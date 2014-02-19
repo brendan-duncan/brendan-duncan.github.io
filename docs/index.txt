@@ -1658,7 +1658,10 @@ image/image.readJpg method
 image/image.decodeJpg method
 image/image.encodeNamedImage method
 image/image.decodeNamedImage method
+image/image.decodeNamedAnimation method
 image/image.getDecoderForNamedImage method
+image/image.decodeAnimation method
+image/image.decodeImage method
 image/image.findDecoderForData method
 image/image.vignette method
 image/image.smooth method
