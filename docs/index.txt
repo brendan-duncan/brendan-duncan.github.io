@@ -631,9 +631,14 @@ image/image.BitmapFont.BitmapFont-fromFnt constructor
 image/image.BitmapFont.BitmapFont-fromZip constructor
 image/image.BitmapFont.characterXAdvance method
 image/image.Animation class
-image/image.Animation.loopCount property
+image/image.Animation.ANIMATION property
+image/image.Animation.PAGE property
+image/image.Animation.width property
+image/image.Animation.height property
 image/image.Animation.backgroundColor property
 image/image.Animation.frames property
+image/image.Animation.loopCount property
+image/image.Animation.frameType property
 image/image.Animation.numFrames getter
 image/image.Animation.length getter
 image/image.Animation.[] operator
