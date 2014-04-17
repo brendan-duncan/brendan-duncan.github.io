@@ -33452,8 +33452,17 @@ var $$ = {};
       return completer.future;
     },
     _updatePreviewImage$2: function(image, bytes) {
-      var src, dst, t1, w, t2, dsti, y, t3, t4;
-      src = H.NativeUint32List_NativeUint32List$view(J.get$buffer$x(bytes), 0, null);
+      var t1, src, dst, w, t2, dsti, y, t3, t4;
+      t1 = J.getInterceptor(bytes);
+      if (!!t1.$isUint8List)
+        src = H.NativeUint32List_NativeUint32List$view(t1.get$buffer(bytes), 0, null);
+      else {
+        t1 = H.checkSubtype(bytes, "$isList", [J.JSInt], "$asList");
+        if (t1)
+          src = H.NativeUint32List_NativeUint32List$view(new Uint8Array(H._ensureNativeList(bytes)).buffer, 0, null);
+        else
+          return;
+      }
       dst = image.data;
       t1 = this.extents;
       w = J.$sub$n(t1[1], t1[0]);
