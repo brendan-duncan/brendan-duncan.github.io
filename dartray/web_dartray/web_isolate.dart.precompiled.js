@@ -1201,13 +1201,13 @@ var $$ = {};
     return x == null || typeof x === "string" || typeof x === "number" || typeof x === "boolean";
   },
   startRootIsolate_closure: {
-    "^": "Closure:86;box_0,entry_1",
+    "^": "Closure:91;box_0,entry_1",
     call$0: function() {
       this.entry_1.call$1(this.box_0.args_0);
     }
   },
   startRootIsolate_closure0: {
-    "^": "Closure:86;box_0,entry_2",
+    "^": "Closure:91;box_0,entry_2",
     call$0: function() {
       this.entry_2.call$2(this.box_0.args_0, null);
     }
@@ -1369,7 +1369,7 @@ var $$ = {};
     }
   },
   _IsolateContext_handlePing_closure: {
-    "^": "Closure:86;responsePort_0",
+    "^": "Closure:91;responsePort_0",
     call$0: function() {
       J.send$1$x(this.responsePort_0, null);
     }
@@ -1459,7 +1459,7 @@ var $$ = {};
     "^": "Object;"
   },
   IsolateNatives__processWorkerMessage_closure: {
-    "^": "Closure:86;entryPoint_0,args_1,message_2,isSpawnUri_3,startPaused_4,replyTo_5",
+    "^": "Closure:91;entryPoint_0,args_1,message_2,isSpawnUri_3,startPaused_4,replyTo_5",
     call$0: function() {
       H.IsolateNatives__startIsolate(this.entryPoint_0, this.args_1, this.message_2, this.isSpawnUri_3, this.startPaused_4, this.replyTo_5);
     }
@@ -1528,7 +1528,7 @@ var $$ = {};
     $isCapability: true
   },
   _NativeJsSendPort_send_closure: {
-    "^": "Closure:86;box_0,this_1,shouldSerialize_2",
+    "^": "Closure:91;box_0,this_1,shouldSerialize_2",
     call$0: function() {
       var t1, t2;
       t1 = this.this_1._receivePort;
@@ -1789,7 +1789,7 @@ var $$ = {};
     }
   },
   _Copier_visitMap_closure: {
-    "^": "Closure:87;box_0,this_1",
+    "^": "Closure:92;box_0,this_1",
     call$2: function(key, val) {
       var t1 = this.this_1;
       J.$indexSet$ax(this.box_0.copy_0, t1._dispatch$1(key), t1._dispatch$1(val));
@@ -2957,7 +2957,7 @@ var $$ = {};
     $isEfficientLength: true
   },
   ConstantStringMap_values_closure: {
-    "^": "Closure:88;this_0",
+    "^": "Closure:93;this_0",
     call$1: function(key) {
       return this.this_0._fetch$1(key);
     }
@@ -3109,7 +3109,7 @@ var $$ = {};
     }
   },
   unwrapException_saveStackTrace: {
-    "^": "Closure:88;ex_0",
+    "^": "Closure:93;ex_0",
     call$1: function(error) {
       if (!!J.getInterceptor(error).$isError)
         if (error.$thrownJsError == null)
@@ -3132,31 +3132,31 @@ var $$ = {};
     }
   },
   invokeClosure_closure: {
-    "^": "Closure:86;closure_0",
+    "^": "Closure:91;closure_0",
     call$0: function() {
       return this.closure_0.call$0();
     }
   },
   invokeClosure_closure0: {
-    "^": "Closure:86;closure_1,arg1_2",
+    "^": "Closure:91;closure_1,arg1_2",
     call$0: function() {
       return this.closure_1.call$1(this.arg1_2);
     }
   },
   invokeClosure_closure1: {
-    "^": "Closure:86;closure_3,arg1_4,arg2_5",
+    "^": "Closure:91;closure_3,arg1_4,arg2_5",
     call$0: function() {
       return this.closure_3.call$2(this.arg1_4, this.arg2_5);
     }
   },
   invokeClosure_closure2: {
-    "^": "Closure:86;closure_6,arg1_7,arg2_8,arg3_9",
+    "^": "Closure:91;closure_6,arg1_7,arg2_8,arg3_9",
     call$0: function() {
       return this.closure_6.call$3(this.arg1_7, this.arg2_8, this.arg3_9);
     }
   },
   invokeClosure_closure3: {
-    "^": "Closure:86;closure_10,arg1_11,arg2_12,arg3_13,arg4_14",
+    "^": "Closure:91;closure_10,arg1_11,arg2_12,arg3_13,arg4_14",
     call$0: function() {
       return this.closure_10.call$4(this.arg1_11, this.arg2_12, this.arg3_13, this.arg4_14);
     }
@@ -3350,13 +3350,13 @@ var $$ = {};
     $isTypeImpl: true
   },
   initHooks_closure: {
-    "^": "Closure:88;getTag_0",
+    "^": "Closure:93;getTag_0",
     call$1: function(o) {
       return this.getTag_0(o);
     }
   },
   initHooks_closure0: {
-    "^": "Closure:89;getUnknownTag_1",
+    "^": "Closure:94;getUnknownTag_1",
     call$2: function(o, tag) {
       return this.getUnknownTag_1(o, tag);
     }
@@ -4144,20 +4144,20 @@ var $$ = {};
       }}
   },
   BVHAccel__recursiveBuild_ComparePoints: {
-    "^": "Closure:90;dim_1",
+    "^": "Closure:95;dim_1",
     call$2: function(a, b) {
       var t1 = this.dim_1;
       return J.$lt$n(a.get$centroid().$index(0, t1), b.get$centroid().$index(0, t1));
     }
   },
   BVHAccel__recursiveBuild_CompareToMid: {
-    "^": "Closure:91;dim_2,pmid_3",
+    "^": "Closure:96;dim_2,pmid_3",
     call$1: function(a) {
       return J.$lt$n(a.get$centroid().$index(0, this.dim_2), this.pmid_3);
     }
   },
   BVHAccel__recursiveBuild_CompareToBucket: {
-    "^": "Closure:91;box_0,dim_4,nBuckets_5",
+    "^": "Closure:96;box_0,dim_4,nBuckets_5",
     call$1: function(p) {
       var t1, t2, t3, b;
       t1 = this.nBuckets_5;
@@ -4588,7 +4588,7 @@ var $$ = {};
     "^": "Object;primitives,allCanIntersect",
     size$0: [function(_) {
       return this.primitives.length;
-    }, "call$0", "get$size", 0, 0, 92],
+    }, "call$0", "get$size", 0, 0, 97],
     addPrimitive$1: function(prim) {
       this.primitives.push(prim);
     },
@@ -5254,7 +5254,7 @@ var $$ = {};
       }}
   },
   KdTreeAccel__buildTree_closure: {
-    "^": "Closure:87;",
+    "^": "Closure:92;",
     call$2: function(a, b) {
       return J.$lt$n(a, b) ? -1 : 1;
     }
@@ -5294,19 +5294,19 @@ var $$ = {};
     },
     splitPos$0: [function() {
       return this.split;
-    }, "call$0", "get$splitPos", 0, 0, 93],
+    }, "call$0", "get$splitPos", 0, 0, 98],
     nPrimitives$0: [function() {
       var t1 = this.flags;
       if (typeof t1 !== "number")
         return t1.$shr();
       return C.JSInt_methods._shrOtherPositive$1(t1, 2);
-    }, "call$0", "get$nPrimitives", 0, 0, 92],
+    }, "call$0", "get$nPrimitives", 0, 0, 97],
     splitAxis$0: [function() {
       var t1 = this.flags;
       if (typeof t1 !== "number")
         return t1.$and();
       return t1 & 3;
-    }, "call$0", "get$splitAxis", 0, 0, 92],
+    }, "call$0", "get$splitAxis", 0, 0, 97],
     isLeaf$0: function() {
       var t1 = this.flags;
       if (typeof t1 !== "number")
@@ -9462,7 +9462,7 @@ var $$ = {};
     "^": "Object;imageX@,imageY@,lensU?,lensV?,time@"
   },
   nth_element_closure: {
-    "^": "Closure:87;pred_0",
+    "^": "Closure:92;pred_0",
     call$2: function(a, b) {
       return this.pred_0.call$2(a, b) === true ? -1 : 1;
     }
@@ -9638,9 +9638,6 @@ var $$ = {};
   },
   Filter: {
     "^": "Object;xWidth<,yWidth<,invXWidth<,invYWidth<"
-  },
-  ImageSampler: {
-    "^": "Object;"
   },
   Integrator: {
     "^": "Object;",
@@ -11402,6 +11399,11 @@ var $$ = {};
   },
   ParamSet: {
     "^": "Object;bools<,ints,floats,points,vectors,normals,spectra,strings,textures",
+    addFloat$2: function($name, data) {
+      $name = J.toLowerCase$0$s($name);
+      this.eraseFloat$1($name);
+      this.floats.push(new G.ParamSetItem($name, data, false));
+    },
     addInt$2: function($name, data) {
       $name = J.toLowerCase$0$s($name);
       this.eraseInt$1($name);
@@ -12219,7 +12221,7 @@ var $$ = {};
       }}
   },
   ParamSet_addSpectrumFiles_closure: {
-    "^": "Closure:88;box_0,this_1,s_2,path_3,sc_4",
+    "^": "Closure:93;box_0,this_1,s_2,path_3,sc_4",
     call$1: function(bytes) {
       var t1, t2, values, numSamples, wls, v, i, j, j0, t3;
       t1 = this.path_3;
@@ -12253,7 +12255,7 @@ var $$ = {};
     }
   },
   ParamSet_addSpectrumFiles_closure0: {
-    "^": "Closure:88;this_5,name_6,s_7,c_8",
+    "^": "Closure:93;this_5,name_6,s_7,c_8",
     call$1: function(e) {
       var t1;
       this.this_5.spectra.push(new G.ParamSetItem(this.name_6, this.s_7, false));
@@ -12264,20 +12266,29 @@ var $$ = {};
     }
   },
   ParamSet__readFloatFile__isdigit: {
-    "^": "Closure:94;ZERO_0,NINE_1",
+    "^": "Closure:99;ZERO_0,NINE_1",
     call$1: function(c) {
       var cu = C.JSString_methods.codeUnitAt$1(c, 0);
       return cu >= this.ZERO_0 && cu <= this.NINE_1;
     }
   },
   ParamSet__readFloatFile__isspace: {
-    "^": "Closure:94;",
+    "^": "Closure:99;",
     call$1: function(c) {
       return c === " " || c === "\t" || c === "\n" || c === "\r";
     }
   },
   ParamSetItem: {
     "^": "Object;name>,data>,lookedUp@"
+  },
+  PixelSampler: {
+    "^": "Object;",
+    setup$4: function(xPixelStart, xPixelEnd, yPixelStart, yPixelEnd) {
+      this.xPixelStart = xPixelStart;
+      this.xPixelEnd = xPixelEnd;
+      this.yPixelStart = yPixelStart;
+      this.yPixelEnd = yPixelEnd;
+    }
   },
   Point: {
     "^": "Vector;x,y,z",
@@ -12989,7 +13000,7 @@ var $$ = {};
     f$2: [function(wo, wi) {
       var t1 = J.getInterceptor$x(wi);
       return this.brdf.f$2(wo, new G.Vector(t1.get$x(wi), t1.get$y(wi), J.$negate$n(t1.get$z(wi))));
-    }, "call$2", "get$f", 4, 0, 95],
+    }, "call$2", "get$f", 4, 0, 100],
     sample_f$5: function(wo, wi, u1, u2, pdf) {
       var f, t1, t2, t3;
       f = this.brdf.sample_f$5(wo, wi, u1, u2, pdf);
@@ -13157,7 +13168,7 @@ var $$ = {};
       return f;
     }, function(woW, wiW) {
       return this.f$3(woW, wiW, 31);
-    }, "f$2", "call$3", "call$2", "get$f", 4, 2, 96, 97],
+    }, "f$2", "call$3", "call$2", "get$f", 4, 2, 101, 102],
     rho$3: function(rng, flags, sqrtSamples) {
       var nSamples, t1, t2, s1, s2, ret, i;
       if (typeof sqrtSamples !== "number")
@@ -13390,9 +13401,10 @@ var $$ = {};
       t6 = J.abs$0$n(t5.get$z(wo));
       diffuse = t2.$mul(0, (1 - t4) * (1 - Math.pow(1 - 0.5 * t6, 5)));
       wh = t3.$add(wi, wo);
-      if (J.$eq(wh.get$x(wh), 0) && J.$eq(wh.get$y(wh), 0) && J.$eq(wh.get$z(wh), 0))
+      t2 = J.getInterceptor$x(wh);
+      if (J.$eq(t2.get$x(wh), 0) && J.$eq(t2.get$y(wh), 0) && J.$eq(t2.get$z(wh), 0))
         return G.Spectrum_Spectrum(0);
-      wh = wh.$div(wh, wh.length$0(0));
+      wh = t2.$div(wh, t2.length$0(wh));
       a = G.Spectrum_Spectrum(this.distribution.d$1(wh));
       t2 = G.Vector_Dot(wi, wh);
       t4 = G.Spectrum_Spectrum(1).$sub(0, t1);
@@ -13402,7 +13414,7 @@ var $$ = {};
       t1 = G.Vector_AbsDot(wi, wh);
       t5 = P.max(J.abs$0$n(t3.get$z(wi)), J.abs$0$n(t5.get$z(wo)));
       return diffuse.$add(0, a.$div(0, b).$mul(0, 4 * t1 * t5));
-    }, "call$2", "get$f", 4, 0, 95],
+    }, "call$2", "get$f", 4, 0, 100],
     sample_f$5: function(wi, wo, u1, u2, outPdf) {
       var t1, phi_cosTheta, t2, phi, cosTheta, sintheta, t3, wh, t4, t5, t6, t7, t8, costhetah, ds, anisotropic_pdf;
       t1 = J.getInterceptor$n(u1);
@@ -13585,10 +13597,10 @@ var $$ = {};
           return t2.v_0.clamp$0(0).$div(0, t2.sumWeights_1);
         lastMaxDist2 *= 2;
       }
-    }, "call$2", "get$f", 4, 0, 95]
+    }, "call$2", "get$f", 4, 0, 100]
   },
   IrregularIsotropicBRDF_f_proc: {
-    "^": "Closure:98;box_0",
+    "^": "Closure:103;box_0",
     call$4: function(p, sample, d2, maxDist2) {
       var weight, t1;
       if (typeof d2 !== "number")
@@ -13604,7 +13616,7 @@ var $$ = {};
     "^": "BxDF;R,type",
     f$2: [function(wo, wi) {
       return this.R.$mul(0, 0.3183098861837907);
-    }, "call$2", "get$f", 4, 0, 95],
+    }, "call$2", "get$f", 4, 0, 100],
     rho$3: function(Vector, $int, samples) {
       return this.R;
     },
@@ -13618,7 +13630,7 @@ var $$ = {};
   Microfacet: {
     "^": "BxDF;R,distribution,fresnel,type",
     f$2: [function(wo, wi) {
-      var t1, cosThetaO, t2, cosThetaI, wh, $F, t3, costhetah, t4, NdotWh, NdotWo, NdotWi, WOdotWh;
+      var t1, cosThetaO, t2, cosThetaI, wh, t3, $F, t4, costhetah, t5, NdotWh, NdotWo, NdotWi, WOdotWh;
       t1 = J.getInterceptor$x(wo);
       cosThetaO = J.abs$0$n(t1.get$z(wo));
       t2 = J.getInterceptor$x(wi);
@@ -13626,23 +13638,25 @@ var $$ = {};
       if (cosThetaI === 0 || cosThetaO === 0)
         return G.Spectrum_Spectrum(0);
       wh = t2.$add(wi, wo);
-      if (J.$eq(wh.get$x(wh), 0) && J.$eq(wh.get$y(wh), 0) && J.$eq(wh.get$z(wh), 0))
+      t3 = J.getInterceptor$x(wh);
+      if (J.$eq(t3.get$x(wh), 0) && J.$eq(t3.get$y(wh), 0) && J.$eq(t3.get$z(wh), 0))
         return G.Spectrum_Spectrum(0);
-      wh = wh.$div(wh, wh.length$0(0));
+      wh = t3.$div(wh, t3.length$0(wh));
       $F = this.fresnel.evaluate$1(G.Vector_Dot(wi, wh));
       t3 = this.distribution;
-      costhetah = J.abs$0$n(wh.z);
+      t4 = J.getInterceptor$x(wh);
+      costhetah = J.abs$0$n(t4.get$z(wh));
       t3 = t3.exponent;
       if (typeof t3 !== "number")
         return t3.$add();
-      t4 = Math.pow(costhetah, t3);
-      NdotWh = J.abs$0$n(wh.z);
+      t5 = Math.pow(costhetah, t3);
+      NdotWh = J.abs$0$n(t4.get$z(wh));
       NdotWo = J.abs$0$n(t1.get$z(wo));
       NdotWi = J.abs$0$n(t2.get$z(wi));
       WOdotWh = G.Vector_AbsDot(wo, wh);
       t2 = 2 * NdotWh;
-      return J.$div$n(J.$mul$ns(J.$mul$ns(this.R, (t3 + 2) * 0.15915494309189535 * t4 * P.min(1, P.min(t2 * NdotWo / WOdotWh, t2 * NdotWi / WOdotWh))), $F), 4 * cosThetaI * cosThetaO);
-    }, "call$2", "get$f", 4, 0, 95],
+      return J.$div$n(J.$mul$ns(J.$mul$ns(this.R, (t3 + 2) * 0.15915494309189535 * t5 * P.min(1, P.min(t2 * NdotWo / WOdotWh, t2 * NdotWi / WOdotWh))), $F), 4 * cosThetaI * cosThetaO);
+    }, "call$2", "get$f", 4, 0, 100],
     sample_f$5: function(wo, wi, u1, u2, pdf) {
       var t1, t2, costheta, sintheta, phi, t3, wh, t4, t5, t6, t7, blinn_pdf;
       t1 = this.distribution;
@@ -13671,10 +13685,11 @@ var $$ = {};
       t5 = J.$mul$ns(wh.y, 2);
       t6 = J.$mul$ns(wh.z, 2);
       t7 = J.$add$ns(J.$add$ns(J.$mul$ns(t4.get$x(wo), wh.x), J.$mul$ns(t4.get$y(wo), wh.y)), J.$mul$ns(t4.get$z(wo), wh.z));
-      t7 = t2.$add(0, new G.Vector(J.$mul$ns(t3, t7), J.$mul$ns(t5, t7), J.$mul$ns(t6, t7)));
-      wi.x = t7.get$x(t7);
-      wi.y = t7.get$y(t7);
-      wi.z = t7.get$z(t7);
+      t7 = J.$add$ns(t2, new G.Vector(J.$mul$ns(t3, t7), J.$mul$ns(t5, t7), J.$mul$ns(t6, t7)));
+      t6 = J.getInterceptor$x(t7);
+      wi.x = t6.get$x(t7);
+      wi.y = t6.get$y(t7);
+      wi.z = t6.get$z(t7);
       t1 = t1.exponent;
       if (typeof t1 !== "number")
         return t1.$add();
@@ -13722,7 +13737,7 @@ var $$ = {};
         sinalpha = sinthetai;
       }
       return this.R.$mul(0, 0.3183098861837907 * (this.A + this.B * maxcos * sinalpha * tanbeta));
-    }, "call$2", "get$f", 4, 0, 95],
+    }, "call$2", "get$f", 4, 0, 100],
     OrenNayar$2: function(reflectance, sig) {
       var sigma, sigma2;
       if (typeof sig !== "number")
@@ -13796,10 +13811,10 @@ var $$ = {};
       if (t2 >= t1)
         return H.ioore(t3, t2);
       return G.Spectrum_Spectrum$rgb(t4, t5, t3[t2]);
-    }, "call$2", "get$f", 4, 0, 95]
+    }, "call$2", "get$f", 4, 0, 100]
   },
   RegularHalfangleBRDF_f_REMAP: {
-    "^": "Closure:99;",
+    "^": "Closure:104;",
     call$3: function($V, MAX, COUNT) {
       var t1 = C.JSNumber_methods.toInt$0($V / MAX);
       if (typeof COUNT !== "number")
@@ -13817,7 +13832,7 @@ var $$ = {};
     },
     f$2: [function(wo, wi) {
       return this.s.$mul(0, this.bxdf.f$2(wo, wi));
-    }, "call$2", "get$f", 4, 0, 95],
+    }, "call$2", "get$f", 4, 0, 100],
     sample_f$5: function(wo, wi, u1, u2, pdf) {
       return this.s.$mul(0, this.bxdf.sample_f$5(wo, wi, u1, u2, pdf));
     }
@@ -13826,7 +13841,7 @@ var $$ = {};
     "^": "BxDF;R,fresnel,type",
     f$2: [function(wo, wi) {
       return G.Spectrum_Spectrum(0);
-    }, "call$2", "get$f", 4, 0, 95],
+    }, "call$2", "get$f", 4, 0, 100],
     sample_f$5: function(wo, wi, u1, u2, pdf) {
       var t1 = J.getInterceptor$x(wo);
       wi.x = J.$negate$n(t1.get$x(wo));
@@ -13846,7 +13861,7 @@ var $$ = {};
     "^": "BxDF;T,etai,etat,fresnel,type",
     f$2: [function(wo, wi) {
       return G.Spectrum_Spectrum(0);
-    }, "call$2", "get$f", 4, 0, 95],
+    }, "call$2", "get$f", 4, 0, 100],
     sample_f$5: function(wo, wi, u1, u2, pdf) {
       var t1, entering, ei, et, t0, t2, sini2, eta, sint2, t3, cost, $F;
       t1 = J.getInterceptor$x(wo);
@@ -13964,7 +13979,7 @@ var $$ = {};
     }
   },
   ResourceManager_requestFile_closure: {
-    "^": "Closure:88;this_0,path_1,c_2",
+    "^": "Closure:93;this_0,path_1,c_2",
     call$1: function(bytes) {
       var t1;
       if (bytes == null) {
@@ -13982,7 +13997,7 @@ var $$ = {};
     }
   },
   ResourceManager_requestImage_closure: {
-    "^": "Closure:88;this_0,path_1,c_2",
+    "^": "Closure:93;this_0,path_1,c_2",
     call$1: function(bytes) {
       var t1, decoder, info, hdr, t2, t3, res, ri, y, x, r, g, b, ri0;
       if (bytes == null) {
@@ -14103,7 +14118,7 @@ var $$ = {};
     }
   },
   ResourceManager_waitUntilReady_closure: {
-    "^": "Closure:88;this_0,c_1",
+    "^": "Closure:93;this_0,c_1",
     call$1: function(r) {
       var t1;
       C.JSArray_methods.set$length(this.this_0.futures, 0);
@@ -15439,13 +15454,13 @@ var $$ = {};
     static: {"^": "Spectrum_type<"}
   },
   Spectrum_SortSpectrumSamples_closure: {
-    "^": "Closure:87;",
+    "^": "Closure:92;",
     call$2: function(a, b) {
       return J.$lt$n(J.$index$asx(a, 0), J.$index$asx(b, 0));
     }
   },
   Spectrum_AverageSpectrumSamples_INTERP: {
-    "^": "Closure:87;lambda_0,vals_1,offset_2",
+    "^": "Closure:92;lambda_0,vals_1,offset_2",
     call$2: function(w, i) {
       var t1, t2, t3, t4, t5;
       t1 = this.lambda_0;
@@ -15480,7 +15495,7 @@ var $$ = {};
     }
   },
   Spectrum_AverageSpectrumSamples_SEG_AVG: {
-    "^": "Closure:100;INTERP_3",
+    "^": "Closure:105;INTERP_3",
     call$3: function(wl0, wl1, i) {
       var t1 = this.INTERP_3;
       return 0.5 * J.$add$ns(t1.call$2(wl0, i), t1.call$2(wl1, i));
@@ -15669,7 +15684,7 @@ var $$ = {};
       }}
   },
   SphericalHarmonics_RotateXPlus_O: {
-    "^": "Closure:87;c_in_0",
+    "^": "Closure:92;c_in_0",
     call$2: function(l, m) {
       var t1, t2;
       t1 = this.c_in_0;
@@ -15680,7 +15695,7 @@ var $$ = {};
     }
   },
   SphericalHarmonics__legendrep_P: {
-    "^": "Closure:101;out_0,outIndex_1",
+    "^": "Closure:106;out_0,outIndex_1",
     call$2: function(l, m) {
       var index, t1;
       index = J.toInt$0$n(J.$add$ns(this.outIndex_1, l * l + l + m));
@@ -16299,7 +16314,7 @@ var $$ = {};
       if (typeof t1 !== "number")
         H.throwExpression(P.ArgumentError$(t1));
       return Math.sqrt(t1);
-    }, "call$0", "get$length", 0, 0, 93],
+    }, "call$0", "get$length", 0, 0, 98],
     toString$0: function(_) {
       return H.S(this.x) + " " + H.S(this.y) + " " + H.S(this.z);
     },
@@ -16437,7 +16452,7 @@ var $$ = {};
         ph += wt * t2;
       }
       return ph / sumWt;
-    }, "call$4", "get$p", 8, 0, 102],
+    }, "call$4", "get$p", 8, 0, 107],
     tau$3: function(ray, step, offset) {
       var t, t1, i;
       t = G.Spectrum_Spectrum(0);
@@ -16474,7 +16489,7 @@ var $$ = {};
     },
     p$4: [function(_, p, w, wp, d) {
       return G.PhaseHG(w, wp, this.g);
-    }, "call$4", "get$p", 8, 0, 102],
+    }, "call$4", "get$p", 8, 0, 107],
     tau$3: function(r, stepSize, u) {
       var t00, t1, $length, rn, tau, t2, t3, t4, t5;
       t00 = [0];
@@ -17674,7 +17689,7 @@ var $$ = {};
     $isFuture: true
   },
   Future_wait_handleError: {
-    "^": "Closure:87;box_0,eagerError_1",
+    "^": "Closure:92;box_0,eagerError_1",
     call$2: function(theError, theStackTrace) {
       var t1, t2, t3;
       t1 = this.box_0;
@@ -17693,7 +17708,7 @@ var $$ = {};
     }
   },
   Future_wait_closure: {
-    "^": "Closure:103;box_0,eagerError_2,pos_3",
+    "^": "Closure:108;box_0,eagerError_2,pos_3",
     call$1: function(value) {
       var t1, t2, t3, t4;
       t1 = this.box_0;
@@ -17729,7 +17744,7 @@ var $$ = {};
       t1._asyncCompleteError$2(error, stackTrace);
     }, function(error) {
       return this.completeError$2(error, null);
-    }, "completeError$1", "call$2", "call$1", "get$completeError", 2, 2, 104, 13]
+    }, "completeError$1", "call$2", "call$1", "get$completeError", 2, 2, 109, 13]
   },
   _Future: {
     "^": "Object;_state,_zone<,_resultOrListeners,_nextListener<,_onValueCallback,_errorTestCallback,_onErrorCallback,_whenCompleteActionCallback",
@@ -18026,19 +18041,19 @@ var $$ = {};
       }}
   },
   _Future__addListener_closure: {
-    "^": "Closure:86;this_0,listener_1",
+    "^": "Closure:91;this_0,listener_1",
     call$0: function() {
       P._Future__propagateToListeners(this.this_0, this.listener_1);
     }
   },
   _Future__chainForeignFuture_closure: {
-    "^": "Closure:88;target_0",
+    "^": "Closure:93;target_0",
     call$1: function(value) {
       this.target_0._completeWithValue$1(value);
     }
   },
   _Future__chainForeignFuture_closure0: {
-    "^": "Closure:105;target_1",
+    "^": "Closure:110;target_1",
     call$2: function(error, stackTrace) {
       this.target_1._completeError$2(error, stackTrace);
     },
@@ -18047,25 +18062,25 @@ var $$ = {};
     }
   },
   _Future__asyncComplete_closure: {
-    "^": "Closure:86;this_0,coreFuture_1",
+    "^": "Closure:91;this_0,coreFuture_1",
     call$0: function() {
       P._Future__chainCoreFuture(this.coreFuture_1, this.this_0);
     }
   },
   _Future__asyncComplete_closure0: {
-    "^": "Closure:86;this_2,value_3",
+    "^": "Closure:91;this_2,value_3",
     call$0: function() {
       this.this_2._completeWithValue$1(this.value_3);
     }
   },
   _Future__asyncCompleteError_closure: {
-    "^": "Closure:86;this_0,error_1,stackTrace_2",
+    "^": "Closure:91;this_0,error_1,stackTrace_2",
     call$0: function() {
       this.this_0._completeError$2(this.error_1, this.stackTrace_2);
     }
   },
   _Future__propagateToListeners_handleValueCallback: {
-    "^": "Closure:106;box_1,listener_3,sourceValue_4,zone_5",
+    "^": "Closure:111;box_1,listener_3,sourceValue_4,zone_5",
     call$0: function() {
       var e, s, t1, t2, exception;
       try {
@@ -18191,13 +18206,13 @@ var $$ = {};
     }
   },
   _Future__propagateToListeners_handleWhenCompleteCallback_closure: {
-    "^": "Closure:88;box_2,listener_11",
+    "^": "Closure:93;box_2,listener_11",
     call$1: function(ignored) {
       P._Future__propagateToListeners(this.box_2.source_4, this.listener_11);
     }
   },
   _Future__propagateToListeners_handleWhenCompleteCallback_closure0: {
-    "^": "Closure:105;box_0,listener_12",
+    "^": "Closure:110;box_0,listener_12",
     call$2: function(error, stackTrace) {
       var t1, completeResult;
       t1 = this.box_0;
@@ -18273,42 +18288,42 @@ var $$ = {};
     }
   },
   Stream_forEach__closure: {
-    "^": "Closure:86;action_4,element_5",
+    "^": "Closure:91;action_4,element_5",
     call$0: function() {
       return this.action_4.call$1(this.element_5);
     }
   },
   Stream_forEach__closure0: {
-    "^": "Closure:88;",
+    "^": "Closure:93;",
     call$1: function(_) {
     }
   },
   Stream_forEach_closure0: {
-    "^": "Closure:86;future_6",
+    "^": "Closure:91;future_6",
     call$0: function() {
       this.future_6._complete$1(null);
     }
   },
   Stream_length_closure: {
-    "^": "Closure:88;box_0",
+    "^": "Closure:93;box_0",
     call$1: function(_) {
       ++this.box_0.count_0;
     }
   },
   Stream_length_closure0: {
-    "^": "Closure:86;box_0,future_1",
+    "^": "Closure:91;box_0,future_1",
     call$0: function() {
       this.future_1._complete$1(this.box_0.count_0);
     }
   },
   Stream_isEmpty_closure: {
-    "^": "Closure:88;box_0,future_1",
+    "^": "Closure:93;box_0,future_1",
     call$1: function(_) {
       P._cancelAndValue(this.box_0.subscription_0, this.future_1, false);
     }
   },
   Stream_isEmpty_closure0: {
-    "^": "Closure:86;future_2",
+    "^": "Closure:91;future_2",
     call$0: function() {
       this.future_2._complete$1(true);
     }
@@ -18325,7 +18340,7 @@ var $$ = {};
     }
   },
   Stream_first_closure0: {
-    "^": "Closure:86;future_3",
+    "^": "Closure:91;future_3",
     call$0: function() {
       this.future_3._completeError$1(new P.StateError("No elements"));
     }
@@ -18435,7 +18450,7 @@ var $$ = {};
     }
   },
   _StreamController__subscribe_closure: {
-    "^": "Closure:86;this_0",
+    "^": "Closure:91;this_0",
     call$0: function() {
       P._runGuarded(this.this_0.get$_onListen());
     }
@@ -18843,7 +18858,7 @@ var $$ = {};
     }
   },
   _PendingEvents_schedule_closure: {
-    "^": "Closure:86;this_0,dispatch_1",
+    "^": "Closure:91;this_0,dispatch_1",
     call$0: function() {
       var t1, oldState;
       t1 = this.this_0;
@@ -18880,19 +18895,19 @@ var $$ = {};
     }
   },
   _cancelAndError_closure: {
-    "^": "Closure:86;future_0,error_1,stackTrace_2",
+    "^": "Closure:91;future_0,error_1,stackTrace_2",
     call$0: function() {
       return this.future_0._completeError$2(this.error_1, this.stackTrace_2);
     }
   },
   _cancelAndErrorClosure_closure: {
-    "^": "Closure:107;subscription_0,future_1",
+    "^": "Closure:112;subscription_0,future_1",
     call$2: function(error, stackTrace) {
       return P._cancelAndError(this.subscription_0, this.future_1, error, stackTrace);
     }
   },
   _cancelAndValue_closure: {
-    "^": "Closure:86;future_0,value_1",
+    "^": "Closure:91;future_0,value_1",
     call$0: function() {
       return this.future_0._complete$1(this.value_1);
     }
@@ -18964,7 +18979,7 @@ var $$ = {};
     }],
     _handleError$2: [function(error, stackTrace) {
       this._addError$2(error, stackTrace);
-    }, "call$2", "get$_handleError", 4, 0, 108],
+    }, "call$2", "get$_handleError", 4, 0, 113],
     _handleDone$0: [function() {
       this._close$0();
     }, "call$0", "get$_handleDone", 0, 0, 10],
@@ -19053,37 +19068,37 @@ var $$ = {};
     }
   },
   _BaseZone_bindCallback_closure: {
-    "^": "Closure:86;this_0,registered_1",
+    "^": "Closure:91;this_0,registered_1",
     call$0: function() {
       return this.this_0.runGuarded$1(this.registered_1);
     }
   },
   _BaseZone_bindCallback_closure0: {
-    "^": "Closure:86;this_2,registered_3",
+    "^": "Closure:91;this_2,registered_3",
     call$0: function() {
       return this.this_2.run$1(this.registered_3);
     }
   },
   _BaseZone_bindUnaryCallback_closure: {
-    "^": "Closure:88;this_0,registered_1",
+    "^": "Closure:93;this_0,registered_1",
     call$1: function(arg) {
       return this.this_0.runUnaryGuarded$2(this.registered_1, arg);
     }
   },
   _BaseZone_bindUnaryCallback_closure0: {
-    "^": "Closure:88;this_2,registered_3",
+    "^": "Closure:93;this_2,registered_3",
     call$1: function(arg) {
       return this.this_2.runUnary$2(this.registered_3, arg);
     }
   },
   _rootHandleUncaughtError_closure: {
-    "^": "Closure:86;error_0,stackTrace_1",
+    "^": "Closure:91;error_0,stackTrace_1",
     call$0: function() {
       P._scheduleAsyncCallback(new P._rootHandleUncaughtError__closure(this.error_0, this.stackTrace_1));
     }
   },
   _rootHandleUncaughtError__closure: {
-    "^": "Closure:86;error_2,stackTrace_3",
+    "^": "Closure:91;error_2,stackTrace_3",
     call$0: function() {
       var t1, trace;
       t1 = this.error_2;
@@ -19479,7 +19494,7 @@ var $$ = {};
       }}
   },
   _HashMap_values_closure: {
-    "^": "Closure:88;this_0",
+    "^": "Closure:93;this_0",
     call$1: function(each) {
       return this.this_0.$index(0, each);
     }
@@ -19760,7 +19775,7 @@ var $$ = {};
       }}
   },
   _LinkedHashMap_values_closure: {
-    "^": "Closure:88;this_0",
+    "^": "Closure:93;this_0",
     call$1: function(each) {
       return this.this_0.$index(0, each);
     }
@@ -20535,7 +20550,7 @@ var $$ = {};
     $isEfficientLength: true
   },
   Maps_mapToString_closure: {
-    "^": "Closure:87;box_0,result_1",
+    "^": "Closure:92;box_0,result_1",
     call$2: function(k, v) {
       var t1 = this.box_0;
       if (!t1.first_0)
@@ -20737,7 +20752,7 @@ var $$ = {};
     return H.Primitives_stringFromCharCodes(typeof charCodes !== "object" || charCodes === null || charCodes.constructor !== Array ? P.List_List$from(charCodes, true, null) : charCodes);
   },
   NoSuchMethodError_toString_closure: {
-    "^": "Closure:109;box_0",
+    "^": "Closure:114;box_0",
     call$2: function(key, value) {
       var t1 = this.box_0;
       if (t1.i_1 > 0)
@@ -20881,7 +20896,7 @@ var $$ = {};
       }}
   },
   Duration_toString_sixDigits: {
-    "^": "Closure:110;",
+    "^": "Closure:115;",
     call$1: function(n) {
       if (n >= 100000)
         return H.S(n);
@@ -20897,7 +20912,7 @@ var $$ = {};
     }
   },
   Duration_toString_twoDigits: {
-    "^": "Closure:110;",
+    "^": "Closure:115;",
     call$1: function(n) {
       if (n >= 10)
         return H.S(n);
@@ -21799,13 +21814,13 @@ var $$ = {};
     $isEfficientLength: true
   },
   HttpRequest_request_closure0: {
-    "^": "Closure:87;xhr_0",
+    "^": "Closure:92;xhr_0",
     call$2: function(header, value) {
       this.xhr_0.setRequestHeader(header, value);
     }
   },
   HttpRequest_request_closure: {
-    "^": "Closure:88;completer_1,xhr_2",
+    "^": "Closure:93;completer_1,xhr_2",
     call$1: function(e) {
       var t1, t2, t3;
       t1 = this.xhr_2;
@@ -22725,7 +22740,7 @@ var $$ = {};
     }
   },
   RenderManager_loadFile_closure: {
-    "^": "Closure:88;c_0",
+    "^": "Closure:93;c_0",
     call$1: function(bytes) {
       var t1 = this.c_0.future;
       if (t1._state !== 0)
@@ -22734,7 +22749,7 @@ var $$ = {};
     }
   },
   RenderManager_loadFile_closure0: {
-    "^": "Closure:88;c_1",
+    "^": "Closure:93;c_1",
     call$1: function(e) {
       var t1 = J.toString$0(e);
       $.Log.call$2(2, t1);
@@ -22745,7 +22760,7 @@ var $$ = {};
     }
   },
   RenderManager__loadFile_closure: {
-    "^": "Closure:88;c_1",
+    "^": "Closure:93;c_1",
     call$1: function(bytes) {
       var t1, t2;
       if (typeof bytes === "string") {
@@ -22776,7 +22791,7 @@ var $$ = {};
     }
   },
   RenderManager__loadFile_closure0: {
-    "^": "Closure:88;c_2",
+    "^": "Closure:93;c_2",
     call$1: function(resp) {
       var t1, t2;
       t1 = J.get$response$x(resp);
@@ -22810,7 +22825,7 @@ var $$ = {};
     }
   },
   RenderManager__loadFile_closure1: {
-    "^": "Closure:88;box_0",
+    "^": "Closure:93;box_0",
     call$1: function(e) {
       var t1 = "Error Loading Resource " + H.S(this.box_0.path_0) + ": " + H.S(e);
       $.Log.call$2(2, t1);
@@ -23533,7 +23548,7 @@ var $$ = {};
     }
   },
   convertNativeToDart_AcceptStructuredClone_readSlot: {
-    "^": "Closure:111;copies_2",
+    "^": "Closure:116;copies_2",
     call$1: function(i) {
       var t1 = this.copies_2;
       if (i >= t1.length)
@@ -23542,7 +23557,7 @@ var $$ = {};
     }
   },
   convertNativeToDart_AcceptStructuredClone_writeSlot: {
-    "^": "Closure:112;copies_3",
+    "^": "Closure:117;copies_3",
     call$2: function(i, x) {
       var t1 = this.copies_3;
       if (i >= t1.length)
@@ -23551,7 +23566,7 @@ var $$ = {};
     }
   },
   convertNativeToDart_AcceptStructuredClone_walk: {
-    "^": "Closure:88;mustCopy_4,findSlot_5,readSlot_6,writeSlot_7",
+    "^": "Closure:93;mustCopy_4,findSlot_5,readSlot_6,writeSlot_7",
     call$1: function(e) {
       var slot, copy, t1, key, $length, t2, i;
       if (e == null)
@@ -23657,13 +23672,13 @@ var $$ = {};
     }
   },
   FilteredElementList__filtered_closure: {
-    "^": "Closure:88;",
+    "^": "Closure:93;",
     call$1: function(n) {
       return !!J.getInterceptor(n).$isElement;
     }
   },
   FilteredElementList_removeRange_closure: {
-    "^": "Closure:88;",
+    "^": "Closure:93;",
     call$1: function(el) {
       return J.remove$0$ax(el);
     }
@@ -26112,7 +26127,7 @@ var $$ = {};
     },
     alpha$1: [function(_, color) {
       return J.$eq(color, this.transparent) ? 0 : 255;
-    }, "call$1", "get$alpha", 2, 0, 113],
+    }, "call$1", "get$alpha", 2, 0, 118],
     _bitSize$1: function(n) {
       var i;
       for (i = 1; i <= 8; ++i)
@@ -28242,7 +28257,7 @@ var $$ = {};
         t2.$indexSet(zz, C.List_AZw[k], this._receiveAndExtend$1(s));
         ++k;
       }
-    }, "call$2", "get$_decodeBaseline", 4, 0, 114],
+    }, "call$2", "get$_decodeBaseline", 4, 0, 119],
     _decodeDCFirst$2: [function(component, zz) {
       var t, diff, t1, t2;
       t = this._image$_decodeHuffman$1(component.get$huffmanTableDC());
@@ -28261,7 +28276,7 @@ var $$ = {};
       t1 += diff;
       component.pred = t1;
       J.$indexSet$ax(zz, 0, t1);
-    }, "call$2", "get$_decodeDCFirst", 4, 0, 114],
+    }, "call$2", "get$_decodeDCFirst", 4, 0, 119],
     _decodeDCSuccessive$2: [function(component, zz) {
       var t1, t2, t3, t4;
       t1 = J.getInterceptor$asx(zz);
@@ -28271,7 +28286,7 @@ var $$ = {};
       if (typeof t4 !== "number")
         return H.iae(t4);
       t1.$indexSet(zz, 0, J.$or$n(t2, C.JSInt_methods._shlPositive$1(t3, t4)));
-    }, "call$2", "get$_decodeDCSuccessive", 4, 0, 114],
+    }, "call$2", "get$_decodeDCSuccessive", 4, 0, 119],
     _decodeACFirst$2: [function(component, zz) {
       var t1, k, e, t2, rs, s, r, z, t3;
       t1 = this.eobrun;
@@ -28310,7 +28325,7 @@ var $$ = {};
         t1.$indexSet(zz, z, t2 * C.JSInt_methods._shlPositive$1(1, t3));
         ++k;
       }
-    }, "call$2", "get$_decodeACFirst", 4, 0, 114],
+    }, "call$2", "get$_decodeACFirst", 4, 0, 119],
     _decodeACSuccessive$2: [function(component, zz) {
       var k, e, t1, t2, r, z, rs, s, r0, t3, t4;
       k = this.spectralStart;
@@ -28389,7 +28404,7 @@ var $$ = {};
       if (this.successiveACState === 4)
         if (--this.eobrun === 0)
           this.successiveACState = 0;
-    }, "call$2", "get$_decodeACSuccessive", 4, 0, 115]
+    }, "call$2", "get$_decodeACSuccessive", 4, 0, 120]
   },
   JpegDecoder: {
     "^": "Decoder;info,input,progressCallback",
@@ -30689,7 +30704,7 @@ var $$ = {};
         return section.get$type(section);
       }
       return 0;
-    }, "call$0", "get$type", 0, 0, 92],
+    }, "call$0", "get$type", 0, 0, 97],
     readImageData$2: function(input, psd) {
       var i, t1, t2, t3, t4, t5;
       for (i = 0; t1 = this.channels, t2 = t1.length, t3 = psd.depth, t4 = this.width, t5 = this.height, i < t2; ++i)
@@ -34953,7 +34968,7 @@ var $$ = {};
       }}
   },
   VP8__upsample_LOAD_UV: {
-    "^": "Closure:116;",
+    "^": "Closure:121;",
     call$2: function(u, v) {
       if (typeof v !== "number")
         return v.$shl();
@@ -36371,7 +36386,7 @@ var $$ = {};
         t2[t3] = t4 & 255;
       }
       this._lastRow = row;
-    }, "call$1", "get$_extractAlphaRows", 2, 0, 117],
+    }, "call$1", "get$_extractAlphaRows", 2, 0, 122],
     _decodeAlphaData$3: function(width, height, lastRow) {
       var t1, row, col, htreeGroup, pos, end, last, mask, t2, code, $length, distSymbol, dist, i, t3, t4;
       t1 = this._lastPixel;
@@ -36521,7 +36536,7 @@ var $$ = {};
         }
       }
       this._lastRow = row;
-    }, "call$1", "get$_processRows", 2, 0, 117],
+    }, "call$1", "get$_processRows", 2, 0, 122],
     _applyInverseTransforms$2: function(numRows, rows) {
       var t1, n, cachePixs, startRow, endRow, rowsOut, rowsIn, n0, transform, t2;
       t1 = this._transforms;
@@ -38144,13 +38159,13 @@ var $$ = {};
     }
   },
   hdrToImage__knee: {
-    "^": "Closure:118;",
+    "^": "Closure:123;",
     call$2: function(x, f) {
       return Math.log(x * f + 1) / f;
     }
   },
   hdrToImage__gamma: {
-    "^": "Closure:118;_knee_0",
+    "^": "Closure:123;_knee_0",
     call$2: function(h, m) {
       var x, t1;
       x = P.max(0, h * m);
@@ -38417,6 +38432,8 @@ var $$ = {};
       if (typeof t1 !== "number")
         return H.iae(t1);
       if (x < t1) {
+        if (typeof y !== "number")
+          return y.$ge();
         t1 = this.height;
         if (typeof t1 !== "number")
           return H.iae(t1);
@@ -38427,6 +38444,8 @@ var $$ = {};
         t1 = this.data;
         t2 = this.width;
         if (this._format === 4) {
+          if (typeof y !== "number")
+            return y.$mul();
           if (typeof t2 !== "number")
             return H.iae(t2);
           t2 = y * t2 + x;
@@ -38435,6 +38454,8 @@ var $$ = {};
           t2 = t1[t2];
           t1 = t2;
         } else {
+          if (typeof y !== "number")
+            return y.$mul();
           if (typeof t2 !== "number")
             return H.iae(t2);
           t2 = y * t2 + x;
@@ -38738,204 +38759,6 @@ var $$ = {};
       }}
   }
 }],
-["image_samplers", "package:dartray/image_samplers/image_samplers.dart", , Y, {
-  "^": "",
-  RandomImageSampler: {
-    "^": "ImageSampler;_numSamples,_samples,xPixelStart,xPixelEnd,yPixelStart,yPixelEnd",
-    getPixel$2: function(index, pixel) {
-      var t1;
-      index *= 2;
-      t1 = this._samples;
-      if (index >= t1.length - 1)
-        return;
-      J.$indexSet$ax(pixel, 0, t1[index]);
-      t1 = t1[index + 1];
-      if (1 >= pixel.length)
-        return H.ioore(pixel, 1);
-      pixel[1] = t1;
-    },
-    RandomImageSampler$4: function(xPixelStart, xPixelEnd, yPixelStart, yPixelEnd) {
-      var t1, t2, y, si, t3, x, t4, si0, rng, i, r, l, t, t5;
-      for (t1 = this._samples, t2 = t1.length, y = yPixelStart, si = 0; t3 = J.getInterceptor$n(y), t3.$lt(y, yPixelEnd); y = t3.$add(y, 1))
-        for (x = xPixelStart; t4 = J.getInterceptor$n(x), t4.$lt(x, xPixelEnd); x = t4.$add(x, 1)) {
-          si0 = si + 1;
-          if (si < 0 || si >= t2)
-            return H.ioore(t1, si);
-          t1[si] = x;
-          si = si0 + 1;
-          if (si0 < 0 || si0 >= t2)
-            return H.ioore(t1, si0);
-          t1[si0] = y;
-        }
-      rng = new G.RNG(null, new Uint32Array(624), null);
-      rng.mti = 625;
-      rng.seed$1(0, 5489);
-      t3 = C.JSInt_methods._tdivFast$1(t2, 2);
-      this._numSamples = t3;
-      i = 0;
-      r = 0;
-      while (true) {
-        if (typeof t3 !== "number")
-          return H.iae(t3);
-        if (!(i < t3))
-          break;
-        t3 = rng.randomUInt$0();
-        t4 = this._numSamples;
-        if (typeof t4 !== "number")
-          return H.iae(t4);
-        l = C.JSInt_methods.$mod(t3, t4) * 2;
-        if (r >= t2)
-          return H.ioore(t1, r);
-        t = t1[r];
-        if (l >= t2)
-          return H.ioore(t1, l);
-        t1[r] = t1[l];
-        t1[l] = t;
-        t3 = r + 1;
-        if (t3 >= t2)
-          return H.ioore(t1, t3);
-        t = t1[t3];
-        t5 = l + 1;
-        if (t5 >= t2)
-          return H.ioore(t1, t5);
-        t1[t3] = t1[t5];
-        t1[t5] = t;
-        ++i;
-        r += 2;
-        t3 = t4;
-      }
-    },
-    static: {RandomImageSampler$: function(xPixelStart, xPixelEnd, yPixelStart, yPixelEnd) {
-        var t1 = J.$mul$ns(J.$mul$ns(J.$sub$n(xPixelEnd, xPixelStart), J.$sub$n(yPixelEnd, yPixelStart)), 2);
-        if (typeof t1 !== "number" || Math.floor(t1) !== t1)
-          H.throwExpression(P.ArgumentError$("Invalid length " + H.S(t1)));
-        t1 = new Y.RandomImageSampler(null, new Int32Array(t1), xPixelStart, xPixelEnd, yPixelStart, yPixelEnd);
-        t1.RandomImageSampler$4(xPixelStart, xPixelEnd, yPixelStart, yPixelEnd);
-        return t1;
-      }}
-  },
-  TileImageSampler: {
-    "^": "ImageSampler;tileSize,_numSamples,_samples,xPixelStart,xPixelEnd,yPixelStart,yPixelEnd",
-    getPixel$2: function(index, pixel) {
-      var t1;
-      index *= 2;
-      t1 = this._samples;
-      if (index >= t1.length - 1)
-        return;
-      J.$indexSet$ax(pixel, 0, t1[index]);
-      t1 = t1[index + 1];
-      if (1 >= pixel.length)
-        return H.ioore(pixel, 1);
-      pixel[1] = t1;
-    },
-    TileImageSampler$6$randomize$tileSize: function(xPixelStart, xPixelEnd, yPixelStart, yPixelEnd, randomize, tileSize) {
-      var width, height, t1, t2, numXTiles, numYTiles, tiles, yi, ti, xi, ti0, numTiles, rng, lx, ly, rx, ry, t, t3, t4, t5, t6, si, i, tx, ty, sx, sy, t7, t8, y, x, si0;
-      width = J.$sub$n(xPixelEnd, xPixelStart);
-      height = J.$sub$n(yPixelEnd, yPixelStart);
-      t1 = this.tileSize;
-      t2 = J.getInterceptor$n(width).$tdiv(width, t1);
-      if (typeof width !== "number")
-        return width.$mod();
-      numXTiles = J.$add$ns(t2, C.JSNumber_methods.$mod(width, t1) === 0 ? 0 : 1);
-      t2 = J.getInterceptor$n(height).$tdiv(height, t1);
-      if (typeof height !== "number")
-        return height.$mod();
-      numYTiles = J.$add$ns(t2, C.JSNumber_methods.$mod(height, t1) === 0 ? 0 : 1);
-      t2 = J.$mul$ns(J.$mul$ns(numXTiles, numYTiles), 2);
-      if (typeof t2 !== "number" || Math.floor(t2) !== t2)
-        H.throwExpression(P.ArgumentError$("Invalid length " + H.S(t2)));
-      tiles = new Int32Array(t2);
-      if (typeof numYTiles !== "number")
-        return H.iae(numYTiles);
-      t2 = tiles.length;
-      yi = 0;
-      ti = 0;
-      for (; yi < numYTiles; ++yi) {
-        if (typeof numXTiles !== "number")
-          return H.iae(numXTiles);
-        xi = 0;
-        for (; xi < numXTiles; ++xi) {
-          ti0 = ti + 1;
-          if (ti < 0 || ti >= t2)
-            return H.ioore(tiles, ti);
-          tiles[ti] = xi;
-          ti = ti0 + 1;
-          if (ti0 < 0 || ti0 >= t2)
-            return H.ioore(tiles, ti0);
-          tiles[ti0] = yi;
-        }
-      }
-      numTiles = C.JSInt_methods._tdivFast$1(t2, 2);
-      if (randomize) {
-        rng = new G.RNG(null, new Uint32Array(624), null);
-        rng.mti = 625;
-        rng.seed$1(0, 5489);
-        for (ti = 1; ti < numTiles; ++ti) {
-          lx = ti * 2;
-          ly = lx + 1;
-          rx = C.JSInt_methods.$mod(rng.randomUInt$0(), numTiles) * 2;
-          ry = rx + 1;
-          if (lx >= t2)
-            return H.ioore(tiles, lx);
-          t = tiles[lx];
-          if (rx >= t2)
-            return H.ioore(tiles, rx);
-          tiles[lx] = tiles[rx];
-          tiles[rx] = t;
-          if (ly >= t2)
-            return H.ioore(tiles, ly);
-          t = tiles[ly];
-          if (ry >= t2)
-            return H.ioore(tiles, ry);
-          tiles[ly] = tiles[ry];
-          tiles[ry] = t;
-        }
-      }
-      for (t3 = this._samples, t4 = t3.length, t5 = J.getInterceptor$ns(xPixelStart), t6 = J.getInterceptor$ns(yPixelStart), si = 0, i = 0, ti = 0; i < numTiles; ++i) {
-        ti0 = ti + 1;
-        if (ti >= t2)
-          return H.ioore(tiles, ti);
-        tx = tiles[ti];
-        ti = ti0 + 1;
-        if (ti0 >= t2)
-          return H.ioore(tiles, ti0);
-        ty = tiles[ti0];
-        sx = t5.$add(xPixelStart, tx * t1);
-        sy = t6.$add(yPixelStart, ty * t1);
-        for (t7 = J.getInterceptor$ns(sx), t8 = J.getInterceptor$ns(sy), yi = 0; yi < t1; ++yi) {
-          y = t8.$add(sy, yi);
-          if (J.$ge$n(y, yPixelEnd))
-            break;
-          for (xi = 0; xi < t1; ++xi) {
-            x = t7.$add(sx, xi);
-            if (J.$ge$n(x, xPixelEnd))
-              break;
-            si0 = si + 1;
-            if (si < 0 || si >= t4)
-              return H.ioore(t3, si);
-            t3[si] = x;
-            si = si0 + 1;
-            if (si0 < 0 || si0 >= t4)
-              return H.ioore(t3, si0);
-            t3[si0] = y;
-          }
-        }
-      }
-    },
-    static: {TileImageSampler$: function(xPixelStart, xPixelEnd, yPixelStart, yPixelEnd, randomize, tileSize) {
-        var t1, t2, t3;
-        t1 = J.getInterceptor$n(xPixelEnd);
-        t2 = J.getInterceptor$n(yPixelEnd);
-        t3 = J.$mul$ns(t1.$sub(xPixelEnd, xPixelStart), t2.$sub(yPixelEnd, yPixelStart));
-        t2 = J.$mul$ns(J.$mul$ns(t1.$sub(xPixelEnd, xPixelStart), t2.$sub(yPixelEnd, yPixelStart)), 2);
-        if (typeof t2 !== "number" || Math.floor(t2) !== t2)
-          H.throwExpression(P.ArgumentError$("Invalid length " + H.S(t2)));
-        t1 = new Y.TileImageSampler(tileSize, t3, new Int32Array(t2), xPixelStart, xPixelEnd, yPixelStart, yPixelEnd);
-        t1.TileImageSampler$6$randomize$tileSize(xPixelStart, xPixelEnd, yPixelStart, yPixelEnd, randomize, tileSize);
-        return t1;
-      }}
-  }
-}],
 ["lights", "package:dartray/lights/lights.dart", , O, {
   "^": "",
   DiffuseAreaLight: {
@@ -39162,7 +38985,7 @@ var $$ = {};
       }}
   },
   GoniometricLight_closure: {
-    "^": "Closure:119;this_0,completer_1",
+    "^": "Closure:124;this_0,completer_1",
     call$1: function(img) {
       var t1;
       this.this_0.mipmap = G.MIPMap$texture(img, false, 8, 0);
@@ -39453,7 +39276,7 @@ var $$ = {};
       }}
   },
   InfiniteAreaLight_closure: {
-    "^": "Closure:119;this_0,L_1,completer_2",
+    "^": "Closure:124;this_0,L_1,completer_2",
     call$1: function(img) {
       var texels, width, height, t1, t2, i, t3;
       texels = G.SpectrumImage$from(img);
@@ -39479,7 +39302,7 @@ var $$ = {};
     }
   },
   _InfiniteAreaCube: {
-    "^": "Object:120;light,scene,time@,pEpsilon,computeVis",
+    "^": "Object:125;light,scene,time@,pEpsilon,computeVis",
     call$2: function(p, w) {
       var ray = G.Ray$(p, w, this.pEpsilon, 1 / 0, this.time, 0);
       if (!this.computeVis || !this.scene.intersectP$1(ray))
@@ -39680,7 +39503,7 @@ var $$ = {};
       }}
   },
   ProjectionLight_closure: {
-    "^": "Closure:119;this_0,fov_1,completer_2",
+    "^": "Closure:124;this_0,fov_1,completer_2",
     call$1: function(img) {
       var t1, t2, aspect, t3, opposite;
       t1 = this.this_0;
@@ -39987,7 +39810,7 @@ var $$ = {};
       }}
   },
   MeasuredMaterial_closure: {
-    "^": "Closure:88;this_0,filename_1,c_2",
+    "^": "Closure:93;this_0,filename_1,c_2",
     call$1: function(bytes) {
       var values, t1, numWls, wls, pos, i, pos0, bbox, samples, thetai, phii, thetao, phio, t2, t3, t4, t5, t6, t7, t8, t9, s, p;
       values = H.NativeFloat32List_NativeFloat32List$view(new Uint8Array(H._ensureNativeList(bytes)).buffer, 0, null);
@@ -40061,7 +39884,7 @@ var $$ = {};
     }
   },
   MeasuredMaterial_closure0: {
-    "^": "Closure:88;this_3,filename_4,c_5",
+    "^": "Closure:93;this_3,filename_4,c_5",
     call$1: function(bytes) {
       var fp, t1, t2, dims0, dims1, n, t3, t4, chunkSize;
       fp = U.InputBuffer$(bytes, false, null, 0);
@@ -40726,7 +40549,7 @@ var $$ = {};
       var t1 = this._renderOptions;
       t1.filmParams = params;
       t1.filmName = type;
-    }, "call$2", "get$film", 4, 0, 121],
+    }, "call$2", "get$film", 4, 0, 126],
     worldBegin$0: function() {
       this._currentApiState = 2;
       for (var i = 0; i < 2; ++i)
@@ -40774,7 +40597,7 @@ var $$ = {};
       this._graphicsState.set$material($name);
       this._graphicsState.set$materialParams(params);
       this._graphicsState.set$currentNamedMaterial("");
-    }, "call$2", "get$material", 4, 0, 121],
+    }, "call$2", "get$material", 4, 0, 126],
     shape$2: function(_, $name, params) {
       var obj2world, shape, mtl, area, t1, prim, identity, world2obj0, world2obj1, animatedWorldToObject, baseprim, refinedPrimitives, t2;
       if (this._curTransform.isAnimated$0() !== true) {
@@ -40881,7 +40704,7 @@ var $$ = {};
       t1.primitives.push(new G.TransformedPrimitive(t2, t3, t4));
     },
     worldEnd$0: function() {
-      var t1, t2, filter, film, camera, t3, renderer, largeStepProb, perPixelSamples, nBootstrap, nDirectPixelSamples, doDirectSeparately, mr, md, doBidirectional, sampler, surfaceIntegrator, volumeIntegrator, volumeRegion, accelerator, scene, i;
+      var t1, t2, filter, film, camera, t3, renderer, largeStepProb, perPixelSamples, nBootstrap, nDirectPixelSamples, doDirectSeparately, mr, md, doBidirectional, pixels, sampler, surfaceIntegrator, volumeIntegrator, volumeRegion, accelerator, scene, i;
       for (t1 = this._pushedGraphicsStates, t2 = this._pushedTransforms; t1.length !== 0;) {
         $.Log.call$2(1, "Missing end to pbrtAttributeBegin()");
         if (0 >= t1.length)
@@ -40932,7 +40755,8 @@ var $$ = {};
           $.Log.call$2(1, t2);
         }
         t1.rendererParams.reportUnused$0();
-        sampler = this._makeSampler$4(t1.samplerName, t1.samplerParams, camera.get$film(), camera);
+        pixels = this._makePixelSampler$3(t1.pixelSamplerName, t1.pixelSamplerParams, camera.get$film());
+        sampler = this._makeSampler$5(t1.samplerName, t1.samplerParams, camera.get$film(), camera, pixels);
         if (sampler == null)
           $.Log.call$2(3, "Unable to create sampler.");
         surfaceIntegrator = this._makeSurfaceIntegrator$2(t1.surfIntegratorName, t1.surfIntegratorParams);
@@ -41144,14 +40968,25 @@ var $$ = {};
       paramSet.reportUnused$0();
       return c;
     },
-    _makeSampler$4: function($name, paramSet, film, camera) {
+    _makePixelSampler$3: function($name, paramSet, film) {
+      var t1, s;
+      if (!$.get$Pbrt__pixelSamplers().containsKey$1($name)) {
+        t1 = "PixelSampler '" + H.S($name) + "' unknown.";
+        $.Log.call$2(1, t1);
+        return;
+      }
+      s = $.get$Pbrt__pixelSamplers().$index(0, $name).call$2(paramSet, film);
+      paramSet.reportUnused$0();
+      return s;
+    },
+    _makeSampler$5: function($name, paramSet, film, camera, pixels) {
       var t1, s;
       if (!$.get$Pbrt__samplers().containsKey$1($name)) {
         t1 = "Sampler '" + H.S($name) + "' unknown.";
         $.Log.call$2(1, t1);
         return;
       }
-      s = $.get$Pbrt__samplers().$index(0, $name).call$3(paramSet, film, camera);
+      s = $.get$Pbrt__samplers().$index(0, $name).call$4(paramSet, film, camera, pixels);
       paramSet.reportUnused$0();
       return s;
     },
@@ -41177,7 +41012,7 @@ var $$ = {};
       paramSet.reportUnused$0();
       return f;
     },
-    static: {"^": "Pbrt__accelerators,Pbrt__cameras,Pbrt__films,Pbrt__filters,Pbrt__surfaceIntegrators,Pbrt__volumeIntegrators,Pbrt__lights,Pbrt__areaLights,Pbrt__materials,Pbrt__samplers,Pbrt__shapes,Pbrt__floatTextures,Pbrt__spectrumTextures,Pbrt__volumeRegions,Pbrt__renderers,Pbrt__MAX_TRANSFORMS,Pbrt__START_TRANSFORM_BITS,Pbrt__END_TRANSFORM_BITS,Pbrt__ALL_TRANSFORMS_BITS,Pbrt_STATE_UNINITIALIZED,Pbrt_STATE_OPTIONS_BLOCK,Pbrt_STATE_WORLD_BLOCK", Pbrt__registerStandardNodes: function() {
+    static: {"^": "Pbrt__accelerators,Pbrt__cameras,Pbrt__films,Pbrt__filters,Pbrt__surfaceIntegrators,Pbrt__volumeIntegrators,Pbrt__lights,Pbrt__areaLights,Pbrt__materials,Pbrt__samplers,Pbrt__pixelSamplers,Pbrt__shapes,Pbrt__floatTextures,Pbrt__spectrumTextures,Pbrt__volumeRegions,Pbrt__renderers,Pbrt__MAX_TRANSFORMS,Pbrt__START_TRANSFORM_BITS,Pbrt__END_TRANSFORM_BITS,Pbrt__ALL_TRANSFORMS_BITS,Pbrt_STATE_UNINITIALIZED,Pbrt_STATE_OPTIONS_BLOCK,Pbrt_STATE_WORLD_BLOCK", Pbrt__registerStandardPlugins: function() {
         if ($.get$Pbrt__shapes().containsKey$1("sphere"))
           return;
         $.get$Pbrt__accelerators().$indexSet(0, "bvh", E.BVHAccel_Create$closure());
@@ -41223,20 +41058,25 @@ var $$ = {};
         $.get$Pbrt__materials().$indexSet(0, "subsurface", D.SubsurfaceMaterial_Create$closure());
         $.get$Pbrt__materials().$indexSet(0, "translucent", D.TranslucentMaterial_Create$closure());
         $.get$Pbrt__materials().$indexSet(0, "uber", D.UberMaterial_Create$closure());
+        $.get$Pbrt__pixelSamplers().$indexSet(0, "linear", F.LinearPixelSampler_Create$closure());
+        $.get$Pbrt__pixelSamplers().$indexSet(0, "random", F.RandomPixelSampler_Create$closure());
+        $.get$Pbrt__pixelSamplers().$indexSet(0, "tile", F.TilePixelSampler_Create$closure());
         $.get$Pbrt__samplers().$indexSet(0, "adaptive", U.AdaptiveSampler_Create$closure());
         $.get$Pbrt__samplers().$indexSet(0, "bestcandidate", U.BestCandidateSampler_Create$closure());
         $.get$Pbrt__samplers().$indexSet(0, "halton", U.HaltonSampler_Create$closure());
         $.get$Pbrt__samplers().$indexSet(0, "lowdiscrepancy", U.LowDiscrepancySampler_Create$closure());
         $.get$Pbrt__samplers().$indexSet(0, "random", U.RandomSampler_Create$closure());
         $.get$Pbrt__samplers().$indexSet(0, "stratified", U.StratifiedSampler_Create$closure());
-        $.get$Pbrt__shapes().$indexSet(0, "cone", M.ConeShape_Create$closure());
-        $.get$Pbrt__shapes().$indexSet(0, "cylinder", M.CylinderShape_Create$closure());
-        $.get$Pbrt__shapes().$indexSet(0, "disk", M.DiskShape_Create$closure());
-        $.get$Pbrt__shapes().$indexSet(0, "hyperboloid", M.HyperboloidShape_Create$closure());
-        $.get$Pbrt__shapes().$indexSet(0, "loopsubdiv", M.LoopSubdivisionShape_Create$closure());
-        $.get$Pbrt__shapes().$indexSet(0, "paraboloid", M.ParaboloidShape_Create$closure());
-        $.get$Pbrt__shapes().$indexSet(0, "sphere", M.SphereShape_Create$closure());
-        $.get$Pbrt__shapes().$indexSet(0, "trianglemesh", M.TriangleMeshShape_Create$closure());
+        $.get$Pbrt__shapes().$indexSet(0, "cone", M.Cone_Create$closure());
+        $.get$Pbrt__shapes().$indexSet(0, "cylinder", M.Cylinder_Create$closure());
+        $.get$Pbrt__shapes().$indexSet(0, "disk", M.Disk_Create$closure());
+        $.get$Pbrt__shapes().$indexSet(0, "heightfield", M.Heightfield_Create$closure());
+        $.get$Pbrt__shapes().$indexSet(0, "hyperboloid", M.Hyperboloid_Create$closure());
+        $.get$Pbrt__shapes().$indexSet(0, "loopsubdiv", M.LoopSubdivision_Create$closure());
+        $.get$Pbrt__shapes().$indexSet(0, "nurbs", M.Nurbs_Create$closure());
+        $.get$Pbrt__shapes().$indexSet(0, "paraboloid", M.Paraboloid_Create$closure());
+        $.get$Pbrt__shapes().$indexSet(0, "sphere", M.Sphere_Create$closure());
+        $.get$Pbrt__shapes().$indexSet(0, "trianglemesh", M.TriangleMesh_Create$closure());
         $.get$Pbrt__floatTextures().$indexSet(0, "bilerp", G.BilerpTexture_CreateFloat$closure());
         $.get$Pbrt__spectrumTextures().$indexSet(0, "bilerp", G.BilerpTexture_CreateSpectrum$closure());
         $.get$Pbrt__floatTextures().$indexSet(0, "checkerboard", G.CheckerboardTexture_CreateFloat$closure());
@@ -41267,7 +41107,7 @@ var $$ = {};
       }}
   },
   Pbrt_renderScene_closure: {
-    "^": "Closure:88;this_0,t_1,c_2",
+    "^": "Closure:93;this_0,t_1,c_2",
     call$1: function(x) {
       var t1, t2;
       t1 = this.this_0;
@@ -41281,7 +41121,7 @@ var $$ = {};
     }
   },
   Pbrt_renderScene__closure: {
-    "^": "Closure:88;this_3,t_4,c_5",
+    "^": "Closure:93;this_3,t_4,c_5",
     call$1: function(_) {
       var t1, output;
       t1 = this.t_4;
@@ -41846,6 +41686,14 @@ var $$ = {};
               t2.rotate$4(0, t3, t5, t6, v[3]);
             }
             break;
+          case "pixels":
+            t2 = this.pbrt;
+            t3 = cmd.$index(0, "type");
+            t4 = cmd.$index(0, "params");
+            t2 = t2._renderOptions;
+            t2.pixelSamplerName = t3;
+            t2.pixelSamplerParams = t4;
+            break;
           case "sampler":
             t2 = this.pbrt;
             t3 = cmd.$index(0, "type");
@@ -42280,7 +42128,7 @@ var $$ = {};
     }
   },
   PbrtParser_parse_closure: {
-    "^": "Closure:122;this_0,file_1,t_2,c_3",
+    "^": "Closure:127;this_0,file_1,t_2,c_3",
     call$1: function(input) {
       var t1, t2;
       t1 = this.file_1;
@@ -42291,14 +42139,14 @@ var $$ = {};
     }
   },
   PbrtParser_parse__closure: {
-    "^": "Closure:88;this_4,file_5,t_6,c_7,input_8",
+    "^": "Closure:93;this_4,file_5,t_6,c_7,input_8",
     call$1: function(_) {
       $.Log.call$2(4, "FINISHED Includes. Parsing.");
       this.this_4._parse$2(this.input_8, this.file_5).then$1(new U.PbrtParser_parse___closure(this.t_6, this.c_7));
     }
   },
   PbrtParser_parse___closure: {
-    "^": "Closure:88;t_9,c_10",
+    "^": "Closure:93;t_9,c_10",
     call$1: function(_) {
       var t1 = this.t_9;
       t1.stop$0(0);
@@ -42311,14 +42159,14 @@ var $$ = {};
     }
   },
   PbrtParser__loadIncludes_closure: {
-    "^": "Closure:88;cmd_0",
+    "^": "Closure:93;cmd_0",
     call$1: function(_) {
       var t1 = "FINISHED INCLUDE " + H.S(this.cmd_0.$index(0, "value"));
       $.Log.call$2(4, t1);
     }
   },
   PbrtParser__loadIncludes_closure0: {
-    "^": "Closure:123;this_1,c_2",
+    "^": "Closure:128;this_1,c_2",
     call$1: function(responses) {
       var subFutures, t1, t2, i, t3, inc;
       $.Log.call$2(4, "LOADING SUB-INCLUDES");
@@ -42349,7 +42197,7 @@ var $$ = {};
     }
   },
   PbrtParser__loadIncludes__closure: {
-    "^": "Closure:123;c_3",
+    "^": "Closure:128;c_3",
     call$1: function(subResponses) {
       var t1;
       $.Log.call$2(4, "FINISHED SUB-INCLUDES");
@@ -42360,14 +42208,14 @@ var $$ = {};
     }
   },
   PbrtParser__loadIncludes__closure0: {
-    "^": "Closure:88;c_4",
+    "^": "Closure:93;c_4",
     call$1: function(e) {
       $.Log.call$2(2, e);
       this.c_4.completeError$1(e);
     }
   },
   PbrtParser__loadIncludes_closure1: {
-    "^": "Closure:88;c_5",
+    "^": "Closure:93;c_5",
     call$1: function(e) {
       var t1 = J.toString$0(e);
       $.Log.call$2(2, t1);
@@ -42375,7 +42223,7 @@ var $$ = {};
     }
   },
   PbrtParser__parse_closure: {
-    "^": "Closure:88;c_0",
+    "^": "Closure:93;c_0",
     call$1: function(e) {
       var t1 = this.c_0.future;
       if (t1._state !== 0)
@@ -42384,7 +42232,7 @@ var $$ = {};
     }
   },
   PbrtParser__parseCommand_closure: {
-    "^": "Closure:88;",
+    "^": "Closure:93;",
     call$1: function(e) {
       return J.get$isEmpty$asx(e);
     }
@@ -42402,7 +42250,7 @@ var $$ = {};
       t1 = this.receivePort._controller;
       t1.toString;
       H.setRuntimeTypeInfo(new P._ControllerStream(t1), [null]).listen$4$cancelOnError$onDone$onError(new U.RenderIsolate_start_closure(this), null, null, null);
-    }, "call$1", "get$start", 2, 0, 124],
+    }, "call$1", "get$start", 2, 0, 129],
     _log$2: [function(type, msg) {
       var t1, timestamp;
       t1 = new P.DateTime(Date.now(), false);
@@ -42429,7 +42277,7 @@ var $$ = {};
       t4 = new U.GraphicsState(P.LinkedHashMap_LinkedHashMap$_empty(null, null), P.LinkedHashMap_LinkedHashMap$_empty(null, null), new G.ParamSet([], [], [], [], [], [], [], [], []), null, P.LinkedHashMap_LinkedHashMap$_empty(null, null), null, new G.ParamSet([], [], [], [], [], [], [], [], []), "", null);
       t4.material = "matte";
       t4.reverseOrientation = false;
-      U.Pbrt__registerStandardNodes();
+      U.Pbrt__registerStandardPlugins();
       pbrt = new U.Pbrt(this.manager, 1, t1, 3, t2, t3, t4, [], [], [], null, null);
       if (doPreview === true)
         pbrt.get$_renderOptions().previewCallback = new U.RenderIsolate__render_closure(this);
@@ -42449,7 +42297,7 @@ var $$ = {};
     }
   },
   RenderIsolate_start_closure: {
-    "^": "Closure:88;this_0",
+    "^": "Closure:93;this_0",
     call$1: function(msg) {
       var t1, t2, cmd, t3, id, c, w, h, scene, doPreview;
       t1 = this.this_0;
@@ -42497,13 +42345,13 @@ var $$ = {};
     }
   },
   RenderIsolate__render_closure: {
-    "^": "Closure:125;this_0",
+    "^": "Closure:130;this_0",
     call$1: function(img) {
       J.send$1$x(this.this_0.sendPort, P.LinkedHashMap_LinkedHashMap$_literal(["cmd", "preview", "image", img.getBytes$0()], null, null));
     }
   },
   RenderIsolate__render_closure0: {
-    "^": "Closure:88;this_1,taskNum_2,timer_3",
+    "^": "Closure:93;this_1,taskNum_2,timer_3",
     call$1: function(output) {
       var t1, t2;
       t1 = this.this_1;
@@ -42518,12 +42366,13 @@ var $$ = {};
     "^": "ResourceManager;"
   },
   RenderOptions: {
-    "^": "Object;transformStartTime,transformEndTime,filterName,filterParams,filmName,filmParams,outputImage,previewCallback,samplerName,samplerParams,acceleratorName,acceleratorParams,rendererName,surfIntegratorName,volIntegratorName,rendererParams,surfIntegratorParams,volIntegratorParams,cameraName,cameraParams,cameraToWorld,lights,primitives,volumeRegions,instances,currentInstance,taskNum,taskCount",
+    "^": "Object;transformStartTime,transformEndTime,filterName,filterParams,filmName,filmParams,outputImage,previewCallback,pixelSamplerName,pixelSamplerParams,samplerName,samplerParams,acceleratorName,acceleratorParams,rendererName,surfIntegratorName,volIntegratorName,rendererParams,surfIntegratorParams,volIntegratorParams,cameraName,cameraParams,cameraToWorld,lights,primitives,volumeRegions,instances,currentInstance,taskNum,taskCount",
     RenderOptions$0: function() {
       this.transformStartTime = 0;
       this.transformEndTime = 1;
       this.filterName = "box";
       this.filmName = "image";
+      this.pixelSamplerName = "tile";
       this.samplerName = "lowdiscrepancy";
       this.acceleratorName = "bvh";
       this.rendererName = "sampler";
@@ -42535,7 +42384,7 @@ var $$ = {};
       this.taskCount = 1;
     },
     static: {RenderOptions$: function() {
-        var t1 = new U.RenderOptions(null, null, null, new G.ParamSet([], [], [], [], [], [], [], [], []), null, new G.ParamSet([], [], [], [], [], [], [], [], []), null, null, null, new G.ParamSet([], [], [], [], [], [], [], [], []), null, new G.ParamSet([], [], [], [], [], [], [], [], []), null, null, null, new G.ParamSet([], [], [], [], [], [], [], [], []), new G.ParamSet([], [], [], [], [], [], [], [], []), new G.ParamSet([], [], [], [], [], [], [], [], []), null, new G.ParamSet([], [], [], [], [], [], [], [], []), null, [], [], [], P.LinkedHashMap_LinkedHashMap$_empty(null, null), null, null, null);
+        var t1 = new U.RenderOptions(null, null, null, new G.ParamSet([], [], [], [], [], [], [], [], []), null, new G.ParamSet([], [], [], [], [], [], [], [], []), null, null, null, new G.ParamSet([], [], [], [], [], [], [], [], []), null, new G.ParamSet([], [], [], [], [], [], [], [], []), null, new G.ParamSet([], [], [], [], [], [], [], [], []), null, null, null, new G.ParamSet([], [], [], [], [], [], [], [], []), new G.ParamSet([], [], [], [], [], [], [], [], []), new G.ParamSet([], [], [], [], [], [], [], [], []), null, new G.ParamSet([], [], [], [], [], [], [], [], []), null, [], [], [], P.LinkedHashMap_LinkedHashMap$_empty(null, null), [], null, null);
         t1.RenderOptions$0();
         return t1;
       }}
@@ -42584,6 +42433,272 @@ var $$ = {};
         }
         return t2;
       }}
+  }
+}],
+["pixel_samplers", "package:dartray/pixel_samplers/pixel_samplers.dart", , F, {
+  "^": "",
+  LinearPixelSampler: {
+    "^": "PixelSampler;_numSamples,_samples,xPixelStart,xPixelEnd,yPixelStart,yPixelEnd",
+    setup$4: function(xPixelStart, xPixelEnd, yPixelStart, yPixelEnd) {
+      var t1, y, si, x, t2, t3, si0, t4;
+      G.PixelSampler.prototype.setup$4.call(this, xPixelStart, xPixelEnd, yPixelStart, yPixelEnd);
+      t1 = J.$mul$ns(J.$mul$ns(J.$sub$n(xPixelEnd, xPixelStart), J.$sub$n(yPixelEnd, yPixelStart)), 2);
+      if (typeof t1 !== "number" || Math.floor(t1) !== t1)
+        H.throwExpression(P.ArgumentError$("Invalid length " + H.S(t1)));
+      this._samples = new Int32Array(t1);
+      for (y = yPixelStart, si = 0; t1 = J.getInterceptor$n(y), t1.$lt(y, yPixelEnd); y = t1.$add(y, 1))
+        for (x = xPixelStart; t2 = J.getInterceptor$n(x), t2.$lt(x, xPixelEnd); x = t2.$add(x, 1)) {
+          t3 = this._samples;
+          si0 = si + 1;
+          t4 = t3.length;
+          if (si < 0 || si >= t4)
+            return H.ioore(t3, si);
+          t3[si] = x;
+          si = si0 + 1;
+          if (si0 < 0 || si0 >= t4)
+            return H.ioore(t3, si0);
+          t3[si0] = y;
+        }
+      this._numSamples = C.JSInt_methods._tdivFast$1(this._samples.length, 2);
+    },
+    numPixels$0: function() {
+      return this._numSamples;
+    },
+    getPixel$2: function(index, pixel) {
+      var t1, t2;
+      index *= 2;
+      t1 = this._samples;
+      if (index >= t1.length - 1)
+        return;
+      J.$indexSet$ax(pixel, 0, t1[index]);
+      t1 = this._samples;
+      t2 = index + 1;
+      if (t2 >= t1.length)
+        return H.ioore(t1, t2);
+      t2 = t1[t2];
+      if (1 >= pixel.length)
+        return H.ioore(pixel, 1);
+      pixel[1] = t2;
+    },
+    static: {LinearPixelSampler_Create: [function(params, film) {
+        return new F.LinearPixelSampler(null, null, null, null, null, null);
+      }, "call$2", "LinearPixelSampler_Create$closure", 4, 0, 46]}
+  },
+  RandomPixelSampler: {
+    "^": "PixelSampler;_numSamples,_samples,xPixelStart,xPixelEnd,yPixelStart,yPixelEnd",
+    setup$4: function(xPixelStart, xPixelEnd, yPixelStart, yPixelEnd) {
+      var t1, y, si, x, t2, t3, si0, t4, rng, i, r, l, t, t5;
+      G.PixelSampler.prototype.setup$4.call(this, xPixelStart, xPixelEnd, yPixelStart, yPixelEnd);
+      t1 = J.$mul$ns(J.$mul$ns(J.$sub$n(xPixelEnd, xPixelStart), J.$sub$n(yPixelEnd, yPixelStart)), 2);
+      if (typeof t1 !== "number" || Math.floor(t1) !== t1)
+        H.throwExpression(P.ArgumentError$("Invalid length " + H.S(t1)));
+      this._samples = new Int32Array(t1);
+      for (y = yPixelStart, si = 0; t1 = J.getInterceptor$n(y), t1.$lt(y, yPixelEnd); y = t1.$add(y, 1))
+        for (x = xPixelStart; t2 = J.getInterceptor$n(x), t2.$lt(x, xPixelEnd); x = t2.$add(x, 1)) {
+          t3 = this._samples;
+          si0 = si + 1;
+          t4 = t3.length;
+          if (si < 0 || si >= t4)
+            return H.ioore(t3, si);
+          t3[si] = x;
+          si = si0 + 1;
+          if (si0 < 0 || si0 >= t4)
+            return H.ioore(t3, si0);
+          t3[si0] = y;
+        }
+      rng = new G.RNG(null, new Uint32Array(624), null);
+      rng.mti = 625;
+      rng.seed$1(0, 5489);
+      t1 = C.JSInt_methods._tdivFast$1(this._samples.length, 2);
+      this._numSamples = t1;
+      i = 0;
+      r = 0;
+      while (true) {
+        if (typeof t1 !== "number")
+          return H.iae(t1);
+        if (!(i < t1))
+          break;
+        t1 = rng.randomUInt$0();
+        t2 = this._numSamples;
+        if (typeof t2 !== "number")
+          return H.iae(t2);
+        l = C.JSInt_methods.$mod(t1, t2) * 2;
+        t1 = this._samples;
+        t3 = t1.length;
+        if (r >= t3)
+          return H.ioore(t1, r);
+        t = t1[r];
+        if (l >= t3)
+          return H.ioore(t1, l);
+        t1[r] = t1[l];
+        t1[l] = t;
+        t4 = r + 1;
+        if (t4 >= t3)
+          return H.ioore(t1, t4);
+        t = t1[t4];
+        t5 = l + 1;
+        if (t5 >= t3)
+          return H.ioore(t1, t5);
+        t1[t4] = t1[t5];
+        t1[t5] = t;
+        ++i;
+        r += 2;
+        t1 = t2;
+      }
+    },
+    numPixels$0: function() {
+      return this._numSamples;
+    },
+    getPixel$2: function(index, pixel) {
+      var t1, t2;
+      index *= 2;
+      t1 = this._samples;
+      if (index >= t1.length - 1)
+        return;
+      J.$indexSet$ax(pixel, 0, t1[index]);
+      t1 = this._samples;
+      t2 = index + 1;
+      if (t2 >= t1.length)
+        return H.ioore(t1, t2);
+      t2 = t1[t2];
+      if (1 >= pixel.length)
+        return H.ioore(pixel, 1);
+      pixel[1] = t2;
+    },
+    static: {RandomPixelSampler_Create: [function(params, film) {
+        return new F.RandomPixelSampler(null, null, null, null, null, null);
+      }, "call$2", "RandomPixelSampler_Create$closure", 4, 0, 47]}
+  },
+  TilePixelSampler: {
+    "^": "PixelSampler;tileSize,randomize,_numSamples,_samples,xPixelStart,xPixelEnd,yPixelStart,yPixelEnd",
+    setup$4: function(xPixelStart, xPixelEnd, yPixelStart, yPixelEnd) {
+      var t1, t2, t3, width, height, numXTiles, numYTiles, tiles, yi, ti, xi, ti0, numTiles, rng, lx, ly, rx, ry, t, t4, si, i, tx, ty, sx, sy, t5, t6, y, x, t7, si0, t8;
+      G.PixelSampler.prototype.setup$4.call(this, xPixelStart, xPixelEnd, yPixelStart, yPixelEnd);
+      t1 = J.getInterceptor$n(xPixelEnd);
+      t2 = J.getInterceptor$n(yPixelEnd);
+      this._numSamples = J.$mul$ns(t1.$sub(xPixelEnd, xPixelStart), t2.$sub(yPixelEnd, yPixelStart));
+      t3 = J.$mul$ns(J.$mul$ns(t1.$sub(xPixelEnd, xPixelStart), t2.$sub(yPixelEnd, yPixelStart)), 2);
+      if (typeof t3 !== "number" || Math.floor(t3) !== t3)
+        H.throwExpression(P.ArgumentError$("Invalid length " + H.S(t3)));
+      this._samples = new Int32Array(t3);
+      width = t1.$sub(xPixelEnd, xPixelStart);
+      height = t2.$sub(yPixelEnd, yPixelStart);
+      t1 = this.tileSize;
+      t2 = J.getInterceptor$n(width).$tdiv(width, t1);
+      if (typeof width !== "number")
+        return width.$mod();
+      if (typeof t1 !== "number")
+        return H.iae(t1);
+      numXTiles = J.$add$ns(t2, C.JSNumber_methods.$mod(width, t1) === 0 ? 0 : 1);
+      t2 = J.getInterceptor$n(height).$tdiv(height, t1);
+      if (typeof height !== "number")
+        return height.$mod();
+      numYTiles = J.$add$ns(t2, C.JSNumber_methods.$mod(height, t1) === 0 ? 0 : 1);
+      t2 = J.$mul$ns(J.$mul$ns(numXTiles, numYTiles), 2);
+      if (typeof t2 !== "number" || Math.floor(t2) !== t2)
+        H.throwExpression(P.ArgumentError$("Invalid length " + H.S(t2)));
+      tiles = new Int32Array(t2);
+      if (typeof numYTiles !== "number")
+        return H.iae(numYTiles);
+      t2 = tiles.length;
+      yi = 0;
+      ti = 0;
+      for (; yi < numYTiles; ++yi) {
+        if (typeof numXTiles !== "number")
+          return H.iae(numXTiles);
+        xi = 0;
+        for (; xi < numXTiles; ++xi) {
+          ti0 = ti + 1;
+          if (ti < 0 || ti >= t2)
+            return H.ioore(tiles, ti);
+          tiles[ti] = xi;
+          ti = ti0 + 1;
+          if (ti0 < 0 || ti0 >= t2)
+            return H.ioore(tiles, ti0);
+          tiles[ti0] = yi;
+        }
+      }
+      numTiles = C.JSInt_methods._tdivFast$1(t2, 2);
+      if (this.randomize === true) {
+        rng = new G.RNG(null, new Uint32Array(624), null);
+        rng.mti = 625;
+        rng.seed$1(0, 5489);
+        for (ti = 1; ti < numTiles; ++ti) {
+          lx = ti * 2;
+          ly = lx + 1;
+          rx = C.JSInt_methods.$mod(rng.randomUInt$0(), numTiles) * 2;
+          ry = rx + 1;
+          if (lx >= t2)
+            return H.ioore(tiles, lx);
+          t = tiles[lx];
+          if (rx >= t2)
+            return H.ioore(tiles, rx);
+          tiles[lx] = tiles[rx];
+          tiles[rx] = t;
+          if (ly >= t2)
+            return H.ioore(tiles, ly);
+          t = tiles[ly];
+          if (ry >= t2)
+            return H.ioore(tiles, ry);
+          tiles[ly] = tiles[ry];
+          tiles[ry] = t;
+        }
+      }
+      for (t3 = J.getInterceptor$ns(xPixelStart), t4 = J.getInterceptor$ns(yPixelStart), si = 0, i = 0, ti = 0; i < numTiles; ++i) {
+        ti0 = ti + 1;
+        if (ti >= t2)
+          return H.ioore(tiles, ti);
+        tx = tiles[ti];
+        ti = ti0 + 1;
+        if (ti0 >= t2)
+          return H.ioore(tiles, ti0);
+        ty = tiles[ti0];
+        sx = t3.$add(xPixelStart, tx * t1);
+        sy = t4.$add(yPixelStart, ty * t1);
+        for (t5 = J.getInterceptor$ns(sx), t6 = J.getInterceptor$ns(sy), yi = 0; yi < t1; ++yi) {
+          y = t6.$add(sy, yi);
+          if (J.$ge$n(y, yPixelEnd))
+            break;
+          for (xi = 0; xi < t1; ++xi) {
+            x = t5.$add(sx, xi);
+            if (J.$ge$n(x, xPixelEnd))
+              break;
+            t7 = this._samples;
+            si0 = si + 1;
+            t8 = t7.length;
+            if (si < 0 || si >= t8)
+              return H.ioore(t7, si);
+            t7[si] = x;
+            si = si0 + 1;
+            if (si0 < 0 || si0 >= t8)
+              return H.ioore(t7, si0);
+            t7[si0] = y;
+          }
+        }
+      }
+    },
+    numPixels$0: function() {
+      return this._numSamples;
+    },
+    getPixel$2: function(index, pixel) {
+      var t1, t2;
+      index *= 2;
+      t1 = this._samples;
+      if (index >= t1.length - 1)
+        return;
+      J.$indexSet$ax(pixel, 0, t1[index]);
+      t1 = this._samples;
+      t2 = index + 1;
+      if (t2 >= t1.length)
+        return H.ioore(t1, t2);
+      t2 = t1[t2];
+      if (1 >= pixel.length)
+        return H.ioore(pixel, 1);
+      pixel[1] = t2;
+    },
+    static: {TilePixelSampler_Create: [function(params, film) {
+        return new F.TilePixelSampler(params.findOneInt$2("tilesize", 32), params.findOneBool$2("randomize", true), null, null, null, null, null, null);
+      }, "call$2", "TilePixelSampler_Create$closure", 4, 0, 48]}
   }
 }],
 ["renderers", "package:dartray/renderers/renderers.dart", , Y, {
@@ -42727,7 +42842,7 @@ var $$ = {};
           $.Log.call$2(0, "Metropolis: Starting Direct Lighting Render");
           t2 = this.nDirectPixelSamples;
           if (J.$gt$n(t2, 0)) {
-            sampler = U.LowDiscrepancySampler$(extent[0], extent[1], extent[2], extent[3], t2, t00, t10);
+            sampler = U.LowDiscrepancySampler$(extent[0], extent[1], extent[2], extent[3], t2, t00, t10, new F.TilePixelSampler(32, true, null, null, null, null, null, null));
             new Y._SamplerRendererTask(scene, this, t1, sampler, G.Sample$(sampler, this.directLighting, null, scene), this.taskNum, this.taskCount).run$0();
           }
           t1.film.writeImage$0();
@@ -43760,7 +43875,7 @@ var $$ = {};
       G.Sampler_ComputeSubWindow(J.$sub$n(this.xPixelEnd, this.xPixelStart), J.$sub$n(this.yPixelEnd, this.yPixelStart), num, count, extent);
       if (J.$eq(extent[0], extent[1]) || J.$eq(extent[2], extent[3]))
         return;
-      return U.AdaptiveSampler$(extent[0], extent[1], extent[2], extent[3], this.minSamples, this.maxSamples, this.method, this.shutterOpen, this.shutterClose);
+      return U.AdaptiveSampler$(extent[0], extent[1], extent[2], extent[3], this.minSamples, this.maxSamples, this.method, this.shutterOpen, this.shutterClose, this.pixels);
     },
     roundSize$1: function(size) {
       return G.RoundUpPow2(size);
@@ -43786,7 +43901,7 @@ var $$ = {};
         return this.maxSamples;
       } else {
         t2 = this.pixelIndex;
-        t3 = this.pixels._numSamples;
+        t3 = this.pixels.numPixels$0();
         if (typeof t3 !== "number")
           return H.iae(t3);
         if (t2 >= t3)
@@ -43802,7 +43917,7 @@ var $$ = {};
         this.supersamplePixel = false;
         t1 = this.pixelIndex;
         t2 = this.pixels;
-        t3 = t2._numSamples;
+        t3 = t2.numPixels$0();
         if (typeof t3 !== "number")
           return H.iae(t3);
         if (t1 < t3) {
@@ -43817,7 +43932,7 @@ var $$ = {};
       } else {
         t1 = this.pixelIndex;
         t2 = this.pixels;
-        t3 = t2._numSamples;
+        t3 = t2.numPixels$0();
         if (typeof t3 !== "number")
           return H.iae(t3);
         if (t1 < t3) {
@@ -43878,10 +43993,12 @@ var $$ = {};
       }
       return false;
     },
-    AdaptiveSampler$9: function(xstart, xend, ystart, yend, mins, maxs, method, sopen, sclose) {
+    AdaptiveSampler$10: function(xstart, xend, ystart, yend, mins, maxs, method, sopen, sclose, pixels) {
       var t1, t0;
-      t1 = Y.TileImageSampler$(xstart, xend, ystart, yend, true, 32);
-      this.pixels = t1;
+      t1 = this.pixels;
+      if (t1 == null)
+        $.Log.call$2(3, "Pixel sampler is required by LowDiscrepencySampler");
+      t1.setup$4(xstart, xend, ystart, yend);
       this.pixelIndex = 0;
       this.supersamplePixel = false;
       t1.getPixel$2(0, this.pixel);
@@ -43912,7 +44029,7 @@ var $$ = {};
         $.Log.call$2(1, t1);
       }
     },
-    static: {"^": "AdaptiveSampler_ADAPTIVE_COMPARE_SHAPE_ID,AdaptiveSampler_ADAPTIVE_CONTRAST_THRESHOLD", AdaptiveSampler_Create: [function(params, film, camera) {
+    static: {"^": "AdaptiveSampler_ADAPTIVE_COMPARE_SHAPE_ID,AdaptiveSampler_ADAPTIVE_CONTRAST_THRESHOLD", AdaptiveSampler_Create: [function(params, film, camera, pixels) {
         var extent, minsamp, maxsamp, m, t1, method;
         extent = [0, 0, 0, 0];
         film.getSampleExtent$1(extent);
@@ -43929,10 +44046,10 @@ var $$ = {};
           $.Log.call$2(1, t1);
           method = 1;
         }
-        return U.AdaptiveSampler$(extent[0], extent[1], extent[2], extent[3], minsamp, maxsamp, method, camera.get$shutterOpen(), camera.get$shutterClose());
-      }, "call$3", "AdaptiveSampler_Create$closure", 6, 0, 46], AdaptiveSampler$: function(xstart, xend, ystart, yend, mins, maxs, method, sopen, sclose) {
-        var t1 = new U.AdaptiveSampler(null, new Int32Array(2), null, null, null, null, null, null, xstart, xend, ystart, yend, G.RoundUpPow2(P.max(mins, maxs)), sopen, sclose);
-        t1.AdaptiveSampler$9(xstart, xend, ystart, yend, mins, maxs, method, sopen, sclose);
+        return U.AdaptiveSampler$(extent[0], extent[1], extent[2], extent[3], minsamp, maxsamp, method, camera.get$shutterOpen(), camera.get$shutterClose(), pixels);
+      }, "call$4", "AdaptiveSampler_Create$closure", 8, 0, 49], AdaptiveSampler$: function(xstart, xend, ystart, yend, mins, maxs, method, sopen, sclose, pixels) {
+        var t1 = new U.AdaptiveSampler(pixels, new Int32Array(2), null, null, null, null, null, null, xstart, xend, ystart, yend, G.RoundUpPow2(P.max(mins, maxs)), sopen, sclose);
+        t1.AdaptiveSampler$10(xstart, xend, ystart, yend, mins, maxs, method, sopen, sclose, pixels);
         return t1;
       }}
   },
@@ -43952,67 +44069,67 @@ var $$ = {};
       return 1;
     },
     getMoreSamples$2: function(samples, rng) {
-      var sample, t1, t2, t3, t4, t5, again, t6, t7, tileRng, i, to, t8;
+      var sample, t1, t2, t3, again, t4, t5, tileRng, i, to, t6;
       if (0 >= samples.length)
         return H.ioore(samples, 0);
       sample = samples[0];
-      for (t1 = this.sampleOffsets, t2 = this.shutterOpen, t3 = this.shutterClose, t4 = this.xPixelEnd, t5 = this.yPixelEnd, again = true; again;) {
+      for (t1 = this.sampleOffsets, t2 = this.shutterOpen, t3 = this.shutterClose, again = true; again;) {
         if (this.tableOffset === 4096) {
           this.tableOffset = 0;
-          t6 = ++this.xTile;
-          if (t6 > this.xTileEnd) {
-            t6 = this.xTileStart;
-            this.xTile = t6;
+          t4 = ++this.xTile;
+          if (t4 > this.xTileEnd) {
+            t4 = this.xTileStart;
+            this.xTile = t4;
             if (++this.yTile > this.yTileEnd)
               return 0;
           }
-          t7 = this.yTile;
+          t5 = this.yTile;
           tileRng = new G.RNG(null, new Uint32Array(624), null);
           tileRng.mti = 625;
-          tileRng.seed$1(0, t6 + (t7 << 8 >>> 0));
+          tileRng.seed$1(0, t4 + (t5 << 8 >>> 0));
           for (i = 0; i < 3; ++i)
             t1[i] = (tileRng.randomUInt$0() & 16777215) / 16777216;
         }
-        t6 = new U.BestCandidateSampler_getMoreSamples_WRAP();
+        t4 = new U.BestCandidateSampler_getMoreSamples_WRAP();
         to = this.tableOffset * 5;
-        t7 = this.xTile;
+        t5 = this.xTile;
         if (to >= 20480)
           return H.ioore(C.List_qtg, to);
-        t8 = C.List_qtg[to];
-        if (typeof t8 !== "number")
-          return H.iae(t8);
-        sample.set$imageX((t7 + t8) * this.tableWidth);
-        t8 = this.yTile;
-        t7 = to + 1;
-        if (t7 >= 20480)
-          return H.ioore(C.List_qtg, t7);
-        t7 = C.List_qtg[t7];
-        if (typeof t7 !== "number")
-          return H.iae(t7);
-        sample.imageY = (t8 + t7) * this.tableWidth;
-        t7 = t1[0];
-        t8 = to + 2;
-        if (t8 >= 20480)
-          return H.ioore(C.List_qtg, t8);
-        t8 = t6.call$1(J.$add$ns(t7, C.List_qtg[t8]));
-        if (typeof t8 !== "number")
-          return H.iae(t8);
+        t6 = C.List_qtg[to];
+        if (typeof t6 !== "number")
+          return H.iae(t6);
+        sample.set$imageX((t5 + t6) * this.tableWidth);
+        t6 = this.yTile;
+        t5 = to + 1;
+        if (t5 >= 20480)
+          return H.ioore(C.List_qtg, t5);
+        t5 = C.List_qtg[t5];
+        if (typeof t5 !== "number")
+          return H.iae(t5);
+        sample.imageY = (t6 + t5) * this.tableWidth;
+        t5 = t1[0];
+        t6 = to + 2;
+        if (t6 >= 20480)
+          return H.ioore(C.List_qtg, t6);
+        t6 = t4.call$1(J.$add$ns(t5, C.List_qtg[t6]));
+        if (typeof t6 !== "number")
+          return H.iae(t6);
         if (typeof t2 !== "number")
           return H.iae(t2);
         if (typeof t3 !== "number")
           return H.iae(t3);
-        sample.time = (1 - t8) * t2 + t8 * t3;
-        t8 = t1[1];
-        t7 = to + 3;
-        if (t7 >= 20480)
-          return H.ioore(C.List_qtg, t7);
-        sample.lensU = t6.call$1(J.$add$ns(t8, C.List_qtg[t7]));
-        t7 = t1[2];
-        t8 = to + 4;
-        if (t8 >= 20480)
-          return H.ioore(C.List_qtg, t8);
-        sample.lensV = t6.call$1(J.$add$ns(t7, C.List_qtg[t8]));
-        if (J.$lt$n(sample.imageX, this.xPixelStart) || J.$ge$n(sample.imageX, t4) || J.$lt$n(sample.imageY, this.yPixelStart) || J.$ge$n(sample.imageY, t5)) {
+        sample.time = (1 - t6) * t2 + t6 * t3;
+        t6 = t1[1];
+        t5 = to + 3;
+        if (t5 >= 20480)
+          return H.ioore(C.List_qtg, t5);
+        sample.lensU = t4.call$1(J.$add$ns(t6, C.List_qtg[t5]));
+        t5 = t1[2];
+        t6 = to + 4;
+        if (t6 >= 20480)
+          return H.ioore(C.List_qtg, t6);
+        sample.lensV = t4.call$1(J.$add$ns(t5, C.List_qtg[t6]));
+        if (J.$lt$n(sample.imageX, this.xPixelStart) || J.$ge$n(sample.imageX, this.xPixelEnd) || J.$lt$n(sample.imageY, this.yPixelStart) || J.$ge$n(sample.imageY, this.yPixelEnd)) {
           ++this.tableOffset;
           again = true;
           continue;
@@ -44060,20 +44177,20 @@ var $$ = {};
       for (t1 = this.sampleOffsets, i = 0; i < 3; ++i)
         t1[i] = (tileRng.randomUInt$0() & 16777215) / 16777216;
     },
-    static: {"^": "BestCandidateSampler_SQRT_SAMPLE_TABLE_SIZE,BestCandidateSampler_SAMPLE_TABLE_SIZE", BestCandidateSampler_Create: [function(params, film, camera) {
+    static: {"^": "BestCandidateSampler_SQRT_SAMPLE_TABLE_SIZE,BestCandidateSampler_SAMPLE_TABLE_SIZE", BestCandidateSampler_Create: [function(params, film, camera, pixels) {
         var extent, nsamp;
         extent = [0, 0, 0, 0];
         film.getSampleExtent$1(extent);
         nsamp = params.findOneInt$2("pixelsamples", 4);
         return U.BestCandidateSampler$(extent[0], extent[1], extent[2], extent[3], nsamp, camera.get$shutterOpen(), camera.get$shutterClose());
-      }, "call$3", "BestCandidateSampler_Create$closure", 6, 0, 47], BestCandidateSampler$: function(xstart, xend, ystart, yend, nPixelSamples, sopen, sclose) {
+      }, "call$4", "BestCandidateSampler_Create$closure", 8, 0, 50], BestCandidateSampler$: function(xstart, xend, ystart, yend, nPixelSamples, sopen, sclose) {
         var t1 = new U.BestCandidateSampler(null, null, null, null, null, null, null, null, [0, 0, 0], xstart, xend, ystart, yend, nPixelSamples, sopen, sclose);
         t1.BestCandidateSampler$7(xstart, xend, ystart, yend, nPixelSamples, sopen, sclose);
         return t1;
       }}
   },
   BestCandidateSampler_getMoreSamples_WRAP: {
-    "^": "Closure:88;",
+    "^": "Closure:93;",
     call$1: function(x) {
       var t1 = J.getInterceptor$n(x);
       return t1.$gt(x, 1) ? t1.$sub(x, 1) : x;
@@ -44085,37 +44202,37 @@ var $$ = {};
       return 1;
     },
     getMoreSamples$2: function(samples, rng) {
-      var t1, t2, t3, t4, t5, t6, t7, u, v, lerpDelta, t8, i;
-      for (t1 = samples.length, t2 = this.xPixelEnd, t3 = J.getInterceptor$n(t2), t4 = this.yPixelEnd, t5 = J.getInterceptor$n(t4); true;) {
-        t6 = this.currentSample;
-        t7 = this.wantedSamples;
-        if (typeof t7 !== "number")
-          return H.iae(t7);
-        if (t6 >= t7)
+      var t1, t2, t3, u, v, lerpDelta, t4, i;
+      for (t1 = samples.length; true;) {
+        t2 = this.currentSample;
+        t3 = this.wantedSamples;
+        if (typeof t3 !== "number")
+          return H.iae(t3);
+        if (t2 >= t3)
           return 0;
-        u = G.RadicalInverse(t6, 3);
+        u = G.RadicalInverse(t2, 3);
         v = G.RadicalInverse(this.currentSample, 2);
-        lerpDelta = C.JSNumber_methods.toDouble$0(P.max(t3.$sub(t2, this.xPixelStart), t5.$sub(t4, this.yPixelStart)));
+        lerpDelta = C.JSNumber_methods.toDouble$0(P.max(J.$sub$n(this.xPixelEnd, this.xPixelStart), J.$sub$n(this.yPixelEnd, this.yPixelStart)));
         if (0 >= t1)
           return H.ioore(samples, 0);
-        t6 = samples[0];
-        t7 = this.xPixelStart;
-        t8 = J.$add$ns(t7, lerpDelta);
-        if (typeof t7 !== "number")
-          return H.iae(t7);
-        if (typeof t8 !== "number")
-          return H.iae(t8);
-        t6.set$imageX((1 - u) * t7 + u * t8);
-        t8 = samples[0];
-        t7 = this.yPixelStart;
-        t6 = J.$add$ns(t7, lerpDelta);
-        if (typeof t7 !== "number")
-          return H.iae(t7);
-        if (typeof t6 !== "number")
-          return H.iae(t6);
-        t8.set$imageY((1 - v) * t7 + v * t6);
+        t2 = samples[0];
+        t3 = this.xPixelStart;
+        t4 = J.$add$ns(t3, lerpDelta);
+        if (typeof t3 !== "number")
+          return H.iae(t3);
+        if (typeof t4 !== "number")
+          return H.iae(t4);
+        t2.set$imageX((1 - u) * t3 + u * t4);
+        t4 = samples[0];
+        t3 = this.yPixelStart;
+        t2 = J.$add$ns(t3, lerpDelta);
+        if (typeof t3 !== "number")
+          return H.iae(t3);
+        if (typeof t2 !== "number")
+          return H.iae(t2);
+        t4.set$imageY((1 - v) * t3 + v * t2);
         ++this.currentSample;
-        if (J.$ge$n(samples[0].get$imageX(), t2) || J.$ge$n(samples[0].get$imageY(), t4))
+        if (J.$ge$n(samples[0].get$imageX(), this.xPixelEnd) || J.$ge$n(samples[0].get$imageY(), this.yPixelEnd))
           continue;
         break;
       }
@@ -44169,13 +44286,13 @@ var $$ = {};
         var t1 = new U.HaltonSampler(null, null, xs, xe, ys, ye, ps, sopen, sclose);
         t1.HaltonSampler$7(xs, xe, ys, ye, ps, sopen, sclose);
         return t1;
-      }, HaltonSampler_Create: [function(params, film, camera) {
+      }, HaltonSampler_Create: [function(params, film, camera, pixels) {
         var range, nsamp;
         range = [0, 0, 0, 0];
         film.getSampleExtent$1(range);
         nsamp = params.findOneInt$2("pixelsamples", 4);
         return U.HaltonSampler$(range[0], range[1], range[2], range[3], nsamp, camera.get$shutterOpen(), camera.get$shutterClose());
-      }, "call$3", "HaltonSampler_Create$closure", 6, 0, 48]}
+      }, "call$4", "HaltonSampler_Create$closure", 8, 0, 51]}
   },
   LowDiscrepancySampler: {
     "^": "Sampler;pixels,pixel,pixelIndex,nPixelSamples,sampleBuf,xPixelStart,xPixelEnd,yPixelStart,yPixelEnd,samplesPerPixel,shutterOpen,shutterClose",
@@ -44184,18 +44301,19 @@ var $$ = {};
       G.Sampler_ComputeSubWindow(J.$sub$n(this.xPixelEnd, this.xPixelStart), J.$sub$n(this.yPixelEnd, this.yPixelStart), num, count, extents);
       if (J.$eq(extents[0], extents[1]) || J.$eq(extents[2], extents[3]))
         return;
-      return U.LowDiscrepancySampler$(extents[0], extents[1], extents[2], extents[3], this.nPixelSamples, this.shutterOpen, this.shutterClose);
+      return U.LowDiscrepancySampler$(extents[0], extents[1], extents[2], extents[3], this.nPixelSamples, this.shutterOpen, this.shutterClose, this.pixels);
     },
     roundSize$1: function(size) {
       return G.RoundUpPow2(size);
     },
     getMoreSamples$2: function(samples, rng) {
-      var t1, t2;
+      var t1, t2, t3;
       t1 = this.pixelIndex;
-      t2 = this.pixels._numSamples;
-      if (typeof t2 !== "number")
-        return H.iae(t2);
-      if (t1 >= t2)
+      t2 = this.pixels;
+      t3 = t2.numPixels$0();
+      if (typeof t3 !== "number")
+        return H.iae(t3);
+      if (t1 >= t3)
         return 0;
       if (this.sampleBuf == null) {
         if (0 >= samples.length)
@@ -44206,16 +44324,18 @@ var $$ = {};
         this.sampleBuf = new Float32Array(t1);
       }
       t1 = this.pixel;
-      this.pixels.getPixel$2(this.pixelIndex++, t1);
+      t2.getPixel$2(this.pixelIndex++, t1);
       G.LDPixelSample(t1[0], t1[1], this.shutterOpen, this.shutterClose, this.nPixelSamples, samples, this.sampleBuf, rng);
       return this.nPixelSamples;
     },
     maximumSampleCount$0: function() {
       return this.nPixelSamples;
     },
-    LowDiscrepancySampler$7: function(xstart, xend, ystart, yend, nsamp, sopen, sclose) {
-      var t1;
-      this.pixels = Y.RandomImageSampler$(xstart, xend, ystart, yend);
+    LowDiscrepancySampler$8: function(xstart, xend, ystart, yend, nsamp, sopen, sclose, pixels) {
+      var t1 = this.pixels;
+      if (t1 == null)
+        $.Log.call$2(3, "Pixel sampler is required by LowDiscrepencySampler");
+      t1.setup$4(xstart, xend, ystart, yend);
       this.pixelIndex = 0;
       t1 = J.getInterceptor$n(nsamp);
       if (t1.$and(nsamp, t1.$sub(nsamp, 1)) !== 0) {
@@ -44225,17 +44345,17 @@ var $$ = {};
         this.nPixelSamples = nsamp;
       this.sampleBuf = null;
     },
-    static: {LowDiscrepancySampler$: function(xstart, xend, ystart, yend, nsamp, sopen, sclose) {
-        var t1 = new U.LowDiscrepancySampler(null, new Int32Array(2), null, null, null, xstart, xend, ystart, yend, G.RoundUpPow2(nsamp), sopen, sclose);
-        t1.LowDiscrepancySampler$7(xstart, xend, ystart, yend, nsamp, sopen, sclose);
-        return t1;
-      }, LowDiscrepancySampler_Create: [function(params, film, camera) {
+    static: {LowDiscrepancySampler_Create: [function(params, film, camera, pixels) {
         var extents, nsamp;
         extents = [0, 0, 0, 0];
         film.getSampleExtent$1(extents);
         nsamp = params.findOneInt$2("pixelsamples", 4);
-        return U.LowDiscrepancySampler$(extents[0], extents[1], extents[2], extents[3], nsamp, camera.get$shutterOpen(), camera.get$shutterClose());
-      }, "call$3", "LowDiscrepancySampler_Create$closure", 6, 0, 49]}
+        return U.LowDiscrepancySampler$(extents[0], extents[1], extents[2], extents[3], nsamp, camera.get$shutterOpen(), camera.get$shutterClose(), pixels);
+      }, "call$4", "LowDiscrepancySampler_Create$closure", 8, 0, 52], LowDiscrepancySampler$: function(xstart, xend, ystart, yend, nsamp, sopen, sclose, pixels) {
+        var t1 = new U.LowDiscrepancySampler(pixels, new Int32Array(2), null, null, null, xstart, xend, ystart, yend, G.RoundUpPow2(nsamp), sopen, sclose);
+        t1.LowDiscrepancySampler$8(xstart, xend, ystart, yend, nsamp, sopen, sclose, pixels);
+        return t1;
+      }}
   },
   RandomSampler: {
     "^": "Sampler;continuous,pixels,pixel,pixelIndex,imageSamples,lensSamples,timeSamples,samplePos,xPixelStart,xPixelEnd,yPixelStart,yPixelEnd,samplesPerPixel,shutterOpen,shutterClose",
@@ -44243,19 +44363,20 @@ var $$ = {};
       return 1;
     },
     getMoreSamples$2: function(sample, rng) {
-      var t1, t2, i, t3, t4, o, t5, j;
+      var t1, t2, t3, i, t4, o, t5, j;
       t1 = this.pixelIndex;
-      t2 = this.pixels._numSamples;
-      if (typeof t2 !== "number")
-        return H.iae(t2);
-      if (t1 >= t2) {
+      t2 = this.pixels;
+      t3 = t2.numPixels$0();
+      if (typeof t3 !== "number")
+        return H.iae(t3);
+      if (t1 >= t3) {
         if (this.continuous !== true)
           return 0;
         this.pixelIndex = 0;
       }
       if (J.$eq(this.samplePos, this.samplesPerPixel)) {
         t1 = this.pixel;
-        this.pixels.getPixel$2(this.pixelIndex++, t1);
+        t2.getPixel$2(this.pixelIndex++, t1);
         i = 0;
         while (true) {
           t2 = this.samplesPerPixel;
@@ -44406,11 +44527,13 @@ var $$ = {};
       G.Sampler_ComputeSubWindow(J.$sub$n(this.xPixelEnd, this.xPixelStart), J.$sub$n(this.yPixelEnd, this.yPixelStart), num, count, extents);
       if (J.$eq(extents[0], extents[1]) || J.$eq(extents[2], extents[3]))
         return;
-      return U.RandomSampler$(extents[0], extents[1], extents[2], extents[3], this.samplesPerPixel, this.continuous, this.shutterOpen, this.shutterClose);
+      return U.RandomSampler$(extents[0], extents[1], extents[2], extents[3], this.samplesPerPixel, this.continuous, this.shutterOpen, this.shutterClose, this.pixels);
     },
-    RandomSampler$8: function(xstart, xend, ystart, yend, ns, continuous, sopen, sclose) {
-      var t1;
-      this.pixels = Y.TileImageSampler$(xstart, xend, ystart, yend, true, 32);
+    RandomSampler$9: function(xstart, xend, ystart, yend, ns, continuous, sopen, sclose, pixels) {
+      var t1 = this.pixels;
+      if (t1 == null)
+        $.Log.call$2(3, "Pixel sampler is required by LowDiscrepencySampler");
+      t1.setup$4(xstart, xend, ystart, yend);
       this.pixelIndex = 0;
       t1 = this.samplesPerPixel;
       if (typeof t1 !== "number")
@@ -44432,16 +44555,16 @@ var $$ = {};
       this.timeSamples = new Float32Array(t1);
       this.samplePos = this.samplesPerPixel;
     },
-    static: {RandomSampler_Create: [function(params, film, camera) {
+    static: {RandomSampler_Create: [function(params, film, camera, pixels) {
         var ns, continuous, extents;
         ns = params.findOneInt$2("pixelsamples", 1);
         continuous = params.findOneBool$2("continuous", true);
         extents = [0, 0, 0, 0];
         film.getSampleExtent$1(extents);
-        return U.RandomSampler$(extents[0], extents[1], extents[2], extents[3], ns, continuous, camera.get$shutterOpen(), camera.get$shutterClose());
-      }, "call$3", "RandomSampler_Create$closure", 6, 0, 50], RandomSampler$: function(xstart, xend, ystart, yend, ns, continuous, sopen, sclose) {
-        var t1 = new U.RandomSampler(continuous, null, new Int32Array(2), null, null, null, null, null, xstart, xend, ystart, yend, ns, sopen, sclose);
-        t1.RandomSampler$8(xstart, xend, ystart, yend, ns, continuous, sopen, sclose);
+        return U.RandomSampler$(extents[0], extents[1], extents[2], extents[3], ns, continuous, camera.get$shutterOpen(), camera.get$shutterClose(), pixels);
+      }, "call$4", "RandomSampler_Create$closure", 8, 0, 53], RandomSampler$: function(xstart, xend, ystart, yend, ns, continuous, sopen, sclose, pixels) {
+        var t1 = new U.RandomSampler(continuous, pixels, new Int32Array(2), null, null, null, null, null, xstart, xend, ystart, yend, ns, sopen, sclose);
+        t1.RandomSampler$9(xstart, xend, ystart, yend, ns, continuous, sopen, sclose, pixels);
         return t1;
       }}
   },
@@ -44455,15 +44578,16 @@ var $$ = {};
       G.Sampler_ComputeSubWindow(J.$sub$n(this.xPixelEnd, this.xPixelStart), J.$sub$n(this.yPixelEnd, this.yPixelStart), num, count, range);
       if (J.$eq(range[0], range[1]) || J.$eq(range[2], range[3]))
         return;
-      return U.StratifiedSampler$(range[0], range[1], range[2], range[3], this.xPixelSamples, this.yPixelSamples, this.jitterSamples, this.shutterOpen, this.shutterClose);
+      return U.StratifiedSampler$(range[0], range[1], range[2], range[3], this.xPixelSamples, this.yPixelSamples, this.jitterSamples, this.shutterOpen, this.shutterClose, this.pixels);
     },
     getMoreSamples$2: function(samples, rng) {
       var t1, t2, t3, t4, t5, t6, o, t7, i, j;
       t1 = this.pixelIndex;
-      t2 = this.pixels._numSamples;
-      if (typeof t2 !== "number")
-        return H.iae(t2);
-      if (t1 >= t2)
+      t2 = this.pixels;
+      t3 = t2.numPixels$0();
+      if (typeof t3 !== "number")
+        return H.iae(t3);
+      if (t1 >= t3)
         return 0;
       t1 = this.nPixelSamples;
       if (typeof t1 !== "number")
@@ -44473,7 +44597,7 @@ var $$ = {};
       G.StratifiedSample2D(this.lensSamples, this.xPixelSamples, this.yPixelSamples, rng, t1);
       G.StratifiedSample1D(this.timeSamples, J.$mul$ns(this.xPixelSamples, this.yPixelSamples), rng, t1);
       t1 = this.pixel;
-      this.pixels.getPixel$2(this.pixelIndex++, t1);
+      t2.getPixel$2(this.pixelIndex++, t1);
       t2 = this.xPixelSamples;
       if (typeof t2 !== "number")
         return H.iae(t2);
@@ -44558,9 +44682,11 @@ var $$ = {};
     maximumSampleCount$0: function() {
       return this.nPixelSamples;
     },
-    StratifiedSampler$9: function(xstart, xend, ystart, yend, xs, ys, jitterSamples, sopen, sclose) {
-      var t1;
-      this.pixels = Y.RandomImageSampler$(xstart, xend, ystart, yend);
+    StratifiedSampler$10: function(xstart, xend, ystart, yend, xs, ys, jitterSamples, sopen, sclose, pixels) {
+      var t1 = this.pixels;
+      if (t1 == null)
+        $.Log.call$2(3, "Pixel sampler is required by StratifiedSampler");
+      t1.setup$4(xstart, xend, ystart, yend);
       this.pixelIndex = 0;
       this.xPixelSamples = xs;
       this.yPixelSamples = ys;
@@ -44584,11 +44710,7 @@ var $$ = {};
         H.throwExpression(P.ArgumentError$("Invalid length " + H.S(t1)));
       this.timeSamples = new Float32Array(t1);
     },
-    static: {StratifiedSampler$: function(xstart, xend, ystart, yend, xs, ys, jitterSamples, sopen, sclose) {
-        var t1 = new U.StratifiedSampler(null, null, null, jitterSamples, null, new Int32Array(2), null, null, null, null, xstart, xend, ystart, yend, J.$mul$ns(xs, ys), sopen, sclose);
-        t1.StratifiedSampler$9(xstart, xend, ystart, yend, xs, ys, jitterSamples, sopen, sclose);
-        return t1;
-      }, StratifiedSampler_Create: [function(params, film, camera) {
+    static: {StratifiedSampler_Create: [function(params, film, camera, pixels) {
         var jitter, extents, pixelsamples, ysamp, xsamp;
         jitter = params.findOneBool$2("jitter", true);
         extents = [0, 0, 0, 0];
@@ -44601,13 +44723,17 @@ var $$ = {};
           xsamp = params.findOneInt$2("xsamples", 2);
           ysamp = params.findOneInt$2("ysamples", 2);
         }
-        return U.StratifiedSampler$(extents[0], extents[1], extents[2], extents[3], xsamp, ysamp, jitter, camera.get$shutterOpen(), camera.get$shutterClose());
-      }, "call$3", "StratifiedSampler_Create$closure", 6, 0, 51]}
+        return U.StratifiedSampler$(extents[0], extents[1], extents[2], extents[3], xsamp, ysamp, jitter, camera.get$shutterOpen(), camera.get$shutterClose(), pixels);
+      }, "call$4", "StratifiedSampler_Create$closure", 8, 0, 54], StratifiedSampler$: function(xstart, xend, ystart, yend, xs, ys, jitterSamples, sopen, sclose, pixels) {
+        var t1 = new U.StratifiedSampler(null, null, null, jitterSamples, pixels, new Int32Array(2), null, null, null, null, xstart, xend, ystart, yend, J.$mul$ns(xs, ys), sopen, sclose);
+        t1.StratifiedSampler$10(xstart, xend, ystart, yend, xs, ys, jitterSamples, sopen, sclose, pixels);
+        return t1;
+      }}
   }
 }],
 ["shapes", "package:dartray/shapes/shapes.dart", , M, {
   "^": "",
-  ConeShape: {
+  Cone: {
     "^": "Shape;radius,height>,phiMax,objectToWorld,worldToObject,reverseOrientation,transformSwapsHandedness,shapeId",
     objectBound$0: function() {
       var t1, t2;
@@ -44791,22 +44917,22 @@ var $$ = {};
         H.throwExpression(P.ArgumentError$(t2));
       return J.$div$n(J.$mul$ns(t3.$mul(t1, Math.sqrt(t2)), this.phiMax), 2);
     },
-    static: {ConeShape_Create: [function(o2w, w2o, reverseOrientation, params) {
+    static: {Cone_Create: [function(o2w, w2o, reverseOrientation, params) {
         var radius, height, phimax, t1, t2;
         radius = params.findOneFloat$2("radius", 1);
         height = params.findOneFloat$2("height", 1);
         phimax = params.findOneFloat$2("phimax", 360);
         t1 = $.Shape__nextShapeId;
         $.Shape__nextShapeId = t1 + 1;
-        t1 = new M.ConeShape(radius, height, null, o2w, w2o, reverseOrientation, false, t1);
+        t1 = new M.Cone(radius, height, null, o2w, w2o, reverseOrientation, false, t1);
         t2 = J.clamp$2$n(phimax, 0, 360);
         if (typeof t2 !== "number")
           return H.iae(t2);
         t1.phiMax = 0.017453292519943295 * t2;
         return t1;
-      }, "call$4", "ConeShape_Create$closure", 8, 0, 52]}
+      }, "call$4", "Cone_Create$closure", 8, 0, 55]}
   },
-  CylinderShape: {
+  Cylinder: {
     "^": "Shape;radius,zmin,zmax,phiMax,objectToWorld,worldToObject,reverseOrientation,transformSwapsHandedness,shapeId",
     objectBound$0: function() {
       var t1, t2;
@@ -45008,7 +45134,7 @@ var $$ = {};
         J.scale$1$x(Ns, -1);
       return t4.transformPoint$1(new G.Point(t6, t3, (1 - u1) * t1 + u1 * t2));
     },
-    CylinderShape$7: function(o2w, w2o, ro, radius, z0, z1, phimax) {
+    Cylinder$7: function(o2w, w2o, ro, radius, z0, z1, phimax) {
       var t1;
       this.zmin = P.min(z0, z1);
       this.zmax = P.max(z0, z1);
@@ -45017,7 +45143,7 @@ var $$ = {};
         return H.iae(t1);
       this.phiMax = 0.017453292519943295 * t1;
     },
-    static: {CylinderShape_Create: [function(o2w, w2o, reverseOrientation, params) {
+    static: {Cylinder_Create: [function(o2w, w2o, reverseOrientation, params) {
         var radius, zmin, zmax, phimax, t1;
         radius = params.findOneFloat$2("radius", 1);
         zmin = params.findOneFloat$2("zmin", -1);
@@ -45025,12 +45151,12 @@ var $$ = {};
         phimax = params.findOneFloat$2("phimax", 360);
         t1 = $.Shape__nextShapeId;
         $.Shape__nextShapeId = t1 + 1;
-        t1 = new M.CylinderShape(radius, null, null, null, o2w, w2o, reverseOrientation, false, t1);
-        t1.CylinderShape$7(o2w, w2o, reverseOrientation, radius, zmin, zmax, phimax);
+        t1 = new M.Cylinder(radius, null, null, null, o2w, w2o, reverseOrientation, false, t1);
+        t1.Cylinder$7(o2w, w2o, reverseOrientation, radius, zmin, zmax, phimax);
         return t1;
-      }, "call$4", "CylinderShape_Create$closure", 8, 0, 53]}
+      }, "call$4", "Cylinder_Create$closure", 8, 0, 56]}
   },
-  DiskShape: {
+  Disk: {
     "^": "Shape;height>,radius,innerRadius,phiMax,objectToWorld,worldToObject,reverseOrientation,transformSwapsHandedness,shapeId",
     objectBound$0: function() {
       var t1, t2, t3, t4;
@@ -45166,7 +45292,7 @@ var $$ = {};
         Ns.scale$1(0, -1);
       return t3.transformPoint$1(new G.Point(t00, t2, t1));
     },
-    static: {DiskShape_Create: [function(o2w, w2o, reverseOrientation, params) {
+    static: {Disk_Create: [function(o2w, w2o, reverseOrientation, params) {
         var height, radius, inner_radius, phimax, t1, t2;
         height = params.findOneFloat$2("height", 0);
         radius = params.findOneFloat$2("radius", 1);
@@ -45174,15 +45300,186 @@ var $$ = {};
         phimax = params.findOneFloat$2("phimax", 360);
         t1 = $.Shape__nextShapeId;
         $.Shape__nextShapeId = t1 + 1;
-        t1 = new M.DiskShape(height, radius, inner_radius, phimax, o2w, w2o, reverseOrientation, false, t1);
+        t1 = new M.Disk(height, radius, inner_radius, phimax, o2w, w2o, reverseOrientation, false, t1);
         t2 = J.clamp$2$n(phimax, 0, 360);
         if (typeof t2 !== "number")
           return H.iae(t2);
         t1.phiMax = 0.017453292519943295 * t2;
         return t1;
-      }, "call$4", "DiskShape_Create$closure", 8, 0, 54]}
+      }, "call$4", "Disk_Create$closure", 8, 0, 57]}
   },
-  HyperboloidShape: {
+  Heightfield: {
+    "^": "Shape;z*,nx<,ny,objectToWorld,worldToObject,reverseOrientation,transformSwapsHandedness,shapeId",
+    canIntersect$0: function() {
+      return false;
+    },
+    refine$1: function(refined) {
+      var t1, t2, verts, $P, uvs, y, pi, ui, t3, x, t4, t5, vp, y0, vp0, x0, paramSet;
+      t1 = J.$sub$n(this.nx, 1);
+      if (typeof t1 !== "number")
+        return H.iae(t1);
+      t2 = J.$sub$n(this.ny, 1);
+      if (typeof t2 !== "number")
+        return H.iae(t2);
+      t2 = 3 * (2 * t1 * t2);
+      if (typeof t2 !== "number" || Math.floor(t2) !== t2)
+        H.throwExpression(P.ArgumentError$("Invalid length " + H.S(t2)));
+      verts = new Uint32Array(t2);
+      t1 = J.$mul$ns(this.nx, this.ny);
+      if (typeof t1 !== "number")
+        return H.iae(t1);
+      t1 = Array(t1);
+      t1.fixed$length = init;
+      $P = H.setRuntimeTypeInfo(t1, [G.Point]);
+      t1 = this.nx;
+      if (typeof t1 !== "number")
+        return H.iae(t1);
+      t2 = this.ny;
+      if (typeof t2 !== "number")
+        return H.iae(t2);
+      t2 = 2 * t1 * t2;
+      if (typeof t2 !== "number" || Math.floor(t2) !== t2)
+        H.throwExpression(P.ArgumentError$("Invalid length " + H.S(t2)));
+      uvs = new Float32Array(t2);
+      J.$mul$ns(this.nx, this.ny);
+      t1 = uvs.length;
+      t2 = $P.length;
+      y = 0;
+      pi = 0;
+      ui = 0;
+      while (true) {
+        t3 = this.ny;
+        if (typeof t3 !== "number")
+          return H.iae(t3);
+        if (!(y < t3))
+          break;
+        x = 0;
+        while (true) {
+          t3 = this.nx;
+          if (typeof t3 !== "number")
+            return H.iae(t3);
+          if (!(x < t3))
+            break;
+          if (ui < 0 || ui >= t1)
+            return H.ioore(uvs, ui);
+          uvs[ui] = x / (t3 - 1);
+          t3 = ui + 1;
+          t4 = J.$sub$n(this.ny, 1);
+          if (typeof t4 !== "number")
+            return H.iae(t4);
+          if (t3 >= t1)
+            return H.ioore(uvs, t3);
+          uvs[t3] = y / t4;
+          t4 = uvs[ui];
+          t3 = uvs[t3];
+          t5 = J.$index$asx(this.z, pi);
+          if (pi < 0 || pi >= t2)
+            return H.ioore($P, pi);
+          $P[pi] = new G.Point(t4, t3, t5);
+          ++x;
+          ++pi;
+          ui += 2;
+        }
+        ++y;
+      }
+      t1 = new M.Heightfield_refine_VERT(this);
+      t2 = verts.length;
+      vp = 0;
+      y = 0;
+      while (true) {
+        t3 = J.$sub$n(this.ny, 1);
+        if (typeof t3 !== "number")
+          return H.iae(t3);
+        if (!(y < t3))
+          break;
+        y0 = y + 1;
+        x = 0;
+        while (true) {
+          t3 = J.$sub$n(this.nx, 1);
+          if (typeof t3 !== "number")
+            return H.iae(t3);
+          if (!(x < t3))
+            break;
+          vp0 = vp + 1;
+          t3 = t1.call$2(x, y);
+          if (vp < 0 || vp >= t2)
+            return H.ioore(verts, vp);
+          verts[vp] = t3;
+          vp = vp0 + 1;
+          x0 = x + 1;
+          t3 = t1.call$2(x0, y);
+          if (vp0 < 0 || vp0 >= t2)
+            return H.ioore(verts, vp0);
+          verts[vp0] = t3;
+          vp0 = vp + 1;
+          t3 = t1.call$2(x0, y0);
+          if (vp < 0 || vp >= t2)
+            return H.ioore(verts, vp);
+          verts[vp] = t3;
+          vp = vp0 + 1;
+          t3 = t1.call$2(x, y);
+          if (vp0 < 0 || vp0 >= t2)
+            return H.ioore(verts, vp0);
+          verts[vp0] = t3;
+          vp0 = vp + 1;
+          t3 = t1.call$2(x0, y0);
+          if (vp < 0 || vp >= t2)
+            return H.ioore(verts, vp);
+          verts[vp] = t3;
+          vp = vp0 + 1;
+          t3 = t1.call$2(x, y0);
+          if (vp0 < 0 || vp0 >= t2)
+            return H.ioore(verts, vp0);
+          verts[vp0] = t3;
+          x = x0;
+        }
+        y = y0;
+      }
+      paramSet = new G.ParamSet([], [], [], [], [], [], [], [], []);
+      paramSet.addInt$2("indices", verts);
+      paramSet.addFloat$2("uv", uvs);
+      paramSet.addPoint$2("P", $P);
+      refined.push(M.TriangleMesh_Create(this.objectToWorld, this.worldToObject, this.reverseOrientation, paramSet, null));
+    },
+    objectBound$0: function() {
+      var minz, maxz, i, t1;
+      minz = J.$index$asx(this.z, 0);
+      maxz = J.$index$asx(this.z, 0);
+      i = 1;
+      while (true) {
+        t1 = J.$mul$ns(this.nx, this.ny);
+        if (typeof t1 !== "number")
+          return H.iae(t1);
+        if (!(i < t1))
+          break;
+        if (J.$lt$n(J.$index$asx(this.z, i), minz))
+          minz = J.$index$asx(this.z, i);
+        if (J.$gt$n(J.$index$asx(this.z, i), maxz))
+          maxz = J.$index$asx(this.z, i);
+        ++i;
+      }
+      return G.BBox$(new G.Point(0, 0, minz), new G.Point(1, 1, maxz));
+    },
+    static: {Heightfield_Create: [function(o2w, w2o, reverseOrientation, params) {
+        var nu, nv, Pz, t1;
+        nu = params.findOneInt$2("nu", -1);
+        nv = params.findOneInt$2("nv", -1);
+        Pz = params.findFloat$1("Pz");
+        t1 = $.Shape__nextShapeId;
+        $.Shape__nextShapeId = t1 + 1;
+        return new M.Heightfield(Pz, nu, nv, o2w, w2o, reverseOrientation, false, t1);
+      }, "call$4", "Heightfield_Create$closure", 8, 0, 58]}
+  },
+  Heightfield_refine_VERT: {
+    "^": "Closure:121;this_0",
+    call$2: function(x, y) {
+      var t1 = this.this_0.nx;
+      if (typeof t1 !== "number")
+        return H.iae(t1);
+      return x + y * t1;
+    }
+  },
+  Hyperboloid: {
     "^": "Shape;p1,p2,zmin,zmax,phiMax,rmax,a,c<,objectToWorld,worldToObject,reverseOrientation,transformSwapsHandedness,shapeId",
     objectBound$0: function() {
       var t1, t2;
@@ -45538,8 +45835,8 @@ var $$ = {};
     },
     area$0: function() {
       var t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12, t13, t14, t15, t16, t17, t18;
-      t1 = new M.HyperboloidShape_area_SQR();
-      t2 = new M.HyperboloidShape_area_QUAD();
+      t1 = new M.Hyperboloid_area_SQR();
+      t2 = new M.Hyperboloid_area_QUAD();
       t3 = this.phiMax;
       t4 = t2.call$1(J.get$x$x(this.p1));
       if (typeof t4 !== "number")
@@ -45640,7 +45937,7 @@ var $$ = {};
         return H.iae(t13);
       return t3 / 6 * (2 * t4 - 2 * t5 * t6 * t7 * t8 + 2 * t2 + 2 * t9 * t10 + t18 + t1 - 2 * t11 * t12 * t13);
     },
-    HyperboloidShape$6: function(o2w, w2o, ro, p1, p2, tm) {
+    Hyperboloid$6: function(o2w, w2o, ro, p1, p2, tm) {
       var t1, radius1, t, pp, xy1, xy2, t2, t3, t4;
       t1 = J.$add$ns(J.$mul$ns(J.get$x$x(this.p1), J.get$x$x(this.p1)), J.$mul$ns(J.get$y$x(this.p1), J.get$y$x(this.p1)));
       if (typeof t1 !== "number")
@@ -45701,29 +45998,29 @@ var $$ = {};
         t1.toString;
       } while (t1 == Infinity || t1 == -Infinity || isNaN(t1));
     },
-    static: {HyperboloidShape$: function(o2w, w2o, ro, p1, p2, tm) {
+    static: {Hyperboloid$: function(o2w, w2o, ro, p1, p2, tm) {
         var t1 = $.Shape__nextShapeId;
         $.Shape__nextShapeId = t1 + 1;
-        t1 = new M.HyperboloidShape(p1, p2, null, null, null, null, null, null, o2w, w2o, ro, false, t1);
-        t1.HyperboloidShape$6(o2w, w2o, ro, p1, p2, tm);
+        t1 = new M.Hyperboloid(p1, p2, null, null, null, null, null, null, o2w, w2o, ro, false, t1);
+        t1.Hyperboloid$6(o2w, w2o, ro, p1, p2, tm);
         return t1;
-      }, HyperboloidShape_Create: [function(o2w, w2o, reverseOrientation, params) {
-        return M.HyperboloidShape$(o2w, w2o, reverseOrientation, params.findOnePoint$2("p1", new G.Point(0, 0, 0)), params.findOnePoint$2("p2", new G.Point(1, 1, 1)), params.findOneFloat$2("phimax", 360));
-      }, "call$4", "HyperboloidShape_Create$closure", 8, 0, 55]}
+      }, Hyperboloid_Create: [function(o2w, w2o, reverseOrientation, params) {
+        return M.Hyperboloid$(o2w, w2o, reverseOrientation, params.findOnePoint$2("p1", new G.Point(0, 0, 0)), params.findOnePoint$2("p2", new G.Point(1, 1, 1)), params.findOneFloat$2("phimax", 360));
+      }, "call$4", "Hyperboloid_Create$closure", 8, 0, 59]}
   },
-  HyperboloidShape_area_SQR: {
-    "^": "Closure:88;",
+  Hyperboloid_area_SQR: {
+    "^": "Closure:93;",
     call$1: function(a) {
       return J.$mul$ns(a, a);
     }
   },
-  HyperboloidShape_area_QUAD: {
-    "^": "Closure:88;",
+  Hyperboloid_area_QUAD: {
+    "^": "Closure:93;",
     call$1: function(a) {
       return J.$mul$ns(J.$mul$ns(J.$mul$ns(a, a), a), a);
     }
   },
-  LoopSubdivisionShape: {
+  LoopSubdivision: {
     "^": "Shape;nLevels,vertices,faces,objectToWorld,worldToObject,reverseOrientation,transformSwapsHandedness,shapeId",
     canIntersect$0: function() {
       return false;
@@ -45766,11 +46063,11 @@ var $$ = {};
           t2 = v[j];
           if (!t2.get$boundary())
             if (t2.regular)
-              t2.child.P = M.LoopSubdivisionShape_weightOneRing(t2, 0.0625);
+              t2.child.P = M.LoopSubdivision_weightOneRing(t2, 0.0625);
             else
-              t2.child.P = M.LoopSubdivisionShape_weightOneRing(t2, M.LoopSubdivisionShape_beta(t2.valence$0()));
+              t2.child.P = M.LoopSubdivision_weightOneRing(t2, M.LoopSubdivision_beta(t2.valence$0()));
           else
-            t2.child.P = M.LoopSubdivisionShape_weightBoundary(t2, 0.125);
+            t2.child.P = M.LoopSubdivision_weightBoundary(t2, 0.125);
         }
         t2 = P.LinkedHashMap_LinkedHashMap$_empty(null, null);
         edgeVerts = new M._SDEdgeMap(t2);
@@ -45849,13 +46146,13 @@ var $$ = {};
       for (t1 = Plimit.length, i = 0; i < v.length; ++i) {
         t2 = v[i];
         if (t2.get$boundary()) {
-          t2 = M.LoopSubdivisionShape_weightBoundary(t2, 0.2);
+          t2 = M.LoopSubdivision_weightBoundary(t2, 0.2);
           if (i >= t1)
             return H.ioore(Plimit, i);
           Plimit[i] = t2;
         } else {
           t3 = t2.valence$0();
-          t3 = M.LoopSubdivisionShape_weightOneRing(t2, 1 / (t3 + 3 / (8 * M.LoopSubdivisionShape_beta(t3))));
+          t3 = M.LoopSubdivision_weightOneRing(t2, 1 / (t3 + 3 / (8 * M.LoopSubdivision_beta(t3))));
           if (i >= t1)
             return H.ioore(Plimit, i);
           Plimit[i] = t3;
@@ -45977,7 +46274,7 @@ var $$ = {};
       paramSet.addInt$2("indices", verts);
       paramSet.addPoint$2("P", Plimit);
       paramSet.addNormal$2("N", Ns);
-      refined.push(M.TriangleMeshShape_Create(this.objectToWorld, this.worldToObject, this.reverseOrientation, paramSet, null));
+      refined.push(M.TriangleMesh_Create(this.objectToWorld, this.worldToObject, this.reverseOrientation, paramSet, null));
     },
     objectBound$0: function() {
       var b, t1, t2, i, t3, t4, t5, t6, t7;
@@ -46007,7 +46304,7 @@ var $$ = {};
       }
       return b;
     },
-    LoopSubdivisionShape$8: function(o2w, w2o, ro, nfaces, nvertices, vertexIndices, $P, nLevels) {
+    LoopSubdivision$8: function(o2w, w2o, ro, nfaces, nvertices, vertexIndices, $P, nLevels) {
       var t1, t2, t3, i, t4, t5, j, t6, f, j0, t7, v, edges, ei, v0, ei0, v1, edge, t8, val;
       if (typeof nvertices !== "number")
         return H.iae(nvertices);
@@ -46122,15 +46419,15 @@ var $$ = {};
           v.regular = false;
       }
     },
-    static: {LoopSubdivisionShape_Create: [function(o2w, w2o, reverseOrientation, params) {
+    static: {LoopSubdivision_Create: [function(o2w, w2o, reverseOrientation, params) {
         var nlevels, vi, $P;
         nlevels = params.findOneInt$2("nlevels", 1);
         vi = params.findInt$1("indices");
         $P = params.findPoint$1("P");
         if (vi == null || $P == null)
           return;
-        return M.LoopSubdivisionShape$(o2w, w2o, reverseOrientation, J.$tdiv$n(J.get$length$asx(vi), 3), J.get$length$asx($P), vi, $P, nlevels);
-      }, "call$4", "LoopSubdivisionShape_Create$closure", 8, 0, 56], LoopSubdivisionShape$: function(o2w, w2o, ro, nfaces, nvertices, vertexIndices, $P, nLevels) {
+        return M.LoopSubdivision$(o2w, w2o, reverseOrientation, J.$tdiv$n(J.get$length$asx(vi), 3), J.get$length$asx($P), vi, $P, nlevels);
+      }, "call$4", "LoopSubdivision_Create$closure", 8, 0, 60], LoopSubdivision$: function(o2w, w2o, ro, nfaces, nvertices, vertexIndices, $P, nLevels) {
         var t1, t2;
         t1 = $.Shape__nextShapeId;
         $.Shape__nextShapeId = t1 + 1;
@@ -46139,14 +46436,14 @@ var $$ = {};
         t2 = H.setRuntimeTypeInfo(Array(nvertices), [M._SDVertex]);
         if (typeof nfaces !== "number")
           return H.iae(nfaces);
-        t1 = new M.LoopSubdivisionShape(nLevels, t2, H.setRuntimeTypeInfo(Array(nfaces), [M._SDFace]), o2w, w2o, ro, false, t1);
-        t1.LoopSubdivisionShape$8(o2w, w2o, ro, nfaces, nvertices, vertexIndices, $P, nLevels);
+        t1 = new M.LoopSubdivision(nLevels, t2, H.setRuntimeTypeInfo(Array(nfaces), [M._SDFace]), o2w, w2o, ro, false, t1);
+        t1.LoopSubdivision$8(o2w, w2o, ro, nfaces, nvertices, vertexIndices, $P, nLevels);
         return t1;
-      }, LoopSubdivisionShape_beta: function(valence) {
+      }, LoopSubdivision_beta: function(valence) {
         if (valence === 3)
           return 0.1875;
         return 3 / (8 * valence);
-      }, LoopSubdivisionShape_weightOneRing: function(vert, beta) {
+      }, LoopSubdivision_weightOneRing: function(vert, beta) {
         var valence, Pring, $P, i;
         valence = vert.valence$0();
         Pring = Array(valence);
@@ -46156,7 +46453,7 @@ var $$ = {};
         for (i = 0; i < valence; ++i)
           $P = J.$add$ns($P, J.$mul$ns(Pring[i], beta));
         return $P;
-      }, LoopSubdivisionShape_weightBoundary: function(vert, beta) {
+      }, LoopSubdivision_weightBoundary: function(vert, beta) {
         var valence, Pring, $P, t1;
         valence = vert.valence$0();
         Pring = Array(valence);
@@ -46208,10 +46505,13 @@ var $$ = {};
       t1 = this.boundary;
       face = this.startFace;
       if (!t1) {
-        t1 = J.getInterceptor$ax(p);
+        t1 = p.length;
         do {
           pi0 = pi + 1;
-          t1.$indexSet(p, pi, face.nextVert$1(this).get$P());
+          t2 = face.nextVert$1(this).get$P();
+          if (pi >= t1)
+            return H.ioore(p, pi);
+          p[pi] = t2;
           t2 = face.f;
           t3 = face.vnum$1(this);
           if (t3 < 0 || t3 >= t2.length)
@@ -46227,17 +46527,23 @@ var $$ = {};
         for (; f2 = face.nextFace$1(this), f2 != null; face = f2)
           ;
         pi0 = pi + 1;
-        t1 = J.getInterceptor$ax(p);
-        t1.$indexSet(p, pi, face.nextVert$1(this).get$P());
+        t1 = face.nextVert$1(this).get$P();
+        t2 = p.length;
+        if (pi >= t2)
+          return H.ioore(p, pi);
+        p[pi] = t1;
         pi = pi0;
         do {
           pi0 = pi + 1;
-          t1.$indexSet(p, pi, face.prevVert$1(this).get$P());
-          t2 = face.f;
+          t1 = face.prevVert$1(this).get$P();
+          if (pi >= t2)
+            return H.ioore(p, pi);
+          p[pi] = t1;
+          t1 = face.f;
           t3 = C.JSInt_methods.$mod(face.vnum$1(this) + 2, 3);
-          if (t3 >= t2.length)
-            return H.ioore(t2, t3);
-          face = t2[t3];
+          if (t3 >= t1.length)
+            return H.ioore(t1, t3);
+          face = t1[t3];
           if (face != null) {
             pi = pi0;
             continue;
@@ -46325,7 +46631,564 @@ var $$ = {};
       return this.f.call$2(arg0, arg1);
     }
   },
-  ParaboloidShape: {
+  Nurbs: {
+    "^": "Shape;nu,uorder,nv,vorder,umin,umax,vmin,vmax,uknot,vknot,isHomogeneous,P@,objectToWorld,worldToObject,reverseOrientation,transformSwapsHandedness,shapeId",
+    objectBound$0: function() {
+      var bound, t1, t2, t3, i, pi, t4, t5, t6, t7, t8, t9, t10;
+      if (!this.isHomogeneous) {
+        bound = G.BBox$(null, null);
+        t1 = this.nu;
+        t2 = this.nv;
+        t3 = J.getInterceptor$ns(t1);
+        i = 0;
+        pi = 0;
+        while (true) {
+          t4 = t3.$mul(t1, t2);
+          if (typeof t4 !== "number")
+            return H.iae(t4);
+          if (!(i < t4))
+            break;
+          t4 = J.$index$asx(this.P, pi);
+          t5 = J.$index$asx(this.P, pi + 1);
+          t6 = J.$index$asx(this.P, pi + 2);
+          t7 = bound.pMin;
+          t8 = t7.x;
+          t9 = t7.y;
+          t7 = t7.z;
+          t10 = bound.pMax;
+          bound = new G.BBox(new G.Point(t8, t9, t7), new G.Point(t10.x, t10.y, t10.z)).unionPoint$1(new G.Point(t4, t5, t6));
+          ++i;
+          pi += 3;
+        }
+        return bound;
+      } else {
+        bound = G.BBox$(null, null);
+        t1 = this.nu;
+        t2 = this.nv;
+        t3 = J.getInterceptor$ns(t1);
+        i = 0;
+        pi = 0;
+        while (true) {
+          t4 = t3.$mul(t1, t2);
+          if (typeof t4 !== "number")
+            return H.iae(t4);
+          if (!(i < t4))
+            break;
+          t4 = pi + 3;
+          t5 = J.$div$n(J.$index$asx(this.P, pi), J.$index$asx(this.P, t4));
+          t6 = J.$div$n(J.$index$asx(this.P, pi + 1), J.$index$asx(this.P, t4));
+          t4 = J.$div$n(J.$index$asx(this.P, pi + 2), J.$index$asx(this.P, t4));
+          t7 = bound.pMin;
+          t8 = t7.x;
+          t9 = t7.y;
+          t7 = t7.z;
+          t10 = bound.pMax;
+          bound = new G.BBox(new G.Point(t8, t9, t7), new G.Point(t10.x, t10.y, t10.z)).unionPoint$1(new G.Point(t5, t6, t4));
+          ++i;
+          pi += 4;
+        }
+        return bound;
+      }
+    },
+    worldBound$0: function() {
+      var bound, t1, t2, t3, t4, i, pi, t5, t6, t7, t8, t9;
+      if (!this.isHomogeneous) {
+        bound = G.BBox$(null, null);
+        t1 = this.nu;
+        t2 = this.nv;
+        t3 = J.getInterceptor$ns(t1);
+        t4 = this.objectToWorld;
+        i = 0;
+        pi = 0;
+        while (true) {
+          t5 = t3.$mul(t1, t2);
+          if (typeof t5 !== "number")
+            return H.iae(t5);
+          if (!(i < t5))
+            break;
+          t5 = t4.transformPoint$1(new G.Point(J.$index$asx(this.P, pi), J.$index$asx(this.P, pi + 1), J.$index$asx(this.P, pi + 2)));
+          t6 = bound.pMin;
+          t7 = t6.x;
+          t8 = t6.y;
+          t6 = t6.z;
+          t9 = bound.pMax;
+          bound = new G.BBox(new G.Point(t7, t8, t6), new G.Point(t9.x, t9.y, t9.z)).unionPoint$1(t5);
+          ++i;
+          pi += 3;
+        }
+        return bound;
+      } else {
+        bound = G.BBox$(null, null);
+        t1 = this.nu;
+        t2 = this.nv;
+        t3 = J.getInterceptor$ns(t1);
+        t4 = this.objectToWorld;
+        i = 0;
+        pi = 0;
+        while (true) {
+          t5 = t3.$mul(t1, t2);
+          if (typeof t5 !== "number")
+            return H.iae(t5);
+          if (!(i < t5))
+            break;
+          t5 = pi + 3;
+          t5 = t4.transformPoint$1(new G.Point(J.$div$n(J.$index$asx(this.P, pi), J.$index$asx(this.P, t5)), J.$div$n(J.$index$asx(this.P, pi + 1), J.$index$asx(this.P, t5)), J.$div$n(J.$index$asx(this.P, pi + 2), J.$index$asx(this.P, t5))));
+          t6 = bound.pMin;
+          t7 = t6.x;
+          t8 = t6.y;
+          t6 = t6.z;
+          t9 = bound.pMax;
+          bound = new G.BBox(new G.Point(t7, t8, t6), new G.Point(t9.x, t9.y, t9.z)).unionPoint$1(t5);
+          ++i;
+          pi += 4;
+        }
+        return bound;
+      }
+    },
+    canIntersect$0: function() {
+      return false;
+    },
+    refine$1: function(refined) {
+      var ueval, veval, t1, evalPs, evalNs, t2, i, t3, uvs, Pw, t4, pi, wi, t5, wi0, pi0, t6, t7, t8, v, u, t9, t10, dPdu, dPdv, pt, t11, t12, t13, vertices, vi, v0, vi0, u0, paramSet;
+      ueval = new Float32Array(30);
+      veval = new Float32Array(30);
+      t1 = Array(900);
+      t1.fixed$length = init;
+      evalPs = H.setRuntimeTypeInfo(t1, [G.Point]);
+      t1 = Array(900);
+      t1.fixed$length = init;
+      evalNs = H.setRuntimeTypeInfo(t1, [G.Normal]);
+      for (t1 = this.umin, t2 = this.umax, i = 0; i < 30; ++i) {
+        t3 = i / 29;
+        if (typeof t1 !== "number")
+          return H.iae(t1);
+        if (typeof t2 !== "number")
+          return H.iae(t2);
+        ueval[i] = (1 - t3) * t1 + t3 * t2;
+      }
+      for (t1 = this.vmin, t2 = this.vmax, i = 0; i < 30; ++i) {
+        t3 = i / 29;
+        if (typeof t1 !== "number")
+          return H.iae(t1);
+        if (typeof t2 !== "number")
+          return H.iae(t2);
+        veval[i] = (1 - t3) * t1 + t3 * t2;
+      }
+      uvs = new Float32Array(1800);
+      Pw = this.P;
+      if (!this.isHomogeneous) {
+        t1 = this.nu;
+        t2 = this.nv;
+        t3 = J.getInterceptor$ns(t1);
+        t4 = J.$mul$ns(t3.$mul(t1, t2), 4);
+        if (typeof t4 !== "number" || Math.floor(t4) !== t4)
+          H.throwExpression(P.ArgumentError$("Invalid length " + H.S(t4)));
+        Pw = new Float32Array(t4);
+        t4 = Pw.length;
+        i = 0;
+        pi = 0;
+        wi = 0;
+        while (true) {
+          t5 = t3.$mul(t1, t2);
+          if (typeof t5 !== "number")
+            return H.iae(t5);
+          if (!(i < t5))
+            break;
+          wi0 = wi + 1;
+          pi0 = pi + 1;
+          t5 = J.$index$asx(this.P, pi);
+          if (wi >= t4)
+            return H.ioore(Pw, wi);
+          Pw[wi] = t5;
+          wi = wi0 + 1;
+          pi = pi0 + 1;
+          t5 = J.$index$asx(this.P, pi0);
+          if (wi0 >= t4)
+            return H.ioore(Pw, wi0);
+          Pw[wi0] = t5;
+          wi0 = wi + 1;
+          pi0 = pi + 1;
+          t5 = J.$index$asx(this.P, pi);
+          if (wi >= t4)
+            return H.ioore(Pw, wi);
+          Pw[wi] = t5;
+          wi = wi0 + 1;
+          if (wi0 >= t4)
+            return H.ioore(Pw, wi0);
+          Pw[wi0] = 1;
+          ++i;
+          pi = pi0;
+        }
+      }
+      for (t1 = evalNs.length, t2 = this.uorder, t3 = this.uknot, t4 = this.nu, t5 = this.vorder, t6 = this.vknot, t7 = this.nv, t8 = evalPs.length, v = 0, pi = 0; v < 30; ++v)
+        for (u = 0; u < 30; ++u, ++pi) {
+          t9 = 2 * pi;
+          t10 = ueval[u];
+          if (t9 >= 1800)
+            return H.ioore(uvs, t9);
+          uvs[t9] = t10;
+          ++t9;
+          t10 = veval[v];
+          if (t9 >= 1800)
+            return H.ioore(uvs, t9);
+          uvs[t9] = t10;
+          dPdu = new G.Vector(0, 0, 0);
+          dPdv = new G.Vector(0, 0, 0);
+          pt = M.Nurbs_NurbsEvaluateSurface(t2, t3, t4, ueval[u], t5, t6, t7, veval[v], Pw, dPdu, dPdv);
+          if (pi < 0 || pi >= t8)
+            return H.ioore(evalPs, pi);
+          evalPs[pi] = pt;
+          t10 = G.Vector_Cross(dPdu, dPdv);
+          t9 = t10.x;
+          t11 = t10.y;
+          t10 = t10.z;
+          t12 = new G.Normal(t9, t11, t10);
+          t13 = J.$add$ns(J.$add$ns(J.$mul$ns(t9, t9), J.$mul$ns(t11, t11)), J.$mul$ns(t10, t10));
+          if (typeof t13 !== "number")
+            H.throwExpression(P.ArgumentError$(t13));
+          t13 = Math.sqrt(t13);
+          t12.x = J.$div$n(t9, t13);
+          t12.y = J.$div$n(t11, t13);
+          t12.z = J.$div$n(t10, t13);
+          if (pi >= t1)
+            return H.ioore(evalNs, pi);
+          evalNs[pi] = t12;
+        }
+      vertices = new Int32Array(5046);
+      t1 = new M.Nurbs_refine_VN(30);
+      for (vi = 0, v = 0; v < 29; v = v0)
+        for (v0 = v + 1, u = 0; u < 29; u = u0) {
+          vi0 = vi + 1;
+          t2 = t1.call$2(u, v);
+          if (vi < 0 || vi >= 5046)
+            return H.ioore(vertices, vi);
+          vertices[vi] = t2;
+          vi = vi0 + 1;
+          u0 = u + 1;
+          t2 = t1.call$2(u0, v);
+          if (vi0 < 0 || vi0 >= 5046)
+            return H.ioore(vertices, vi0);
+          vertices[vi0] = t2;
+          vi0 = vi + 1;
+          t2 = t1.call$2(u0, v0);
+          if (vi < 0 || vi >= 5046)
+            return H.ioore(vertices, vi);
+          vertices[vi] = t2;
+          vi = vi0 + 1;
+          t2 = t1.call$2(u, v);
+          if (vi0 < 0 || vi0 >= 5046)
+            return H.ioore(vertices, vi0);
+          vertices[vi0] = t2;
+          vi0 = vi + 1;
+          t2 = t1.call$2(u0, v0);
+          if (vi < 0 || vi >= 5046)
+            return H.ioore(vertices, vi);
+          vertices[vi] = t2;
+          vi = vi0 + 1;
+          t2 = t1.call$2(u, v0);
+          if (vi0 < 0 || vi0 >= 5046)
+            return H.ioore(vertices, vi0);
+          vertices[vi0] = t2;
+        }
+      paramSet = new G.ParamSet([], [], [], [], [], [], [], [], []);
+      paramSet.addInt$2("indices", vertices);
+      paramSet.addPoint$2("P", evalPs);
+      paramSet.addFloat$2("uv", uvs);
+      paramSet.addNormal$2("N", evalNs);
+      refined.push(M.TriangleMesh_Create(this.objectToWorld, this.worldToObject, this.reverseOrientation, paramSet, null));
+    },
+    static: {Nurbs_Create: [function(o2w, w2o, ReverseOrientation, params) {
+        var nu, uorder, uknots, t1, u0, u1, nv, vorder, vknots, v0, v1, p, t2, $P, i, j, t3, j0, npt, isHomogeneous;
+        nu = params.findOneInt$2("nu", -1);
+        uorder = params.findOneInt$2("uorder", -1);
+        uknots = params.findFloat$1("uknots");
+        t1 = J.getInterceptor$asx(uknots);
+        u0 = params.findOneFloat$2("u0", t1.$index(uknots, J.$sub$n(uorder, 1)));
+        u1 = params.findOneFloat$2("u1", t1.$index(uknots, nu));
+        nv = params.findOneInt$2("nv", -1);
+        vorder = params.findOneInt$2("vorder", -1);
+        vknots = params.findFloat$1("vknots");
+        t1 = J.getInterceptor$asx(vknots);
+        v0 = params.findOneFloat$2("v0", t1.$index(vknots, J.$sub$n(vorder, 1)));
+        v1 = params.findOneFloat$2("v1", t1.$index(vknots, nv));
+        p = params.findPoint$1("P");
+        if (p != null) {
+          t1 = J.getInterceptor$asx(p);
+          t2 = J.$mul$ns(t1.get$length(p), 3);
+          if (typeof t2 !== "number" || Math.floor(t2) !== t2)
+            H.throwExpression(P.ArgumentError$("Invalid length " + H.S(t2)));
+          $P = new Float32Array(t2);
+          t2 = $P.length;
+          i = 0;
+          j = 0;
+          while (true) {
+            t3 = t1.get$length(p);
+            if (typeof t3 !== "number")
+              return H.iae(t3);
+            if (!(i < t3))
+              break;
+            j0 = j + 1;
+            t3 = J.get$x$x(t1.$index(p, i));
+            if (j >= t2)
+              return H.ioore($P, j);
+            $P[j] = t3;
+            j = j0 + 1;
+            t3 = J.get$y$x(t1.$index(p, i));
+            if (j0 >= t2)
+              return H.ioore($P, j0);
+            $P[j0] = t3;
+            j0 = j + 1;
+            t3 = J.get$z$x(t1.$index(p, i));
+            if (j >= t2)
+              return H.ioore($P, j);
+            $P[j] = t3;
+            ++i;
+            j = j0;
+          }
+          npt = C.JSInt_methods._tdivFast$1(t2, 3);
+          isHomogeneous = false;
+        } else {
+          $P = params.findFloat$1("Pw");
+          if ($P == null) {
+            $.Log.call$2(2, "Must provide control points via 'P' or 'Pw' parameter to NURBS shape.");
+            return;
+          }
+          t1 = J.getInterceptor$asx($P);
+          if (J.$mod$n(t1.get$length($P), 4) !== 0) {
+            $.Log.call$2(2, "Number of 'Pw' control points provided to NURBS shape must be multiple of four");
+            return;
+          }
+          npt = J.$tdiv$n(t1.get$length($P), 4);
+          isHomogeneous = true;
+        }
+        t1 = J.getInterceptor$ns(nu);
+        if (!J.$eq(npt, t1.$mul(nu, nv))) {
+          t1 = "NURBS shape was expecting " + H.S(nu) + "*" + H.S(nv) + "=" + H.S(t1.$mul(nu, nv)) + " control points, was given " + H.S(J.get$length$asx($P));
+          $.Log.call$2(2, t1);
+          return;
+        }
+        t1 = $.Shape__nextShapeId;
+        $.Shape__nextShapeId = t1 + 1;
+        return new M.Nurbs(nu, uorder, nv, vorder, u0, u1, v0, v1, uknots, vknots, isHomogeneous, $P, o2w, w2o, ReverseOrientation, false, t1);
+      }, "call$4", "Nurbs_Create$closure", 8, 0, 61], Nurbs_NurbsEvaluateSurface: function(uOrder, uKnot, ucp, u, vOrder, vKnot, vcp, v, cp, dPdu, dPdv) {
+        var t1, iso, uFirstCp, t2, i, j, pt, j0, t3, vFirstCp, $P;
+        t1 = P.max(uOrder, vOrder) * 4;
+        if (typeof t1 !== "number" || Math.floor(t1) !== t1)
+          H.throwExpression(P.ArgumentError$("Invalid length " + H.S(t1)));
+        iso = new Float32Array(t1);
+        uFirstCp = J.$add$ns(J.$sub$n(M.Nurbs_KnotOffset(uKnot, uOrder, ucp, u), uOrder), 1);
+        if (typeof uOrder !== "number")
+          return H.iae(uOrder);
+        t1 = J.getInterceptor$ns(uFirstCp);
+        t2 = iso.length;
+        i = 0;
+        j = 0;
+        for (; i < uOrder; ++i) {
+          pt = M.Nurbs_NurbsEvaluate(vOrder, vKnot, cp, J.$mul$ns(t1.$add(uFirstCp, i), 4), vcp, ucp, v, null);
+          j0 = j + 1;
+          t3 = pt[0];
+          if (j >= t2)
+            return H.ioore(iso, j);
+          iso[j] = t3;
+          j = j0 + 1;
+          t3 = pt[1];
+          if (j0 >= t2)
+            return H.ioore(iso, j0);
+          iso[j0] = t3;
+          j0 = j + 1;
+          t3 = pt[2];
+          if (j >= t2)
+            return H.ioore(iso, j);
+          iso[j] = t3;
+          j = j0 + 1;
+          t3 = pt[3];
+          if (j0 >= t2)
+            return H.ioore(iso, j0);
+          iso[j0] = t3;
+        }
+        vFirstCp = J.$add$ns(J.$sub$n(M.Nurbs_KnotOffset(vKnot, vOrder, vcp, v), vOrder), 1);
+        $P = M.Nurbs_NurbsEvaluate(uOrder, uKnot, iso, J.$mul$ns(t1.$negate(uFirstCp), 4), ucp, 1, u, dPdu);
+        if (typeof vOrder !== "number")
+          return H.iae(vOrder);
+        t1 = J.getInterceptor$ns(vFirstCp);
+        i = 0;
+        j = 0;
+        for (; i < vOrder; ++i) {
+          pt = M.Nurbs_NurbsEvaluate(uOrder, uKnot, cp, J.$mul$ns(J.$mul$ns(t1.$add(vFirstCp, i), ucp), 4), ucp, 1, u, null);
+          j0 = j + 1;
+          t3 = pt[0];
+          if (j >= t2)
+            return H.ioore(iso, j);
+          iso[j] = t3;
+          j = j0 + 1;
+          t3 = pt[1];
+          if (j0 >= t2)
+            return H.ioore(iso, j0);
+          iso[j0] = t3;
+          j0 = j + 1;
+          t3 = pt[2];
+          if (j >= t2)
+            return H.ioore(iso, j);
+          iso[j] = t3;
+          j = j0 + 1;
+          t3 = pt[3];
+          if (j0 >= t2)
+            return H.ioore(iso, j0);
+          iso[j0] = t3;
+        }
+        M.Nurbs_NurbsEvaluate(vOrder, vKnot, iso, J.$mul$ns(t1.$negate(vFirstCp), 4), vcp, 1, v, dPdv);
+        return new G.Point(J.$div$n($P[0], $P[3]), J.$div$n($P[1], $P[3]), J.$div$n($P[2], $P[3]));
+      }, Nurbs_NurbsEvaluate: function(order, knot, cp, cpi, np, cpStride, t, deriv) {
+        var knotOffset, t1, cpOffset, t2, cpWork, t3, t4, t5, i, j, i0, j0, t6, k, l, alpha, t7, t8, t9, t10, vx, vy, vz, vw, factor, dw;
+        knotOffset = M.Nurbs_KnotOffset(knot, order, np, t);
+        t1 = J.getInterceptor$n(knotOffset);
+        cpOffset = J.$add$ns(t1.$sub(knotOffset, order), 1);
+        if (typeof order !== "number")
+          return H.iae(order);
+        t2 = 4 * order;
+        if (typeof t2 !== "number" || Math.floor(t2) !== t2)
+          H.throwExpression(P.ArgumentError$("Invalid length " + H.S(t2)));
+        cpWork = new Float32Array(t2);
+        for (t2 = cpWork.length, t3 = J.getInterceptor$ns(cpOffset), t4 = J.getInterceptor$ns(cpi), t5 = J.getInterceptor$asx(cp), i = 0; i < t2;) {
+          j = t4.$add(cpi, J.$mul$ns(t3.$add(cpOffset, i), cpStride));
+          i0 = i + 1;
+          j0 = J.$add$ns(j, 1);
+          cpWork[i] = t5.$index(cp, j);
+          i = i0 + 1;
+          j = J.$add$ns(j0, 1);
+          t6 = t5.$index(cp, j0);
+          if (i0 >= t2)
+            return H.ioore(cpWork, i0);
+          cpWork[i0] = t6;
+          i0 = i + 1;
+          j0 = J.$add$ns(j, 1);
+          t6 = t5.$index(cp, j);
+          if (i >= t2)
+            return H.ioore(cpWork, i);
+          cpWork[i] = t6;
+          i = i0 + 1;
+          J.$add$ns(j0, 1);
+          t6 = t5.$index(cp, j0);
+          if (i0 >= t2)
+            return H.ioore(cpWork, i0);
+          cpWork[i0] = t6;
+        }
+        for (t3 = order - 2, t4 = order - 1, t5 = J.getInterceptor$asx(knot), i = 0; i < t3; ++i)
+          for (t6 = t4 - i, j = 0, k = 0, l = 4; j < t6; k += 4, l += 4, j = j0) {
+            alpha = J.$div$n(J.$sub$n(t5.$index(knot, J.$add$ns(t1.$add(knotOffset, 1), j)), t), J.$sub$n(t5.$index(knot, J.$add$ns(t1.$add(knotOffset, 1), j)), t5.$index(knot, J.$add$ns(J.$sub$n(J.$add$ns(t1.$add(knotOffset, j), 2), order), i))));
+            if (j >= t2)
+              return H.ioore(cpWork, j);
+            t7 = cpWork[j];
+            if (typeof alpha !== "number")
+              return H.iae(alpha);
+            if (l >= t2)
+              return H.ioore(cpWork, l);
+            t8 = cpWork[l];
+            t9 = 1 - alpha;
+            if (k >= t2)
+              return H.ioore(cpWork, k);
+            cpWork[k] = t7 * alpha + t8 * t9;
+            t8 = k + 1;
+            j0 = j + 1;
+            if (j0 >= t2)
+              return H.ioore(cpWork, j0);
+            t7 = cpWork[j0];
+            t10 = l + 1;
+            if (t10 >= t2)
+              return H.ioore(cpWork, t10);
+            t10 = cpWork[t10];
+            if (t8 >= t2)
+              return H.ioore(cpWork, t8);
+            cpWork[t8] = t7 * alpha + t10 * t9;
+            t10 = k + 2;
+            t7 = j + 2;
+            if (t7 >= t2)
+              return H.ioore(cpWork, t7);
+            t7 = cpWork[t7];
+            t8 = l + 2;
+            if (t8 >= t2)
+              return H.ioore(cpWork, t8);
+            t8 = cpWork[t8];
+            if (t10 >= t2)
+              return H.ioore(cpWork, t10);
+            cpWork[t10] = t7 * alpha + t8 * t9;
+            t8 = k + 3;
+            t7 = j + 3;
+            if (t7 >= t2)
+              return H.ioore(cpWork, t7);
+            t7 = cpWork[t7];
+            t10 = l + 3;
+            if (t10 >= t2)
+              return H.ioore(cpWork, t10);
+            t10 = cpWork[t10];
+            if (t8 >= t2)
+              return H.ioore(cpWork, t8);
+            cpWork[t8] = t7 * alpha + t10 * t9;
+          }
+        alpha = J.$div$n(J.$sub$n(t5.$index(knot, t1.$add(knotOffset, 1)), t), J.$sub$n(t5.$index(knot, t1.$add(knotOffset, 1)), t5.$index(knot, t1.$add(knotOffset, 0))));
+        if (0 >= t2)
+          return H.ioore(cpWork, 0);
+        t3 = cpWork[0];
+        if (typeof alpha !== "number")
+          return H.iae(alpha);
+        if (4 >= t2)
+          return H.ioore(cpWork, 4);
+        t6 = 1 - alpha;
+        vx = t3 * alpha + cpWork[4] * t6;
+        t3 = cpWork[1];
+        if (5 >= t2)
+          return H.ioore(cpWork, 5);
+        vy = t3 * alpha + cpWork[5] * t6;
+        t3 = cpWork[2];
+        if (6 >= t2)
+          return H.ioore(cpWork, 6);
+        vz = t3 * alpha + cpWork[6] * t6;
+        t3 = cpWork[3];
+        if (7 >= t2)
+          return H.ioore(cpWork, 7);
+        vw = t3 * alpha + cpWork[7] * t6;
+        if (deriv != null) {
+          t1 = J.$sub$n(t5.$index(knot, t1.$add(knotOffset, 1)), t5.$index(knot, knotOffset));
+          if (typeof t1 !== "number")
+            return H.iae(t1);
+          factor = t4 / t1;
+          t1 = cpWork[4];
+          t4 = cpWork[0];
+          t2 = cpWork[5];
+          t3 = cpWork[1];
+          t5 = cpWork[6];
+          t6 = cpWork[2];
+          dw = (cpWork[7] - cpWork[3]) * factor;
+          t7 = vw * vw;
+          deriv.x = (t1 - t4) * factor / vw - vx * dw / t7;
+          deriv.y = (t2 - t3) * factor / vw - vy * dw / t7;
+          deriv.z = (t5 - t6) * factor / vw - vz * dw / t7;
+        }
+        return [vx, vy, vz, vw];
+      }, Nurbs_KnotOffset: function(knot, order, np, t) {
+        var firstKnot, t1, knotOffset, t2, t3;
+        firstKnot = J.$sub$n(order, 1);
+        t1 = J.getInterceptor$asx(knot);
+        knotOffset = firstKnot;
+        while (true) {
+          t2 = J.getInterceptor$ns(knotOffset);
+          t3 = t1.$index(knot, t2.$add(knotOffset, 1));
+          if (typeof t3 !== "number")
+            return H.iae(t3);
+          if (!(t > t3))
+            break;
+          knotOffset = t2.$add(knotOffset, 1);
+        }
+        return knotOffset;
+      }}
+  },
+  Nurbs_refine_VN: {
+    "^": "Closure:121;diceu_0",
+    call$2: function(u, v) {
+      return v * this.diceu_0 + u;
+    }
+  },
+  Paraboloid: {
     "^": "Shape;radius,zmin,zmax,phiMax,objectToWorld,worldToObject,reverseOrientation,transformSwapsHandedness,shapeId",
     objectBound$0: function() {
       var t1, t2;
@@ -46560,7 +47423,7 @@ var $$ = {};
       t3 = this.zmax;
       return t1 / 12 * (t2 - Math.pow(1 + 4 * t3, 1.5));
     },
-    ParaboloidShape$7: function(o2w, w2o, ro, radius, z0, z1, tm) {
+    Paraboloid$7: function(o2w, w2o, ro, radius, z0, z1, tm) {
       var t1;
       this.zmin = P.min(z0, z1);
       this.zmax = P.max(z0, z1);
@@ -46569,7 +47432,7 @@ var $$ = {};
         return H.iae(t1);
       this.phiMax = 0.017453292519943295 * t1;
     },
-    static: {ParaboloidShape_Create: [function(o2w, w2o, reverseOrientation, params) {
+    static: {Paraboloid_Create: [function(o2w, w2o, reverseOrientation, params) {
         var radius, zmin, zmax, phimax, t1;
         radius = params.findOneFloat$2("radius", 1);
         zmin = params.findOneFloat$2("zmin", 0);
@@ -46577,12 +47440,12 @@ var $$ = {};
         phimax = params.findOneFloat$2("phimax", 360);
         t1 = $.Shape__nextShapeId;
         $.Shape__nextShapeId = t1 + 1;
-        t1 = new M.ParaboloidShape(radius, null, null, null, o2w, w2o, reverseOrientation, false, t1);
-        t1.ParaboloidShape$7(o2w, w2o, reverseOrientation, radius, zmin, zmax, phimax);
+        t1 = new M.Paraboloid(radius, null, null, null, o2w, w2o, reverseOrientation, false, t1);
+        t1.Paraboloid$7(o2w, w2o, reverseOrientation, radius, zmin, zmax, phimax);
         return t1;
-      }, "call$4", "ParaboloidShape_Create$closure", 8, 0, 57]}
+      }, "call$4", "Paraboloid_Create$closure", 8, 0, 62]}
   },
-  SphereShape: {
+  Sphere: {
     "^": "Shape;radius,phiMax,zmin,zmax,thetaMin,thetaMax,objectToWorld,worldToObject,reverseOrientation,transformSwapsHandedness,shapeId",
     objectBound$0: function() {
       var t1, t2;
@@ -46925,7 +47788,7 @@ var $$ = {};
       t1 = P.max(0, 1 - sinThetaMax2);
       return G.UniformConePdf(Math.sqrt(t1));
     },
-    SphereShape$7: function(o2w, w2o, ro, radius, z0, z1, pm) {
+    Sphere$7: function(o2w, w2o, ro, radius, z0, z1, pm) {
       var t1, t2;
       t1 = this.radius;
       t2 = J.getInterceptor$n(t1);
@@ -46943,7 +47806,7 @@ var $$ = {};
         return H.iae(t1);
       this.phiMax = 0.017453292519943295 * t1;
     },
-    static: {SphereShape_Create: [function(o2w, w2o, reverseOrientation, params) {
+    static: {Sphere_Create: [function(o2w, w2o, reverseOrientation, params) {
         var radius, zmin, zmax, phimax, t1;
         radius = params.findOneFloat$2("radius", 1);
         zmin = params.findOneFloat$2("zmin", J.$negate$n(radius));
@@ -46951,272 +47814,12 @@ var $$ = {};
         phimax = params.findOneFloat$2("phimax", 360);
         t1 = $.Shape__nextShapeId;
         $.Shape__nextShapeId = t1 + 1;
-        t1 = new M.SphereShape(radius, null, null, null, null, null, o2w, w2o, reverseOrientation, false, t1);
-        t1.SphereShape$7(o2w, w2o, reverseOrientation, radius, zmin, zmax, phimax);
+        t1 = new M.Sphere(radius, null, null, null, null, null, o2w, w2o, reverseOrientation, false, t1);
+        t1.Sphere$7(o2w, w2o, reverseOrientation, radius, zmin, zmax, phimax);
         return t1;
-      }, "call$4", "SphereShape_Create$closure", 8, 0, 58]}
+      }, "call$4", "Sphere_Create$closure", 8, 0, 63]}
   },
-  TriangleMeshShape: {
-    "^": "Shape;ntris,nverts,vertexIndex,p>,n<,s,uvs,alphaTexture,objectToWorld,worldToObject,reverseOrientation,transformSwapsHandedness,shapeId",
-    objectBound$0: function() {
-      var objectBounds, t1, t2, i, t3, t4, t5, t6, t7;
-      objectBounds = G.BBox$(null, null);
-      t1 = this.nverts;
-      if (typeof t1 !== "number")
-        return H.iae(t1);
-      t2 = this.worldToObject;
-      i = 0;
-      for (; i < t1; ++i) {
-        t3 = this.p;
-        if (i >= t3.length)
-          return H.ioore(t3, i);
-        t3 = t2.transformPoint$1(t3[i]);
-        t4 = objectBounds.pMin;
-        t5 = t4.x;
-        t6 = t4.y;
-        t4 = t4.z;
-        t7 = objectBounds.pMax;
-        objectBounds = new G.BBox(new G.Point(t5, t6, t4), new G.Point(t7.x, t7.y, t7.z)).unionPoint$1(t3);
-      }
-      return objectBounds;
-    },
-    worldBound$0: function() {
-      var worldBounds, t1, i, t2, t3, t4, t5, t6;
-      worldBounds = G.BBox$(null, null);
-      t1 = this.nverts;
-      if (typeof t1 !== "number")
-        return H.iae(t1);
-      i = 0;
-      for (; i < t1; ++i) {
-        t2 = this.p;
-        if (i >= t2.length)
-          return H.ioore(t2, i);
-        t2 = t2[i];
-        t3 = worldBounds.pMin;
-        t4 = t3.x;
-        t5 = t3.y;
-        t3 = t3.z;
-        t6 = worldBounds.pMax;
-        worldBounds = new G.BBox(new G.Point(t4, t5, t3), new G.Point(t6.x, t6.y, t6.z)).unionPoint$1(t2);
-      }
-      return worldBounds;
-    },
-    canIntersect$0: function() {
-      return false;
-    },
-    refine$1: function(refined) {
-      var t1, t2, t3, i, t4, t5;
-      t1 = this.ntris;
-      if (typeof t1 !== "number")
-        return H.iae(t1);
-      t2 = this.objectToWorld;
-      t3 = this.worldToObject;
-      i = 0;
-      for (; i < t1; ++i) {
-        t4 = this.reverseOrientation;
-        t5 = $.Shape__nextShapeId;
-        $.Shape__nextShapeId = t5 + 1;
-        t5 = new M.TriangleShape(this, i, t2, t3, t4, false, t5);
-        t5.index = i * 3;
-        refined.push(t5);
-      }
-    },
-    p$4: function($receiver, arg0, arg1, arg2, arg3) {
-      return this.p.call$4(arg0, arg1, arg2, arg3);
-    },
-    TriangleMeshShape$11: function(o2w, w2o, ro, ntris, nverts, vertexIndex, $P, n, s, uvs, alphaTexture) {
-      var t1, t2, t3, i, t4, t5;
-      t1 = this.nverts;
-      if (typeof t1 !== "number")
-        return H.iae(t1);
-      t2 = Array(t1);
-      t2.fixed$length = init;
-      this.p = H.setRuntimeTypeInfo(t2, [G.Point]);
-      for (t2 = this.objectToWorld, t3 = J.getInterceptor$asx($P), i = 0; i < t1; ++i) {
-        t4 = this.p;
-        t5 = t2.transformPoint$1(t3.$index($P, i));
-        if (i >= t4.length)
-          return H.ioore(t4, i);
-        t4[i] = t5;
-      }
-    },
-    static: {TriangleMeshShape$: function(o2w, w2o, ro, ntris, nverts, vertexIndex, $P, n, s, uvs, alphaTexture) {
-        var t1 = $.Shape__nextShapeId;
-        $.Shape__nextShapeId = t1 + 1;
-        t1 = new M.TriangleMeshShape(ntris, nverts, vertexIndex, null, n, s, uvs, alphaTexture, o2w, w2o, ro, false, t1);
-        t1.TriangleMeshShape$11(o2w, w2o, ro, ntris, nverts, vertexIndex, $P, n, s, uvs, alphaTexture);
-        return t1;
-      }, TriangleMeshShape_Create: [function(o2w, w2o, reverseOrientation, params, floatTextures) {
-        var vi, $P, uvs, discardDegnerateUVs, t1, npi, t2, nuvi, t3, t4, $S, $N, nvi, vp, i, t5, t6, t7, t8, alphaTexName, alphaTex;
-        vi = params.findInt$1("indices");
-        $P = params.findPoint$1("P");
-        uvs = params.findFloat$1("uv");
-        if (uvs == null)
-          uvs = params.findFloat$1("st");
-        if (vi == null || $P == null)
-          return;
-        discardDegnerateUVs = params.findOneBool$2("discarddegenerateUVs", false);
-        if (uvs != null) {
-          t1 = J.getInterceptor$asx($P);
-          npi = t1.get$length($P);
-          t2 = J.getInterceptor$asx(uvs);
-          nuvi = t2.get$length(uvs);
-          t3 = t2.get$length(uvs);
-          t4 = t1.get$length($P);
-          if (typeof t4 !== "number")
-            return H.iae(t4);
-          if (J.$lt$n(t3, 2 * t4)) {
-            if (typeof npi !== "number")
-              return H.iae(npi);
-            t1 = "Not enough of 'uv's for triangle mesh. Expencted " + H.S(2 * npi) + ", found " + H.S(nuvi) + ".  Discarding.";
-            $.Log.call$2(1, t1);
-            uvs = null;
-          } else {
-            t2 = t2.get$length(uvs);
-            t1 = t1.get$length($P);
-            if (typeof t1 !== "number")
-              return H.iae(t1);
-            if (J.$gt$n(t2, 2 * t1)) {
-              if (typeof npi !== "number")
-                return H.iae(npi);
-              t1 = "More 'uv's provided than will be used for triangle mesh.  (" + H.S(2 * npi) + " expcted, " + H.S(nuvi) + " found)";
-              $.Log.call$2(1, t1);
-            }
-          }
-        }
-        $S = params.findVector$1("S");
-        if ($S != null && !J.$eq(J.get$length$asx($S), J.get$length$asx($P))) {
-          $.Log.call$2(1, "Number of 'S's for triangle mesh must match 'P's");
-          $S = null;
-        }
-        $N = params.findNormal$1("N");
-        if ($N != null && !J.$eq(J.get$length$asx($N), J.get$length$asx($P))) {
-          $.Log.call$2(1, "Number of 'N's for triangle mesh must match 'P's");
-          $N = null;
-        }
-        if (discardDegnerateUVs === true && uvs != null && $N != null) {
-          nvi = J.get$length$asx($N);
-          if (typeof nvi !== "number")
-            return H.iae(nvi);
-          t1 = J.getInterceptor$asx(uvs);
-          t2 = J.getInterceptor$asx(vi);
-          t3 = J.getInterceptor$asx($P);
-          vp = 0;
-          i = 0;
-          for (; i < nvi; i += 3, vp += 3) {
-            t4 = vp + 1;
-            t5 = vp + 2;
-            t6 = G.Vector_Cross(J.$sub$n(t3.$index($P, t2.$index(vi, vp)), t3.$index($P, t2.$index(vi, t4))), J.$sub$n(t3.$index($P, t2.$index(vi, t5)), t3.$index($P, t2.$index(vi, t4))));
-            t7 = t6.x;
-            t7 = J.$mul$ns(t7, t7);
-            t8 = t6.y;
-            t8 = J.$add$ns(t7, J.$mul$ns(t8, t8));
-            t6 = t6.z;
-            t6 = J.$add$ns(t8, J.$mul$ns(t6, t6));
-            if (typeof t6 !== "number")
-              H.throwExpression(P.ArgumentError$(t6));
-            if (0.5 * Math.sqrt(t6) < 1e-7)
-              continue;
-            t6 = t2.$index(vi, vp);
-            if (typeof t6 !== "number")
-              return H.iae(t6);
-            t6 = t1.$index(uvs, 2 * t6);
-            t7 = t2.$index(vi, t4);
-            if (typeof t7 !== "number")
-              return H.iae(t7);
-            if (J.$eq(t6, t1.$index(uvs, 2 * t7))) {
-              t6 = t2.$index(vi, vp);
-              if (typeof t6 !== "number")
-                return H.iae(t6);
-              t6 = t1.$index(uvs, 2 * t6 + 1);
-              t7 = t2.$index(vi, t4);
-              if (typeof t7 !== "number")
-                return H.iae(t7);
-              t7 = J.$eq(t6, t1.$index(uvs, 2 * t7 + 1));
-              t6 = t7;
-            } else
-              t6 = false;
-            if (!t6) {
-              t6 = t2.$index(vi, t4);
-              if (typeof t6 !== "number")
-                return H.iae(t6);
-              t6 = t1.$index(uvs, 2 * t6);
-              t7 = t2.$index(vi, t5);
-              if (typeof t7 !== "number")
-                return H.iae(t7);
-              if (J.$eq(t6, t1.$index(uvs, 2 * t7))) {
-                t4 = t2.$index(vi, t4);
-                if (typeof t4 !== "number")
-                  return H.iae(t4);
-                t4 = t1.$index(uvs, 2 * t4 + 1);
-                t6 = t2.$index(vi, t5);
-                if (typeof t6 !== "number")
-                  return H.iae(t6);
-                t6 = J.$eq(t4, t1.$index(uvs, 2 * t6 + 1));
-                t4 = t6;
-              } else
-                t4 = false;
-              if (!t4) {
-                t4 = t2.$index(vi, t5);
-                if (typeof t4 !== "number")
-                  return H.iae(t4);
-                t4 = t1.$index(uvs, 2 * t4);
-                t6 = t2.$index(vi, vp);
-                if (typeof t6 !== "number")
-                  return H.iae(t6);
-                if (J.$eq(t4, t1.$index(uvs, 2 * t6))) {
-                  t4 = t2.$index(vi, t5);
-                  if (typeof t4 !== "number")
-                    return H.iae(t4);
-                  t4 = t1.$index(uvs, 2 * t4 + 1);
-                  t5 = t2.$index(vi, vp);
-                  if (typeof t5 !== "number")
-                    return H.iae(t5);
-                  t5 = J.$eq(t4, t1.$index(uvs, 2 * t5 + 1));
-                  t4 = t5;
-                } else
-                  t4 = false;
-              } else
-                t4 = true;
-            } else
-              t4 = true;
-            if (t4) {
-              $.Log.call$2(1, "Degenerate uv coordinates in triangle mesh. Discarding all uvs.");
-              uvs = null;
-              break;
-            }
-          }
-        }
-        t1 = J.getInterceptor$asx($P);
-        npi = t1.get$length($P);
-        t2 = J.getInterceptor$asx(vi);
-        nvi = t2.get$length(vi);
-        if (typeof nvi !== "number")
-          return H.iae(nvi);
-        i = 0;
-        for (; i < nvi; ++i)
-          if (J.$ge$n(t2.$index(vi, i), npi)) {
-            t1 = "TriangleMesh has out of-bounds vertex index " + H.S(t2.$index(vi, i)) + " (" + H.S(npi) + " 'P' values were given";
-            $.Log.call$2(1, t1);
-            return;
-          }
-        alphaTexName = params.findTexture$1("alpha");
-        if (!J.$eq(alphaTexName, ""))
-          if (floatTextures.containsKey$1(alphaTexName) === true)
-            alphaTex = floatTextures.$index(0, alphaTexName);
-          else {
-            t3 = "Couldn't find float texture '" + H.S(alphaTexName) + "' for 'alpha' parameter";
-            $.Log.call$2(1, t3);
-            alphaTex = null;
-          }
-        else
-          alphaTex = J.$eq(params.findOneFloat$2("alpha", 1), 0) ? new G.ConstantTexture(0) : null;
-        return M.TriangleMeshShape$(o2w, w2o, reverseOrientation, J.$tdiv$n(t2.get$length(vi), 3), t1.get$length($P), vi, $P, $N, $S, uvs, alphaTex);
-      }, function(o2w, w2o, reverseOrientation, params) {
-        return M.TriangleMeshShape_Create(o2w, w2o, reverseOrientation, params, null);
-      }, null, "call$5", "call$4", "TriangleMeshShape_Create$closure", 8, 2, 59, 13]}
-  },
-  TriangleShape: {
+  Triangle: {
     "^": "Shape;mesh,index,objectToWorld,worldToObject,reverseOrientation,transformSwapsHandedness,shapeId",
     objectBound$0: function() {
       var t1, t2, t3, t4, t5, p1, p2, p3;
@@ -47478,7 +48081,7 @@ var $$ = {};
       if (typeof i !== "number")
         return H.iae(i);
       return J.$index$asx(this.mesh.vertexIndex, t1 + i);
-    }, "call$1", "get$v", 2, 0, 113],
+    }, "call$1", "get$v", 2, 0, 118],
     getUVs$1: function(uv) {
       var t1, t2, t3, t4, t5;
       t1 = this.mesh;
@@ -47691,6 +48294,266 @@ var $$ = {};
       }
       return p;
     }
+  },
+  TriangleMesh: {
+    "^": "Shape;ntris,nverts,vertexIndex,p>,n<,s,uvs,alphaTexture,objectToWorld,worldToObject,reverseOrientation,transformSwapsHandedness,shapeId",
+    objectBound$0: function() {
+      var objectBounds, t1, t2, i, t3, t4, t5, t6, t7;
+      objectBounds = G.BBox$(null, null);
+      t1 = this.nverts;
+      if (typeof t1 !== "number")
+        return H.iae(t1);
+      t2 = this.worldToObject;
+      i = 0;
+      for (; i < t1; ++i) {
+        t3 = this.p;
+        if (i >= t3.length)
+          return H.ioore(t3, i);
+        t3 = t2.transformPoint$1(t3[i]);
+        t4 = objectBounds.pMin;
+        t5 = t4.x;
+        t6 = t4.y;
+        t4 = t4.z;
+        t7 = objectBounds.pMax;
+        objectBounds = new G.BBox(new G.Point(t5, t6, t4), new G.Point(t7.x, t7.y, t7.z)).unionPoint$1(t3);
+      }
+      return objectBounds;
+    },
+    worldBound$0: function() {
+      var worldBounds, t1, i, t2, t3, t4, t5, t6;
+      worldBounds = G.BBox$(null, null);
+      t1 = this.nverts;
+      if (typeof t1 !== "number")
+        return H.iae(t1);
+      i = 0;
+      for (; i < t1; ++i) {
+        t2 = this.p;
+        if (i >= t2.length)
+          return H.ioore(t2, i);
+        t2 = t2[i];
+        t3 = worldBounds.pMin;
+        t4 = t3.x;
+        t5 = t3.y;
+        t3 = t3.z;
+        t6 = worldBounds.pMax;
+        worldBounds = new G.BBox(new G.Point(t4, t5, t3), new G.Point(t6.x, t6.y, t6.z)).unionPoint$1(t2);
+      }
+      return worldBounds;
+    },
+    canIntersect$0: function() {
+      return false;
+    },
+    refine$1: function(refined) {
+      var t1, t2, t3, i, t4, t5;
+      t1 = this.ntris;
+      if (typeof t1 !== "number")
+        return H.iae(t1);
+      t2 = this.objectToWorld;
+      t3 = this.worldToObject;
+      i = 0;
+      for (; i < t1; ++i) {
+        t4 = this.reverseOrientation;
+        t5 = $.Shape__nextShapeId;
+        $.Shape__nextShapeId = t5 + 1;
+        t5 = new M.Triangle(this, i, t2, t3, t4, false, t5);
+        t5.index = i * 3;
+        refined.push(t5);
+      }
+    },
+    p$4: function($receiver, arg0, arg1, arg2, arg3) {
+      return this.p.call$4(arg0, arg1, arg2, arg3);
+    },
+    TriangleMesh$11: function(o2w, w2o, ro, ntris, nverts, vertexIndex, $P, n, s, uvs, alphaTexture) {
+      var t1, t2, t3, i, t4, t5;
+      t1 = this.nverts;
+      if (typeof t1 !== "number")
+        return H.iae(t1);
+      t2 = Array(t1);
+      t2.fixed$length = init;
+      this.p = H.setRuntimeTypeInfo(t2, [G.Point]);
+      for (t2 = this.objectToWorld, t3 = J.getInterceptor$asx($P), i = 0; i < t1; ++i) {
+        t4 = this.p;
+        t5 = t2.transformPoint$1(t3.$index($P, i));
+        if (i >= t4.length)
+          return H.ioore(t4, i);
+        t4[i] = t5;
+      }
+    },
+    static: {TriangleMesh$: function(o2w, w2o, ro, ntris, nverts, vertexIndex, $P, n, s, uvs, alphaTexture) {
+        var t1 = $.Shape__nextShapeId;
+        $.Shape__nextShapeId = t1 + 1;
+        t1 = new M.TriangleMesh(ntris, nverts, vertexIndex, null, n, s, uvs, alphaTexture, o2w, w2o, ro, false, t1);
+        t1.TriangleMesh$11(o2w, w2o, ro, ntris, nverts, vertexIndex, $P, n, s, uvs, alphaTexture);
+        return t1;
+      }, TriangleMesh_Create: [function(o2w, w2o, reverseOrientation, params, floatTextures) {
+        var vi, $P, uvs, discardDegnerateUVs, t1, npi, t2, nuvi, t3, t4, $S, $N, nvi, vp, i, t5, t6, t7, t8, alphaTexName, alphaTex;
+        vi = params.findInt$1("indices");
+        $P = params.findPoint$1("P");
+        uvs = params.findFloat$1("uv");
+        if (uvs == null)
+          uvs = params.findFloat$1("st");
+        if (vi == null || $P == null)
+          return;
+        discardDegnerateUVs = params.findOneBool$2("discarddegenerateUVs", false);
+        if (uvs != null) {
+          t1 = J.getInterceptor$asx($P);
+          npi = t1.get$length($P);
+          t2 = J.getInterceptor$asx(uvs);
+          nuvi = t2.get$length(uvs);
+          t3 = t2.get$length(uvs);
+          t4 = t1.get$length($P);
+          if (typeof t4 !== "number")
+            return H.iae(t4);
+          if (J.$lt$n(t3, 2 * t4)) {
+            if (typeof npi !== "number")
+              return H.iae(npi);
+            t1 = "Not enough of 'uv's for triangle mesh. Expencted " + H.S(2 * npi) + ", found " + H.S(nuvi) + ".  Discarding.";
+            $.Log.call$2(1, t1);
+            uvs = null;
+          } else {
+            t2 = t2.get$length(uvs);
+            t1 = t1.get$length($P);
+            if (typeof t1 !== "number")
+              return H.iae(t1);
+            if (J.$gt$n(t2, 2 * t1)) {
+              if (typeof npi !== "number")
+                return H.iae(npi);
+              t1 = "More 'uv's provided than will be used for triangle mesh.  (" + H.S(2 * npi) + " expcted, " + H.S(nuvi) + " found)";
+              $.Log.call$2(1, t1);
+            }
+          }
+        }
+        $S = params.findVector$1("S");
+        if ($S != null && !J.$eq(J.get$length$asx($S), J.get$length$asx($P))) {
+          $.Log.call$2(1, "Number of 'S's for triangle mesh must match 'P's");
+          $S = null;
+        }
+        $N = params.findNormal$1("N");
+        if ($N != null && !J.$eq(J.get$length$asx($N), J.get$length$asx($P))) {
+          $.Log.call$2(1, "Number of 'N's for triangle mesh must match 'P's");
+          $N = null;
+        }
+        if (discardDegnerateUVs === true && uvs != null && $N != null) {
+          nvi = J.get$length$asx($N);
+          if (typeof nvi !== "number")
+            return H.iae(nvi);
+          t1 = J.getInterceptor$asx(uvs);
+          t2 = J.getInterceptor$asx(vi);
+          t3 = J.getInterceptor$asx($P);
+          vp = 0;
+          i = 0;
+          for (; i < nvi; i += 3, vp += 3) {
+            t4 = vp + 1;
+            t5 = vp + 2;
+            t6 = G.Vector_Cross(J.$sub$n(t3.$index($P, t2.$index(vi, vp)), t3.$index($P, t2.$index(vi, t4))), J.$sub$n(t3.$index($P, t2.$index(vi, t5)), t3.$index($P, t2.$index(vi, t4))));
+            t7 = t6.x;
+            t7 = J.$mul$ns(t7, t7);
+            t8 = t6.y;
+            t8 = J.$add$ns(t7, J.$mul$ns(t8, t8));
+            t6 = t6.z;
+            t6 = J.$add$ns(t8, J.$mul$ns(t6, t6));
+            if (typeof t6 !== "number")
+              H.throwExpression(P.ArgumentError$(t6));
+            if (0.5 * Math.sqrt(t6) < 1e-7)
+              continue;
+            t6 = t2.$index(vi, vp);
+            if (typeof t6 !== "number")
+              return H.iae(t6);
+            t6 = t1.$index(uvs, 2 * t6);
+            t7 = t2.$index(vi, t4);
+            if (typeof t7 !== "number")
+              return H.iae(t7);
+            if (J.$eq(t6, t1.$index(uvs, 2 * t7))) {
+              t6 = t2.$index(vi, vp);
+              if (typeof t6 !== "number")
+                return H.iae(t6);
+              t6 = t1.$index(uvs, 2 * t6 + 1);
+              t7 = t2.$index(vi, t4);
+              if (typeof t7 !== "number")
+                return H.iae(t7);
+              t7 = J.$eq(t6, t1.$index(uvs, 2 * t7 + 1));
+              t6 = t7;
+            } else
+              t6 = false;
+            if (!t6) {
+              t6 = t2.$index(vi, t4);
+              if (typeof t6 !== "number")
+                return H.iae(t6);
+              t6 = t1.$index(uvs, 2 * t6);
+              t7 = t2.$index(vi, t5);
+              if (typeof t7 !== "number")
+                return H.iae(t7);
+              if (J.$eq(t6, t1.$index(uvs, 2 * t7))) {
+                t4 = t2.$index(vi, t4);
+                if (typeof t4 !== "number")
+                  return H.iae(t4);
+                t4 = t1.$index(uvs, 2 * t4 + 1);
+                t6 = t2.$index(vi, t5);
+                if (typeof t6 !== "number")
+                  return H.iae(t6);
+                t6 = J.$eq(t4, t1.$index(uvs, 2 * t6 + 1));
+                t4 = t6;
+              } else
+                t4 = false;
+              if (!t4) {
+                t4 = t2.$index(vi, t5);
+                if (typeof t4 !== "number")
+                  return H.iae(t4);
+                t4 = t1.$index(uvs, 2 * t4);
+                t6 = t2.$index(vi, vp);
+                if (typeof t6 !== "number")
+                  return H.iae(t6);
+                if (J.$eq(t4, t1.$index(uvs, 2 * t6))) {
+                  t4 = t2.$index(vi, t5);
+                  if (typeof t4 !== "number")
+                    return H.iae(t4);
+                  t4 = t1.$index(uvs, 2 * t4 + 1);
+                  t5 = t2.$index(vi, vp);
+                  if (typeof t5 !== "number")
+                    return H.iae(t5);
+                  t5 = J.$eq(t4, t1.$index(uvs, 2 * t5 + 1));
+                  t4 = t5;
+                } else
+                  t4 = false;
+              } else
+                t4 = true;
+            } else
+              t4 = true;
+            if (t4) {
+              $.Log.call$2(1, "Degenerate uv coordinates in triangle mesh. Discarding all uvs.");
+              uvs = null;
+              break;
+            }
+          }
+        }
+        t1 = J.getInterceptor$asx($P);
+        npi = t1.get$length($P);
+        t2 = J.getInterceptor$asx(vi);
+        nvi = t2.get$length(vi);
+        if (typeof nvi !== "number")
+          return H.iae(nvi);
+        i = 0;
+        for (; i < nvi; ++i)
+          if (J.$ge$n(t2.$index(vi, i), npi)) {
+            t1 = "TriangleMesh has out of-bounds vertex index " + H.S(t2.$index(vi, i)) + " (" + H.S(npi) + " 'P' values were given";
+            $.Log.call$2(1, t1);
+            return;
+          }
+        alphaTexName = params.findTexture$1("alpha");
+        if (!J.$eq(alphaTexName, ""))
+          if (floatTextures.containsKey$1(alphaTexName) === true)
+            alphaTex = floatTextures.$index(0, alphaTexName);
+          else {
+            t3 = "Couldn't find float texture '" + H.S(alphaTexName) + "' for 'alpha' parameter";
+            $.Log.call$2(1, t3);
+            alphaTex = null;
+          }
+        else
+          alphaTex = J.$eq(params.findOneFloat$2("alpha", 1), 0) ? new G.ConstantTexture(0) : null;
+        return M.TriangleMesh$(o2w, w2o, reverseOrientation, J.$tdiv$n(t2.get$length(vi), 3), t1.get$length($P), vi, $P, $N, $S, uvs, alphaTex);
+      }, function(o2w, w2o, reverseOrientation, params) {
+        return M.TriangleMesh_Create(o2w, w2o, reverseOrientation, params, null);
+      }, null, "call$5", "call$4", "TriangleMesh_Create$closure", 8, 2, 64, 13]}
   }
 }],
 ["surface_integrators", "package:dartray/surface_integrators/surface_integrators.dart", , U, {
@@ -47833,7 +48696,7 @@ var $$ = {};
         t1 = new U.AmbientOcclusionIntegrator(null, params.findOneFloat$2("mindist", 0.0001), maxDist);
         t1.nSamples = G.RoundUpPow2(nSamples);
         return t1;
-      }, "call$1", "AmbientOcclusionIntegrator_Create$closure", 2, 0, 60]}
+      }, "call$1", "AmbientOcclusionIntegrator_Create$closure", 2, 0, 65]}
   },
   DiffusePRTIntegrator: {
     "^": "SurfaceIntegrator;lmax,nSamples<,c_in",
@@ -47901,7 +48764,7 @@ var $$ = {};
         return t2;
       }, DiffusePRTIntegrator_Create: [function(params) {
         return U.DiffusePRTIntegrator$(params.findOneInt$2("lmax", 4), params.findOneInt$2("nsamples", 4096));
-      }, "call$1", "DiffusePRTIntegrator_Create$closure", 2, 0, 61]}
+      }, "call$1", "DiffusePRTIntegrator_Create$closure", 2, 0, 66]}
   },
   DirectLightingIntegrator: {
     "^": "SurfaceIntegrator;strategy,maxDepth,lightSampleOffsets,bsdfSampleOffsets,lightNumOffset",
@@ -48006,7 +48869,7 @@ var $$ = {};
           strategy = 0;
         }
         return new U.DirectLightingIntegrator(strategy, maxDepth, null, null, null);
-      }, "call$1", "DirectLightingIntegrator_Create$closure", 2, 0, 62]}
+      }, "call$1", "DirectLightingIntegrator_Create$closure", 2, 0, 67]}
   },
   GlossyPRTIntegrator: {
     "^": "SurfaceIntegrator;Kd,Ks,roughness,lmax,nSamples<,c_in,B",
@@ -48147,7 +49010,7 @@ var $$ = {};
         t1 = new U.GlossyPRTIntegrator(params.findOneSpectrum$2("Kd", G.Spectrum_Spectrum(0.5)), params.findOneSpectrum$2("Ks", G.Spectrum_Spectrum(0.25)), params.findOneFloat$2("roughness", 0.1), lmax, null, null, null);
         t1.nSamples = G.RoundUpPow2(ns);
         return t1;
-      }, "call$1", "GlossyPRTIntegrator_Create$closure", 2, 0, 63]}
+      }, "call$1", "GlossyPRTIntegrator_Create$closure", 2, 0, 68]}
   },
   IGIIntegrator: {
     "^": "SurfaceIntegrator;lightSampleOffsets,bsdfSampleOffsets,nLightPaths,nLightSets,gLimit,nGatherSamples,rrThreshold,maxSpecularDepth,vlSetOffset,gatherSampleOffset,virtualLights",
@@ -48539,7 +49402,7 @@ var $$ = {};
         return t1;
       }, IGIIntegrator_Create: [function(params) {
         return U.IGIIntegrator$(params.findOneInt$2("nlights", 64), params.findOneInt$2("nsets", 4), params.findOneFloat$2("rrthreshold", 0.0001), params.findOneInt$2("maxdepth", 5), params.findOneFloat$2("glimit", 10), params.findOneInt$2("gathersamples", 16));
-      }, "call$1", "IGIIntegrator_Create$closure", 2, 0, 64]}
+      }, "call$1", "IGIIntegrator_Create$closure", 2, 0, 69]}
   },
   _VirtualLight: {
     "^": "Object;p>,n<,pathContrib<,rayEpsilon",
@@ -48796,7 +49659,7 @@ var $$ = {};
           return H.iae(maxAngle);
         t1.cosMaxSampleAngleDifference = Math.cos(57.29577951308232 * maxAngle);
         return t1;
-      }, "call$1", "IrradianceCacheIntegrator_Create$closure", 2, 0, 65]}
+      }, "call$1", "IrradianceCacheIntegrator_Create$closure", 2, 0, 70]}
   },
   IrradianceSample: {
     "^": "Object;E,n<,p>,wAvg,maxDist<",
@@ -48835,7 +49698,7 @@ var $$ = {};
     }
   },
   IrradProcess: {
-    "^": "Object:126;p>,n<,minWeight,cosMaxSampleAngleDifference,sumWt,nFound,E,wAvg",
+    "^": "Object:131;p>,n<,minWeight,cosMaxSampleAngleDifference,sumWt,nFound,E,wAvg",
     call$1: function(sample) {
       var t1, perr, t2, err, wt;
       t1 = this.p;
@@ -48971,7 +49834,7 @@ var $$ = {};
         t1 = new U.PathIntegrator(null, H.setRuntimeTypeInfo(Array(3), [G.LightSampleOffsets]), H.setRuntimeTypeInfo(Array(3), [J.JSInt]), H.setRuntimeTypeInfo(Array(3), [G.BSDFSampleOffsets]), H.setRuntimeTypeInfo(Array(3), [G.BSDFSampleOffsets]));
         t1.maxDepth = maxDepth;
         return t1;
-      }, "call$1", "PathIntegrator_Create$closure", 2, 0, 66]}
+      }, "call$1", "PathIntegrator_Create$closure", 2, 0, 71]}
   },
   PhotonMapIntegrator: {
     "^": "SurfaceIntegrator;nCausticPhotonsWanted,nIndirectPhotonsWanted,nLookup,maxDistSquared,maxSpecularDepth,maxPhotonDepth,finalGather,gatherSamples,cosGatherAngle,lightSampleOffsets,bsdfSampleOffsets,bsdfGatherSampleOffsets,indirGatherSampleOffsets,nCausticPaths,nIndirectPaths,causticMap,indirectMap,radianceMap",
@@ -49246,7 +50109,7 @@ var $$ = {};
         if (typeof gatherAngle !== "number")
           return H.iae(gatherAngle);
         return new U.PhotonMapIntegrator(nCaustic, nIndirect, nUsed, [t1], maxSpecularDepth, maxPhotonDepth, finalGather, gatherSamples, Math.cos(0.017453292519943295 * gatherAngle), null, null, null, null, 0, 0, null, null, null);
-      }, "call$1", "PhotonMapIntegrator_Create$closure", 2, 0, 67]}
+      }, "call$1", "PhotonMapIntegrator_Create$closure", 2, 0, 72]}
   },
   Photon: {
     "^": "Object;p>,alpha>,wi<",
@@ -49519,7 +50382,7 @@ var $$ = {};
     }
   },
   PhotonProcess: {
-    "^": "Object:127;photons,nLookup,nFound",
+    "^": "Object:132;photons,nLookup,nFound",
     call$4: function(p, photon, distSquared, maxDistSquared) {
       var t1, t2, t3, t4, t5, t6;
       t1 = this.nFound;
@@ -49567,7 +50430,7 @@ var $$ = {};
     }
   },
   RadiancePhotonProcess: {
-    "^": "Object:128;n<,photon<",
+    "^": "Object:133;n<,photon<",
     call$4: function(p, rp, distSquared, maxDistSquared) {
       if (J.$gt$n(G.Vector_Dot(rp.get$n(), this.n), 0)) {
         this.photon = rp;
@@ -49640,7 +50503,7 @@ var $$ = {};
     },
     static: {WhittedIntegrator_Create: [function(params) {
         return new U.WhittedIntegrator(params.findOneInt$2("maxdepth", 5));
-      }, "call$1", "WhittedIntegrator_Create$closure", 2, 0, 68]}
+      }, "call$1", "WhittedIntegrator_Create$closure", 2, 0, 73]}
   }
 }],
 ["textures", "package:dartray/textures/textures.dart", , G, {
@@ -49687,7 +50550,7 @@ var $$ = {};
         }
         t1 = tp.geomParams;
         return new G.BilerpTexture(map, t1.findOneFloat$2("v00", tp.materialParams.findOneFloat$2("v00", 0)), t1.findOneFloat$2("v01", tp.materialParams.findOneFloat$2("v01", 1)), t1.findOneFloat$2("v10", tp.materialParams.findOneFloat$2("v10", 0)), t1.findOneFloat$2("v11", tp.materialParams.findOneFloat$2("v11", 1)));
-      }, "call$2", "BilerpTexture_CreateFloat$closure", 4, 0, 69], BilerpTexture_CreateSpectrum: [function(tex2world, tp) {
+      }, "call$2", "BilerpTexture_CreateFloat$closure", 4, 0, 74], BilerpTexture_CreateSpectrum: [function(tex2world, tp) {
         var type, t1, map, t2, t3, t4, t5;
         type = tp.findString$2("mapping", "uv");
         t1 = J.getInterceptor(type);
@@ -49719,7 +50582,7 @@ var $$ = {};
         t4 = t2.findOneSpectrum$2("v10", tp.materialParams.findOneSpectrum$2("v10", t4));
         t5 = G.Spectrum_Spectrum(1);
         return new G.BilerpTexture(map, t1, t3, t4, t2.findOneSpectrum$2("v11", tp.materialParams.findOneSpectrum$2("v11", t5)));
-      }, "call$2", "BilerpTexture_CreateSpectrum$closure", 4, 0, 69]}
+      }, "call$2", "BilerpTexture_CreateSpectrum$closure", 4, 0, 74]}
   },
   Checkerboard3DTexture: {
     "^": "Texture;mapping,tex1,tex2",
@@ -49823,12 +50686,12 @@ var $$ = {};
           return new G.Checkerboard3DTexture(new G.IdentityMapping3D(tex2world), tex1, tex2);
       }, CheckerboardTexture_CreateFloat: [function(tex2world, tp) {
         return G.CheckerboardTexture__Create(tex2world, tp, tp.getFloatTexture$2("tex1", 1), tp.getFloatTexture$2("tex2", 0));
-      }, "call$2", "CheckerboardTexture_CreateFloat$closure", 4, 0, 70], CheckerboardTexture_CreateSpectrum: [function(tex2world, tp) {
+      }, "call$2", "CheckerboardTexture_CreateFloat$closure", 4, 0, 75], CheckerboardTexture_CreateSpectrum: [function(tex2world, tp) {
         return G.CheckerboardTexture__Create(tex2world, tp, tp.getSpectrumTexture$2("tex1", G.Spectrum_Spectrum(1)), tp.getSpectrumTexture$2("tex2", G.Spectrum_Spectrum(0)));
-      }, "call$2", "CheckerboardTexture_CreateSpectrum$closure", 4, 0, 70]}
+      }, "call$2", "CheckerboardTexture_CreateSpectrum$closure", 4, 0, 75]}
   },
   CheckerboardTexture_evaluate_BUMPINT: {
-    "^": "Closure:88;",
+    "^": "Closure:93;",
     call$1: function(x) {
       var t1 = J.getInterceptor$n(x);
       return J.floor$0$n(t1.$div(x, 2)) + 2 * P.max(J.$sub$n(J.$sub$n(t1.$div(x, 2), J.floor$0$n(t1.$div(x, 2))), 0.5), 0);
@@ -49881,7 +50744,7 @@ var $$ = {};
           map = new G.UVMapping2D(1, 1, 0, 0);
         }
         return new G.DotsTexture(map, tp.getFloatTexture$2("inside", 1), tp.getFloatTexture$2("outside", 0));
-      }, "call$2", "DotsTexture_CreateFloat$closure", 4, 0, 71], DotsTexture_CreateSpectrum: [function(tex2world, tp) {
+      }, "call$2", "DotsTexture_CreateFloat$closure", 4, 0, 76], DotsTexture_CreateSpectrum: [function(tex2world, tp) {
         var type, t1, map, t2, t3, t4;
         type = tp.findString$2("mapping", "uv");
         t1 = J.getInterceptor(type);
@@ -49905,7 +50768,7 @@ var $$ = {};
           map = new G.UVMapping2D(1, 1, 0, 0);
         }
         return new G.DotsTexture(map, tp.getSpectrumTexture$2("inside", G.Spectrum_Spectrum(1)), tp.getSpectrumTexture$2("outside", G.Spectrum_Spectrum(0)));
-      }, "call$2", "DotsTexture_CreateSpectrum$closure", 4, 0, 71]}
+      }, "call$2", "DotsTexture_CreateSpectrum$closure", 4, 0, 76]}
   },
   FBmTexture: {
     "^": "Texture;omega,octaves,spectrum,mapping",
@@ -49919,10 +50782,10 @@ var $$ = {};
     static: {FBmTexture_CreateFloat: [function(tex2world, tp) {
         var t1 = tp.findInt$2("octaves", 8);
         return new G.FBmTexture(tp.geomParams.findOneFloat$2("roughness", tp.materialParams.findOneFloat$2("roughness", 0.5)), t1, false, new G.IdentityMapping3D(tex2world));
-      }, "call$2", "FBmTexture_CreateFloat$closure", 4, 0, 72], FBmTexture_CreateSpectrum: [function(tex2world, tp) {
+      }, "call$2", "FBmTexture_CreateFloat$closure", 4, 0, 77], FBmTexture_CreateSpectrum: [function(tex2world, tp) {
         var t1 = tp.findInt$2("octaves", 8);
         return new G.FBmTexture(tp.geomParams.findOneFloat$2("roughness", tp.materialParams.findOneFloat$2("roughness", 0.5)), t1, true, new G.IdentityMapping3D(tex2world));
-      }, "call$2", "FBmTexture_CreateSpectrum$closure", 4, 0, 72]}
+      }, "call$2", "FBmTexture_CreateSpectrum$closure", 4, 0, 77]}
   },
   ImageTexture: {
     "^": "Texture;mipmap,mapping",
@@ -49994,7 +50857,7 @@ var $$ = {};
         scale = t1.findOneFloat$2("scale", tp.materialParams.findOneFloat$2("scale", 1));
         gamma = t1.findOneFloat$2("gamma", tp.materialParams.findOneFloat$2("gamma", 1));
         return G.ImageTexture$(map, t1.findOneFilename$2("filename", tp.materialParams.findOneFilename$2("filename", "")), trilerp, maxAniso, wrapMode, scale, gamma, false);
-      }, "call$2", "ImageTexture_CreateFloat$closure", 4, 0, 73], ImageTexture_CreateSpectrum: [function(tex2world, tp) {
+      }, "call$2", "ImageTexture_CreateFloat$closure", 4, 0, 78], ImageTexture_CreateSpectrum: [function(tex2world, tp) {
         var type, t1, map, t2, t3, t4, maxAniso, trilerp, wrap, wrapMode, scale, gamma;
         type = tp.findString$2("mapping", "uv");
         t1 = J.getInterceptor(type);
@@ -50029,10 +50892,10 @@ var $$ = {};
         scale = t1.findOneFloat$2("scale", tp.materialParams.findOneFloat$2("scale", 1));
         gamma = t1.findOneFloat$2("gamma", tp.materialParams.findOneFloat$2("gamma", 1));
         return G.ImageTexture$(map, t1.findOneFilename$2("filename", tp.materialParams.findOneFilename$2("filename", "")), trilerp, maxAniso, wrapMode, scale, gamma, true);
-      }, "call$2", "ImageTexture_CreateSpectrum$closure", 4, 0, 73]}
+      }, "call$2", "ImageTexture_CreateSpectrum$closure", 4, 0, 78]}
   },
   ImageTexture_closure: {
-    "^": "Closure:119;this_0,doTri_1,maxAniso_2,wrap_3,scale_4,gamma_5,spectrum_6,completer_7",
+    "^": "Closure:124;this_0,doTri_1,maxAniso_2,wrap_3,scale_4,gamma_5,spectrum_6,completer_7",
     call$1: function(img) {
       var t1, len, t2, i, t3, t4;
       if (img != null) {
@@ -50133,12 +50996,12 @@ var $$ = {};
     },
     static: {MarbleTexture_CreateFloat: [function(tex2world, tp) {
         return;
-      }, "call$2", "MarbleTexture_CreateFloat$closure", 4, 0, 74], MarbleTexture_CreateSpectrum: [function(tex2world, tp) {
+      }, "call$2", "MarbleTexture_CreateFloat$closure", 4, 0, 79], MarbleTexture_CreateSpectrum: [function(tex2world, tp) {
         var t1, t2;
         t1 = tp.findInt$2("octaves", 8);
         t2 = tp.geomParams;
         return new G.MarbleTexture(t1, t2.findOneFloat$2("roughness", tp.materialParams.findOneFloat$2("roughness", 0.5)), t2.findOneFloat$2("scale", tp.materialParams.findOneFloat$2("scale", 1)), t2.findOneFloat$2("variation", tp.materialParams.findOneFloat$2("variation", 0.2)), new G.IdentityMapping3D(tex2world));
-      }, "call$2", "MarbleTexture_CreateSpectrum$closure", 4, 0, 74]}
+      }, "call$2", "MarbleTexture_CreateSpectrum$closure", 4, 0, 79]}
   },
   MixTexture: {
     "^": "Texture;tex1,tex2,amount",
@@ -50153,9 +51016,9 @@ var $$ = {};
     },
     static: {MixTexture_CreateFloat: [function(tex2world, tp) {
         return new G.MixTexture(tp.getFloatTexture$2("tex1", 0), tp.getFloatTexture$2("tex2", 1), tp.getFloatTexture$2("amount", 0.5));
-      }, "call$2", "MixTexture_CreateFloat$closure", 4, 0, 75], MixTexture_CreateSpectrum: [function(tex2world, tp) {
+      }, "call$2", "MixTexture_CreateFloat$closure", 4, 0, 80], MixTexture_CreateSpectrum: [function(tex2world, tp) {
         return new G.MixTexture(tp.getSpectrumTexture$2("tex1", G.Spectrum_Spectrum(0)), tp.getSpectrumTexture$2("tex2", G.Spectrum_Spectrum(1)), tp.getFloatTexture$2("amount", 0.5));
-      }, "call$2", "MixTexture_CreateSpectrum$closure", 4, 0, 75]}
+      }, "call$2", "MixTexture_CreateSpectrum$closure", 4, 0, 80]}
   },
   ScaleTexture: {
     "^": "Texture;tex1,tex2",
@@ -50169,9 +51032,9 @@ var $$ = {};
     },
     static: {ScaleTexture_CreateFloat: [function(tex2world, tp) {
         return new G.ScaleTexture(tp.getFloatTexture$2("tex1", 1), tp.getFloatTexture$2("tex2", 1));
-      }, "call$2", "ScaleTexture_CreateFloat$closure", 4, 0, 76], ScaleTexture_CreateSpectrum: [function(tex2world, tp) {
+      }, "call$2", "ScaleTexture_CreateFloat$closure", 4, 0, 81], ScaleTexture_CreateSpectrum: [function(tex2world, tp) {
         return new G.ScaleTexture(tp.getSpectrumTexture$2("tex1", G.Spectrum_Spectrum(1)), tp.getSpectrumTexture$2("tex2", G.Spectrum_Spectrum(1)));
-      }, "call$2", "ScaleTexture_CreateSpectrum$closure", 4, 0, 76]}
+      }, "call$2", "ScaleTexture_CreateSpectrum$closure", 4, 0, 81]}
   },
   UVTexture: {
     "^": "Texture;mapping",
@@ -50186,7 +51049,7 @@ var $$ = {};
     },
     static: {UVTexture_CreateFloat: [function(tex2world, tp) {
         return;
-      }, "call$2", "UVTexture_CreateFloat$closure", 4, 0, 77], UVTexture_CreateSpectrum: [function(tex2world, tp) {
+      }, "call$2", "UVTexture_CreateFloat$closure", 4, 0, 82], UVTexture_CreateSpectrum: [function(tex2world, tp) {
         var type, t1, map, t2, t3, t4;
         type = tp.findString$2("mapping", "uv");
         t1 = J.getInterceptor(type);
@@ -50210,7 +51073,7 @@ var $$ = {};
           map = new G.UVMapping2D(1, 1, 0, 0);
         }
         return new G.UVTexture(map);
-      }, "call$2", "UVTexture_CreateSpectrum$closure", 4, 0, 77]}
+      }, "call$2", "UVTexture_CreateSpectrum$closure", 4, 0, 82]}
   },
   WindyTexture: {
     "^": "Texture;mapping,spectrum",
@@ -50228,9 +51091,9 @@ var $$ = {};
     },
     static: {WindyTexture_CreateFloat: [function(tex2world, tp) {
         return new G.WindyTexture(new G.IdentityMapping3D(tex2world), false);
-      }, "call$2", "WindyTexture_CreateFloat$closure", 4, 0, 78], WindyTexture_CreateSpectrum: [function(tex2world, tp) {
+      }, "call$2", "WindyTexture_CreateFloat$closure", 4, 0, 83], WindyTexture_CreateSpectrum: [function(tex2world, tp) {
         return new G.WindyTexture(new G.IdentityMapping3D(tex2world), true);
-      }, "call$2", "WindyTexture_CreateSpectrum$closure", 4, 0, 78]}
+      }, "call$2", "WindyTexture_CreateSpectrum$closure", 4, 0, 83]}
   },
   WrinkledTexture: {
     "^": "Texture;omega,octaves,spectrum,mapping",
@@ -50244,10 +51107,10 @@ var $$ = {};
     static: {WrinkledTexture_CreateFloat: [function(tex2world, tp) {
         var t1 = tp.findInt$2("octaves", 8);
         return new G.WrinkledTexture(tp.geomParams.findOneFloat$2("roughness", tp.materialParams.findOneFloat$2("roughness", 0.5)), t1, false, new G.IdentityMapping3D(tex2world));
-      }, "call$2", "WrinkledTexture_CreateFloat$closure", 4, 0, 79], WrinkledTexture_CreateSpectrum: [function(tex2world, tp) {
+      }, "call$2", "WrinkledTexture_CreateFloat$closure", 4, 0, 84], WrinkledTexture_CreateSpectrum: [function(tex2world, tp) {
         var t1 = tp.findInt$2("octaves", 8);
         return new G.WrinkledTexture(tp.geomParams.findOneFloat$2("roughness", tp.materialParams.findOneFloat$2("roughness", 0.5)), t1, true, new G.IdentityMapping3D(tex2world));
-      }, "call$2", "WrinkledTexture_CreateSpectrum$closure", 4, 0, 79]}
+      }, "call$2", "WrinkledTexture_CreateSpectrum$closure", 4, 0, 84]}
   }
 }],
 ["volume_integrators", "package:dartray/volume_integrators/volume_integrators.dart", , S, {
@@ -50327,7 +51190,7 @@ var $$ = {};
     },
     static: {EmissionIntegrator_Create: [function(params) {
         return new S.EmissionIntegrator(params.findOneFloat$2("stepsize", 1), null, null);
-      }, "call$1", "EmissionIntegrator_Create$closure", 2, 0, 80]}
+      }, "call$1", "EmissionIntegrator_Create$closure", 2, 0, 85]}
   },
   SingleScatteringIntegrator: {
     "^": "VolumeIntegrator;stepSize,tauSampleOffset,scatterSampleOffset",
@@ -50473,7 +51336,7 @@ var $$ = {};
     },
     static: {SingleScatteringIntegrator_Create: [function(params) {
         return new S.SingleScatteringIntegrator(params.findOneFloat$2("stepsize", 1), null, null);
-      }, "call$1", "SingleScatteringIntegrator_Create$closure", 2, 0, 81]}
+      }, "call$1", "SingleScatteringIntegrator_Create$closure", 2, 0, 86]}
   }
 }],
 ["volume_regions", "package:dartray/volume_regions/volume_regions.dart", , B, {
@@ -50514,7 +51377,7 @@ var $$ = {};
         t2 = J.getInterceptor$asx(up);
         t1.upDir = t2.$div(up, t2.length$0(up));
         return t1;
-      }, "call$2", "ExponentialDensityRegion_Create$closure", 4, 0, 82]}
+      }, "call$2", "ExponentialDensityRegion_Create$closure", 4, 0, 87]}
   },
   HomogeneousVolumeRegion: {
     "^": "VolumeRegion;sig_a,sig_s,le,g,extent,worldToVolume",
@@ -50536,7 +51399,7 @@ var $$ = {};
       if (!this.extent.inside$1(this.worldToVolume.transformPoint$1(p)))
         return 0;
       return G.PhaseHG(wi, wo, this.g);
-    }, "call$4", "get$p", 8, 0, 129],
+    }, "call$4", "get$p", 8, 0, 134],
     tau$3: function(ray, step, offset) {
       var t00, t1, t2, t3, t4, t5;
       t00 = [0];
@@ -50567,7 +51430,7 @@ var $$ = {};
         var t1 = new B.HomogeneousVolumeRegion(null, null, null, null, null, null);
         t1.HomogeneousVolumeRegion$6(params.findOneSpectrum$2("sigma_a", G.Spectrum_Spectrum(0)), params.findOneSpectrum$2("sigma_s", G.Spectrum_Spectrum(0)), params.findOneFloat$2("g", 0), params.findOneSpectrum$2("Le", G.Spectrum_Spectrum(0)), G.BBox$(params.findOnePoint$2("p0", new G.Point(0, 0, 0)), params.findOnePoint$2("p1", new G.Point(1, 1, 1))), volume2world);
         return t1;
-      }, "call$2", "HomogeneousVolumeRegion_Create$closure", 4, 0, 83]}
+      }, "call$2", "HomogeneousVolumeRegion_Create$closure", 4, 0, 88]}
   },
   VolumeGridDensity: {
     "^": "DensityRegion;_density,nx<,ny,nz@,extent,sig_a,sig_s,le,g,worldToVolume",
@@ -50650,7 +51513,7 @@ var $$ = {};
         t1 = new B.VolumeGridDensity(null, nx, ny, nz, G.BBox$(p0, p1), G.Spectrum_Spectrum$from(sigma_a, 0), G.Spectrum_Spectrum$from(sigma_s, 0), G.Spectrum_Spectrum$from(Le, 0), g, G.Transform$(volume2world.get$mInv(), volume2world.m));
         t1._density = new Float64Array(H._ensureNativeList(data));
         return t1;
-      }, "call$2", "VolumeGridDensity_Create$closure", 4, 0, 84]}
+      }, "call$2", "VolumeGridDensity_Create$closure", 4, 0, 89]}
   }
 }],
 ["", "web_isolate.dart", , M, {
@@ -50665,14 +51528,14 @@ var $$ = {};
     t5 = new U.GraphicsState(P.LinkedHashMap_LinkedHashMap$_empty(null, null), P.LinkedHashMap_LinkedHashMap$_empty(null, null), new G.ParamSet([], [], [], [], [], [], [], [], []), null, P.LinkedHashMap_LinkedHashMap$_empty(null, null), null, new G.ParamSet([], [], [], [], [], [], [], [], []), "", null);
     t5.material = "matte";
     t5.reverseOrientation = false;
-    U.Pbrt__registerStandardNodes();
+    U.Pbrt__registerStandardPlugins();
     t1.pbrt = new U.Pbrt(t1, 1, t2, 3, t3, t4, t5, [], [], [], null, null);
     if (port != null) {
       t2 = new U.RenderIsolate(1, 2, 3, null, 0, 1, null, null, t1, C.C__JSRandom, P.LinkedHashMap_LinkedHashMap$_empty(null, null));
       t1.isolate = t2;
       t2.start$1(0, port);
     }
-  }, "call$2", "main$closure", 4, 0, 85]
+  }, "call$2", "main$closure", 4, 0, 90]
 },
 1],
 ]);
@@ -50910,10 +51773,21 @@ D.TranslucentMaterial.$isTranslucentMaterial = true;
 D.TranslucentMaterial.$isObject = true;
 D.UberMaterial.$isUberMaterial = true;
 D.UberMaterial.$isObject = true;
+F.LinearPixelSampler.$isLinearPixelSampler = true;
+F.LinearPixelSampler.$isPixelSampler = true;
+F.LinearPixelSampler.$isObject = true;
+F.RandomPixelSampler.$isRandomPixelSampler = true;
+F.RandomPixelSampler.$isPixelSampler = true;
+F.RandomPixelSampler.$isObject = true;
+F.TilePixelSampler.$isTilePixelSampler = true;
+F.TilePixelSampler.$isPixelSampler = true;
+F.TilePixelSampler.$isObject = true;
 U.AdaptiveSampler.$isAdaptiveSampler = true;
 U.AdaptiveSampler.$isObject = true;
 G.Camera.$isCamera = true;
 G.Camera.$isObject = true;
+G.PixelSampler.$isPixelSampler = true;
+G.PixelSampler.$isObject = true;
 U.BestCandidateSampler.$isBestCandidateSampler = true;
 U.BestCandidateSampler.$isObject = true;
 U.HaltonSampler.$isHaltonSampler = true;
@@ -50924,30 +51798,36 @@ U.RandomSampler.$isRandomSampler = true;
 U.RandomSampler.$isObject = true;
 U.StratifiedSampler.$isStratifiedSampler = true;
 U.StratifiedSampler.$isObject = true;
-M.ConeShape.$isConeShape = true;
-M.ConeShape.$isShape = true;
-M.ConeShape.$isObject = true;
-M.CylinderShape.$isCylinderShape = true;
-M.CylinderShape.$isShape = true;
-M.CylinderShape.$isObject = true;
-M.DiskShape.$isDiskShape = true;
-M.DiskShape.$isShape = true;
-M.DiskShape.$isObject = true;
-M.HyperboloidShape.$isHyperboloidShape = true;
-M.HyperboloidShape.$isShape = true;
-M.HyperboloidShape.$isObject = true;
-M.LoopSubdivisionShape.$isLoopSubdivisionShape = true;
-M.LoopSubdivisionShape.$isShape = true;
-M.LoopSubdivisionShape.$isObject = true;
-M.ParaboloidShape.$isParaboloidShape = true;
-M.ParaboloidShape.$isShape = true;
-M.ParaboloidShape.$isObject = true;
-M.SphereShape.$isSphereShape = true;
-M.SphereShape.$isShape = true;
-M.SphereShape.$isObject = true;
-M.TriangleMeshShape.$isTriangleMeshShape = true;
-M.TriangleMeshShape.$isShape = true;
-M.TriangleMeshShape.$isObject = true;
+M.Cone.$isCone = true;
+M.Cone.$isShape = true;
+M.Cone.$isObject = true;
+M.Cylinder.$isCylinder = true;
+M.Cylinder.$isShape = true;
+M.Cylinder.$isObject = true;
+M.Disk.$isDisk = true;
+M.Disk.$isShape = true;
+M.Disk.$isObject = true;
+M.Heightfield.$isHeightfield = true;
+M.Heightfield.$isShape = true;
+M.Heightfield.$isObject = true;
+M.Hyperboloid.$isHyperboloid = true;
+M.Hyperboloid.$isShape = true;
+M.Hyperboloid.$isObject = true;
+M.LoopSubdivision.$isLoopSubdivision = true;
+M.LoopSubdivision.$isShape = true;
+M.LoopSubdivision.$isObject = true;
+M.Nurbs.$isNurbs = true;
+M.Nurbs.$isShape = true;
+M.Nurbs.$isObject = true;
+M.Paraboloid.$isParaboloid = true;
+M.Paraboloid.$isShape = true;
+M.Paraboloid.$isObject = true;
+M.Sphere.$isSphere = true;
+M.Sphere.$isShape = true;
+M.Sphere.$isObject = true;
+M.TriangleMesh.$isTriangleMesh = true;
+M.TriangleMesh.$isShape = true;
+M.TriangleMesh.$isObject = true;
 P.Map.$isMap = true;
 P.Map.$isObject = true;
 G.Texture.$isTexture = true;
@@ -52344,6 +53224,9 @@ Isolate.$lazy($, "_materials", "Pbrt__materials", "get$Pbrt__materials", functio
 Isolate.$lazy($, "_samplers", "Pbrt__samplers", "get$Pbrt__samplers", function() {
   return P.LinkedHashMap_LinkedHashMap$_empty(null, null);
 });
+Isolate.$lazy($, "_pixelSamplers", "Pbrt__pixelSamplers", "get$Pbrt__pixelSamplers", function() {
+  return P.LinkedHashMap_LinkedHashMap$_empty(null, null);
+});
 Isolate.$lazy($, "_shapes", "Pbrt__shapes", "get$Pbrt__shapes", function() {
   return P.LinkedHashMap_LinkedHashMap$_empty(null, null);
 });
@@ -52406,20 +53289,25 @@ init.metadata = [{func: "dynamic__String", args: [J.JSString]},
 {func: "SubsurfaceMaterial__Transform_TextureParams", ret: D.SubsurfaceMaterial, args: [G.Transform, G.TextureParams]},
 {func: "TranslucentMaterial__Transform_TextureParams", ret: D.TranslucentMaterial, args: [G.Transform, G.TextureParams]},
 {func: "UberMaterial__Transform_TextureParams", ret: D.UberMaterial, args: [G.Transform, G.TextureParams]},
-{func: "AdaptiveSampler__ParamSet_Film_Camera", ret: U.AdaptiveSampler, args: [G.ParamSet, G.Film, G.Camera]},
-{func: "BestCandidateSampler__ParamSet_Film_Camera", ret: U.BestCandidateSampler, args: [G.ParamSet, G.Film, G.Camera]},
-{func: "HaltonSampler__ParamSet_Film_Camera", ret: U.HaltonSampler, args: [G.ParamSet, G.Film, G.Camera]},
-{func: "LowDiscrepancySampler__ParamSet_Film_Camera", ret: U.LowDiscrepancySampler, args: [G.ParamSet, G.Film, G.Camera]},
-{func: "RandomSampler__ParamSet_Film_Camera", ret: U.RandomSampler, args: [G.ParamSet, G.Film, G.Camera]},
-{func: "StratifiedSampler__ParamSet_Film_Camera", ret: U.StratifiedSampler, args: [G.ParamSet, G.Film, G.Camera]},
-{func: "ConeShape__Transform_Transform_bool_ParamSet", ret: M.ConeShape, args: [G.Transform, G.Transform, J.JSBool, G.ParamSet]},
-{func: "CylinderShape__Transform_Transform_bool_ParamSet", ret: M.CylinderShape, args: [G.Transform, G.Transform, J.JSBool, G.ParamSet]},
-{func: "DiskShape__Transform_Transform_bool_ParamSet", ret: M.DiskShape, args: [G.Transform, G.Transform, J.JSBool, G.ParamSet]},
-{func: "HyperboloidShape__Transform_Transform_bool_ParamSet", ret: M.HyperboloidShape, args: [G.Transform, G.Transform, J.JSBool, G.ParamSet]},
-{func: "LoopSubdivisionShape__Transform_Transform_bool_ParamSet", ret: M.LoopSubdivisionShape, args: [G.Transform, G.Transform, J.JSBool, G.ParamSet]},
-{func: "ParaboloidShape__Transform_Transform_bool_ParamSet", ret: M.ParaboloidShape, args: [G.Transform, G.Transform, J.JSBool, G.ParamSet]},
-{func: "SphereShape__Transform_Transform_bool_ParamSet", ret: M.SphereShape, args: [G.Transform, G.Transform, J.JSBool, G.ParamSet]},
-{func: "TriangleMeshShape__Transform_Transform_bool_ParamSet__Map", ret: M.TriangleMeshShape, args: [G.Transform, G.Transform, J.JSBool, G.ParamSet], opt: [[P.Map, J.JSString, G.Texture]]},
+{func: "LinearPixelSampler__ParamSet_Film", ret: F.LinearPixelSampler, args: [G.ParamSet, G.Film]},
+{func: "RandomPixelSampler__ParamSet_Film", ret: F.RandomPixelSampler, args: [G.ParamSet, G.Film]},
+{func: "TilePixelSampler__ParamSet_Film", ret: F.TilePixelSampler, args: [G.ParamSet, G.Film]},
+{func: "AdaptiveSampler__ParamSet_Film_Camera_PixelSampler", ret: U.AdaptiveSampler, args: [G.ParamSet, G.Film, G.Camera, G.PixelSampler]},
+{func: "BestCandidateSampler__ParamSet_Film_Camera_PixelSampler", ret: U.BestCandidateSampler, args: [G.ParamSet, G.Film, G.Camera, G.PixelSampler]},
+{func: "HaltonSampler__ParamSet_Film_Camera_PixelSampler", ret: U.HaltonSampler, args: [G.ParamSet, G.Film, G.Camera, G.PixelSampler]},
+{func: "LowDiscrepancySampler__ParamSet_Film_Camera_PixelSampler", ret: U.LowDiscrepancySampler, args: [G.ParamSet, G.Film, G.Camera, G.PixelSampler]},
+{func: "RandomSampler__ParamSet_Film_Camera_PixelSampler", ret: U.RandomSampler, args: [G.ParamSet, G.Film, G.Camera, G.PixelSampler]},
+{func: "StratifiedSampler__ParamSet_Film_Camera_PixelSampler", ret: U.StratifiedSampler, args: [G.ParamSet, G.Film, G.Camera, G.PixelSampler]},
+{func: "Cone__Transform_Transform_bool_ParamSet", ret: M.Cone, args: [G.Transform, G.Transform, J.JSBool, G.ParamSet]},
+{func: "Cylinder__Transform_Transform_bool_ParamSet", ret: M.Cylinder, args: [G.Transform, G.Transform, J.JSBool, G.ParamSet]},
+{func: "Disk__Transform_Transform_bool_ParamSet", ret: M.Disk, args: [G.Transform, G.Transform, J.JSBool, G.ParamSet]},
+{func: "Heightfield__Transform_Transform_bool_ParamSet", ret: M.Heightfield, args: [G.Transform, G.Transform, J.JSBool, G.ParamSet]},
+{func: "Hyperboloid__Transform_Transform_bool_ParamSet", ret: M.Hyperboloid, args: [G.Transform, G.Transform, J.JSBool, G.ParamSet]},
+{func: "LoopSubdivision__Transform_Transform_bool_ParamSet", ret: M.LoopSubdivision, args: [G.Transform, G.Transform, J.JSBool, G.ParamSet]},
+{func: "Nurbs__Transform_Transform_bool_ParamSet", ret: M.Nurbs, args: [G.Transform, G.Transform, J.JSBool, G.ParamSet]},
+{func: "Paraboloid__Transform_Transform_bool_ParamSet", ret: M.Paraboloid, args: [G.Transform, G.Transform, J.JSBool, G.ParamSet]},
+{func: "Sphere__Transform_Transform_bool_ParamSet", ret: M.Sphere, args: [G.Transform, G.Transform, J.JSBool, G.ParamSet]},
+{func: "TriangleMesh__Transform_Transform_bool_ParamSet__Map", ret: M.TriangleMesh, args: [G.Transform, G.Transform, J.JSBool, G.ParamSet], opt: [[P.Map, J.JSString, G.Texture]]},
 {func: "AmbientOcclusionIntegrator__ParamSet", ret: U.AmbientOcclusionIntegrator, args: [G.ParamSet]},
 {func: "DiffusePRTIntegrator__ParamSet", ret: U.DiffusePRTIntegrator, args: [G.ParamSet]},
 {func: "DirectLightingIntegrator__ParamSet", ret: U.DirectLightingIntegrator, args: [G.ParamSet]},
@@ -57307,15 +58195,6 @@ function dart_precompiled($collectedClasses) {
   Filter.prototype.get$invYWidth = function() {
     return this.invYWidth;
   };
-  function ImageSampler() {
-  }
-  ImageSampler.builtin$cls = "ImageSampler";
-  if (!"name" in ImageSampler)
-    ImageSampler.name = "ImageSampler";
-  $desc = $collectedClasses.ImageSampler;
-  if ($desc instanceof Array)
-    $desc = $desc[1];
-  ImageSampler.prototype = $desc;
   function Integrator() {
   }
   Integrator.builtin$cls = "Integrator";
@@ -57762,6 +58641,15 @@ function dart_precompiled($collectedClasses) {
   ParamSetItem.prototype.set$lookedUp = function(v) {
     return this.lookedUp = v;
   };
+  function PixelSampler() {
+  }
+  PixelSampler.builtin$cls = "PixelSampler";
+  if (!"name" in PixelSampler)
+    PixelSampler.name = "PixelSampler";
+  $desc = $collectedClasses.PixelSampler;
+  if ($desc instanceof Array)
+    $desc = $desc[1];
+  PixelSampler.prototype = $desc;
   function Point(x, y, z) {
     this.x = x;
     this.y = y;
@@ -62531,37 +63419,6 @@ function dart_precompiled($collectedClasses) {
   OutputBuffer.prototype.set$length = function(receiver, v) {
     return this.length = v;
   };
-  function RandomImageSampler(_numSamples, _samples, xPixelStart, xPixelEnd, yPixelStart, yPixelEnd) {
-    this._numSamples = _numSamples;
-    this._samples = _samples;
-    this.xPixelStart = xPixelStart;
-    this.xPixelEnd = xPixelEnd;
-    this.yPixelStart = yPixelStart;
-    this.yPixelEnd = yPixelEnd;
-  }
-  RandomImageSampler.builtin$cls = "RandomImageSampler";
-  if (!"name" in RandomImageSampler)
-    RandomImageSampler.name = "RandomImageSampler";
-  $desc = $collectedClasses.RandomImageSampler;
-  if ($desc instanceof Array)
-    $desc = $desc[1];
-  RandomImageSampler.prototype = $desc;
-  function TileImageSampler(tileSize, _numSamples, _samples, xPixelStart, xPixelEnd, yPixelStart, yPixelEnd) {
-    this.tileSize = tileSize;
-    this._numSamples = _numSamples;
-    this._samples = _samples;
-    this.xPixelStart = xPixelStart;
-    this.xPixelEnd = xPixelEnd;
-    this.yPixelStart = yPixelStart;
-    this.yPixelEnd = yPixelEnd;
-  }
-  TileImageSampler.builtin$cls = "TileImageSampler";
-  if (!"name" in TileImageSampler)
-    TileImageSampler.name = "TileImageSampler";
-  $desc = $collectedClasses.TileImageSampler;
-  if ($desc instanceof Array)
-    $desc = $desc[1];
-  TileImageSampler.prototype = $desc;
   function DiffuseAreaLight(Lemit, shapeSet, area, nSamples, lightToWorld, worldToLight) {
     this.Lemit = Lemit;
     this.shapeSet = shapeSet;
@@ -63254,7 +64111,7 @@ function dart_precompiled($collectedClasses) {
   if ($desc instanceof Array)
     $desc = $desc[1];
   RenderManagerInterface.prototype = $desc;
-  function RenderOptions(transformStartTime, transformEndTime, filterName, filterParams, filmName, filmParams, outputImage, previewCallback, samplerName, samplerParams, acceleratorName, acceleratorParams, rendererName, surfIntegratorName, volIntegratorName, rendererParams, surfIntegratorParams, volIntegratorParams, cameraName, cameraParams, cameraToWorld, lights, primitives, volumeRegions, instances, currentInstance, taskNum, taskCount) {
+  function RenderOptions(transformStartTime, transformEndTime, filterName, filterParams, filmName, filmParams, outputImage, previewCallback, pixelSamplerName, pixelSamplerParams, samplerName, samplerParams, acceleratorName, acceleratorParams, rendererName, surfIntegratorName, volIntegratorName, rendererParams, surfIntegratorParams, volIntegratorParams, cameraName, cameraParams, cameraToWorld, lights, primitives, volumeRegions, instances, currentInstance, taskNum, taskCount) {
     this.transformStartTime = transformStartTime;
     this.transformEndTime = transformEndTime;
     this.filterName = filterName;
@@ -63263,6 +64120,8 @@ function dart_precompiled($collectedClasses) {
     this.filmParams = filmParams;
     this.outputImage = outputImage;
     this.previewCallback = previewCallback;
+    this.pixelSamplerName = pixelSamplerName;
+    this.pixelSamplerParams = pixelSamplerParams;
     this.samplerName = samplerName;
     this.samplerParams = samplerParams;
     this.acceleratorName = acceleratorName;
@@ -63304,6 +64163,53 @@ function dart_precompiled($collectedClasses) {
   TransformSet.prototype.get$t = function() {
     return this.t;
   };
+  function LinearPixelSampler(_numSamples, _samples, xPixelStart, xPixelEnd, yPixelStart, yPixelEnd) {
+    this._numSamples = _numSamples;
+    this._samples = _samples;
+    this.xPixelStart = xPixelStart;
+    this.xPixelEnd = xPixelEnd;
+    this.yPixelStart = yPixelStart;
+    this.yPixelEnd = yPixelEnd;
+  }
+  LinearPixelSampler.builtin$cls = "LinearPixelSampler";
+  if (!"name" in LinearPixelSampler)
+    LinearPixelSampler.name = "LinearPixelSampler";
+  $desc = $collectedClasses.LinearPixelSampler;
+  if ($desc instanceof Array)
+    $desc = $desc[1];
+  LinearPixelSampler.prototype = $desc;
+  function RandomPixelSampler(_numSamples, _samples, xPixelStart, xPixelEnd, yPixelStart, yPixelEnd) {
+    this._numSamples = _numSamples;
+    this._samples = _samples;
+    this.xPixelStart = xPixelStart;
+    this.xPixelEnd = xPixelEnd;
+    this.yPixelStart = yPixelStart;
+    this.yPixelEnd = yPixelEnd;
+  }
+  RandomPixelSampler.builtin$cls = "RandomPixelSampler";
+  if (!"name" in RandomPixelSampler)
+    RandomPixelSampler.name = "RandomPixelSampler";
+  $desc = $collectedClasses.RandomPixelSampler;
+  if ($desc instanceof Array)
+    $desc = $desc[1];
+  RandomPixelSampler.prototype = $desc;
+  function TilePixelSampler(tileSize, randomize, _numSamples, _samples, xPixelStart, xPixelEnd, yPixelStart, yPixelEnd) {
+    this.tileSize = tileSize;
+    this.randomize = randomize;
+    this._numSamples = _numSamples;
+    this._samples = _samples;
+    this.xPixelStart = xPixelStart;
+    this.xPixelEnd = xPixelEnd;
+    this.yPixelStart = yPixelStart;
+    this.yPixelEnd = yPixelEnd;
+  }
+  TilePixelSampler.builtin$cls = "TilePixelSampler";
+  if (!"name" in TilePixelSampler)
+    TilePixelSampler.name = "TilePixelSampler";
+  $desc = $collectedClasses.TilePixelSampler;
+  if ($desc instanceof Array)
+    $desc = $desc[1];
+  TilePixelSampler.prototype = $desc;
   function AggregateTestRenderer(nIterations, primitives, bboxes) {
     this.nIterations = nIterations;
     this.primitives = primitives;
@@ -63626,7 +64532,7 @@ function dart_precompiled($collectedClasses) {
   if ($desc instanceof Array)
     $desc = $desc[1];
   StratifiedSampler.prototype = $desc;
-  function ConeShape(radius, height, phiMax, objectToWorld, worldToObject, reverseOrientation, transformSwapsHandedness, shapeId) {
+  function Cone(radius, height, phiMax, objectToWorld, worldToObject, reverseOrientation, transformSwapsHandedness, shapeId) {
     this.radius = radius;
     this.height = height;
     this.phiMax = phiMax;
@@ -63636,17 +64542,17 @@ function dart_precompiled($collectedClasses) {
     this.transformSwapsHandedness = transformSwapsHandedness;
     this.shapeId = shapeId;
   }
-  ConeShape.builtin$cls = "ConeShape";
-  if (!"name" in ConeShape)
-    ConeShape.name = "ConeShape";
-  $desc = $collectedClasses.ConeShape;
+  Cone.builtin$cls = "Cone";
+  if (!"name" in Cone)
+    Cone.name = "Cone";
+  $desc = $collectedClasses.Cone;
   if ($desc instanceof Array)
     $desc = $desc[1];
-  ConeShape.prototype = $desc;
-  ConeShape.prototype.get$height = function(receiver) {
+  Cone.prototype = $desc;
+  Cone.prototype.get$height = function(receiver) {
     return this.height;
   };
-  function CylinderShape(radius, zmin, zmax, phiMax, objectToWorld, worldToObject, reverseOrientation, transformSwapsHandedness, shapeId) {
+  function Cylinder(radius, zmin, zmax, phiMax, objectToWorld, worldToObject, reverseOrientation, transformSwapsHandedness, shapeId) {
     this.radius = radius;
     this.zmin = zmin;
     this.zmax = zmax;
@@ -63657,14 +64563,14 @@ function dart_precompiled($collectedClasses) {
     this.transformSwapsHandedness = transformSwapsHandedness;
     this.shapeId = shapeId;
   }
-  CylinderShape.builtin$cls = "CylinderShape";
-  if (!"name" in CylinderShape)
-    CylinderShape.name = "CylinderShape";
-  $desc = $collectedClasses.CylinderShape;
+  Cylinder.builtin$cls = "Cylinder";
+  if (!"name" in Cylinder)
+    Cylinder.name = "Cylinder";
+  $desc = $collectedClasses.Cylinder;
   if ($desc instanceof Array)
     $desc = $desc[1];
-  CylinderShape.prototype = $desc;
-  function DiskShape(height, radius, innerRadius, phiMax, objectToWorld, worldToObject, reverseOrientation, transformSwapsHandedness, shapeId) {
+  Cylinder.prototype = $desc;
+  function Disk(height, radius, innerRadius, phiMax, objectToWorld, worldToObject, reverseOrientation, transformSwapsHandedness, shapeId) {
     this.height = height;
     this.radius = radius;
     this.innerRadius = innerRadius;
@@ -63675,17 +64581,53 @@ function dart_precompiled($collectedClasses) {
     this.transformSwapsHandedness = transformSwapsHandedness;
     this.shapeId = shapeId;
   }
-  DiskShape.builtin$cls = "DiskShape";
-  if (!"name" in DiskShape)
-    DiskShape.name = "DiskShape";
-  $desc = $collectedClasses.DiskShape;
+  Disk.builtin$cls = "Disk";
+  if (!"name" in Disk)
+    Disk.name = "Disk";
+  $desc = $collectedClasses.Disk;
   if ($desc instanceof Array)
     $desc = $desc[1];
-  DiskShape.prototype = $desc;
-  DiskShape.prototype.get$height = function(receiver) {
+  Disk.prototype = $desc;
+  Disk.prototype.get$height = function(receiver) {
     return this.height;
   };
-  function HyperboloidShape(p1, p2, zmin, zmax, phiMax, rmax, a, c, objectToWorld, worldToObject, reverseOrientation, transformSwapsHandedness, shapeId) {
+  function Heightfield(z, nx, ny, objectToWorld, worldToObject, reverseOrientation, transformSwapsHandedness, shapeId) {
+    this.z = z;
+    this.nx = nx;
+    this.ny = ny;
+    this.objectToWorld = objectToWorld;
+    this.worldToObject = worldToObject;
+    this.reverseOrientation = reverseOrientation;
+    this.transformSwapsHandedness = transformSwapsHandedness;
+    this.shapeId = shapeId;
+  }
+  Heightfield.builtin$cls = "Heightfield";
+  if (!"name" in Heightfield)
+    Heightfield.name = "Heightfield";
+  $desc = $collectedClasses.Heightfield;
+  if ($desc instanceof Array)
+    $desc = $desc[1];
+  Heightfield.prototype = $desc;
+  Heightfield.prototype.get$z = function(receiver) {
+    return this.z;
+  };
+  Heightfield.prototype.set$z = function(receiver, v) {
+    return this.z = v;
+  };
+  Heightfield.prototype.get$nx = function() {
+    return this.nx;
+  };
+  function Heightfield_refine_VERT(this_0) {
+    this.this_0 = this_0;
+  }
+  Heightfield_refine_VERT.builtin$cls = "Heightfield_refine_VERT";
+  if (!"name" in Heightfield_refine_VERT)
+    Heightfield_refine_VERT.name = "Heightfield_refine_VERT";
+  $desc = $collectedClasses.Heightfield_refine_VERT;
+  if ($desc instanceof Array)
+    $desc = $desc[1];
+  Heightfield_refine_VERT.prototype = $desc;
+  function Hyperboloid(p1, p2, zmin, zmax, phiMax, rmax, a, c, objectToWorld, worldToObject, reverseOrientation, transformSwapsHandedness, shapeId) {
     this.p1 = p1;
     this.p2 = p2;
     this.zmin = zmin;
@@ -63700,35 +64642,35 @@ function dart_precompiled($collectedClasses) {
     this.transformSwapsHandedness = transformSwapsHandedness;
     this.shapeId = shapeId;
   }
-  HyperboloidShape.builtin$cls = "HyperboloidShape";
-  if (!"name" in HyperboloidShape)
-    HyperboloidShape.name = "HyperboloidShape";
-  $desc = $collectedClasses.HyperboloidShape;
+  Hyperboloid.builtin$cls = "Hyperboloid";
+  if (!"name" in Hyperboloid)
+    Hyperboloid.name = "Hyperboloid";
+  $desc = $collectedClasses.Hyperboloid;
   if ($desc instanceof Array)
     $desc = $desc[1];
-  HyperboloidShape.prototype = $desc;
-  HyperboloidShape.prototype.get$c = function() {
+  Hyperboloid.prototype = $desc;
+  Hyperboloid.prototype.get$c = function() {
     return this.c;
   };
-  function HyperboloidShape_area_SQR() {
+  function Hyperboloid_area_SQR() {
   }
-  HyperboloidShape_area_SQR.builtin$cls = "HyperboloidShape_area_SQR";
-  if (!"name" in HyperboloidShape_area_SQR)
-    HyperboloidShape_area_SQR.name = "HyperboloidShape_area_SQR";
-  $desc = $collectedClasses.HyperboloidShape_area_SQR;
+  Hyperboloid_area_SQR.builtin$cls = "Hyperboloid_area_SQR";
+  if (!"name" in Hyperboloid_area_SQR)
+    Hyperboloid_area_SQR.name = "Hyperboloid_area_SQR";
+  $desc = $collectedClasses.Hyperboloid_area_SQR;
   if ($desc instanceof Array)
     $desc = $desc[1];
-  HyperboloidShape_area_SQR.prototype = $desc;
-  function HyperboloidShape_area_QUAD() {
+  Hyperboloid_area_SQR.prototype = $desc;
+  function Hyperboloid_area_QUAD() {
   }
-  HyperboloidShape_area_QUAD.builtin$cls = "HyperboloidShape_area_QUAD";
-  if (!"name" in HyperboloidShape_area_QUAD)
-    HyperboloidShape_area_QUAD.name = "HyperboloidShape_area_QUAD";
-  $desc = $collectedClasses.HyperboloidShape_area_QUAD;
+  Hyperboloid_area_QUAD.builtin$cls = "Hyperboloid_area_QUAD";
+  if (!"name" in Hyperboloid_area_QUAD)
+    Hyperboloid_area_QUAD.name = "Hyperboloid_area_QUAD";
+  $desc = $collectedClasses.Hyperboloid_area_QUAD;
   if ($desc instanceof Array)
     $desc = $desc[1];
-  HyperboloidShape_area_QUAD.prototype = $desc;
-  function LoopSubdivisionShape(nLevels, vertices, faces, objectToWorld, worldToObject, reverseOrientation, transformSwapsHandedness, shapeId) {
+  Hyperboloid_area_QUAD.prototype = $desc;
+  function LoopSubdivision(nLevels, vertices, faces, objectToWorld, worldToObject, reverseOrientation, transformSwapsHandedness, shapeId) {
     this.nLevels = nLevels;
     this.vertices = vertices;
     this.faces = faces;
@@ -63738,13 +64680,13 @@ function dart_precompiled($collectedClasses) {
     this.transformSwapsHandedness = transformSwapsHandedness;
     this.shapeId = shapeId;
   }
-  LoopSubdivisionShape.builtin$cls = "LoopSubdivisionShape";
-  if (!"name" in LoopSubdivisionShape)
-    LoopSubdivisionShape.name = "LoopSubdivisionShape";
-  $desc = $collectedClasses.LoopSubdivisionShape;
+  LoopSubdivision.builtin$cls = "LoopSubdivision";
+  if (!"name" in LoopSubdivision)
+    LoopSubdivision.name = "LoopSubdivision";
+  $desc = $collectedClasses.LoopSubdivision;
   if ($desc instanceof Array)
     $desc = $desc[1];
-  LoopSubdivisionShape.prototype = $desc;
+  LoopSubdivision.prototype = $desc;
   function _SDEdgeMap(_edgeMap) {
     this._edgeMap = _edgeMap;
   }
@@ -63832,7 +64774,49 @@ function dart_precompiled($collectedClasses) {
   _SDEdge.prototype.get$f0edgeNum = function() {
     return this.f0edgeNum;
   };
-  function ParaboloidShape(radius, zmin, zmax, phiMax, objectToWorld, worldToObject, reverseOrientation, transformSwapsHandedness, shapeId) {
+  function Nurbs(nu, uorder, nv, vorder, umin, umax, vmin, vmax, uknot, vknot, isHomogeneous, P, objectToWorld, worldToObject, reverseOrientation, transformSwapsHandedness, shapeId) {
+    this.nu = nu;
+    this.uorder = uorder;
+    this.nv = nv;
+    this.vorder = vorder;
+    this.umin = umin;
+    this.umax = umax;
+    this.vmin = vmin;
+    this.vmax = vmax;
+    this.uknot = uknot;
+    this.vknot = vknot;
+    this.isHomogeneous = isHomogeneous;
+    this.P = P;
+    this.objectToWorld = objectToWorld;
+    this.worldToObject = worldToObject;
+    this.reverseOrientation = reverseOrientation;
+    this.transformSwapsHandedness = transformSwapsHandedness;
+    this.shapeId = shapeId;
+  }
+  Nurbs.builtin$cls = "Nurbs";
+  if (!"name" in Nurbs)
+    Nurbs.name = "Nurbs";
+  $desc = $collectedClasses.Nurbs;
+  if ($desc instanceof Array)
+    $desc = $desc[1];
+  Nurbs.prototype = $desc;
+  Nurbs.prototype.get$P = function() {
+    return this.P;
+  };
+  Nurbs.prototype.set$P = function(v) {
+    return this.P = v;
+  };
+  function Nurbs_refine_VN(diceu_0) {
+    this.diceu_0 = diceu_0;
+  }
+  Nurbs_refine_VN.builtin$cls = "Nurbs_refine_VN";
+  if (!"name" in Nurbs_refine_VN)
+    Nurbs_refine_VN.name = "Nurbs_refine_VN";
+  $desc = $collectedClasses.Nurbs_refine_VN;
+  if ($desc instanceof Array)
+    $desc = $desc[1];
+  Nurbs_refine_VN.prototype = $desc;
+  function Paraboloid(radius, zmin, zmax, phiMax, objectToWorld, worldToObject, reverseOrientation, transformSwapsHandedness, shapeId) {
     this.radius = radius;
     this.zmin = zmin;
     this.zmax = zmax;
@@ -63843,14 +64827,14 @@ function dart_precompiled($collectedClasses) {
     this.transformSwapsHandedness = transformSwapsHandedness;
     this.shapeId = shapeId;
   }
-  ParaboloidShape.builtin$cls = "ParaboloidShape";
-  if (!"name" in ParaboloidShape)
-    ParaboloidShape.name = "ParaboloidShape";
-  $desc = $collectedClasses.ParaboloidShape;
+  Paraboloid.builtin$cls = "Paraboloid";
+  if (!"name" in Paraboloid)
+    Paraboloid.name = "Paraboloid";
+  $desc = $collectedClasses.Paraboloid;
   if ($desc instanceof Array)
     $desc = $desc[1];
-  ParaboloidShape.prototype = $desc;
-  function SphereShape(radius, phiMax, zmin, zmax, thetaMin, thetaMax, objectToWorld, worldToObject, reverseOrientation, transformSwapsHandedness, shapeId) {
+  Paraboloid.prototype = $desc;
+  function Sphere(radius, phiMax, zmin, zmax, thetaMin, thetaMax, objectToWorld, worldToObject, reverseOrientation, transformSwapsHandedness, shapeId) {
     this.radius = radius;
     this.phiMax = phiMax;
     this.zmin = zmin;
@@ -63863,14 +64847,30 @@ function dart_precompiled($collectedClasses) {
     this.transformSwapsHandedness = transformSwapsHandedness;
     this.shapeId = shapeId;
   }
-  SphereShape.builtin$cls = "SphereShape";
-  if (!"name" in SphereShape)
-    SphereShape.name = "SphereShape";
-  $desc = $collectedClasses.SphereShape;
+  Sphere.builtin$cls = "Sphere";
+  if (!"name" in Sphere)
+    Sphere.name = "Sphere";
+  $desc = $collectedClasses.Sphere;
   if ($desc instanceof Array)
     $desc = $desc[1];
-  SphereShape.prototype = $desc;
-  function TriangleMeshShape(ntris, nverts, vertexIndex, p, n, s, uvs, alphaTexture, objectToWorld, worldToObject, reverseOrientation, transformSwapsHandedness, shapeId) {
+  Sphere.prototype = $desc;
+  function Triangle(mesh, index, objectToWorld, worldToObject, reverseOrientation, transformSwapsHandedness, shapeId) {
+    this.mesh = mesh;
+    this.index = index;
+    this.objectToWorld = objectToWorld;
+    this.worldToObject = worldToObject;
+    this.reverseOrientation = reverseOrientation;
+    this.transformSwapsHandedness = transformSwapsHandedness;
+    this.shapeId = shapeId;
+  }
+  Triangle.builtin$cls = "Triangle";
+  if (!"name" in Triangle)
+    Triangle.name = "Triangle";
+  $desc = $collectedClasses.Triangle;
+  if ($desc instanceof Array)
+    $desc = $desc[1];
+  Triangle.prototype = $desc;
+  function TriangleMesh(ntris, nverts, vertexIndex, p, n, s, uvs, alphaTexture, objectToWorld, worldToObject, reverseOrientation, transformSwapsHandedness, shapeId) {
     this.ntris = ntris;
     this.nverts = nverts;
     this.vertexIndex = vertexIndex;
@@ -63885,35 +64885,19 @@ function dart_precompiled($collectedClasses) {
     this.transformSwapsHandedness = transformSwapsHandedness;
     this.shapeId = shapeId;
   }
-  TriangleMeshShape.builtin$cls = "TriangleMeshShape";
-  if (!"name" in TriangleMeshShape)
-    TriangleMeshShape.name = "TriangleMeshShape";
-  $desc = $collectedClasses.TriangleMeshShape;
+  TriangleMesh.builtin$cls = "TriangleMesh";
+  if (!"name" in TriangleMesh)
+    TriangleMesh.name = "TriangleMesh";
+  $desc = $collectedClasses.TriangleMesh;
   if ($desc instanceof Array)
     $desc = $desc[1];
-  TriangleMeshShape.prototype = $desc;
-  TriangleMeshShape.prototype.get$p = function(receiver) {
+  TriangleMesh.prototype = $desc;
+  TriangleMesh.prototype.get$p = function(receiver) {
     return this.p;
   };
-  TriangleMeshShape.prototype.get$n = function() {
+  TriangleMesh.prototype.get$n = function() {
     return this.n;
   };
-  function TriangleShape(mesh, index, objectToWorld, worldToObject, reverseOrientation, transformSwapsHandedness, shapeId) {
-    this.mesh = mesh;
-    this.index = index;
-    this.objectToWorld = objectToWorld;
-    this.worldToObject = worldToObject;
-    this.reverseOrientation = reverseOrientation;
-    this.transformSwapsHandedness = transformSwapsHandedness;
-    this.shapeId = shapeId;
-  }
-  TriangleShape.builtin$cls = "TriangleShape";
-  if (!"name" in TriangleShape)
-    TriangleShape.name = "TriangleShape";
-  $desc = $collectedClasses.TriangleShape;
-  if ($desc instanceof Array)
-    $desc = $desc[1];
-  TriangleShape.prototype = $desc;
   function AmbientOcclusionIntegrator(nSamples, minDist, maxDist) {
     this.nSamples = nSamples;
     this.minDist = minDist;
@@ -64553,5 +65537,5 @@ function dart_precompiled($collectedClasses) {
   VolumeGridDensity.prototype.set$nz = function(v) {
     return this.nz = v;
   };
-  return [HtmlElement, AnchorElement, AnimationEvent, AreaElement, AudioElement, AutocompleteErrorEvent, BRElement, BaseElement, BeforeLoadEvent, BeforeUnloadEvent, Blob, BodyElement, ButtonElement, CDataSection, CanvasElement, CharacterData, CloseEvent, Comment, CompositionEvent, ContentElement, CssFontFaceLoadEvent, CustomEvent, DListElement, DataListElement, DetailsElement, DeviceMotionEvent, DeviceOrientationEvent, DialogElement, DivElement, Document, DocumentFragment, DomError, DomException, Element, EmbedElement, ErrorEvent, Event, EventTarget, FieldSetElement, File, FileError, FocusEvent, FormElement, HRElement, HashChangeEvent, HeadElement, HeadingElement, HtmlCollection, HtmlDocument, HtmlFormControlsCollection, HtmlHtmlElement, HtmlOptionsCollection, HttpRequest, HttpRequestEventTarget, IFrameElement, ImageElement, InputElement, InstallEvent, InstallPhaseEvent, KeyboardEvent, KeygenElement, LIElement, LabelElement, LegendElement, LinkElement, MapElement, MediaElement, MediaError, MediaKeyError, MediaKeyEvent, MediaKeyMessageEvent, MediaKeyNeededEvent, MediaStream, MediaStreamEvent, MediaStreamTrackEvent, MenuElement, MessageEvent, MetaElement, MeterElement, MidiConnectionEvent, MidiInput, MidiMessageEvent, MidiOutput, MidiPort, ModElement, MouseEvent, Navigator, NavigatorUserMediaError, Node, NodeList, OListElement, ObjectElement, OptGroupElement, OptionElement, OutputElement, OverflowEvent, PageTransitionEvent, ParagraphElement, ParamElement, PopStateEvent, PositionError, PreElement, ProcessingInstruction, ProgressElement, ProgressEvent, QuoteElement, ResourceProgressEvent, RtcDataChannelEvent, RtcDtmfToneChangeEvent, RtcIceCandidateEvent, ScriptElement, SecurityPolicyViolationEvent, SelectElement, ShadowElement, ShadowRoot, SourceElement, SpanElement, SpeechInputEvent, SpeechRecognitionError, SpeechRecognitionEvent, SpeechSynthesisEvent, StorageEvent, StyleElement, TableCaptionElement, TableCellElement, TableColElement, TableElement, TableRowElement, TableSectionElement, TemplateElement, Text, TextAreaElement, TextEvent, TitleElement, TouchEvent, TrackElement, TrackEvent, TransitionEvent, UIEvent, UListElement, UnknownElement, VideoElement, WheelEvent, Window, XmlDocument, _Attr, _ClientRect, _DocumentType, _HTMLAppletElement, _HTMLDirectoryElement, _HTMLFontElement, _HTMLFrameElement, _HTMLFrameSetElement, _HTMLMarqueeElement, _MutationEvent, _NamedNodeMap, _Notation, _XMLHttpRequestProgressEvent, VersionChangeEvent, AElement, AltGlyphElement, AnimateElement, AnimateMotionElement, AnimateTransformElement, AnimatedEnumeration, AnimatedLength, AnimatedLengthList, AnimatedNumber, AnimatedNumberList, AnimatedString, AnimatedTransformList, AnimationElement, CircleElement, ClipPathElement, DefsElement, DescElement, DiscardElement, EllipseElement, FEBlendElement, FEColorMatrixElement, FEComponentTransferElement, FECompositeElement, FEConvolveMatrixElement, FEDiffuseLightingElement, FEDisplacementMapElement, FEDistantLightElement, FEFloodElement, FEFuncAElement, FEFuncBElement, FEFuncGElement, FEFuncRElement, FEGaussianBlurElement, FEImageElement, FEMergeElement, FEMergeNodeElement, FEMorphologyElement, FEOffsetElement, FEPointLightElement, FESpecularLightingElement, FESpotLightElement, FETileElement, FETurbulenceElement, FilterElement, ForeignObjectElement, GElement, GeometryElement, GraphicsElement, ImageElement0, LineElement, LinearGradientElement, MarkerElement, MaskElement, MetadataElement, PathElement, PatternElement, PointList, PolygonElement, PolylineElement, RadialGradientElement, RectElement, ScriptElement0, SetElement, StopElement, StyleElement0, SvgElement, SvgSvgElement, SwitchElement, SymbolElement, TSpanElement, TextContentElement, TextElement, TextPathElement, TextPositioningElement, TitleElement0, UseElement, ViewElement, ZoomEvent, _GradientElement, _SVGAltGlyphDefElement, _SVGAltGlyphItemElement, _SVGComponentTransferFunctionElement, _SVGCursorElement, _SVGFEDropShadowElement, _SVGFontElement, _SVGFontFaceElement, _SVGFontFaceFormatElement, _SVGFontFaceNameElement, _SVGFontFaceSrcElement, _SVGFontFaceUriElement, _SVGGlyphElement, _SVGGlyphRefElement, _SVGHKernElement, _SVGMPathElement, _SVGMissingGlyphElement, _SVGVKernElement, AudioProcessingEvent, OfflineAudioCompletionEvent, ContextEvent, SqlError, NativeByteBuffer, NativeTypedData, NativeByteData, NativeFloat32List, NativeFloat64List, NativeInt16List, NativeInt32List, NativeInt8List, NativeUint16List, NativeUint32List, NativeUint8ClampedList, NativeUint8List, JS_CONST, Interceptor, JSBool, JSNull, JavaScriptObject, PlainJavaScriptObject, UnknownJavaScriptObject, JSArray, JSNumber, JSInt, JSDouble, JSString, _CodeUnits, startRootIsolate_closure, startRootIsolate_closure0, _Manager, _IsolateContext, _IsolateContext_handlePing_closure, _EventLoop, _EventLoop__runHelper_next, _IsolateEvent, _MainManagerStub, IsolateNatives__processWorkerMessage_closure, IsolateNatives__startIsolate_runStartFunction, _BaseSendPort, _NativeJsSendPort, _NativeJsSendPort_send_closure, _WorkerSendPort, RawReceivePortImpl, ReceivePortImpl, _JsSerializer, _JsCopier, _JsDeserializer, _JsVisitedMap, _MessageTraverserVisitedMap, _MessageTraverser, _Copier, _Copier_visitMap_closure, _Serializer, _Deserializer, TimerImpl, TimerImpl_internalCallback, TimerImpl_internalCallback0, CapabilityImpl, ConstantMap, ConstantStringMap, ConstantStringMap_values_closure, _ConstantMapKeyIterable, GeneralConstantMap, ReflectionInfo, TypeErrorDecoder, NullError, JsNoSuchMethodError, UnknownJsTypeError, unwrapException_saveStackTrace, _StackTrace, invokeClosure_closure, invokeClosure_closure0, invokeClosure_closure1, invokeClosure_closure2, invokeClosure_closure3, Closure, TearOffClosure, BoundClosure, RuntimeError, RuntimeType, RuntimeFunctionType, DynamicRuntimeType, TypeImpl, initHooks_closure, initHooks_closure0, initHooks_closure1, BruteForceAccel, BVHAccel, BVHAccel__recursiveBuild_ComparePoints, BVHAccel__recursiveBuild_CompareToMid, BVHAccel__recursiveBuild_CompareToBucket, _BVHPrimitiveInfo, _BVHBucketInfo, _BVHBuildNode, _LinearBVHNode, GridAccel, _Voxel, KdTreeAccel, KdTreeAccel__buildTree_closure, _KdToDo, _KdAccelNode, _BoundEdge, ArchiveException, InputStream, OutputStream, HuffmanTable, Inflate, ZLibDecoder, EnvironmentCamera, OrthographicCamera, PerspectiveCamera, AnimatedTransform, BBox, Camera, CameraSample, nth_element_closure, DifferentialGeometry, Film, Filter, ImageSampler, Integrator, Intersection, KdTree, _CompareNode, _KdNode, AreaLight, Light, LightSample, LightSampleOffsets, ShapeSet, VisibilityTester, Material, Matrix4x4, MIPMap, _ResampleWeight, Distribution1D, Distribution2D, PermutedHalton, Normal, Octree, _OctreeNode, OutputImage, ParamSet, ParamSet_addSpectrumFiles_closure, ParamSet_addSpectrumFiles_closure0, ParamSet__readFloatFile__isdigit, ParamSet__readFloatFile__isspace, ParamSetItem, Point, Aggregate, GeometricPrimitive, Primitive, TransformedPrimitive, ProjectiveCamera, Quaternion, Ray, RayDifferential, Anisotropic, Blinn, BRDFToBTDF, BSDF, BSDFSample, BSDFSampleOffsets, BxDF, Fresnel, FresnelBlend, FresnelConductor, FresnelDielectric, FresnelNoOp, IrregIsotropicBRDFSample, IrregularIsotropicBRDF, IrregularIsotropicBRDF_f_proc, Lambertian, Microfacet, MicrofacetDistribution, OrenNayar, RegularHalfangleBRDF, RegularHalfangleBRDF_f_REMAP, ScaledBxDF, SpecularReflection, SpecularTransmission, Renderer, ResourceManager, ResourceManager_requestFile_closure, ResourceManager_requestImage_closure, ResourceManager_waitUntilReady_closure, RGBColor, RNG, Sample, SampledSpectrum, _Spectrum, Sampler, Scene, Shape, Spectrum, Spectrum_SortSpectrumSamples_closure, Spectrum_AverageSpectrumSamples_INTERP, Spectrum_AverageSpectrumSamples_SEG_AVG, SpectrumImage, SphericalHarmonics_RotateXPlus_O, SphericalHarmonics__legendrep_P, StatTracker, StatsCounter, SurfaceIntegrator, ConstantTexture, CylindricalMapping2D, IdentityMapping3D, PlanarMapping2D, SphericalMapping2D, Texture, TextureMapping2D, TextureMapping3D, UVMapping2D, TextureParams, Transform, Vector, AggregateVolume, DensityRegion, VolumeRegion, VolumeIntegrator, XYZColor, ListIterable, SubListIterable, ListIterator, MappedIterable, EfficientLengthMappedIterable, MappedIterator, WhereIterable, WhereIterator, SkipIterable, EfficientLengthSkipIterable, SkipIterator, FixedLengthListMixin, UnmodifiableListMixin, UnmodifiableListBase, _AsyncError, Future, Future_wait_handleError, Future_wait_closure, _Completer, _AsyncCompleter, _Future, _Future__addListener_closure, _Future__chainForeignFuture_closure, _Future__chainForeignFuture_closure0, _Future__asyncComplete_closure, _Future__asyncComplete_closure0, _Future__asyncCompleteError_closure, _Future__propagateToListeners_handleValueCallback, _Future__propagateToListeners_handleError, _Future__propagateToListeners_handleWhenCompleteCallback, _Future__propagateToListeners_handleWhenCompleteCallback_closure, _Future__propagateToListeners_handleWhenCompleteCallback_closure0, _AsyncCallbackEntry, Stream, Stream_forEach_closure, Stream_forEach__closure, Stream_forEach__closure0, Stream_forEach_closure0, Stream_length_closure, Stream_length_closure0, Stream_isEmpty_closure, Stream_isEmpty_closure0, Stream_first_closure, Stream_first_closure0, StreamSubscription, _StreamController, _StreamController__subscribe_closure, _StreamController__recordCancel_complete, _SyncStreamControllerDispatch, _AsyncStreamControllerDispatch, _AsyncStreamController, _StreamController__AsyncStreamControllerDispatch, _SyncStreamController, _StreamController__SyncStreamControllerDispatch, _ControllerStream, _ControllerSubscription, _EventSink, _BufferingStreamSubscription, _BufferingStreamSubscription__sendError_sendError, _BufferingStreamSubscription__sendDone_sendDone, _StreamImpl, _DelayedEvent, _DelayedData, _DelayedError, _DelayedDone, _PendingEvents, _PendingEvents_schedule_closure, _StreamImplEvents, _cancelAndError_closure, _cancelAndErrorClosure_closure, _cancelAndValue_closure, _ForwardingStream, _ForwardingStreamSubscription, _SkipStream, _BaseZone, _BaseZone_bindCallback_closure, _BaseZone_bindCallback_closure0, _BaseZone_bindUnaryCallback_closure, _BaseZone_bindUnaryCallback_closure0, _rootHandleUncaughtError_closure, _rootHandleUncaughtError__closure, _RootZone, _HashMap, _HashMap_values_closure, HashMapKeyIterable, HashMapKeyIterator, _LinkedHashMap, _LinkedHashMap_values_closure, _LinkedHashMap_addAll_closure, LinkedHashMapCell, LinkedHashMapKeyIterable, LinkedHashMapKeyIterator, _HashSet, _IdentityHashSet, HashSetIterator, _LinkedHashSet, LinkedHashSetCell, LinkedHashSetIterator, _HashSetBase, IterableBase, ListBase, ListMixin, Maps_mapToString_closure, ListQueue, _ListQueueIterator, NoSuchMethodError_toString_closure, Comparable, DateTime, Duration, Duration_toString_sixDigits, Duration_toString_twoDigits, Error, NullThrownError, ArgumentError, RangeError, UnsupportedError, UnimplementedError, StateError, ConcurrentModificationError, OutOfMemoryError, StackOverflowError, CyclicInitializationError, _ExceptionImplementation, FormatException, IntegerDivisionByZeroException, Expando, Function, Iterator, Map, Null, Object, Pattern, StackTrace, Stopwatch, StringBuffer, Symbol, _ChildrenElementList, Interceptor_ListMixin, Interceptor_ListMixin_ImmutableListMixin, HttpRequest_request_closure0, HttpRequest_request_closure, _ChildNodeListLazy, Interceptor_ListMixin0, Interceptor_ListMixin_ImmutableListMixin0, Interceptor_ListMixin1, Interceptor_ListMixin_ImmutableListMixin1, EventStreamProvider, _EventStream, _EventStreamSubscription, ImmutableListMixin, FixedSizeListIterator, Capability, SendPort, _JSRandom, Float32List, Uint32List, Uint8List, NativeTypedArray, NativeTypedArrayOfDouble, NativeTypedArray_ListMixin, NativeTypedArray_ListMixin_FixedLengthListMixin, NativeTypedArrayOfInt, NativeTypedArray_ListMixin0, NativeTypedArray_ListMixin_FixedLengthListMixin0, RenderManager, RenderManager_loadFile_closure, RenderManager_loadFile_closure0, RenderManager__loadFile_closure, RenderManager__loadFile_closure0, RenderManager__loadFile_closure1, ImageFilm, BoxFilter, GaussianFilter, LanczosSincFilter, MitchellFilter, TriangleFilter, convertNativeToDart_AcceptStructuredClone_findSlot, convertNativeToDart_AcceptStructuredClone_readSlot, convertNativeToDart_AcceptStructuredClone_writeSlot, convertNativeToDart_AcceptStructuredClone_walk, FilteredElementList, FilteredElementList__filtered_closure, FilteredElementList_removeRange_closure, DecodeInfo, Decoder, ExrAttribute, ExrB44Compressor, ExrChannel, ExrCompressor, ExrHufDec, ExrImage, ExrPart, ExrPizCompressor, _PizChannelData, ExrPxr24Compressor, ExrRleCompressor, ExrZipCompressor, ExrDecoder, GifColorMap, GifImageDesc, GifInfo, GifDecoder, JpegAdobe, JpegComponent, JpegData, JpegFrame, JpegJfif, JpegScan, JpegDecoder, PngFrame, PngInfo, PngDecoder, PsdLayerAdditionalData, PsdLayerSectionDivider, PsdBlendingRanges, PsdChannel, PsdImage, PsdImageResource, PsdLayer, PsdLayerData, PsdMask, PsdDecoder, TiffBitReader, TiffEntry, TiffFaxDecoder, TiffImage, TiffInfo, LzwDecoder, TiffDecoder, VP8, VP8__upsample_LOAD_UV, VP8BitReader, VP8Filter, VP8FrameHeader, VP8PictureHeader, VP8SegmentHeader, VP8BandProbas, VP8Proba, VP8FilterHeader, VP8FInfo, VP8MB, VP8QuantMatrix, VP8MBData, VP8TopSamples, VP8L, VP8LBitReader, VP8LColorCache, VP8LTransform, _VP8LMultipliers, WebPAlpha, WebPFrame, _HuffmanTree, _HTreeGroup, WebPInfo, WebPDecoder, HdrImage, HdrSlice, hdrToImage__knee, hdrToImage__gamma, Image, ImageException, InputBuffer, OutputBuffer, RandomImageSampler, TileImageSampler, DiffuseAreaLight, DistantLight, GoniometricLight, GoniometricLight_closure, InfiniteAreaLight, InfiniteAreaLight_closure, _InfiniteAreaCube, PointLight, ProjectionLight, ProjectionLight_closure, SpotLight, GlassMaterial, KdSubsurfaceMaterial, MatteMaterial, MeasuredMaterial, MeasuredMaterial_closure, MeasuredMaterial_closure0, MetalMaterial, MirrorMaterial, MixMaterial, PlasticMaterial, ShinyMetalMaterial, SubstrateMaterial, SubsurfaceMaterial, TranslucentMaterial, UberMaterial, GraphicsState, Pbrt, Pbrt_renderScene_closure, Pbrt_renderScene__closure, PbrtLexer, _PbrtLexerInput, PbrtParser, PbrtParser_parse_closure, PbrtParser_parse__closure, PbrtParser_parse___closure, PbrtParser__loadIncludes_closure, PbrtParser__loadIncludes_closure0, PbrtParser__loadIncludes__closure, PbrtParser__loadIncludes__closure0, PbrtParser__loadIncludes_closure1, PbrtParser__parse_closure, PbrtParser__parseCommand_closure, RenderIsolate, RenderIsolate_start_closure, RenderIsolate__render_closure, RenderIsolate__render_closure0, RenderManagerInterface, RenderOptions, TransformSet, AggregateTestRenderer, MetropolisRenderer, _PathSample, _LightingSample, _PathVertex, _MLTSample, _MLTTask, SamplerRenderer, _SamplerRendererTask, AdaptiveSampler, BestCandidateSampler, BestCandidateSampler_getMoreSamples_WRAP, HaltonSampler, LowDiscrepancySampler, RandomSampler, StratifiedSampler, ConeShape, CylinderShape, DiskShape, HyperboloidShape, HyperboloidShape_area_SQR, HyperboloidShape_area_QUAD, LoopSubdivisionShape, _SDEdgeMap, _SDVertex, _SDFace, _SDEdge, ParaboloidShape, SphereShape, TriangleMeshShape, TriangleShape, AmbientOcclusionIntegrator, DiffusePRTIntegrator, DirectLightingIntegrator, GlossyPRTIntegrator, IGIIntegrator, _VirtualLight, IrradianceCacheIntegrator, IrradianceSample, IrradiancePrimeTask, IrradProcess, PathIntegrator, PhotonMapIntegrator, Photon, RadiancePhoton, PhotonShootingTask, ComputeRadianceTask, ClosePhoton, PhotonProcess, RadiancePhotonProcess, WhittedIntegrator, BilerpTexture, Checkerboard3DTexture, CheckerboardTexture, CheckerboardTexture_evaluate_BUMPINT, DotsTexture, FBmTexture, ImageTexture, ImageTexture_closure, MarbleTexture, MixTexture, ScaleTexture, UVTexture, WindyTexture, WrinkledTexture, EmissionIntegrator, SingleScatteringIntegrator, ExponentialDensityRegion, HomogeneousVolumeRegion, VolumeGridDensity];
+  return [HtmlElement, AnchorElement, AnimationEvent, AreaElement, AudioElement, AutocompleteErrorEvent, BRElement, BaseElement, BeforeLoadEvent, BeforeUnloadEvent, Blob, BodyElement, ButtonElement, CDataSection, CanvasElement, CharacterData, CloseEvent, Comment, CompositionEvent, ContentElement, CssFontFaceLoadEvent, CustomEvent, DListElement, DataListElement, DetailsElement, DeviceMotionEvent, DeviceOrientationEvent, DialogElement, DivElement, Document, DocumentFragment, DomError, DomException, Element, EmbedElement, ErrorEvent, Event, EventTarget, FieldSetElement, File, FileError, FocusEvent, FormElement, HRElement, HashChangeEvent, HeadElement, HeadingElement, HtmlCollection, HtmlDocument, HtmlFormControlsCollection, HtmlHtmlElement, HtmlOptionsCollection, HttpRequest, HttpRequestEventTarget, IFrameElement, ImageElement, InputElement, InstallEvent, InstallPhaseEvent, KeyboardEvent, KeygenElement, LIElement, LabelElement, LegendElement, LinkElement, MapElement, MediaElement, MediaError, MediaKeyError, MediaKeyEvent, MediaKeyMessageEvent, MediaKeyNeededEvent, MediaStream, MediaStreamEvent, MediaStreamTrackEvent, MenuElement, MessageEvent, MetaElement, MeterElement, MidiConnectionEvent, MidiInput, MidiMessageEvent, MidiOutput, MidiPort, ModElement, MouseEvent, Navigator, NavigatorUserMediaError, Node, NodeList, OListElement, ObjectElement, OptGroupElement, OptionElement, OutputElement, OverflowEvent, PageTransitionEvent, ParagraphElement, ParamElement, PopStateEvent, PositionError, PreElement, ProcessingInstruction, ProgressElement, ProgressEvent, QuoteElement, ResourceProgressEvent, RtcDataChannelEvent, RtcDtmfToneChangeEvent, RtcIceCandidateEvent, ScriptElement, SecurityPolicyViolationEvent, SelectElement, ShadowElement, ShadowRoot, SourceElement, SpanElement, SpeechInputEvent, SpeechRecognitionError, SpeechRecognitionEvent, SpeechSynthesisEvent, StorageEvent, StyleElement, TableCaptionElement, TableCellElement, TableColElement, TableElement, TableRowElement, TableSectionElement, TemplateElement, Text, TextAreaElement, TextEvent, TitleElement, TouchEvent, TrackElement, TrackEvent, TransitionEvent, UIEvent, UListElement, UnknownElement, VideoElement, WheelEvent, Window, XmlDocument, _Attr, _ClientRect, _DocumentType, _HTMLAppletElement, _HTMLDirectoryElement, _HTMLFontElement, _HTMLFrameElement, _HTMLFrameSetElement, _HTMLMarqueeElement, _MutationEvent, _NamedNodeMap, _Notation, _XMLHttpRequestProgressEvent, VersionChangeEvent, AElement, AltGlyphElement, AnimateElement, AnimateMotionElement, AnimateTransformElement, AnimatedEnumeration, AnimatedLength, AnimatedLengthList, AnimatedNumber, AnimatedNumberList, AnimatedString, AnimatedTransformList, AnimationElement, CircleElement, ClipPathElement, DefsElement, DescElement, DiscardElement, EllipseElement, FEBlendElement, FEColorMatrixElement, FEComponentTransferElement, FECompositeElement, FEConvolveMatrixElement, FEDiffuseLightingElement, FEDisplacementMapElement, FEDistantLightElement, FEFloodElement, FEFuncAElement, FEFuncBElement, FEFuncGElement, FEFuncRElement, FEGaussianBlurElement, FEImageElement, FEMergeElement, FEMergeNodeElement, FEMorphologyElement, FEOffsetElement, FEPointLightElement, FESpecularLightingElement, FESpotLightElement, FETileElement, FETurbulenceElement, FilterElement, ForeignObjectElement, GElement, GeometryElement, GraphicsElement, ImageElement0, LineElement, LinearGradientElement, MarkerElement, MaskElement, MetadataElement, PathElement, PatternElement, PointList, PolygonElement, PolylineElement, RadialGradientElement, RectElement, ScriptElement0, SetElement, StopElement, StyleElement0, SvgElement, SvgSvgElement, SwitchElement, SymbolElement, TSpanElement, TextContentElement, TextElement, TextPathElement, TextPositioningElement, TitleElement0, UseElement, ViewElement, ZoomEvent, _GradientElement, _SVGAltGlyphDefElement, _SVGAltGlyphItemElement, _SVGComponentTransferFunctionElement, _SVGCursorElement, _SVGFEDropShadowElement, _SVGFontElement, _SVGFontFaceElement, _SVGFontFaceFormatElement, _SVGFontFaceNameElement, _SVGFontFaceSrcElement, _SVGFontFaceUriElement, _SVGGlyphElement, _SVGGlyphRefElement, _SVGHKernElement, _SVGMPathElement, _SVGMissingGlyphElement, _SVGVKernElement, AudioProcessingEvent, OfflineAudioCompletionEvent, ContextEvent, SqlError, NativeByteBuffer, NativeTypedData, NativeByteData, NativeFloat32List, NativeFloat64List, NativeInt16List, NativeInt32List, NativeInt8List, NativeUint16List, NativeUint32List, NativeUint8ClampedList, NativeUint8List, JS_CONST, Interceptor, JSBool, JSNull, JavaScriptObject, PlainJavaScriptObject, UnknownJavaScriptObject, JSArray, JSNumber, JSInt, JSDouble, JSString, _CodeUnits, startRootIsolate_closure, startRootIsolate_closure0, _Manager, _IsolateContext, _IsolateContext_handlePing_closure, _EventLoop, _EventLoop__runHelper_next, _IsolateEvent, _MainManagerStub, IsolateNatives__processWorkerMessage_closure, IsolateNatives__startIsolate_runStartFunction, _BaseSendPort, _NativeJsSendPort, _NativeJsSendPort_send_closure, _WorkerSendPort, RawReceivePortImpl, ReceivePortImpl, _JsSerializer, _JsCopier, _JsDeserializer, _JsVisitedMap, _MessageTraverserVisitedMap, _MessageTraverser, _Copier, _Copier_visitMap_closure, _Serializer, _Deserializer, TimerImpl, TimerImpl_internalCallback, TimerImpl_internalCallback0, CapabilityImpl, ConstantMap, ConstantStringMap, ConstantStringMap_values_closure, _ConstantMapKeyIterable, GeneralConstantMap, ReflectionInfo, TypeErrorDecoder, NullError, JsNoSuchMethodError, UnknownJsTypeError, unwrapException_saveStackTrace, _StackTrace, invokeClosure_closure, invokeClosure_closure0, invokeClosure_closure1, invokeClosure_closure2, invokeClosure_closure3, Closure, TearOffClosure, BoundClosure, RuntimeError, RuntimeType, RuntimeFunctionType, DynamicRuntimeType, TypeImpl, initHooks_closure, initHooks_closure0, initHooks_closure1, BruteForceAccel, BVHAccel, BVHAccel__recursiveBuild_ComparePoints, BVHAccel__recursiveBuild_CompareToMid, BVHAccel__recursiveBuild_CompareToBucket, _BVHPrimitiveInfo, _BVHBucketInfo, _BVHBuildNode, _LinearBVHNode, GridAccel, _Voxel, KdTreeAccel, KdTreeAccel__buildTree_closure, _KdToDo, _KdAccelNode, _BoundEdge, ArchiveException, InputStream, OutputStream, HuffmanTable, Inflate, ZLibDecoder, EnvironmentCamera, OrthographicCamera, PerspectiveCamera, AnimatedTransform, BBox, Camera, CameraSample, nth_element_closure, DifferentialGeometry, Film, Filter, Integrator, Intersection, KdTree, _CompareNode, _KdNode, AreaLight, Light, LightSample, LightSampleOffsets, ShapeSet, VisibilityTester, Material, Matrix4x4, MIPMap, _ResampleWeight, Distribution1D, Distribution2D, PermutedHalton, Normal, Octree, _OctreeNode, OutputImage, ParamSet, ParamSet_addSpectrumFiles_closure, ParamSet_addSpectrumFiles_closure0, ParamSet__readFloatFile__isdigit, ParamSet__readFloatFile__isspace, ParamSetItem, PixelSampler, Point, Aggregate, GeometricPrimitive, Primitive, TransformedPrimitive, ProjectiveCamera, Quaternion, Ray, RayDifferential, Anisotropic, Blinn, BRDFToBTDF, BSDF, BSDFSample, BSDFSampleOffsets, BxDF, Fresnel, FresnelBlend, FresnelConductor, FresnelDielectric, FresnelNoOp, IrregIsotropicBRDFSample, IrregularIsotropicBRDF, IrregularIsotropicBRDF_f_proc, Lambertian, Microfacet, MicrofacetDistribution, OrenNayar, RegularHalfangleBRDF, RegularHalfangleBRDF_f_REMAP, ScaledBxDF, SpecularReflection, SpecularTransmission, Renderer, ResourceManager, ResourceManager_requestFile_closure, ResourceManager_requestImage_closure, ResourceManager_waitUntilReady_closure, RGBColor, RNG, Sample, SampledSpectrum, _Spectrum, Sampler, Scene, Shape, Spectrum, Spectrum_SortSpectrumSamples_closure, Spectrum_AverageSpectrumSamples_INTERP, Spectrum_AverageSpectrumSamples_SEG_AVG, SpectrumImage, SphericalHarmonics_RotateXPlus_O, SphericalHarmonics__legendrep_P, StatTracker, StatsCounter, SurfaceIntegrator, ConstantTexture, CylindricalMapping2D, IdentityMapping3D, PlanarMapping2D, SphericalMapping2D, Texture, TextureMapping2D, TextureMapping3D, UVMapping2D, TextureParams, Transform, Vector, AggregateVolume, DensityRegion, VolumeRegion, VolumeIntegrator, XYZColor, ListIterable, SubListIterable, ListIterator, MappedIterable, EfficientLengthMappedIterable, MappedIterator, WhereIterable, WhereIterator, SkipIterable, EfficientLengthSkipIterable, SkipIterator, FixedLengthListMixin, UnmodifiableListMixin, UnmodifiableListBase, _AsyncError, Future, Future_wait_handleError, Future_wait_closure, _Completer, _AsyncCompleter, _Future, _Future__addListener_closure, _Future__chainForeignFuture_closure, _Future__chainForeignFuture_closure0, _Future__asyncComplete_closure, _Future__asyncComplete_closure0, _Future__asyncCompleteError_closure, _Future__propagateToListeners_handleValueCallback, _Future__propagateToListeners_handleError, _Future__propagateToListeners_handleWhenCompleteCallback, _Future__propagateToListeners_handleWhenCompleteCallback_closure, _Future__propagateToListeners_handleWhenCompleteCallback_closure0, _AsyncCallbackEntry, Stream, Stream_forEach_closure, Stream_forEach__closure, Stream_forEach__closure0, Stream_forEach_closure0, Stream_length_closure, Stream_length_closure0, Stream_isEmpty_closure, Stream_isEmpty_closure0, Stream_first_closure, Stream_first_closure0, StreamSubscription, _StreamController, _StreamController__subscribe_closure, _StreamController__recordCancel_complete, _SyncStreamControllerDispatch, _AsyncStreamControllerDispatch, _AsyncStreamController, _StreamController__AsyncStreamControllerDispatch, _SyncStreamController, _StreamController__SyncStreamControllerDispatch, _ControllerStream, _ControllerSubscription, _EventSink, _BufferingStreamSubscription, _BufferingStreamSubscription__sendError_sendError, _BufferingStreamSubscription__sendDone_sendDone, _StreamImpl, _DelayedEvent, _DelayedData, _DelayedError, _DelayedDone, _PendingEvents, _PendingEvents_schedule_closure, _StreamImplEvents, _cancelAndError_closure, _cancelAndErrorClosure_closure, _cancelAndValue_closure, _ForwardingStream, _ForwardingStreamSubscription, _SkipStream, _BaseZone, _BaseZone_bindCallback_closure, _BaseZone_bindCallback_closure0, _BaseZone_bindUnaryCallback_closure, _BaseZone_bindUnaryCallback_closure0, _rootHandleUncaughtError_closure, _rootHandleUncaughtError__closure, _RootZone, _HashMap, _HashMap_values_closure, HashMapKeyIterable, HashMapKeyIterator, _LinkedHashMap, _LinkedHashMap_values_closure, _LinkedHashMap_addAll_closure, LinkedHashMapCell, LinkedHashMapKeyIterable, LinkedHashMapKeyIterator, _HashSet, _IdentityHashSet, HashSetIterator, _LinkedHashSet, LinkedHashSetCell, LinkedHashSetIterator, _HashSetBase, IterableBase, ListBase, ListMixin, Maps_mapToString_closure, ListQueue, _ListQueueIterator, NoSuchMethodError_toString_closure, Comparable, DateTime, Duration, Duration_toString_sixDigits, Duration_toString_twoDigits, Error, NullThrownError, ArgumentError, RangeError, UnsupportedError, UnimplementedError, StateError, ConcurrentModificationError, OutOfMemoryError, StackOverflowError, CyclicInitializationError, _ExceptionImplementation, FormatException, IntegerDivisionByZeroException, Expando, Function, Iterator, Map, Null, Object, Pattern, StackTrace, Stopwatch, StringBuffer, Symbol, _ChildrenElementList, Interceptor_ListMixin, Interceptor_ListMixin_ImmutableListMixin, HttpRequest_request_closure0, HttpRequest_request_closure, _ChildNodeListLazy, Interceptor_ListMixin0, Interceptor_ListMixin_ImmutableListMixin0, Interceptor_ListMixin1, Interceptor_ListMixin_ImmutableListMixin1, EventStreamProvider, _EventStream, _EventStreamSubscription, ImmutableListMixin, FixedSizeListIterator, Capability, SendPort, _JSRandom, Float32List, Uint32List, Uint8List, NativeTypedArray, NativeTypedArrayOfDouble, NativeTypedArray_ListMixin, NativeTypedArray_ListMixin_FixedLengthListMixin, NativeTypedArrayOfInt, NativeTypedArray_ListMixin0, NativeTypedArray_ListMixin_FixedLengthListMixin0, RenderManager, RenderManager_loadFile_closure, RenderManager_loadFile_closure0, RenderManager__loadFile_closure, RenderManager__loadFile_closure0, RenderManager__loadFile_closure1, ImageFilm, BoxFilter, GaussianFilter, LanczosSincFilter, MitchellFilter, TriangleFilter, convertNativeToDart_AcceptStructuredClone_findSlot, convertNativeToDart_AcceptStructuredClone_readSlot, convertNativeToDart_AcceptStructuredClone_writeSlot, convertNativeToDart_AcceptStructuredClone_walk, FilteredElementList, FilteredElementList__filtered_closure, FilteredElementList_removeRange_closure, DecodeInfo, Decoder, ExrAttribute, ExrB44Compressor, ExrChannel, ExrCompressor, ExrHufDec, ExrImage, ExrPart, ExrPizCompressor, _PizChannelData, ExrPxr24Compressor, ExrRleCompressor, ExrZipCompressor, ExrDecoder, GifColorMap, GifImageDesc, GifInfo, GifDecoder, JpegAdobe, JpegComponent, JpegData, JpegFrame, JpegJfif, JpegScan, JpegDecoder, PngFrame, PngInfo, PngDecoder, PsdLayerAdditionalData, PsdLayerSectionDivider, PsdBlendingRanges, PsdChannel, PsdImage, PsdImageResource, PsdLayer, PsdLayerData, PsdMask, PsdDecoder, TiffBitReader, TiffEntry, TiffFaxDecoder, TiffImage, TiffInfo, LzwDecoder, TiffDecoder, VP8, VP8__upsample_LOAD_UV, VP8BitReader, VP8Filter, VP8FrameHeader, VP8PictureHeader, VP8SegmentHeader, VP8BandProbas, VP8Proba, VP8FilterHeader, VP8FInfo, VP8MB, VP8QuantMatrix, VP8MBData, VP8TopSamples, VP8L, VP8LBitReader, VP8LColorCache, VP8LTransform, _VP8LMultipliers, WebPAlpha, WebPFrame, _HuffmanTree, _HTreeGroup, WebPInfo, WebPDecoder, HdrImage, HdrSlice, hdrToImage__knee, hdrToImage__gamma, Image, ImageException, InputBuffer, OutputBuffer, DiffuseAreaLight, DistantLight, GoniometricLight, GoniometricLight_closure, InfiniteAreaLight, InfiniteAreaLight_closure, _InfiniteAreaCube, PointLight, ProjectionLight, ProjectionLight_closure, SpotLight, GlassMaterial, KdSubsurfaceMaterial, MatteMaterial, MeasuredMaterial, MeasuredMaterial_closure, MeasuredMaterial_closure0, MetalMaterial, MirrorMaterial, MixMaterial, PlasticMaterial, ShinyMetalMaterial, SubstrateMaterial, SubsurfaceMaterial, TranslucentMaterial, UberMaterial, GraphicsState, Pbrt, Pbrt_renderScene_closure, Pbrt_renderScene__closure, PbrtLexer, _PbrtLexerInput, PbrtParser, PbrtParser_parse_closure, PbrtParser_parse__closure, PbrtParser_parse___closure, PbrtParser__loadIncludes_closure, PbrtParser__loadIncludes_closure0, PbrtParser__loadIncludes__closure, PbrtParser__loadIncludes__closure0, PbrtParser__loadIncludes_closure1, PbrtParser__parse_closure, PbrtParser__parseCommand_closure, RenderIsolate, RenderIsolate_start_closure, RenderIsolate__render_closure, RenderIsolate__render_closure0, RenderManagerInterface, RenderOptions, TransformSet, LinearPixelSampler, RandomPixelSampler, TilePixelSampler, AggregateTestRenderer, MetropolisRenderer, _PathSample, _LightingSample, _PathVertex, _MLTSample, _MLTTask, SamplerRenderer, _SamplerRendererTask, AdaptiveSampler, BestCandidateSampler, BestCandidateSampler_getMoreSamples_WRAP, HaltonSampler, LowDiscrepancySampler, RandomSampler, StratifiedSampler, Cone, Cylinder, Disk, Heightfield, Heightfield_refine_VERT, Hyperboloid, Hyperboloid_area_SQR, Hyperboloid_area_QUAD, LoopSubdivision, _SDEdgeMap, _SDVertex, _SDFace, _SDEdge, Nurbs, Nurbs_refine_VN, Paraboloid, Sphere, Triangle, TriangleMesh, AmbientOcclusionIntegrator, DiffusePRTIntegrator, DirectLightingIntegrator, GlossyPRTIntegrator, IGIIntegrator, _VirtualLight, IrradianceCacheIntegrator, IrradianceSample, IrradiancePrimeTask, IrradProcess, PathIntegrator, PhotonMapIntegrator, Photon, RadiancePhoton, PhotonShootingTask, ComputeRadianceTask, ClosePhoton, PhotonProcess, RadiancePhotonProcess, WhittedIntegrator, BilerpTexture, Checkerboard3DTexture, CheckerboardTexture, CheckerboardTexture_evaluate_BUMPINT, DotsTexture, FBmTexture, ImageTexture, ImageTexture_closure, MarbleTexture, MixTexture, ScaleTexture, UVTexture, WindyTexture, WrinkledTexture, EmissionIntegrator, SingleScatteringIntegrator, ExponentialDensityRegion, HomogeneousVolumeRegion, VolumeGridDensity];
 }

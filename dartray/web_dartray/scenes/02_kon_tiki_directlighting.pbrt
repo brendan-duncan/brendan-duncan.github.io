@@ -1,10 +1,9 @@
-Sampler "stratified" 
-  "integer xsamples" [2] "integer ysamples" [2]
-  "bool jitter" ["false"]
+Sampler "random"
+#Sampler "stratified" 
+#  "integer xsamples" [2] "integer ysamples" [2]
+#  "bool jitter" ["false"]
 
 PixelFilter "mitchell"
-
-Accelerator "grid"
 
 LookAt 15 7.5 -15   0 0 0   0 1 0
 Camera "perspective"
