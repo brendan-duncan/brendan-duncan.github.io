@@ -1,5 +1,4 @@
 SurfaceIntegrator "path"
-Pixels "tile" "integer tilesize" [5]
 Sampler "lowdiscrepancy" "integer pixelsamples" [4] 
 #Sampler "stratified" "integer pixelsamples" [1]
 #Sampler "random" "integer pixelsamples" [1]

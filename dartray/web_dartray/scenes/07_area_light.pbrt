@@ -1,4 +1,3 @@
-Pixels "random"
 Sampler "stratified" "integer pixelsamples" [32] "bool jitter" ["true"]
 PixelFilter "mitchell"
 

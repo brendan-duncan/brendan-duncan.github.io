@@ -2,7 +2,8 @@ Scale -1 1 1
 LookAt 18 3.5 2    8 -.5 20   0 1 0
 Camera "perspective" "float fov" [50]
 
-Sampler "lowdiscrepancy" "integer pixelsamples" [16]
+#Sampler "lowdiscrepancy" "integer pixelsamples" [16]
+Sampler "random"
 PixelFilter "box"
 Film "image" "integer xresolution" [450] "integer yresolution" [270]
     "string filename" "room-path.png"

@@ -23,7 +23,7 @@ import 'package:dartray/dartray_web.dart';
 import 'package:image/image.dart';
 
 //String scene = 'scenes/01_bowl_of_spheres.pbrt';
-//String scene = 'scenes/02_kon_tiki_directlighting.pbrt';
+//String scene = 'scenes/02_kin_tiki_directlighting.pbrt';
 //String scene = 'scenes/03_quadrics_directlighting.pbrt';
 //String scene = 'scenes/04_box.pbrt';
 //String scene = 'scenes/05_distant_light.pbrt';
@@ -38,6 +38,9 @@ String scene = 'scenes/cornell_path.pbrt';
 //String scene = 'scenes/teapot-area-light.pbrt';
 //String scene = 'pbrt/caustic-proj.pbrt';
 //String scene = 'pbrt/sibenik-igi.pbrt';
+//String scene = 'pbrt/killeroo-simple.pbrt';
+//String scene = 'pbrt/sponza-fog.pbrt';
+//String scene = 'pbrt/city-env.pbrt';
 //String scene = 'scenes/nurbs.pbrt';
 
 void main() {
@@ -57,7 +60,7 @@ void main() {
   timer.start();
   new RenderManager().render(scene,
       image: img,
-      isolate: 'web_isolate.dart', numThreads: 4,
+      isolate: 'web_isolate.dart',
       log: (int type, String msg) {
         print('$msg');
         var div = new Html.Element.html('<pre>$msg</pre>');

@@ -33366,6 +33366,9 @@ var $$ = {};
         t3._addListener$1(result);
       }
       return completer.future;
+    },
+    render$5$image$isolate$log$preview: function(path, image, isolate, log, preview) {
+      return this.render$6$image$isolate$log$numThreads$preview(path, image, isolate, log, 1, preview);
     }
   },
   RenderManagerInterface_render_closure1: {
@@ -36796,7 +36799,7 @@ var $$ = {};
     t5.reverseOrientation = false;
     U.Pbrt__registerStandardPlugins();
     t1.pbrt = new U.Pbrt(t1, 1, t2, 3, t3, t4, t5, [], [], [], null, null);
-    t1.render$6$image$isolate$log$numThreads$preview($.scene, img, "web_isolate.dart", new K.main_closure(), 4, new K.main_closure0(e, imageData)).then$1(new K.main_closure1(e, imageData, img, timer));
+    t1.render$5$image$isolate$log$preview($.scene, img, "web_isolate.dart", new K.main_closure(), new K.main_closure0(e, imageData)).then$1(new K.main_closure1(e, imageData, img, timer));
   }, "call$0", "main$closure", 0, 0, 9],
   main_closure: {
     "^": "Closure:123;",
