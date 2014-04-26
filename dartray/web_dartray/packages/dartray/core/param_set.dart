@@ -1,22 +1,22 @@
 /****************************************************************************
- *  Copyright (C) 2014 by Brendan Duncan.                                   *
+ * Copyright (C) 2014 by Brendan Duncan.                                    *
  *                                                                          *
- *  This file is part of DartRay.                                           *
+ * This file is part of DartRay.                                            *
  *                                                                          *
- *  Licensed under the Apache License, Version 2.0 (the "License");         *
- *  you may not use this file except in compliance with the License.        *
- *  You may obtain a copy of the License at                                 *
+ * Licensed under the Apache License, Version 2.0 (the "License");          *
+ * you may not use this file except in compliance with the License.         *
+ * You may obtain a copy of the License at                                  *
  *                                                                          *
- *  http://www.apache.org/licenses/LICENSE-2.0                              *
+ * http://www.apache.org/licenses/LICENSE-2.0                               *
  *                                                                          *
- *  Unless required by applicable law or agreed to in writing, software     *
- *  distributed under the License is distributed on an "AS IS" BASIS,       *
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.*
- *  See the License for the specific language governing permissions and     *
- *  limitations under the License.                                          *
+ * Unless required by applicable law or agreed to in writing, software      *
+ * distributed under the License is distributed on an "AS IS" BASIS,        *
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. *
+ * See the License for the specific language governing permissions and      *
+ * limitations under the License.                                           *
  *                                                                          *
- *   This project is based on PBRT v2 ; see http://www.pbrt.org             *
- *   pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.*
+ * This project is based on PBRT v2 ; see http://www.pbrt.org               *
+ * pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.  *
  ****************************************************************************/
 part of core;
 
@@ -34,6 +34,91 @@ class ParamSet {
     spectra = new List.from(other.spectra),
     strings = new List.from(other.strings),
     textures = new List.from(other.textures);
+
+  ParamSet.fromJson(Map json) {
+    for (String type_name in json.keys) {
+      var value = json[type_name];
+      List tk = type_name.split(' ');
+      if (tk.length != 2) {
+        LogError('Invalid parameter declaration: \'$type_name\'. '
+                 'Should be \'type name\'.');
+        continue;
+      }
+
+      String type = tk[0];
+      String name = tk[1];
+
+      if (type == 'float') {
+        if (value is num) {
+          value = [value.toDouble()];
+        }
+        addFloat(name, value);
+      } else if (type == 'int' || type == 'integer') {
+        if (value is num) {
+          value = [value.toInt()];
+        }
+        addInt(name, value);
+      } else if (type == 'bool' || type == 'boolean') {
+        if (value is bool) {
+          value = [value];
+        }
+        addBool(name, value);
+      } else if (type == 'point') {
+        addPoint(name, value);
+      } else if (type == 'vector') {
+        addVector(name, value);
+      } else if (type == 'normal') {
+        addNormal(name, value);
+      } else if (type == 'string') {
+        addString(name, value);
+      } else if (type == 'string') {
+        addString(name, value);
+      } else if (type == 'rgb' || type == 'color') {
+        addRGBSpectrum(name, value);
+      } else if (type == 'xyz') {
+        addXYZSpectrum(name, value);
+      } else {
+        LogError('Unhandled parameter type: $type');
+      }
+    }
+  }
+
+  Map toJson() {
+    Map json = {};
+    for (var p in bools) {
+      json['bool ${p.name}'] = p.data;
+    }
+
+    for (var p in ints) {
+      json['int ${p.name}'] = p.data;
+    }
+
+    for (var p in floats) {
+      json['float ${p.name}'] = p.data;
+    }
+
+    for (var p in points) {
+      json['point ${p.name}'] = p.data;
+    }
+
+    for (var p in vectors) {
+      json['vector ${p.name}'] = p.data;
+    }
+
+    for (var p in normals) {
+      json['normal ${p.name}'] = p.data;
+    }
+
+    for (var p in spectra) {
+      json['color ${p.name}'] = p.data;
+    }
+
+    for (var p in strings) {
+      json['string ${p.name}'] = p.data;
+    }
+
+    return json;
+  }
 
   void addFloat(String name, List<double> data) {
     name = name.toLowerCase();
@@ -166,7 +251,7 @@ class ParamSet {
           continue;
         }
 
-        List<double> values = _readFloatFile(bytes, path);
+        List<double> values = ReadFloatFile(bytes, path);
         int numSamples = values.length ~/ 2;
         Float32List wls = new Float32List(numSamples);
         Float32List v = new Float32List(numSamples);
@@ -185,7 +270,7 @@ class ParamSet {
           Completer sc = new Completer();
           ResourceManager.RequestFile(path).then((bytes) {
             LogDebug('FINISHED SPECTRUM FILE $path');
-            List<double> values = _readFloatFile(bytes, path);
+            List<double> values = ReadFloatFile(bytes, path);
             int numSamples = values.length ~/ 2;
             Float32List wls = new Float32List(numSamples);
             Float32List v = new Float32List(numSamples);
@@ -640,55 +725,6 @@ class ParamSet {
     }
     out += '] ';
     return out;
-  }
-
-  List<double> _readFloatFile(List<int> bytes, String path) {
-    String text = new String.fromCharCodes(bytes);
-    int len = text.length;
-    int ci = 0;
-
-    final int ZERO = '0'.codeUnits[0];
-    final int NINE = '9'.codeUnits[0];
-    bool _isdigit(String c) {
-      int cu = c.codeUnits[0];
-      return cu >= ZERO && cu <= NINE;
-    }
-
-    bool _isspace(String c) {
-      return c == ' ' || c == '\t' || c == '\n' || c == '\r';
-    }
-
-    List<double> values = [];
-    bool inNumber = false;
-    String curNumber = '';
-    int lineNumber = 0;
-    while (ci < len) {
-      String c = text[ci++];
-      if (c == '\n') {
-        ++lineNumber;
-      }
-      if (inNumber) {
-        if (_isdigit(c) || c == '.' || c == 'e' || c == '-' || c == '+') {
-          curNumber += c;
-        } else {
-          values.add(double.parse(curNumber));
-          inNumber = false;
-          curNumber = '';
-        }
-      } else {
-        if (_isdigit(c) || c == '.' || c == '-' || c == '+') {
-          inNumber = true;
-          curNumber += c;
-        } else if (c == '#') {
-          while ((c = text[ci++]) != '\n' && ci < len) ;
-          ++lineNumber;
-        } else if (!_isspace(c)) {
-          LogWarning('Unexpected text found at line $lineNumber of float file $path: $c');
-        }
-      }
-    }
-
-    return values;
   }
 
   List<ParamSetItem<bool>> bools = [];

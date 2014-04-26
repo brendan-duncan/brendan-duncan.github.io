@@ -1,3 +1,23 @@
+/****************************************************************************
+ * Copyright (C) 2014 by Brendan Duncan.                                    *
+ *                                                                          *
+ * This file is part of DartRay.                                            *
+ *                                                                          *
+ * Licensed under the Apache License, Version 2.0 (the "License");          *
+ * you may not use this file except in compliance with the License.         *
+ * You may obtain a copy of the License at                                  *
+ *                                                                          *
+ * http://www.apache.org/licenses/LICENSE-2.0                               *
+ *                                                                          *
+ * Unless required by applicable law or agreed to in writing, software      *
+ * distributed under the License is distributed on an "AS IS" BASIS,        *
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. *
+ * See the License for the specific language governing permissions and      *
+ * limitations under the License.                                           *
+ *                                                                          *
+ * This project is based on PBRT v2 ; see http://www.pbrt.org               *
+ * pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.  *
+ ****************************************************************************/
 part of surface_integrators;
 
 class IrradianceCacheIntegrator extends SurfaceIntegrator {
@@ -6,20 +26,6 @@ class IrradianceCacheIntegrator extends SurfaceIntegrator {
                             double maxang, this.maxSpecularDepth,
                             this.maxIndirectDepth, this.nSamples) {
     cosMaxSampleAngleDifference = Math.cos(Degrees(maxang));
-  }
-
-  static IrradianceCacheIntegrator Create(ParamSet params) {
-    double minWeight = params.findOneFloat('minweight', 0.5);
-    double minSpacing = params.findOneFloat('minpixelspacing', 2.5);
-    double maxSpacing = params.findOneFloat('maxpixelspacing', 15.0);
-    double maxAngle = params.findOneFloat('maxangledifference', 10.0);
-    int maxSpecularDepth = params.findOneInt('maxspeculardepth', 5);
-    int maxIndirectDepth = params.findOneInt('maxindirectdepth', 3);
-    int nSamples = params.findOneInt('nsamples', 4096);
-
-    return new IrradianceCacheIntegrator(minWeight, minSpacing, maxSpacing,
-                                         maxAngle, maxSpecularDepth,
-                                         maxIndirectDepth, nSamples);
   }
 
   Spectrum Li(Scene scene, Renderer renderer, RayDifferential ray,
@@ -97,9 +103,8 @@ class IrradianceCacheIntegrator extends SurfaceIntegrator {
 
     HaltonSampler sampler = new HaltonSampler(extent[0], extent[1],
                                               extent[2], extent[3],
-                                              1,
                                               camera.shutterOpen,
-                                              camera.shutterClose);
+                                              camera.shutterClose, 1);
 
     Sample sample = new Sample(sampler, this, null, scene);
 
@@ -124,7 +129,7 @@ class IrradianceCacheIntegrator extends SurfaceIntegrator {
     if (!interpolateE(scene, p, ng, E, wi)) {
       // Compute irradiance at current point
       Stats.IRRADIANCE_CACHE_STARTED_COMPUTING_IRRADIANCE(p, ng);
-      List<int> scramble = [ rng.randomUInt(), rng.randomUInt() ];
+      List<int> scramble = [ rng.randomUint(), rng.randomUint() ];
       double minHitDistance = INFINITY;
       Vector wAvg = new Vector(0.0, 0.0, 0.0);
       Spectrum LiSum = new Spectrum(0.0);
@@ -144,7 +149,7 @@ class IrradianceCacheIntegrator extends SurfaceIntegrator {
         Stats.IRRADIANCE_CACHE_STARTED_RAY(r);
         Spectrum L = pathL(r, scene, renderer, rng);
         LiSum += L;
-        wAvg += r.direction * L.y;
+        wAvg += r.direction * L.luminance();
         minHitDistance = Math.min(minHitDistance, r.maxDistance);
         Stats.IRRADIANCE_CACHE_FINISHED_RAY(r, r.maxDistance, L);
       }
@@ -266,7 +271,7 @@ class IrradianceCacheIntegrator extends SurfaceIntegrator {
 
       // Possibly terminate the path
       if (pathLength > 2) {
-        double rrProb = Math.min(1.0, pathThroughput.y);
+        double rrProb = Math.min(1.0, pathThroughput.luminance());
 
         if (rng.randomFloat() > rrProb) {
           break;
@@ -277,6 +282,20 @@ class IrradianceCacheIntegrator extends SurfaceIntegrator {
     }
 
     return L;
+  }
+
+  static IrradianceCacheIntegrator Create(ParamSet params) {
+    double minWeight = params.findOneFloat('minweight', 0.5);
+    double minSpacing = params.findOneFloat('minpixelspacing', 2.5);
+    double maxSpacing = params.findOneFloat('maxpixelspacing', 15.0);
+    double maxAngle = params.findOneFloat('maxangledifference', 10.0);
+    int maxSpecularDepth = params.findOneInt('maxspeculardepth', 5);
+    int maxIndirectDepth = params.findOneInt('maxindirectdepth', 3);
+    int nSamples = params.findOneInt('nsamples', 4096);
+
+    return new IrradianceCacheIntegrator(minWeight, minSpacing, maxSpacing,
+                                         maxAngle, maxSpecularDepth,
+                                         maxIndirectDepth, nSamples);
   }
 
   double minSamplePixelSpacing;

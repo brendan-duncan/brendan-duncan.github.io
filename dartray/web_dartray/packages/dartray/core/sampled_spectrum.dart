@@ -1,13 +1,33 @@
+/****************************************************************************
+ * Copyright (C) 2014 by Brendan Duncan.                                    *
+ *                                                                          *
+ * This file is part of DartRay.                                            *
+ *                                                                          *
+ * Licensed under the Apache License, Version 2.0 (the "License");          *
+ * you may not use this file except in compliance with the License.         *
+ * You may obtain a copy of the License at                                  *
+ *                                                                          *
+ * http://www.apache.org/licenses/LICENSE-2.0                               *
+ *                                                                          *
+ * Unless required by applicable law or agreed to in writing, software      *
+ * distributed under the License is distributed on an "AS IS" BASIS,        *
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. *
+ * See the License for the specific language governing permissions and      *
+ * limitations under the License.                                           *
+ *                                                                          *
+ * This project is based on PBRT v2 ; see http://www.pbrt.org               *
+ * pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.  *
+ ****************************************************************************/
 part of core;
 
 class SampledSpectrum extends Spectrum {
   static const int NUM_SAMPLES = 4;
 
   SampledSpectrum([double v = 0.0]) :
-    super.samples(NUM_SAMPLES, v);
+    super._(NUM_SAMPLES, v);
 
   SampledSpectrum.from(Spectrum s, [int type = Spectrum.SPECTRUM_REFLECTANCE]) :
-    super.samples(NUM_SAMPLES) {
+    super._(NUM_SAMPLES) {
     if (s is SampledSpectrum) {
       for (int i = 0; i < NUM_SAMPLES; ++i) {
         c[i] = s.c[i];
@@ -21,18 +41,18 @@ class SampledSpectrum extends Spectrum {
   }
 
   SampledSpectrum.rgb(double r, double g, double b) :
-    super.samples(NUM_SAMPLES) {
+    super._(NUM_SAMPLES) {
     setRGB(r, g, b);
   }
 
   SampledSpectrum.xyz(double x, double y, double z) :
-    super.samples(NUM_SAMPLES) {
+    super._(NUM_SAMPLES) {
     setXYZ(x, y, z);
   }
 
   SampledSpectrum.fromSampled(List<double> lambda, List<double> v,
                              [int offset = 0]) :
-    super.samples(NUM_SAMPLES) {
+    super._(NUM_SAMPLES) {
     setSampled(lambda, v, offset);
   }
 
@@ -224,7 +244,7 @@ class SampledSpectrum extends Spectrum {
     return xyz;
   }
 
-  double get y {
+  double luminance() {
     double yy = 0.0;
     for (int i = 0; i < NUM_SAMPLES; ++i) {
       yy += _Spectrum.G.Y.c[i] * c[i];

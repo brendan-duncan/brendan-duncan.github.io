@@ -1,28 +1,28 @@
 /****************************************************************************
- *  Copyright (C) 2014 by Brendan Duncan.                                   *
+ * Copyright (C) 2014 by Brendan Duncan.                                    *
  *                                                                          *
- *  This file is part of DartRay.                                           *
+ * This file is part of DartRay.                                            *
  *                                                                          *
- *  Licensed under the Apache License, Version 2.0 (the "License");         *
- *  you may not use this file except in compliance with the License.        *
- *  You may obtain a copy of the License at                                 *
+ * Licensed under the Apache License, Version 2.0 (the "License");          *
+ * you may not use this file except in compliance with the License.         *
+ * You may obtain a copy of the License at                                  *
  *                                                                          *
- *  http://www.apache.org/licenses/LICENSE-2.0                              *
+ * http://www.apache.org/licenses/LICENSE-2.0                               *
  *                                                                          *
- *  Unless required by applicable law or agreed to in writing, software     *
- *  distributed under the License is distributed on an "AS IS" BASIS,       *
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.*
- *  See the License for the specific language governing permissions and     *
- *  limitations under the License.                                          *
+ * Unless required by applicable law or agreed to in writing, software      *
+ * distributed under the License is distributed on an "AS IS" BASIS,        *
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. *
+ * See the License for the specific language governing permissions and      *
+ * limitations under the License.                                           *
  *                                                                          *
- *   This project is based on PBRT v2 ; see http://www.pbrt.org             *
- *   pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.*
+ * This project is based on PBRT v2 ; see http://www.pbrt.org               *
+ * pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.  *
  ****************************************************************************/
 part of core;
 
 /**
- * Stores information about a ray intersection, including the point, normal,
- * and derivatives of the surface.
+ * Stores information about the point on a surface from a ray intersection.
+ * This includes the point, normal, and various derivatives of the surface.
  */
 class DifferentialGeometry {
   Point p;
@@ -75,19 +75,17 @@ class DifferentialGeometry {
     dvdy = other.dvdy;
   }
 
-  DifferentialGeometry set(Point P, Vector DPDU,
-              Vector DPDV, Normal DNDU,
-              Normal DNDV, double uu, double vv,
-              Shape sh) {
-    p.copy(P);
-    dpdu.copy(DPDU);
-    dpdv.copy(DPDV);
-    dndu.copy(DNDU);
-    dndv.copy(DNDV);
-    nn.copy(Vector.Normalize(Vector.Cross(dpdu, dpdv)));
-    u = uu;
-    v = vv;
-    shape = sh;
+  DifferentialGeometry set(Point p, Vector dpdu, Vector dpdv, Normal dndu,
+                           Normal dndv, double u, double v, Shape shape) {
+    this.p = p;//.copy(p);
+    this.dpdu = dpdu;//.copy(dpdu);
+    this.dpdv = dpdv;//.copy(dpdv);
+    this.dndu = dndu;//.copy(dndu);
+    this.dndv = dndv;//.copy(dndv);
+    this.nn = Vector.Normalize(Vector.Cross(dpdu, dpdv));
+    this.u = u;
+    this.v = v;
+    this.shape = shape;
     dudx = 0.0;
     dvdx = 0.0;
     dudy = 0.0;
@@ -96,6 +94,7 @@ class DifferentialGeometry {
     // Adjust normal based on orientation and handedness
     int a = shape != null && shape.reverseOrientation ? 1 : 0;
     int b = shape != null && shape.transformSwapsHandedness ? 1 : 0;
+
     if (shape != null && (a ^ b) != 0) {
       nn *= -1.0;
     }

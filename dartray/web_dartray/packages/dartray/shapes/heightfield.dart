@@ -1,19 +1,29 @@
+/****************************************************************************
+ * Copyright (C) 2014 by Brendan Duncan.                                    *
+ *                                                                          *
+ * This file is part of DartRay.                                            *
+ *                                                                          *
+ * Licensed under the Apache License, Version 2.0 (the "License");          *
+ * you may not use this file except in compliance with the License.         *
+ * You may obtain a copy of the License at                                  *
+ *                                                                          *
+ * http://www.apache.org/licenses/LICENSE-2.0                               *
+ *                                                                          *
+ * Unless required by applicable law or agreed to in writing, software      *
+ * distributed under the License is distributed on an "AS IS" BASIS,        *
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. *
+ * See the License for the specific language governing permissions and      *
+ * limitations under the License.                                           *
+ *                                                                          *
+ * This project is based on PBRT v2 ; see http://www.pbrt.org               *
+ * pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.  *
+ ****************************************************************************/
 part of shapes;
 
 class Heightfield extends Shape {
   Heightfield(Transform o2w, Transform w2o, bool ro, this.nx, this.ny,
               this.z) :
     super(o2w, w2o, ro);
-
-  static Heightfield Create(Transform o2w, Transform w2o,
-                            bool reverseOrientation, ParamSet params) {
-    int nu = params.findOneInt('nu', -1);
-    int nv = params.findOneInt('nv', -1);
-    List<double> Pz = params.findFloat('Pz');
-    assert(Pz.length == nu * nv);
-    assert(nu != -1 && nv != -1 && Pz != null);
-    return new Heightfield(o2w, w2o, reverseOrientation, nu, nv, Pz);
-  }
 
   bool canIntersect() {
     return false;
@@ -76,4 +86,14 @@ class Heightfield extends Shape {
   List<double> z;
   int nx;
   int ny;
+
+  static Heightfield Create(Transform o2w, Transform w2o,
+                            bool reverseOrientation, ParamSet params) {
+    int nu = params.findOneInt('nu', -1);
+    int nv = params.findOneInt('nv', -1);
+    List<double> Pz = params.findFloat('Pz');
+    assert(Pz.length == nu * nv);
+    assert(nu != -1 && nv != -1 && Pz != null);
+    return new Heightfield(o2w, w2o, reverseOrientation, nu, nv, Pz);
+  }
 }

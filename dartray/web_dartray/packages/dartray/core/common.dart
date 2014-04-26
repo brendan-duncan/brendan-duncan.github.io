@@ -1,22 +1,22 @@
 /****************************************************************************
- *  Copyright (C) 2014 by Brendan Duncan.                                   *
+ * Copyright (C) 2014 by Brendan Duncan.                                    *
  *                                                                          *
- *  This file is part of DartRay.                                           *
+ * This file is part of DartRay.                                            *
  *                                                                          *
- *  Licensed under the Apache License, Version 2.0 (the "License");         *
- *  you may not use this file except in compliance with the License.        *
- *  You may obtain a copy of the License at                                 *
+ * Licensed under the Apache License, Version 2.0 (the "License");          *
+ * you may not use this file except in compliance with the License.         *
+ * You may obtain a copy of the License at                                  *
  *                                                                          *
- *  http://www.apache.org/licenses/LICENSE-2.0                              *
+ * http://www.apache.org/licenses/LICENSE-2.0                               *
  *                                                                          *
- *  Unless required by applicable law or agreed to in writing, software     *
- *  distributed under the License is distributed on an "AS IS" BASIS,       *
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.*
- *  See the License for the specific language governing permissions and     *
- *  limitations under the License.                                          *
+ * Unless required by applicable law or agreed to in writing, software      *
+ * distributed under the License is distributed on an "AS IS" BASIS,        *
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. *
+ * See the License for the specific language governing permissions and      *
+ * limitations under the License.                                           *
  *                                                                          *
- *   This project is based on PBRT v2 ; see http://www.pbrt.org             *
- *   pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.*
+ * This project is based on PBRT v2 ; see http://www.pbrt.org               *
+ * pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.  *
  ****************************************************************************/
 part of core;
 
@@ -26,25 +26,86 @@ const double INV_FOURPI = 0.07957747154594766788;
 const double INFINITY = 1.0e500;
 const double FLT_EPSILON = 1.19209290e-07;
 
-double Lerp(num t, num v1, num v2) =>
-    (1.0 - t) * v1 + t * v2;
+/**
+ * The Future class has a forEach static method, but not a while-loop
+ * equivalent. This function will continue calling f while f returns a future,
+ * and breaks when f returns null.
+ * It waits for the future returned by f to complete before calling f again.
+ * The returned future will complete when the loop has beeb broken.
+ */
+Future FutureWhileLoop(Function f) {
+  Completer doneSignal = new Completer();
+  void nextElement(_) {
+    Future future = f();
+    if (future == null) {
+      doneSignal.complete(null);
+    } else {
+      new Future.sync(() => future)
+        .then(nextElement, onError : doneSignal.completeError);
+    }
+  }
+  nextElement(null);
+  return doneSignal.future;
+}
 
+void GetSubWindow(int w, int h, int num, int count, List<int> extents) {
+  // Determine how many tiles to use in each dimension, nx and ny
+  int nx = count;
+  int ny = 1;
+  while ((nx & 0x1) == 0 && 2 * w * ny < h * nx) {
+    nx >>= 1;
+    ny <<= 1;
+  }
+  assert(nx * ny == count);
+
+  // Compute x and y pixel sample range for sub-window
+  int xo = num % nx;
+  int yo = num ~/ nx;
+  double tx0 = xo / nx;
+  double tx1 = (xo + 1) / nx;
+  double ty0 = yo / ny;
+  double ty1 = (yo + 1) / ny;
+  extents[0] = Lerp(tx0, 0, w).floor();
+  extents[1] = Math.min(Lerp(tx1, 0, w).floor(), w);
+  extents[2] = Lerp(ty0, 0, h).floor();
+  extents[3] = Math.min(Lerp(ty1, 0, h).floor(), h);
+}
+
+/**
+ * Linear interpolation between two values [v1] and [v2], at [t] which should
+ * be between 0 and 1.
+ */
+Lerp(num t, v1, v2) =>
+    v1 * (1.0 - t) + v2 * t;
+
+/**
+ * Convert degrees to radians.
+ */
 double Radians(num deg) =>
   (Math.PI / 180.0) * deg;
 
+/**
+ * Convert radians to degrees.
+ */
 double Degrees(num rad) =>
   (180.0 / Math.PI) * rad;
 
-double _invLog2 = 1.0 / Math.log(2.0);
+final double _invLog2 = 1.0 / Math.log(2.0);
 
 double Log2(num x) {
   return Math.log(x) * _invLog2;
 }
 
+/**
+ * Is the value [v] a power of 2?
+ */
 bool IsPowerOf2(int v) {
   return (v & (v - 1)) == 0;
 }
 
+/**
+ * Round a value [v] to the next power of 2.
+ */
 int RoundUpPow2(int v) {
   v--;
   v |= v >> 1;
@@ -64,11 +125,17 @@ int Mod(int a, int b) {
   return a;
 }
 
+/**
+ * Smooth interpolation of [value] between [min] and [max].
+ */
 double SmoothStep(double min, double max, double value) {
   double v = ((value - min) / (max - min)).clamp(0.0, 1.0);
   return v * v * (-2.0 * v  + 3.0);
 }
 
+/**
+ * Solve the given quadratic equation.
+ */
 bool Quadratic(double A, double B, double C, List<double> t0,
                List<double> t1) {
   // Find quadratic discriminant
@@ -97,6 +164,73 @@ bool Quadratic(double A, double B, double C, List<double> t0,
   }
 
   return true;
+}
+
+bool SolveLinearSystem2x2(List<double> A, List<double> B,
+                          List<double> x0, List<double> x1) {
+  double det = A[0] * A[3] - A[1] * A[2];
+  if (det.abs() < 1.0e-10) {
+    return false;
+  }
+
+  x0[0] = (A[3] * B[0] - A[1] * B[1]) / det;
+  x1[0] = (A[0] * B[1] - A[2] * B[0]) / det;
+
+  if (x0[0].isNaN || x1[0].isNaN) {
+    return false;
+  }
+
+  return true;
+}
+
+List<double> ReadFloatFile(List<int> bytes, String path) {
+  String text = new String.fromCharCodes(bytes);
+  int len = text.length;
+  int ci = 0;
+
+  final int ZERO = '0'.codeUnits[0];
+  final int NINE = '9'.codeUnits[0];
+  bool _isdigit(String c) {
+    int cu = c.codeUnits[0];
+    return cu >= ZERO && cu <= NINE;
+  }
+
+  bool _isspace(String c) {
+    return c == ' ' || c == '\t' || c == '\n' || c == '\r';
+  }
+
+  List<double> values = [];
+  bool inNumber = false;
+  String curNumber = '';
+  int lineNumber = 0;
+  while (ci < len) {
+    String c = text[ci++];
+    if (c == '\n') {
+      ++lineNumber;
+    }
+    if (inNumber) {
+      if (_isdigit(c) || c == '.' || c == 'e' || c == '-' || c == '+') {
+        curNumber += c;
+      } else {
+        values.add(double.parse(curNumber));
+        inNumber = false;
+        curNumber = '';
+      }
+    } else {
+      if (_isdigit(c) || c == '.' || c == '-' || c == '+') {
+        inNumber = true;
+        curNumber += c;
+      } else if (c == '#') {
+        while ((c = text[ci++]) != '\n' && ci < len) ;
+        ++lineNumber;
+      } else if (!_isspace(c)) {
+        LogWarning('Unexpected text found at line $lineNumber of float file '
+                   '$path: $c');
+      }
+    }
+  }
+
+  return values;
 }
 
 /**

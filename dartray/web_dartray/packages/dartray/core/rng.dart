@@ -1,31 +1,51 @@
 /****************************************************************************
- *  Copyright (C) 2014 by Brendan Duncan.                                   *
+ * Copyright (C) 2014 by Brendan Duncan.                                    *
  *                                                                          *
- *  This file is part of DartRay.                                           *
+ * This file is part of DartRay.                                            *
  *                                                                          *
- *  Licensed under the Apache License, Version 2.0 (the "License");         *
- *  you may not use this file except in compliance with the License.        *
- *  You may obtain a copy of the License at                                 *
+ * Licensed under the Apache License, Version 2.0 (the "License");          *
+ * you may not use this file except in compliance with the License.         *
+ * You may obtain a copy of the License at                                  *
  *                                                                          *
- *  http://www.apache.org/licenses/LICENSE-2.0                              *
+ * http://www.apache.org/licenses/LICENSE-2.0                               *
  *                                                                          *
- *  Unless required by applicable law or agreed to in writing, software     *
- *  distributed under the License is distributed on an "AS IS" BASIS,       *
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.*
- *  See the License for the specific language governing permissions and     *
- *  limitations under the License.                                          *
+ * Unless required by applicable law or agreed to in writing, software      *
+ * distributed under the License is distributed on an "AS IS" BASIS,        *
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. *
+ * See the License for the specific language governing permissions and      *
+ * limitations under the License.                                           *
  *                                                                          *
- *   This project is based on PBRT v2 ; see http://www.pbrt.org             *
- *   pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.*
+ * This project is based on PBRT v2 ; see http://www.pbrt.org               *
+ * pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.  *
  ****************************************************************************/
 part of core;
 
+
 /**
- * Generates random numbers using the Mersenne Twister algorithm.
- * This is used instead of Math.Random so that results can be verified against
- * the c++ implementation of PBRT.
+ * Generates random numbers using the Random class in dart:math.
  */
 class RNG {
+  Math.Random random;
+  RNG([int seed = 5489]) :
+    random = new Math.Random(seed);
+
+  void seed(int seed) {
+    random = new Math.Random(seed);
+  }
+
+  double randomFloat() {
+    return random.nextDouble();
+  }
+
+  int randomUint() {
+    return random.nextInt(0xffffffff);
+  }
+}
+
+/**
+ * Generates random numbers using the Mersenne Twister algorithm.
+ */
+/*class RNG {
   RNG([int seed = 5489]) {
     mti = N + 1; // mti==N+1 means mt[N] is not initialized
     this.seed(seed);
@@ -46,12 +66,12 @@ class RNG {
 
   double randomFloat() {
     Stats.RNG_STARTED_RANDOM_FLOAT();
-    double v = (randomUInt() & 0xffffff) / 16777216.0;
+    double v = (randomUint() & 0xffffff) / 16777216.0;
     Stats.RNG_FINISHED_RANDOM_FLOAT();
     return v;
   }
 
-  int randomUInt() {
+  int randomUint() {
     int y;
     const int M = 397;
     const int MATRIX_A = 0x9908b0df; // constant vector a
@@ -59,7 +79,7 @@ class RNG {
     const int LOWER_MASK = 0x7fffffff; // least significant r bits
 
     const List<int> mag01 = const [0x0, MATRIX_A];
-    // mag01[x] = x * MATRIX_A  for x=0,1 */
+    // mag01[x] = x * MATRIX_A  for x=0,1
 
     if (mti >= N) { // generate N words at one time
       Stats.RNG_STARTED_TABLEGEN();
@@ -97,10 +117,8 @@ class RNG {
     return y;
   }
 
-  Math.Random random;
-
   static const int N = 624;
   /// the array for the state vector
   Uint32List mt = new Uint32List(N);
   int mti;
-}
+}*/

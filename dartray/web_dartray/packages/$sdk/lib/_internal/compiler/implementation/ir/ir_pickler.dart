@@ -28,7 +28,7 @@ part 'ir_unpickler.dart';
  *
  * pickle   ::= int(entries) function
  *
- * function ::= int(endSourceOffset) int(namePosition) node(body)
+ * function ::= int(parameter count) {element(parameter)} node(body)
  *
  * int      ::= see [writeInt] for number encoding
  *
@@ -36,7 +36,7 @@ part 'ir_unpickler.dart';
  *            | byte(STRING_UTF8) int(length) {byte(utf8)}
  *
  * node      ::= byte(NODE_CONSTANT) constant node(next)
- *             | byte(NODE_LET_CONT) node(next) node(body)
+ *             | byte(NODE_LET_CONT) int(parameter count) node(next) node(body)
  *             | byte(NODE_INVOKE_STATIC) element selector
  *                   reference(continuation) {reference(argument)}
  *             | byte(NODE_INVOKE_CONTINUATION) reference(continuation)
@@ -168,7 +168,7 @@ class Pickler extends ir.Visitor {
    */
   ByteData doubleData = new ByteData(8);
 
-  List<int> pickle(ir.Function function) {
+  List<int> pickle(ir.FunctionDefinition function) {
     data = new Uint8List(INITIAL_SIZE);
     offset = 0;
     emitted = <Object, int>{};
@@ -356,11 +356,14 @@ class Pickler extends ir.Visitor {
     }
   }
 
-  void visitFunction(ir.Function node) {
-    writeInt(node.endOffset);
-    writeInt(node.namePosition);
+  void visitFunctionDefinition(ir.FunctionDefinition node) {
     // The continuation parameter is bound in the body.
     recordForBackReference(node.returnContinuation);
+    writeInt(node.parameters.length);
+    for (var parameter in node.parameters) {
+      recordForBackReference(parameter);
+      writeElement(parameter.element);
+    }
     node.body.accept(this);
   }
 
@@ -378,11 +381,12 @@ class Pickler extends ir.Visitor {
     // LetCont contexts is in the continuation body, the continuation should be
     // written second.
     writeByte(Pickles.NODE_LET_CONT);
+    writeInt(node.continuation.parameters.length);
     // The continuation is bound in the body.
     recordForBackReference(node.continuation);
     node.body.accept(this);
-    // The continuation parameter is bound in the continuation's body.
-    recordForBackReference(node.continuation.parameter);
+    // The continuation parameters are bound in the continuation's body.
+    node.continuation.parameters.forEach(recordForBackReference);
     node.continuation.body.accept(this);
   }
 

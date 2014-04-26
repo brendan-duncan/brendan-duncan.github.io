@@ -1,22 +1,22 @@
 /****************************************************************************
- *  Copyright (C) 2014 by Brendan Duncan.                                   *
+ * Copyright (C) 2014 by Brendan Duncan.                                    *
  *                                                                          *
- *  This file is part of DartRay.                                           *
+ * This file is part of DartRay.                                            *
  *                                                                          *
- *  Licensed under the Apache License, Version 2.0 (the "License");         *
- *  you may not use this file except in compliance with the License.        *
- *  You may obtain a copy of the License at                                 *
+ * Licensed under the Apache License, Version 2.0 (the "License");          *
+ * you may not use this file except in compliance with the License.         *
+ * You may obtain a copy of the License at                                  *
  *                                                                          *
- *  http://www.apache.org/licenses/LICENSE-2.0                              *
+ * http://www.apache.org/licenses/LICENSE-2.0                               *
  *                                                                          *
- *  Unless required by applicable law or agreed to in writing, software     *
- *  distributed under the License is distributed on an "AS IS" BASIS,       *
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.*
- *  See the License for the specific language governing permissions and     *
- *  limitations under the License.                                          *
+ * Unless required by applicable law or agreed to in writing, software      *
+ * distributed under the License is distributed on an "AS IS" BASIS,        *
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. *
+ * See the License for the specific language governing permissions and      *
+ * limitations under the License.                                           *
  *                                                                          *
- *   This project is based on PBRT v2 ; see http://www.pbrt.org             *
- *   pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.*
+ * This project is based on PBRT v2 ; see http://www.pbrt.org               *
+ * pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.  *
  ****************************************************************************/
 part of core;
 
@@ -47,19 +47,27 @@ class Distribution1D {
     }
   }
 
-
   double sampleContinuous(double u, List<double> pdf, [List<int> off]) {
-    // Find surrounding CDF segments and _offset_
+    // Find surrounding CDF segments and offset
     int ptr = upper_bound(cdf, u, last: count + 1);
     int offset = Math.max(0, ptr - 1);
+    if (offset == count) {
+      offset = count - 1;
+    }
+
     if (off != null) {
       off[0] = offset;
     }
+
     assert(offset < count);
-    assert(u >= cdf[offset] && u < cdf[offset + 1]);
+    assert(u >= cdf[offset] && u <= cdf[offset + 1]);
 
     // Compute offset along CDF segment
-    double du = (u - cdf[offset]) / (cdf[offset + 1] - cdf[offset]);
+    double dc = (cdf[offset + 1] - cdf[offset]);
+    double du = 0.0;
+    if (dc != 0.0) {
+      du = (u - cdf[offset]) / dc;
+    }
     assert(!du.isNaN);
 
     // Compute PDF for sampled offset
@@ -67,7 +75,7 @@ class Distribution1D {
       pdf[0] = func[offset] / funcInt;
     }
 
-    // Return $x\in{}[0,1)$ corresponding to sample
+    // Return x\in{}[0,1) corresponding to sample
     return (offset + du) / count;
   }
 
@@ -285,7 +293,7 @@ void StratifiedSample2D(List<double> samples, int nx, int ny, RNG rng,
 
 void Shuffle(samples, int offset, int count, int dims, RNG rng) {
   for (int i = 0; i < count; ++i) {
-    int other = i + (rng.randomUInt() % (count - i));
+    int other = i + (rng.randomUint() % (count - i));
     for (int j = 0; j < dims; ++j) {
       var s = samples[offset + dims * i + j];
       samples[offset + dims * i + j] = samples[offset + dims * other + j];
@@ -308,7 +316,7 @@ void LatinHypercube(List<double> samples, int nSamples, int nDim,
   // Permute LHS samples in each dimension
   for (int i = 0; i < nDim; ++i) {
     for (int j = 0; j < nSamples; ++j) {
-      int other = j + (rng.randomUInt() % (nSamples - j));
+      int other = j + (rng.randomUint() % (nSamples - j));
       double t = samples[nDim * j + i];
       samples[nDim * j + i] = samples[nDim * other + i];
       samples[nDim * other + i] = t;
@@ -515,7 +523,7 @@ double LarcherPillichshammer2(int n, int scramble) {
 
 void LDShuffleScrambled1D(int nSamples, int nPixel,
                           List<double> samples, RNG rng) {
-  int scramble = rng.randomUInt();
+  int scramble = rng.randomUint();
   for (int i = 0; i < nSamples * nPixel; ++i) {
     samples[i] = VanDerCorput(i, scramble);
   }
@@ -530,7 +538,7 @@ void LDShuffleScrambled1D(int nSamples, int nPixel,
 
 void LDShuffleScrambled2D(int nSamples, int nPixel,
                           List<double> samples, RNG rng) {
-  List<int> scramble = [ rng.randomUInt(), rng.randomUInt() ];
+  List<int> scramble = [ rng.randomUint(), rng.randomUint() ];
   for (int i = 0; i < nSamples * nPixel; ++i) {
     Sample02(i, scramble, samples, 2 * i);
   }

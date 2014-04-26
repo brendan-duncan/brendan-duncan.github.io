@@ -1,22 +1,22 @@
 /****************************************************************************
- *  Copyright (C) 2014 by Brendan Duncan.                                   *
+ * Copyright (C) 2014 by Brendan Duncan.                                    *
  *                                                                          *
- *  This file is part of DartRay.                                           *
+ * This file is part of DartRay.                                            *
  *                                                                          *
- *  Licensed under the Apache License, Version 2.0 (the "License");         *
- *  you may not use this file except in compliance with the License.        *
- *  You may obtain a copy of the License at                                 *
+ * Licensed under the Apache License, Version 2.0 (the "License");          *
+ * you may not use this file except in compliance with the License.         *
+ * You may obtain a copy of the License at                                  *
  *                                                                          *
- *  http://www.apache.org/licenses/LICENSE-2.0                              *
+ * http://www.apache.org/licenses/LICENSE-2.0                               *
  *                                                                          *
- *  Unless required by applicable law or agreed to in writing, software     *
- *  distributed under the License is distributed on an "AS IS" BASIS,       *
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.*
- *  See the License for the specific language governing permissions and     *
- *  limitations under the License.                                          *
+ * Unless required by applicable law or agreed to in writing, software      *
+ * distributed under the License is distributed on an "AS IS" BASIS,        *
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. *
+ * See the License for the specific language governing permissions and      *
+ * limitations under the License.                                           *
  *                                                                          *
- *   This project is based on PBRT v2 ; see http://www.pbrt.org             *
- *   pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.*
+ * This project is based on PBRT v2 ; see http://www.pbrt.org               *
+ * pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.  *
  ****************************************************************************/
 part of core;
 
@@ -25,21 +25,57 @@ class MIPMap {
   static const int TEXTURE_BLACK = 1;
   static const int TEXTURE_CLAMP = 2;
 
+  static String GetTextureName(String filename,
+                               {bool doTri: false, double maxAniso: 8.0,
+                                int wrap: TEXTURE_REPEAT,
+                                scale: 1.0,
+                                double gamma: 1.0,
+                                bool spectrum: true}) {
+    String name = filename;
+    if (doTri) {
+      name += '_TRI:$doTri';
+    }
+    if (maxAniso != 8.0) {
+      name += '_ANI:$maxAniso';
+    }
+    if (wrap != TEXTURE_REPEAT) {
+      name += '_WRAP:$wrap';
+    }
+    if (scale is num && scale != 1.0) {
+      name += '_SCALE:$scale';
+    }
+    if (scale is Spectrum && !scale.isValue(1.0)) {
+      name += '_SCALE:$scale';
+    }
+    if (gamma != 1.0) {
+      name += '_GAMMA:$gamma';
+    }
+    if (!spectrum) {
+      name += '_SPECTRUM:$spectrum';
+    }
+    return name;
+  }
+
   MIPMap() :
     width = 0,
     height = 0,
     levels = 0;
 
-  MIPMap.texture(SpectrumImage img,
+  MIPMap.texture(SpectrumImage img, String filename,
                  [this.doTrilinear = false,
-                  this.maxAnisotropy = 8.0, this.wrapMode = TEXTURE_REPEAT]) {
+                  this.maxAnisotropy = 8.0,
+                  this.wrapMode = TEXTURE_REPEAT]) {
     int xres = img.width;
     int yres = img.height;
+
     SpectrumImage resampledImage;
     if (!IsPowerOf2(xres) || !IsPowerOf2(yres)) {
       // Resample image to power-of-two resolution
       int sPow2 = RoundUpPow2(xres);
       int tPow2 = RoundUpPow2(yres);
+      if (filename.isNotEmpty) {
+        LogInfo('Resizing Image $filename to $sPow2 $tPow2');
+      }
 
       // Resample image in s direction
       List<_ResampleWeight> sWeights = _resampleWeights(xres, sPow2);
@@ -107,6 +143,9 @@ class MIPMap {
     // Initialize levels of MIPMap from image
     levels = 1 + Log2(Math.max(xres, yres)).toInt();
     pyramid = new List<SpectrumImage>(levels);
+    if (filename.isNotEmpty && levels > 1) {
+      LogInfo('$filename: Generating $levels MIPMap Levels');
+    }
 
     // Initialize most detailed level of MIPMap
     pyramid[0] = new SpectrumImage.from(img);
@@ -136,6 +175,9 @@ class MIPMap {
         double r2 = i / (WEIGHT_LUT_SIZE - 1);
         weightLut[i] = Math.exp(-alpha * r2) - Math.exp(-alpha);
       }
+    }
+    if (filename.isNotEmpty && levels > 1) {
+      LogInfo('Finished generating MIPMap for $filename');
     }
   }
 

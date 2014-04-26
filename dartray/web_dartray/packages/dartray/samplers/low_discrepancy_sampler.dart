@@ -1,69 +1,52 @@
 /****************************************************************************
- *  Copyright (C) 2014 by Brendan Duncan.                                   *
+ * Copyright (C) 2014 by Brendan Duncan.                                    *
  *                                                                          *
- *  This file is part of DartRay.                                           *
+ * This file is part of DartRay.                                            *
  *                                                                          *
- *  Licensed under the Apache License, Version 2.0 (the "License");         *
- *  you may not use this file except in compliance with the License.        *
- *  You may obtain a copy of the License at                                 *
+ * Licensed under the Apache License, Version 2.0 (the "License");          *
+ * you may not use this file except in compliance with the License.         *
+ * You may obtain a copy of the License at                                  *
  *                                                                          *
- *  http://www.apache.org/licenses/LICENSE-2.0                              *
+ * http://www.apache.org/licenses/LICENSE-2.0                               *
  *                                                                          *
- *  Unless required by applicable law or agreed to in writing, software     *
- *  distributed under the License is distributed on an "AS IS" BASIS,       *
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.*
- *  See the License for the specific language governing permissions and     *
- *  limitations under the License.                                          *
+ * Unless required by applicable law or agreed to in writing, software      *
+ * distributed under the License is distributed on an "AS IS" BASIS,        *
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. *
+ * See the License for the specific language governing permissions and      *
+ * limitations under the License.                                           *
  *                                                                          *
- *   This project is based on PBRT v2 ; see http://www.pbrt.org             *
- *   pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.*
+ * This project is based on PBRT v2 ; see http://www.pbrt.org               *
+ * pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.  *
  ****************************************************************************/
 part of samplers;
 
 class LowDiscrepancySampler extends Sampler {
-  static LowDiscrepancySampler Create(ParamSet params, Film film,
-                                      Camera camera, PixelSampler pixels) {
-    // Initialize common sampler parameters
-    List<int> extents = [0, 0, 0, 0];
-    film.getSampleExtent(extents);
-    int nsamp = params.findOneInt('pixelsamples', 4);
-
-    return new LowDiscrepancySampler(extents[0], extents[1], extents[2],
-                                     extents[3], nsamp,
-                                     camera.shutterOpen, camera.shutterClose,
-                                     pixels);
-  }
-
-  LowDiscrepancySampler(int xstart, int xend, int ystart, int yend,
-                        int nsamp, double sopen, double sclose,
-                        this.pixels) :
-    super(xstart, xend, ystart, yend, RoundUpPow2(nsamp), sopen, sclose) {
+  LowDiscrepancySampler(int x, int y, int width, int height,
+                        double sopen, double sclose, this.pixels,
+                        int nsamp) :
+    super(x, y, width, height, sopen, sclose, RoundUpPow2(nsamp)) {
     if (pixels == null) {
-      LogSevere('Pixel sampler is required by LowDiscrepencySampler');
+      LogSevere('A PixelSampler is required by LowDiscrepencySampler');
     }
-    pixels.setup(xstart, xend, ystart, yend);
+
+    pixels.setup(x, y, width, height);
     pixelIndex = 0;
+
     if (!IsPowerOf2(nsamp)) {
-      LogWarning('Pixel samples being rounded up to power of 2');
       nPixelSamples = RoundUpPow2(nsamp);
+      LogWarning('Pixel samples being rounded up to power of 2: '
+                 '$nsamp => $nPixelSamples');
     } else {
       nPixelSamples = nsamp;
     }
     sampleBuf = null;
-  }
 
-  Sampler getSubSampler(int num, int count) {
-    List extents = [0, 0, 0, 0];
-    computeSubWindow(num, count, extents);
-    if (extents[0] == extents[1] || extents[2] == extents[3]) {
-      return null;
+    pass = 0;
+    if (RenderOverrides.SamplingMode() == Sampler.TWO_PASS_SAMPLING ||
+        RenderOverrides.SamplingMode() == Sampler.ITERATIVE_SAMPLING) {
+      randomSampler = new RandomSampler(x, y, width, height,
+                                        sopen, sclose, pixels, 1);
     }
-
-    return new LowDiscrepancySampler(extents[0], extents[1],
-                                     extents[2], extents[3],
-                                     nPixelSamples,
-                                     shutterOpen, shutterClose,
-                                     pixels);
   }
 
   int roundSize(int size) {
@@ -71,13 +54,21 @@ class LowDiscrepancySampler extends Sampler {
   }
 
   int getMoreSamples(List<Sample> samples, RNG rng) {
+    if (pass == 0 && randomSampler != null) {
+      int count = randomSampler.getMoreSamples(samples, rng);
+      if (count != 0) {
+        return count;
+      }
+      pass++;
+    }
+
     if (pixelIndex >= pixels.numPixels()) {
       return 0;
     }
 
     if (sampleBuf == null) {
        sampleBuf = new Float32List(LDPixelSampleFloatsNeeded(samples[0],
-                                                            nPixelSamples));
+                                                             nPixelSamples));
     }
 
     pixels.getPixel(pixelIndex++, pixel);
@@ -92,10 +83,21 @@ class LowDiscrepancySampler extends Sampler {
     return nPixelSamples;
   }
 
+  static LowDiscrepancySampler Create(ParamSet params, int x, int y, int width,
+                                      int height, Camera camera,
+                                      PixelSampler pixels) {
+    // Initialize common sampler parameters
+    int nsamp = params.findOneInt('pixelsamples', 4);
+
+    return new LowDiscrepancySampler(x, y, width, height, camera.shutterOpen,
+                                     camera.shutterClose, pixels, nsamp);
+  }
 
   PixelSampler pixels;
   Int32List pixel = new Int32List(2);
   int pixelIndex;
   int nPixelSamples;
   Float32List sampleBuf;
+  Sampler randomSampler;
+  int pass;
 }

@@ -1,3 +1,23 @@
+/****************************************************************************
+ * Copyright (C) 2014 by Brendan Duncan.                                    *
+ *                                                                          *
+ * This file is part of DartRay.                                            *
+ *                                                                          *
+ * Licensed under the Apache License, Version 2.0 (the "License");          *
+ * you may not use this file except in compliance with the License.         *
+ * You may obtain a copy of the License at                                  *
+ *                                                                          *
+ * http://www.apache.org/licenses/LICENSE-2.0                               *
+ *                                                                          *
+ * Unless required by applicable law or agreed to in writing, software      *
+ * distributed under the License is distributed on an "AS IS" BASIS,        *
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. *
+ * See the License for the specific language governing permissions and      *
+ * limitations under the License.                                           *
+ *                                                                          *
+ * This project is based on PBRT v2 ; see http://www.pbrt.org               *
+ * pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.  *
+ ****************************************************************************/
 part of renderers;
 
 class AggregateTestRenderer extends Renderer {
@@ -11,13 +31,7 @@ class AggregateTestRenderer extends Renderer {
     }
   }
 
-  static AggregateTestRenderer Create(ParamSet params,
-                                     List<Primitive> primitives) {
-    int niters = params.findOneInt('niters', 100000);
-    return new AggregateTestRenderer(niters, primitives);
-  }
-
-  OutputImage render(Scene scene) {
+  Future<OutputImage> render(Scene scene) {
     RNG rng = new RNG();
     // Compute bounding box of region used to generate random rays
     BBox bbox = new BBox.from(scene.worldBound);
@@ -33,18 +47,18 @@ class AggregateTestRenderer extends Renderer {
       Point org = new Point(Lerp(rng.randomFloat(), bbox.pMin.x, bbox.pMax.x),
                             Lerp(rng.randomFloat(), bbox.pMin.y, bbox.pMax.y),
                             Lerp(rng.randomFloat(), bbox.pMin.z, bbox.pMax.z));
-      if ((rng.randomUInt() % 4) == 0) {
+      if ((rng.randomUint() % 4) == 0) {
         org = lastHit;
       }
 
       // Choose ray direction for testing accelerator
       Vector dir = UniformSampleSphere(rng.randomFloat(), rng.randomFloat());
 
-      if ((rng.randomUInt() % 32) == 0) {
+      if ((rng.randomUint() % 32) == 0) {
         dir.x = dir.y = 0.0;
-      } else if ((rng.randomUInt() % 32) == 0) {
+      } else if ((rng.randomUint() % 32) == 0) {
         dir.x = dir.z = 0.0;
-      } else if ((rng.randomUInt() % 32) == 0) {
+      } else if ((rng.randomUint() % 32) == 0) {
         dir.y = dir.z = 0.0;
       }
 
@@ -90,7 +104,9 @@ class AggregateTestRenderer extends Renderer {
       }
     }
 
-    return null;
+    Completer<OutputImage> c = new Completer<OutputImage>();
+    c.complete(null);
+    return c.future;
   }
 
   Spectrum Li(Scene scene, RayDifferential ray,
@@ -101,6 +117,12 @@ class AggregateTestRenderer extends Renderer {
   Spectrum transmittance(Scene scene, RayDifferential ray,
           Sample sample, RNG rng) {
     return new Spectrum(0.0);
+  }
+
+  static AggregateTestRenderer Create(ParamSet params,
+                                     List<Primitive> primitives) {
+    int niters = params.findOneInt('niters', 100000);
+    return new AggregateTestRenderer(niters, primitives);
   }
 
   int nIterations;

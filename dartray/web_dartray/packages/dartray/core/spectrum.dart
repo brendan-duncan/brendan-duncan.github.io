@@ -1,22 +1,22 @@
 /****************************************************************************
- *  Copyright (C) 2014 by Brendan Duncan.                                   *
+ * Copyright (C) 2014 by Brendan Duncan.                                    *
  *                                                                          *
- *  This file is part of DartRay.                                           *
+ * This file is part of DartRay.                                            *
  *                                                                          *
- *  Licensed under the Apache License, Version 2.0 (the "License");         *
- *  you may not use this file except in compliance with the License.        *
- *  You may obtain a copy of the License at                                 *
+ * Licensed under the Apache License, Version 2.0 (the "License");          *
+ * you may not use this file except in compliance with the License.         *
+ * You may obtain a copy of the License at                                  *
  *                                                                          *
- *  http://www.apache.org/licenses/LICENSE-2.0                              *
+ * http://www.apache.org/licenses/LICENSE-2.0                               *
  *                                                                          *
- *  Unless required by applicable law or agreed to in writing, software     *
- *  distributed under the License is distributed on an "AS IS" BASIS,       *
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.*
- *  See the License for the specific language governing permissions and     *
- *  limitations under the License.                                          *
+ * Unless required by applicable law or agreed to in writing, software      *
+ * distributed under the License is distributed on an "AS IS" BASIS,        *
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. *
+ * See the License for the specific language governing permissions and      *
+ * limitations under the License.                                           *
  *                                                                          *
- *   This project is based on PBRT v2 ; see http://www.pbrt.org             *
- *   pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.*
+ * This project is based on PBRT v2 ; see http://www.pbrt.org               *
+ * pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.  *
  ****************************************************************************/
 part of core;
 
@@ -26,13 +26,26 @@ part of core;
 abstract class Spectrum {
   final Float32List c;
 
+  static final Spectrum ONE = new Spectrum(1.0);
+  static final Spectrum ZERO = new Spectrum(0.0);
+
   static const int RGB = 0;
   static const int XYZ = 1;
   static const int SAMPLED = 2;
 
   /// Determines the type of spectrum to use for color calculations, either
-  /// [SAMPLED] wavelength or [RGB] tripple.
+  /// [SAMPLED] wavelength or [RGB] tripple. This should only be set before
+  /// any Spectrum objects are created, so the type of Spectrum doesn't become
+  /// inconsistant.
   static int type = RGB;
+
+  /**
+   * How many samples does a spectrum color have?
+   */
+  static int NumSamples() =>
+      type == RGB ? 3 :
+      type == XYZ ? 3 :
+      SampledSpectrum.NUM_SAMPLES;
 
   /**
    * Factor constructor will create the type of spectrum currently being used.
@@ -77,23 +90,26 @@ abstract class Spectrum {
     return new Spectrum()..setSampled(lambda, v, offset);
   }
 
-  Spectrum.samples(int nSamples, [double v = 0.0]) :
-    c = new Float32List(nSamples) {
-    if (v != 0.0) {
-      c.fillRange(0, nSamples, v);
+  List<double> toList([List<double> data, int offset = 0]) {
+    if (data == null) {
+      return c;
     }
+    for (int i = 0; i < c.length; ++i) {
+      data[offset + i] = c[i];
+    }
+    return data;
   }
 
-  double operator[](int index) =>
-      c[index];
-
-  operator[]=(int index, double value) =>
-      c[index] = value;
+  void setList(List<double> data, [int offset = 0]) {
+    for (int i = 0; i < c.length; ++i) {
+      c[i] = data[offset + i];
+    }
+  }
 
   /**
    * Get the luminance of the spectrum.
    */
-  double get y;
+  double luminance();
 
   void set(double v) {
     for (int i = 0, n = c.length; i < n; ++i) {
@@ -252,6 +268,14 @@ abstract class Spectrum {
     return s;
   }
 
+  String toString() {
+    String s = '${c[0]}';
+    for (int i = 1; i < c.length; ++i) {
+      s += ' ${c[i]}';
+    }
+    return s;
+  }
+
   static List<Spectrum> AllocateList(int count) {
     List<Spectrum> r = new List<Spectrum>(count);
     for (int i = 0; i < count; ++i) {
@@ -379,8 +403,7 @@ abstract class Spectrum {
 
   static double InterpolateSpectrumSamples(List<double> lambda,
                                            List<double> vals,
-                                           num l,
-                                           [int offset = 0]) {
+                                           num l, [int offset = 0]) {
     final int n = lambda.length;
     //for (int i = 0; i < n-1; ++i) Assert(lambda[i+1] > lambda[i]);
 
@@ -395,7 +418,7 @@ abstract class Spectrum {
     for (int i = 0; i < n - 1; ++i) {
       if (l >= lambda[i] && l <= lambda[i + 1]) {
         double t = (l - lambda[i]) / (lambda[i + 1] - lambda[i]);
-        return Lerp(t, vals[offset + i], vals[i + 1]);
+        return Lerp(t, vals[offset + i], vals[offset + i + 1]);
       }
     }
 
@@ -1117,4 +1140,12 @@ abstract class Spectrum {
       1.6624255403475907e-01,   1.6997613960634927e-01,
       1.5769743995852967e-01,   1.9069090525482305e-01
   ];
+
+
+  Spectrum._(int nSamples, [double v = 0.0]) :
+    c = new Float32List(nSamples) {
+    if (v != 0.0) {
+      c.fillRange(0, nSamples, v);
+    }
+  }
 }

@@ -1,22 +1,22 @@
 /****************************************************************************
- *  Copyright (C) 2014 by Brendan Duncan.                                   *
+ * Copyright (C) 2014 by Brendan Duncan.                                    *
  *                                                                          *
- *  This file is part of DartRay.                                           *
+ * This file is part of DartRay.                                            *
  *                                                                          *
- *  Licensed under the Apache License, Version 2.0 (the 'License');         *
- *  you may not use this file except in compliance with the License.        *
- *  You may obtain a copy of the License at                                 *
+ * Licensed under the Apache License, Version 2.0 (the "License");          *
+ * you may not use this file except in compliance with the License.         *
+ * You may obtain a copy of the License at                                  *
  *                                                                          *
- *  http://www.apache.org/licenses/LICENSE-2.0                              *
+ * http://www.apache.org/licenses/LICENSE-2.0                               *
  *                                                                          *
- *  Unless required by applicable law or agreed to in writing, software     *
- *  distributed under the License is distributed on an 'AS IS' BASIS,       *
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.*
- *  See the License for the specific language governing permissions and     *
- *  limitations under the License.                                          *
+ * Unless required by applicable law or agreed to in writing, software      *
+ * distributed under the License is distributed on an "AS IS" BASIS,        *
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. *
+ * See the License for the specific language governing permissions and      *
+ * limitations under the License.                                           *
  *                                                                          *
- *   This project is based on PBRT v2 ; see http://www.pbrt.org             *
- *   pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.*
+ * This project is based on PBRT v2 ; see http://www.pbrt.org               *
+ * pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.  *
  ****************************************************************************/
 part of shapes;
 
@@ -26,64 +26,6 @@ class Nurbs extends Shape {
              this.nv, this.vorder, this.vknot, this.vmin, this.vmax,
              this.P, this.isHomogeneous) :
     super(o2w, w2o, reverseOrientation);
-
-  static Nurbs Create(Transform o2w, Transform w2o,
-                           bool ReverseOrientation, ParamSet params) {
-    int nu = params.findOneInt('nu', -1);
-    int uorder = params.findOneInt('uorder', -1);
-    List<double> uknots = params.findFloat('uknots');
-    assert(nu != -1 && uorder != -1 && uknots != null);
-    assert(uknots.length == nu + uorder);
-    double u0 = params.findOneFloat('u0', uknots[uorder-1]);
-    double u1 = params.findOneFloat('u1', uknots[nu]);
-
-    int nv = params.findOneInt('nv', -1);
-    int vorder = params.findOneInt('vorder', -1);
-    List<double> vknots = params.findFloat('vknots');
-    assert(nv != -1 && vorder != -1 && vknots != null);
-    assert(vknots.length == nv + vorder);
-    double v0 = params.findOneFloat('v0', vknots[vorder-1]);
-    double v1 = params.findOneFloat('v1', vknots[nv]);
-
-    bool isHomogeneous = false;
-    List<double> P;
-    List<Point> p = params.findPoint('P');
-    int npt;
-    if (p != null)  {
-      P = new Float32List(p.length * 3);
-      for (int i = 0, j = 0; i < p.length; ++i) {
-        P[j++] = p[i].x;
-        P[j++] = p[i].y;
-        P[j++] = p[i].z;
-      }
-      npt = P.length ~/ 3;
-    } else {
-      P = params.findFloat('Pw');
-      if (P == null) {
-        LogError('Must provide control points via \'P\' or \'Pw\' parameter to '
-                 'NURBS shape.');
-        return null;
-      }
-      if ((P.length % 4) != 0) {
-        LogError('Number of \'Pw\' control points provided to NURBS shape '
-                 'must be multiple of four');
-        return null;
-      }
-
-      npt = P.length ~/ 4;
-      isHomogeneous = true;
-    }
-
-    if (npt != nu * nv) {
-      LogError('NURBS shape was expecting $nu*$nv=${nu*nv} control points, '
-               'was given ${P.length}');
-      return null;
-    }
-
-    return new Nurbs(o2w, w2o, ReverseOrientation, nu, uorder, uknots,
-                          u0, u1, nv, vorder, vknots, v0, v1, P,
-                          isHomogeneous);
-  }
 
   BBox objectBound() {
     if (!isHomogeneous) {
@@ -332,5 +274,63 @@ class Nurbs extends Shape {
   List<double> vknot;
   bool isHomogeneous;
   List<double> P;
+
+  static Nurbs Create(Transform o2w, Transform w2o,
+                      bool ReverseOrientation, ParamSet params) {
+    int nu = params.findOneInt('nu', -1);
+    int uorder = params.findOneInt('uorder', -1);
+    List<double> uknots = params.findFloat('uknots');
+    assert(nu != -1 && uorder != -1 && uknots != null);
+    assert(uknots.length == nu + uorder);
+    double u0 = params.findOneFloat('u0', uknots[uorder-1]);
+    double u1 = params.findOneFloat('u1', uknots[nu]);
+
+    int nv = params.findOneInt('nv', -1);
+    int vorder = params.findOneInt('vorder', -1);
+    List<double> vknots = params.findFloat('vknots');
+    assert(nv != -1 && vorder != -1 && vknots != null);
+    assert(vknots.length == nv + vorder);
+    double v0 = params.findOneFloat('v0', vknots[vorder-1]);
+    double v1 = params.findOneFloat('v1', vknots[nv]);
+
+    bool isHomogeneous = false;
+    List<double> P;
+    List<Point> p = params.findPoint('P');
+    int npt;
+    if (p != null)  {
+      P = new Float32List(p.length * 3);
+      for (int i = 0, j = 0; i < p.length; ++i) {
+        P[j++] = p[i].x;
+        P[j++] = p[i].y;
+        P[j++] = p[i].z;
+      }
+      npt = P.length ~/ 3;
+    } else {
+      P = params.findFloat('Pw');
+      if (P == null) {
+        LogError('Must provide control points via \'P\' or \'Pw\' parameter to '
+                 'NURBS shape.');
+        return null;
+      }
+      if ((P.length % 4) != 0) {
+        LogError('Number of \'Pw\' control points provided to NURBS shape '
+                 'must be multiple of four');
+        return null;
+      }
+
+      npt = P.length ~/ 4;
+      isHomogeneous = true;
+    }
+
+    if (npt != nu * nv) {
+      LogError('NURBS shape was expecting $nu*$nv=${nu*nv} control points, '
+               'was given ${P.length}');
+        return null;
+      }
+
+      return new Nurbs(o2w, w2o, ReverseOrientation, nu, uorder, uknots,
+                            u0, u1, nv, vorder, vknots, v0, v1, P,
+                            isHomogeneous);
+    }
 }
 

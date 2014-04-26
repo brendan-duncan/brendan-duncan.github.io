@@ -1,28 +1,36 @@
 /****************************************************************************
- *  Copyright (C) 2014 by Brendan Duncan.                                   *
+ * Copyright (C) 2014 by Brendan Duncan.                                    *
  *                                                                          *
- *  This file is part of DartRay.                                           *
+ * This file is part of DartRay.                                            *
  *                                                                          *
- *  Licensed under the Apache License, Version 2.0 (the "License");         *
- *  you may not use this file except in compliance with the License.        *
- *  You may obtain a copy of the License at                                 *
+ * Licensed under the Apache License, Version 2.0 (the "License");          *
+ * you may not use this file except in compliance with the License.         *
+ * You may obtain a copy of the License at                                  *
  *                                                                          *
- *  http://www.apache.org/licenses/LICENSE-2.0                              *
+ * http://www.apache.org/licenses/LICENSE-2.0                               *
  *                                                                          *
- *  Unless required by applicable law or agreed to in writing, software     *
- *  distributed under the License is distributed on an "AS IS" BASIS,       *
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.*
- *  See the License for the specific language governing permissions and     *
- *  limitations under the License.                                          *
+ * Unless required by applicable law or agreed to in writing, software      *
+ * distributed under the License is distributed on an "AS IS" BASIS,        *
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. *
+ * See the License for the specific language governing permissions and      *
+ * limitations under the License.                                           *
  *                                                                          *
- *   This project is based on PBRT v2 ; see http://www.pbrt.org             *
- *   pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.*
+ * This project is based on PBRT v2 ; see http://www.pbrt.org               *
+ * pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.  *
  ****************************************************************************/
 part of core;
 
 /**
  * Animates objects and cameras over time as a linear interpolation between
  * two transforms.
+ *
+ * The transformation used to evaluate an object is linearly interpolated
+ * between [transform1] at [startTime], and [transform2] at [endTime], for the
+ * current camera shutter time being evaluated.
+ *
+ * If [transform1] and [transform2] are the same, then the transform is
+ * considered not-animated, and the interpolation is short-cutted to return
+ * [transform1].
  */
 class AnimatedTransform {
   AnimatedTransform(Transform transform1, this.startTime,
@@ -52,16 +60,17 @@ class AnimatedTransform {
 
   static void Decompose(Matrix4x4 m, Vector T, Quaternion Rquat, Matrix4x4 S) {
     // Extract translation _T_ from transformation matrix
-    T.x = m.m[3];
-    T.y = m.m[7];
-    T.z = m.m[11];
+    T.x = m.data[3];
+    T.y = m.data[7];
+    T.z = m.data[11];
 
     // Compute new transformation matrix _M_ without translation
     Matrix4x4 M = new Matrix4x4.from(m);
     for (int i = 0; i < 3; ++i) {
-      M.m[i * 3 + 3] = M.m[12 + i] = 0.0;
+      M.data[i * 4 + 3] = 0.0;
+      M.data[12 + i] = 0.0;
     }
-    M.m[15] = 1.0;
+    M.data[15] = 1.0;
 
     // Extract rotation _R_ from transformation matrix
     double norm;
@@ -73,15 +82,15 @@ class AnimatedTransform {
       Matrix4x4 Rnext = new Matrix4x4();
       Matrix4x4 Rit = Matrix4x4.Inverse(Matrix4x4.Transpose(R));
       for (int i = 0; i < 16; ++i) {
-        Rnext.m[i] = 0.5 * (R.m[i] + Rit.m[i]);
+        Rnext.data[i] = 0.5 * (R.data[i] + Rit.data[i]);
       }
 
       // Compute norm of difference between _R_ and _Rnext_
       norm = 0.0;
       for (int i = 0, j = 0; i < 3; ++i, j += 4) {
-        double n = (R.m[j] - Rnext.m[j]).abs() +
-                   (R.m[j + 1] - Rnext.m[j + 1]).abs() +
-                   (R.m[j + 2] - Rnext.m[j + 2]).abs();
+        double n = (R.data[j] - Rnext.data[j]).abs() +
+                   (R.data[j + 1] - Rnext.data[j + 1]).abs() +
+                   (R.data[j + 2] - Rnext.data[j + 2]).abs();
         norm = Math.max(norm, n);
      }
 
@@ -91,7 +100,7 @@ class AnimatedTransform {
     // XXX TODO FIXME deal with flip...
     Rquat.copy(new Quaternion.fromMatrix(R));
 
-    // Compute scale _S_ using rotation and original matrix
+    // Compute scale S using rotation and original matrix
     S.copy(Matrix4x4.Mul(Matrix4x4.Inverse(R), M));
   }
 
@@ -109,16 +118,16 @@ class AnimatedTransform {
 
     double dt = (time - startTime) / (endTime - startTime);
 
-    // Interpolate translation at _dt_
+    // Interpolate translation at dt
     Vector trans = T[0] * (1.0 - dt) + T[1] * dt;
 
-    // Interpolate rotation at _dt_
+    // Interpolate rotation at dt
     Quaternion rotate = Quaternion.Slerp(dt, R[0], R[1]);
 
-    // Interpolate scale at _dt_
+    // Interpolate scale at dt
     Matrix4x4 scale = new Matrix4x4();
     for (int i = 0; i < 16; ++i) {
-      scale.m[i] = Lerp(dt, S[0].m[i], S[1].m[i]);
+      scale.data[i] = Lerp(dt, S[0].data[i], S[1].data[i]);
     }
 
     // Compute interpolated matrix as product of interpolated components

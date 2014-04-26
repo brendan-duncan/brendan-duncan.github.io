@@ -1,22 +1,22 @@
 /****************************************************************************
- *  Copyright (C) 2014 by Brendan Duncan.                                   *
+ * Copyright (C) 2014 by Brendan Duncan.                                    *
  *                                                                          *
- *  This file is part of DartRay.                                           *
+ * This file is part of DartRay.                                            *
  *                                                                          *
- *  Licensed under the Apache License, Version 2.0 (the "License");         *
- *  you may not use this file except in compliance with the License.        *
- *  You may obtain a copy of the License at                                 *
+ * Licensed under the Apache License, Version 2.0 (the "License");          *
+ * you may not use this file except in compliance with the License.         *
+ * You may obtain a copy of the License at                                  *
  *                                                                          *
- *  http://www.apache.org/licenses/LICENSE-2.0                              *
+ * http://www.apache.org/licenses/LICENSE-2.0                               *
  *                                                                          *
- *  Unless required by applicable law or agreed to in writing, software     *
- *  distributed under the License is distributed on an "AS IS" BASIS,       *
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.*
- *  See the License for the specific language governing permissions and     *
- *  limitations under the License.                                          *
+ * Unless required by applicable law or agreed to in writing, software      *
+ * distributed under the License is distributed on an "AS IS" BASIS,        *
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. *
+ * See the License for the specific language governing permissions and      *
+ * limitations under the License.                                           *
  *                                                                          *
- *   This project is based on PBRT v2 ; see http://www.pbrt.org             *
- *   pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.*
+ * This project is based on PBRT v2 ; see http://www.pbrt.org               *
+ * pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.  *
  ****************************************************************************/
 part of samplers;
 
@@ -25,45 +25,33 @@ class BestCandidateSampler extends Sampler {
   static const int SAMPLE_TABLE_SIZE = SQRT_SAMPLE_TABLE_SIZE *
                                        SQRT_SAMPLE_TABLE_SIZE;
 
-  static BestCandidateSampler Create(ParamSet params, Film film,
-                                     Camera camera, PixelSampler pixels) {
-    // Initialize common sampler parameters
-    List<int> extent = [0, 0, 0, 0];
-    film.getSampleExtent(extent);
-    int nsamp = params.findOneInt("pixelsamples", 4);
-
-    return new BestCandidateSampler(extent[0], extent[1], extent[2], extent[3],
-                                    nsamp, camera.shutterOpen,
-                                        camera.shutterClose);
-  }
-
-  BestCandidateSampler(int xstart, int xend, int ystart, int yend,
-                       int nPixelSamples, double sopen, double sclose)
-    : super(xstart, xend, ystart, yend, nPixelSamples, sopen, sclose) {
+  BestCandidateSampler(int x, int y, int width, int height,
+                       double sopen, double sclose, int nPixelSamples)
+    : super(x, y, width, height, sopen, sclose, nPixelSamples) {
     tableWidth = SQRT_SAMPLE_TABLE_SIZE / Math.sqrt(nPixelSamples);
-    xTileStart = (xstart / tableWidth).floor();
-    xTileEnd = (xend / tableWidth).floor();
-    yTileStart = (ystart / tableWidth).floor();
-    yTileEnd = (yend / tableWidth).floor();
+    xTileStart = (left / tableWidth).floor();
+    xTileEnd = (right / tableWidth).floor();
+    yTileStart = (top / tableWidth).floor();
+    yTileEnd = (bottom / tableWidth).floor();
     xTile = xTileStart;
     yTile = yTileStart;
     tableOffset = 0;
+
     // Update sample shifts
     RNG tileRng = new RNG(xTile + (yTile << 8));
     for (int i = 0; i < 3; ++i) {
       sampleOffsets[i] = tileRng.randomFloat();
     }
-  }
 
-  Sampler getSubSampler(int num, int count) {
-    List<int> extent = [0, 0, 0, 0];
-    computeSubWindow(num, count, extent);
-    if (extent[0] == extent[1] || extent[2] == extent[3]) {
-      return null;
+    pass = 0;
+    if (RenderOverrides.SamplingMode() == Sampler.TWO_PASS_SAMPLING ||
+        RenderOverrides.SamplingMode() == Sampler.ITERATIVE_SAMPLING) {
+      PixelSampler pixels = new TilePixelSampler();
+      pixels.setup(x, y, width, height);
+
+      randomSampler = new RandomSampler(x, y, width, height,
+                                        sopen, sclose, pixels, 1);
     }
-
-    return new BestCandidateSampler(extent[0], extent[1], extent[2], extent[3],
-                                    samplesPerPixel, shutterOpen, shutterClose);
   }
 
   int roundSize(int size) {
@@ -75,10 +63,20 @@ class BestCandidateSampler extends Sampler {
   }
 
   int getMoreSamples(List<Sample> samples, RNG rng) {
+    if (pass == 0 && randomSampler != null) {
+      int count = randomSampler.getMoreSamples(samples, rng);
+      if (count != 0) {
+        return count;
+      }
+      pass++;
+    }
+
     Sample sample = samples[0];
+
     bool again = true;
     while (again) {
       again = false;
+
       if (tableOffset == SAMPLE_TABLE_SIZE) {
         // Advance to next best-candidate sample table position
         tableOffset = 0;
@@ -95,6 +93,7 @@ class BestCandidateSampler extends Sampler {
           sampleOffsets[i] = tileRng.randomFloat();
         }
       }
+
       // Compute raster sample from table
       WRAP(x) => x > 1 ? (x - 1) : x;
 
@@ -107,8 +106,8 @@ class BestCandidateSampler extends Sampler {
       sample.lensV = WRAP(sampleOffsets[2] + _SAMPLE_TABLE[to + 4]);
 
       // Check sample against crop window, goto _again_ if outside
-      if (sample.imageX < xPixelStart || sample.imageX >= xPixelEnd ||
-          sample.imageY < yPixelStart || sample.imageY >= yPixelEnd) {
+      if (sample.imageX < left || sample.imageX > right ||
+          sample.imageY < left || sample.imageY > right) {
         ++tableOffset;
         again = true;
         continue;
@@ -128,6 +127,17 @@ class BestCandidateSampler extends Sampler {
     return 1;
   }
 
+  static BestCandidateSampler Create(ParamSet params, int x, int y,
+                                     int width, int height, Camera camera,
+                                     PixelSampler pixels) {
+    // Initialize common sampler parameters
+    int nsamp = params.findOneInt('pixelsamples', 4);
+
+    return new BestCandidateSampler(x, y, width, height,
+                                    camera.shutterOpen, camera.shutterClose,
+                                    nsamp);
+  }
+
   double tableWidth;
   int tableOffset;
   int xTileStart;
@@ -137,6 +147,8 @@ class BestCandidateSampler extends Sampler {
   int xTile;
   int yTile;
   List<double> sampleOffsets = [0.0, 0.0, 0.0];
+  Sampler randomSampler;
+  int pass;
 }
 
 const List<double> _SAMPLE_TABLE = const [

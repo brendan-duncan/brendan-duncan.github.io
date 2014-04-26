@@ -1,21 +1,22 @@
 /****************************************************************************
- *  Copyright (C) 2014 by authors (see AUTHORS)                             *
+ * Copyright (C) 2014 by Brendan Duncan.                                    *
  *                                                                          *
- *  This file is part of DartRay.                                           *
+ * This file is part of DartRay.                                            *
  *                                                                          *
- *  Licensed under the Apache License, Version 2.0 (the "License");         *
- *  you may not use this file except in compliance with the License.        *
- *  You may obtain a copy of the License at                                 *
+ * Licensed under the Apache License, Version 2.0 (the "License");          *
+ * you may not use this file except in compliance with the License.         *
+ * You may obtain a copy of the License at                                  *
  *                                                                          *
- *  http://www.apache.org/licenses/LICENSE-2.0                              *
+ * http://www.apache.org/licenses/LICENSE-2.0                               *
  *                                                                          *
- *  Unless required by applicable law or agreed to in writing, software     *
- *  distributed under the License is distributed on an "AS IS" BASIS,       *
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.*
- *  See the License for the specific language governing permissions and     *
- *  limitations under the License.                                          *
+ * Unless required by applicable law or agreed to in writing, software      *
+ * distributed under the License is distributed on an "AS IS" BASIS,        *
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. *
+ * See the License for the specific language governing permissions and      *
+ * limitations under the License.                                           *
  *                                                                          *
- *   This project is based on PBRT v2 ; see http://www.pbrt.org             *
+ * This project is based on PBRT v2 ; see http://www.pbrt.org               *
+ * pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.  *
  ****************************************************************************/
 part of accelerators;
 
@@ -34,6 +35,7 @@ class BVHAccel extends Aggregate {
     for (int i = 0; i < p.length; ++i) {
       p[i].fullyRefine(primitives);
     }
+    LogInfo('BVH: ${primitives.length} Primitives');
 
     if (primitives.isEmpty) {
       nodes = null;
@@ -44,15 +46,18 @@ class BVHAccel extends Aggregate {
     Stats.BVH_STARTED_CONSTRUCTION(this, primitives.length);
 
     // Initialize _buildData_ array for primitives
-    List<_BVHPrimitiveInfo> buildData = [];
+    List<_BVHPrimitiveInfo> buildData =
+        new List<_BVHPrimitiveInfo>(primitives.length);
+
     for (int i = 0; i < primitives.length; ++i) {
       BBox bbox = primitives[i].worldBound();
-      buildData.add(new _BVHPrimitiveInfo(i, bbox));
+      buildData[i] = new _BVHPrimitiveInfo(i, bbox);
     }
 
     // Recursively build BVH tree for primitives
     List<int> totalNodes = [0];
     List<Primitive> orderedPrims = [];
+
     _BVHBuildNode root = _recursiveBuild(buildData, 0,
                                          primitives.length,
                                          totalNodes,
@@ -66,23 +71,13 @@ class BVHAccel extends Aggregate {
     // Compute representation of depth-first traversal of BVH tree
     nodes = new List<_LinearBVHNode>(totalNodes[0]);
     for (int i = 0, len = totalNodes[0]; i < len; ++i) {
-       nodes[i] = new _LinearBVHNode();
+      nodes[i] = new _LinearBVHNode();
     }
 
     List<int> offset = [0];
     _flattenBVHTree(root, offset);
     assert(offset[0] == totalNodes[0]);
     Stats.BVH_FINISHED_CONSTRUCTION(this);
-  }
-
-  static BVHAccel Create(List<Primitive> prims, ParamSet ps) {
-    String splitMethod = ps.findOneString("splitmethod", "sah");
-    int maxPrimsInNode = ps.findOneInt("maxnodeprims", 4);
-    int sm = (splitMethod == 'sah') ? SPLIT_SAH :
-             (splitMethod == 'middle') ? SPLIT_MIDDLE :
-             (splitMethod == 'equal') ? SPLIT_EQUAL_COUNTS :
-               SPLIT_SAH;
-    return new BVHAccel(prims, maxPrimsInNode, sm);
   }
 
   BBox worldBound() {
@@ -322,21 +317,26 @@ class BVHAccel extends Aggregate {
             for (int i = start; i < end; ++i) {
               int b = (nBuckets *
                 ((buildData[i].centroid[dim] - centroidBounds.pMin[dim]) /
-                (centroidBounds.pMax[dim] - centroidBounds.pMin[dim]))).floor();
+                (centroidBounds.pMax[dim] - centroidBounds.pMin[dim]))).toInt();
               if (b == nBuckets) {
                 b = nBuckets - 1;
               }
 
               assert(b >= 0 && b < nBuckets);
               buckets[b].count++;
-              buckets[b].bounds = BBox.Union(buckets[b].bounds, buildData[i].bounds);
+              buckets[b].bounds = BBox.Union(buckets[b].bounds,
+                                             buildData[i].bounds);
             }
 
+            BBox b0 = new BBox();
+            BBox b1 = new BBox();
+
             // Compute costs for splitting after each bucket
-            List<double> cost = new List<double>(nBuckets - 1);
-            for (int i = 0; i < nBuckets-1; ++i) {
-              BBox b0 = new BBox();
-              BBox b1 = new BBox();
+            List<double> cost = new Float32List(nBuckets - 1);
+
+            for (int i = 0; i < nBuckets - 1; ++i) {
+              b0.reset();
+              b1.reset();
               int count0 = 0, count1 = 0;
 
               for (int j = 0; j <= i; ++j) {
@@ -368,7 +368,8 @@ class BVHAccel extends Aggregate {
               bool CompareToBucket(_BVHPrimitiveInfo p) {
                 int b = (nBuckets *
                     ((p.centroid[dim] - centroidBounds.pMin[dim]) /
-                     (centroidBounds.pMax[dim] - centroidBounds.pMin[dim]))).floor();
+                     (centroidBounds.pMax[dim] -
+                      centroidBounds.pMin[dim]))).floor();
 
                 if (b == nBuckets) {
                   b = nBuckets - 1;
@@ -407,7 +408,7 @@ class BVHAccel extends Aggregate {
 
   int _flattenBVHTree(_BVHBuildNode node, List<int> offset) {
     _LinearBVHNode linearNode = nodes[offset[0]];
-    linearNode.bounds = new BBox.from(node.bounds);
+    linearNode.bounds = node.bounds;//new BBox.from(node.bounds);
     int myOffset = offset[0]++;
 
     if (node.nPrimitives > 0) {
@@ -443,7 +444,7 @@ class BVHAccel extends Aggregate {
       tmax = tymax;
     }
 
-    // Check for ray intersection against $z$ slab
+    // Check for ray intersection against z slab
     double tzmin = (bounds[dirIsNeg[2]].z - ray.origin.z) * invDir.z;
     double tzmax = (bounds[1 - dirIsNeg[2]].z - ray.origin.z) * invDir.z;
     if ((tmin > tzmax) || (tzmin > tmax)) {
@@ -460,6 +461,16 @@ class BVHAccel extends Aggregate {
     return (tmin < ray.maxDistance) && (tmax > ray.minDistance);
   }
 
+  static BVHAccel Create(List<Primitive> prims, ParamSet ps) {
+    String splitMethod = ps.findOneString("splitmethod", "sah");
+    int maxPrimsInNode = ps.findOneInt("maxnodeprims", 4);
+    int sm = (splitMethod == 'sah') ? SPLIT_SAH :
+             (splitMethod == 'middle') ? SPLIT_MIDDLE :
+             (splitMethod == 'equal') ? SPLIT_EQUAL_COUNTS :
+             SPLIT_SAH;
+    return new BVHAccel(prims, maxPrimsInNode, sm);
+  }
+
   int maxPrimsInNode;
   int splitMethod;
   List<Primitive> primitives = [];
@@ -471,7 +482,7 @@ class _BVHPrimitiveInfo {
     if (bounds == null) {
       bounds = new BBox();
     }
-    centroid = new Point.from(bounds.pMin * 0.5 + bounds.pMax * 0.5);
+    centroid = bounds.center;
   }
 
   int primitiveNumber;
@@ -510,7 +521,7 @@ class _BVHBuildNode {
 }
 
 class _LinearBVHNode {
-  BBox bounds = new BBox();
+  BBox bounds;
   int offset; // primitivesOffset / secondChildOffset
   int nPrimitives;  // 0 . interior node
   int axis;

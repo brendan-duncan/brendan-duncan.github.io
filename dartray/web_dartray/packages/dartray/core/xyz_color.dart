@@ -1,43 +1,43 @@
 /****************************************************************************
- *  Copyright (C) 2014 by Brendan Duncan.                                   *
+ * Copyright (C) 2014 by Brendan Duncan.                                    *
  *                                                                          *
- *  This file is part of DartRay.                                           *
+ * This file is part of DartRay.                                            *
  *                                                                          *
- *  Licensed under the Apache License, Version 2.0 (the "License");         *
- *  you may not use this file except in compliance with the License.        *
- *  You may obtain a copy of the License at                                 *
+ * Licensed under the Apache License, Version 2.0 (the "License");          *
+ * you may not use this file except in compliance with the License.         *
+ * You may obtain a copy of the License at                                  *
  *                                                                          *
- *  http://www.apache.org/licenses/LICENSE-2.0                              *
+ * http://www.apache.org/licenses/LICENSE-2.0                               *
  *                                                                          *
- *  Unless required by applicable law or agreed to in writing, software     *
- *  distributed under the License is distributed on an "AS IS" BASIS,       *
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.*
- *  See the License for the specific language governing permissions and     *
- *  limitations under the License.                                          *
+ * Unless required by applicable law or agreed to in writing, software      *
+ * distributed under the License is distributed on an "AS IS" BASIS,        *
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. *
+ * See the License for the specific language governing permissions and      *
+ * limitations under the License.                                           *
  *                                                                          *
- *   This project is based on PBRT v2 ; see http://www.pbrt.org             *
- *   pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.*
+ * This project is based on PBRT v2 ; see http://www.pbrt.org               *
+ * pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.  *
  ****************************************************************************/
 part of core;
 
 class XYZColor extends Spectrum {
   XYZColor([double v = 0.0]) :
-    super.samples(3, v);
+    super._(3, v);
 
   XYZColor.xyz(double x, double y, double z) :
-    super.samples(3) {
+    super._(3) {
     c[0] = x;
     c[1] = y;
     c[2] = z;
   }
 
   XYZColor.rgb(double r, double g, double b) :
-    super.samples(3) {
+    super._(3) {
     Spectrum.RGBToXYZ(r, g, b, c);
   }
 
   XYZColor.from(Spectrum color) :
-    super.samples(3) {
+    super._(3) {
     if (color is RGBColor) {
       Spectrum.RGBToXYZ(color.c[0], color.c[1], color.c[2], c);
     } else if (color is XYZColor) {
@@ -63,6 +63,8 @@ class XYZColor extends Spectrum {
   double get z => c[2];
 
   set z(double v) => c[2] = v;
+
+  double luminance() => c[1];
 
   RGBColor toRGB() => new RGBColor.from(this);
 

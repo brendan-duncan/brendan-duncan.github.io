@@ -1,40 +1,26 @@
 /****************************************************************************
- *  Copyright (C) 2014 by Brendan Duncan.                                   *
+ * Copyright (C) 2014 by Brendan Duncan.                                    *
  *                                                                          *
- *  This file is part of DartRay.                                           *
+ * This file is part of DartRay.                                            *
  *                                                                          *
- *  Licensed under the Apache License, Version 2.0 (the 'License');         *
- *  you may not use this file except in compliance with the License.        *
- *  You may obtain a copy of the License at                                 *
+ * Licensed under the Apache License, Version 2.0 (the "License");          *
+ * you may not use this file except in compliance with the License.         *
+ * You may obtain a copy of the License at                                  *
  *                                                                          *
- *  http://www.apache.org/licenses/LICENSE-2.0                              *
+ * http://www.apache.org/licenses/LICENSE-2.0                               *
  *                                                                          *
- *  Unless required by applicable law or agreed to in writing, software     *
- *  distributed under the License is distributed on an 'AS IS' BASIS,       *
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.*
- *  See the License for the specific language governing permissions and     *
- *  limitations under the License.                                          *
+ * Unless required by applicable law or agreed to in writing, software      *
+ * distributed under the License is distributed on an "AS IS" BASIS,        *
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. *
+ * See the License for the specific language governing permissions and      *
+ * limitations under the License.                                           *
  *                                                                          *
- *   This project is based on PBRT v2 ; see http://www.pbrt.org             *
- *   pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.*
+ * This project is based on PBRT v2 ; see http://www.pbrt.org               *
+ * pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.  *
  ****************************************************************************/
 part of shapes;
 
 class LoopSubdivision extends Shape {
-  static LoopSubdivision Create(Transform o2w, Transform w2o,
-          bool reverseOrientation, ParamSet params) {
-      int nlevels = params.findOneInt('nlevels', 1);
-      List<int> vi = params.findInt('indices');
-      List<Point> P = params.findPoint('P');
-      if (vi == null || P == null) {
-        return null;
-      }
-
-      return new LoopSubdivision(o2w, w2o, reverseOrientation,
-                                 vi.length ~/ 3, P.length, vi,
-                                 P, nlevels);
-  }
-
   LoopSubdivision(Transform o2w, Transform w2o, bool ro,
              int nfaces, int nvertices, List<int> vertexIndices,
              List<Point> P, this.nLevels) :
@@ -375,6 +361,20 @@ class LoopSubdivision extends Shape {
   int nLevels;
   final List<_SDVertex> vertices;
   final List<_SDFace> faces;
+
+  static LoopSubdivision Create(Transform o2w, Transform w2o,
+                                bool reverseOrientation, ParamSet params) {
+      int nlevels = params.findOneInt('nlevels', 1);
+      List<int> vi = params.findInt('indices');
+      List<Point> P = params.findPoint('P');
+      if (vi == null || P == null) {
+        return null;
+      }
+
+      return new LoopSubdivision(o2w, w2o, reverseOrientation,
+                                 vi.length ~/ 3, P.length, vi,
+                                 P, nlevels);
+  }
 }
 
 class _SDEdgeMap {

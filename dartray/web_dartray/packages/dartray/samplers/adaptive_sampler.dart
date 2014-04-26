@@ -1,22 +1,22 @@
 /****************************************************************************
- *  Copyright (C) 2014 by Brendan Duncan.                                   *
+ * Copyright (C) 2014 by Brendan Duncan.                                    *
  *                                                                          *
- *  This file is part of DartRay.                                           *
+ * This file is part of DartRay.                                            *
  *                                                                          *
- *  Licensed under the Apache License, Version 2.0 (the 'License');         *
- *  you may not use this file except in compliance with the License.        *
- *  You may obtain a copy of the License at                                 *
+ * Licensed under the Apache License, Version 2.0 (the "License");          *
+ * you may not use this file except in compliance with the License.         *
+ * You may obtain a copy of the License at                                  *
  *                                                                          *
- *  http://www.apache.org/licenses/LICENSE-2.0                              *
+ * http://www.apache.org/licenses/LICENSE-2.0                               *
  *                                                                          *
- *  Unless required by applicable law or agreed to in writing, software     *
- *  distributed under the License is distributed on an 'AS IS' BASIS,       *
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.*
- *  See the License for the specific language governing permissions and     *
- *  limitations under the License.                                          *
+ * Unless required by applicable law or agreed to in writing, software      *
+ * distributed under the License is distributed on an "AS IS" BASIS,        *
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. *
+ * See the License for the specific language governing permissions and      *
+ * limitations under the License.                                           *
  *                                                                          *
- *   This project is based on PBRT v2 ; see http://www.pbrt.org             *
- *   pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.*
+ * This project is based on PBRT v2 ; see http://www.pbrt.org               *
+ * pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.  *
  ****************************************************************************/
 part of samplers;
 
@@ -24,39 +24,14 @@ class AdaptiveSampler extends Sampler {
   static const int ADAPTIVE_COMPARE_SHAPE_ID = 0;
   static const int ADAPTIVE_CONTRAST_THRESHOLD = 1;
 
-  static AdaptiveSampler Create(ParamSet params, Film film, Camera camera,
-                                PixelSampler pixels) {
-    // Initialize common sampler parameters
-    List<int> extent = [0, 0, 0, 0];
-    film.getSampleExtent(extent);
-    int minsamp = params.findOneInt('minsamples', 4);
-    int maxsamp = params.findOneInt('maxsamples', 32);
-
-    String m = params.findOneString('method', 'contrast');
-    int method = (m == 'contrast') ? ADAPTIVE_CONTRAST_THRESHOLD :
-                 (m == 'shapeid') ? ADAPTIVE_COMPARE_SHAPE_ID :
-                 -1;
-
-    if (method == -1) {
-      LogWarning('Adaptive sampling metric \'$m\' unknown. Using \'contrast\'.');
-      method = ADAPTIVE_CONTRAST_THRESHOLD;
-    }
-
-    return new AdaptiveSampler(extent[0], extent[1], extent[2], extent[3],
-                               minsamp, maxsamp, method,
-                               camera.shutterOpen, camera.shutterClose,
-                               pixels);
-  }
-
-  AdaptiveSampler(int xstart, int xend, int ystart, int yend,
-                  int mins, int maxs, int method,
-                  double sopen, double sclose, this.pixels) :
-    super(xstart, xend, ystart, yend, RoundUpPow2(Math.max(mins, maxs)),
-          sopen, sclose) {
+  AdaptiveSampler(int x, int y, int width, int height, int mins, int maxs,
+                  int method, double sopen, double sclose, this.pixels) :
+    super(x, y, width, height, sopen, sclose,
+          RoundUpPow2(Math.max(mins, maxs))) {
     if (pixels == null) {
-      LogSevere('Pixel sampler is required by LowDiscrepencySampler');
+      LogSevere('A PixelSampler is required by AdaptiveSampler');
     }
-    pixels.setup(xstart, xend, ystart, yend);
+    pixels.setup(x, y, width, height);
     pixelIndex = 0;
     supersamplePixel = false;
 
@@ -93,18 +68,13 @@ class AdaptiveSampler extends Sampler {
       LogWarning('Adaptive sampler must have more maximum samples than '
                  'minimum. Using $minSamples - $maxSamples');
     }
-  }
 
-  Sampler getSubSampler(int num, int count) {
-    List<int> extent = [0, 0, 0, 0];
-    computeSubWindow(num, count, extent);
-    if (extent[0] == extent[1] || extent[2] == extent[3]) {
-      return null;
+    pass = 0;
+    if (RenderOverrides.SamplingMode() == Sampler.TWO_PASS_SAMPLING ||
+        RenderOverrides.SamplingMode() == Sampler.ITERATIVE_SAMPLING) {
+      randomSampler = new RandomSampler(x, y, width, height,
+                                        sopen, sclose, pixels, 1);
     }
-
-    return new AdaptiveSampler(extent[0], extent[1], extent[2], extent[3],
-                               minSamples, maxSamples, method,
-                               shutterOpen, shutterClose, pixels);
   }
 
   int roundSize(int size) {
@@ -116,6 +86,14 @@ class AdaptiveSampler extends Sampler {
   }
 
   int getMoreSamples(List<Sample> samples, RNG rng) {
+    if (pass == 0 && randomSampler != null) {
+      int count = randomSampler.getMoreSamples(samples, rng);
+      if (count != 0) {
+        return count;
+      }
+      pass++;
+    }
+
     if (sampleBuf == null) {
       sampleBuf = new Float32List(LDPixelSampleFloatsNeeded(samples[0],
                                                             maxSamples));
@@ -139,6 +117,10 @@ class AdaptiveSampler extends Sampler {
 
   bool reportResults(List<Sample> samples, List<RayDifferential> rays,
                      List<Spectrum> Ls, List<Intersection> isects, int count) {
+    if (pass == 0 && randomSampler != null) {
+      return true;
+    }
+
     if (supersamplePixel) {
       supersamplePixel = false;
       // Advance to next pixel for sampling
@@ -176,12 +158,12 @@ class AdaptiveSampler extends Sampler {
         // Compare contrast of sample differences to threshold
         double Lavg = 0.0;
         for (int i = 0; i < count; ++i) {
-          Lavg += Ls[i].y;
+          Lavg += Ls[i].luminance();
         }
         Lavg /= count;
         const double maxContrast = 0.5;
         for (int i = 0; i < count; ++i) {
-          if ((Ls[i].y - Lavg).abs() / Lavg > maxContrast) {
+          if ((Ls[i].luminance() - Lavg).abs() / Lavg > maxContrast) {
             return true;
           }
         }
@@ -191,13 +173,36 @@ class AdaptiveSampler extends Sampler {
     return false;
   }
 
+  static AdaptiveSampler Create(ParamSet params, int x, int y,
+                                int width, int height, Camera camera,
+                                PixelSampler pixels) {
+    // Initialize common sampler parameters
+    int minsamp = params.findOneInt('minsamples', 4);
+    int maxsamp = params.findOneInt('maxsamples', 32);
+
+    String m = params.findOneString('method', 'contrast');
+    int method = (m == 'contrast') ? ADAPTIVE_CONTRAST_THRESHOLD :
+                 (m == 'shapeid') ? ADAPTIVE_COMPARE_SHAPE_ID :
+                 -1;
+
+    if (method == -1) {
+      LogWarning('Adaptive sampling metric \'$m\' unknown. Using \'contrast\'.');
+      method = ADAPTIVE_CONTRAST_THRESHOLD;
+    }
+
+    return new AdaptiveSampler(x, y, width, height, minsamp, maxsamp,
+                               method, camera.shutterOpen, camera.shutterClose,
+                               pixels);
+  }
+
   PixelSampler pixels;
   Int32List pixel = new Int32List(2);
   int pixelIndex;
   int minSamples;
   int maxSamples;
   Float32List sampleBuf;
-
   int method;
   bool supersamplePixel;
+  Sampler randomSampler;
+  int pass;
 }

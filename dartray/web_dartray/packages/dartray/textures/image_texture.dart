@@ -1,22 +1,22 @@
 /****************************************************************************
- *  Copyright (C) 2014 by Brendan Duncan.                                   *
+ * Copyright (C) 2014 by Brendan Duncan.                                    *
  *                                                                          *
- *  This file is part of DartRay.                                           *
+ * This file is part of DartRay.                                            *
  *                                                                          *
- *  Licensed under the Apache License, Version 2.0 (the 'License');         *
- *  you may not use this file except in compliance with the License.        *
- *  You may obtain a copy of the License at                                 *
+ * Licensed under the Apache License, Version 2.0 (the "License");          *
+ * you may not use this file except in compliance with the License.         *
+ * You may obtain a copy of the License at                                  *
  *                                                                          *
- *  http://www.apache.org/licenses/LICENSE-2.0                              *
+ * http://www.apache.org/licenses/LICENSE-2.0                               *
  *                                                                          *
- *  Unless required by applicable law or agreed to in writing, software     *
- *  distributed under the License is distributed on an 'AS IS' BASIS,       *
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.*
- *  See the License for the specific language governing permissions and     *
- *  limitations under the License.                                          *
+ * Unless required by applicable law or agreed to in writing, software      *
+ * distributed under the License is distributed on an "AS IS" BASIS,        *
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. *
+ * See the License for the specific language governing permissions and      *
+ * limitations under the License.                                           *
  *                                                                          *
- *   This project is based on PBRT v2 ; see http://www.pbrt.org             *
- *   pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.*
+ * This project is based on PBRT v2 ; see http://www.pbrt.org               *
+ * pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.  *
  ****************************************************************************/
 part of textures;
 
@@ -28,6 +28,19 @@ class ImageTexture extends Texture {
       Completer completer = new Completer();
       ResourceManager.RequestImage(filename, completer.future)
         .then((SpectrumImage img) {
+          String name = MIPMap.GetTextureName(filename, doTri: doTri,
+                                              maxAniso: maxAniso,
+                                              wrap: wrap, scale: scale,
+                                              gamma: gamma,
+                                              spectrum: spectrum);
+          LogDebug('TEXTURE $name');
+
+          if (ResourceManager.HasTexture(name)) {
+            mipmap = ResourceManager.GetTexture(name);
+            completer.complete();
+            return;
+          }
+
           if (img != null) {
             if (!spectrum) {
               img = img.convert(SpectrumImage.FLOAT);
@@ -41,7 +54,8 @@ class ImageTexture extends Texture {
               }
             }
 
-            mipmap = new MIPMap.texture(img, doTri, maxAniso, wrap);
+            mipmap = new MIPMap.texture(img, filename, doTri, maxAniso, wrap);
+            ResourceManager.AddTexture(name, mipmap);
           }
 
           // Let the renderer know we're done processing the resource.
@@ -59,8 +73,24 @@ class ImageTexture extends Texture {
       img[0] = v;
     }
 
-    mipmap = new MIPMap.texture(img);
+    mipmap = new MIPMap.texture(img, '');
   }
+
+  evaluate(DifferentialGeometry dg) {
+    List<double> s = [0.0];
+    List<double> t = [0.0];
+    List<double> dsdx = [0.0];
+    List<double> dtdx = [0.0];
+    List<double> dsdy = [0.0];
+    List<double> dtdy = [0.0];
+    mapping.map(dg, s, t, dsdx, dtdx, dsdy, dtdy);
+    var v = mipmap.lookup2(s[0], t[0], dsdx[0], dtdx[0], dsdy[0], dtdy[0]);
+    return v;
+  }
+
+  MIPMap mipmap;
+  TextureMapping2D mapping;
+
 
   static ImageTexture CreateFloat(Transform tex2world, TextureParams tp) {
     // Initialize 2D texture mapping _map_ from _tp_
@@ -143,19 +173,4 @@ class ImageTexture extends Texture {
     return new ImageTexture(map, tp.findFilename('filename'),
                             trilerp, maxAniso, wrapMode, scale, gamma, true);
   }
-
-  evaluate(DifferentialGeometry dg) {
-    List<double> s = [0.0];
-    List<double> t = [0.0];
-    List<double> dsdx = [0.0];
-    List<double> dtdx = [0.0];
-    List<double> dsdy = [0.0];
-    List<double> dtdy = [0.0];
-    mapping.map(dg, s, t, dsdx, dtdx, dsdy, dtdy);
-    var v = mipmap.lookup2(s[0], t[0], dsdx[0], dtdx[0], dsdy[0], dtdy[0]);
-    return v;
-  }
-
-  MIPMap mipmap;
-  TextureMapping2D mapping;
 }

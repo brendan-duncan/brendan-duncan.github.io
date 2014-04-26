@@ -1,22 +1,22 @@
 /****************************************************************************
- *  Copyright (C) 2014 by Brendan Duncan.                                   *
+ * Copyright (C) 2014 by Brendan Duncan.                                    *
  *                                                                          *
- *  This file is part of DartRay.                                           *
+ * This file is part of DartRay.                                            *
  *                                                                          *
- *  Licensed under the Apache License, Version 2.0 (the "License");         *
- *  you may not use this file except in compliance with the License.        *
- *  You may obtain a copy of the License at                                 *
+ * Licensed under the Apache License, Version 2.0 (the "License");          *
+ * you may not use this file except in compliance with the License.         *
+ * You may obtain a copy of the License at                                  *
  *                                                                          *
- *  http://www.apache.org/licenses/LICENSE-2.0                              *
+ * http://www.apache.org/licenses/LICENSE-2.0                               *
  *                                                                          *
- *  Unless required by applicable law or agreed to in writing, software     *
- *  distributed under the License is distributed on an "AS IS" BASIS,       *
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.*
- *  See the License for the specific language governing permissions and     *
- *  limitations under the License.                                          *
+ * Unless required by applicable law or agreed to in writing, software      *
+ * distributed under the License is distributed on an "AS IS" BASIS,        *
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. *
+ * See the License for the specific language governing permissions and      *
+ * limitations under the License.                                           *
  *                                                                          *
- *   This project is based on PBRT v2 ; see http://www.pbrt.org             *
- *   pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.*
+ * This project is based on PBRT v2 ; see http://www.pbrt.org               *
+ * pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.  *
  ****************************************************************************/
 library core;
 
@@ -26,14 +26,12 @@ import 'dart:typed_data';
 import 'package:image/image.dart' as Img;
 
 part 'light/area_light.dart';
-part 'light/light.dart';
 part 'light/light_sample.dart';
 part 'light/light_sample_offsets.dart';
 part 'light/shape_set.dart';
 part 'light/visibility_tester.dart';
 part 'primitive/aggregate.dart';
 part 'primitive/geometric_primitive.dart';
-part 'primitive/primitive.dart';
 part 'primitive/transformed_primitive.dart';
 part 'reflection/anisotropic.dart';
 part 'reflection/blinn.dart';
@@ -63,7 +61,6 @@ part 'texture/cylindrical_mapping_2d.dart';
 part 'texture/identity_mapping_3d.dart';
 part 'texture/planar_mapping_2d.dart';
 part 'texture/spherical_mapping_2d.dart';
-part 'texture/texture.dart';
 part 'texture/texture_mapping_2d.dart';
 part 'texture/texture_mapping_3d.dart';
 part 'texture/uv_mapping_2d.dart';
@@ -79,7 +76,7 @@ part 'common.dart';
 part 'differential_geometry.dart';
 part 'film.dart';
 part 'filter.dart';
-part 'pixel_sampler.dart';
+part 'light.dart';
 part 'integrator.dart';
 part 'intersection.dart';
 part 'kdtree.dart';
@@ -92,12 +89,16 @@ part 'normal.dart';
 part 'octree.dart';
 part 'output_image.dart';
 part 'param_set.dart';
+part 'pixel_sampler.dart';
+part 'plugin.dart';
 part 'point.dart';
+part 'primitive.dart';
 part 'projective_camera.dart';
 part 'quaternion.dart';
 part 'ray.dart';
 part 'ray_differential.dart';
 part 'renderer.dart';
+part 'render_overrides.dart';
 part 'resource_manager.dart';
 part 'rgb_color.dart';
 part 'rng.dart';
@@ -111,6 +112,8 @@ part 'spectrum_image.dart';
 part 'spherical_harmonics.dart';
 part 'stats.dart';
 part 'surface_integrator.dart';
+part 'surface_point.dart';
+part 'texture.dart';
 part 'texture_params.dart';
 part 'transform.dart';
 part 'vector.dart';

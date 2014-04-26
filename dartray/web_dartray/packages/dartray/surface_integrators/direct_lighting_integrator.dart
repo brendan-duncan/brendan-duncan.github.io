@@ -1,22 +1,22 @@
 /****************************************************************************
- *  Copyright (C) 2014 by Brendan Duncan.                                   *
+ * Copyright (C) 2014 by Brendan Duncan.                                    *
  *                                                                          *
- *  This file is part of DartRay.                                           *
+ * This file is part of DartRay.                                            *
  *                                                                          *
- *  Licensed under the Apache License, Version 2.0 (the "License");         *
- *  you may not use this file except in compliance with the License.        *
- *  You may obtain a copy of the License at                                 *
+ * Licensed under the Apache License, Version 2.0 (the "License");          *
+ * you may not use this file except in compliance with the License.         *
+ * You may obtain a copy of the License at                                  *
  *                                                                          *
- *  http://www.apache.org/licenses/LICENSE-2.0                              *
+ * http://www.apache.org/licenses/LICENSE-2.0                               *
  *                                                                          *
- *  Unless required by applicable law or agreed to in writing, software     *
- *  distributed under the License is distributed on an "AS IS" BASIS,       *
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.*
- *  See the License for the specific language governing permissions and     *
- *  limitations under the License.                                          *
+ * Unless required by applicable law or agreed to in writing, software      *
+ * distributed under the License is distributed on an "AS IS" BASIS,        *
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. *
+ * See the License for the specific language governing permissions and      *
+ * limitations under the License.                                           *
  *                                                                          *
- *   This project is based on PBRT v2 ; see http://www.pbrt.org             *
- *   pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.*
+ * This project is based on PBRT v2 ; see http://www.pbrt.org               *
+ * pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.  *
  ****************************************************************************/
 part of surface_integrators;
 
@@ -26,21 +26,6 @@ class DirectLightingIntegrator extends SurfaceIntegrator {
 
   DirectLightingIntegrator([this.strategy = SAMPLE_ALL_UNIFORM,
                             this.maxDepth = 5]);
-
-  static DirectLightingIntegrator Create(ParamSet params) {
-    int maxDepth = params.findOneInt('maxdepth', 5);
-    int strategy;
-    String st = params.findOneString('strategy', 'all');
-    if (st == 'one') {
-      strategy = SAMPLE_ONE_UNIFORM;
-    } else if (st == 'all') {
-      strategy = SAMPLE_ALL_UNIFORM;
-    } else {
-      LogWarning('Strategy \'$st\' for direct lighting unknown. Using \'all\'.');
-      strategy = SAMPLE_ALL_UNIFORM;
-    }
-    return new DirectLightingIntegrator(strategy, maxDepth);
-  }
 
   Spectrum Li(Scene scene, Renderer renderer,
       RayDifferential ray, Intersection isect,
@@ -108,6 +93,21 @@ class DirectLightingIntegrator extends SurfaceIntegrator {
       bsdfSampleOffsets = new List<BSDFSampleOffsets>(1);
       bsdfSampleOffsets[0] = new BSDFSampleOffsets(1, sample);
     }
+  }
+
+  static DirectLightingIntegrator Create(ParamSet params) {
+    int maxDepth = params.findOneInt('maxdepth', 5);
+    int strategy;
+    String st = params.findOneString('strategy', 'all');
+    if (st == 'one') {
+      strategy = SAMPLE_ONE_UNIFORM;
+    } else if (st == 'all') {
+      strategy = SAMPLE_ALL_UNIFORM;
+    } else {
+      LogWarning('Strategy \'$st\' for direct lighting unknown. Using \'all\'.');
+      strategy = SAMPLE_ALL_UNIFORM;
+    }
+    return new DirectLightingIntegrator(strategy, maxDepth);
   }
 
   int strategy;

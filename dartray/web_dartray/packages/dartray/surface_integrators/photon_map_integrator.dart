@@ -1,3 +1,23 @@
+/****************************************************************************
+ * Copyright (C) 2014 by Brendan Duncan.                                    *
+ *                                                                          *
+ * This file is part of DartRay.                                            *
+ *                                                                          *
+ * Licensed under the Apache License, Version 2.0 (the "License");          *
+ * you may not use this file except in compliance with the License.         *
+ * You may obtain a copy of the License at                                  *
+ *                                                                          *
+ * http://www.apache.org/licenses/LICENSE-2.0                               *
+ *                                                                          *
+ * Unless required by applicable law or agreed to in writing, software      *
+ * distributed under the License is distributed on an "AS IS" BASIS,        *
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. *
+ * See the License for the specific language governing permissions and      *
+ * limitations under the License.                                           *
+ *                                                                          *
+ * This project is based on PBRT v2 ; see http://www.pbrt.org               *
+ * pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.  *
+ ****************************************************************************/
 part of surface_integrators;
 
 class PhotonMapIntegrator extends SurfaceIntegrator {
@@ -8,24 +28,6 @@ class PhotonMapIntegrator extends SurfaceIntegrator {
                       double ga) :
     maxDistSquared = [maxdist * maxdist],
     cosGatherAngle = Math.cos(Radians(ga));
-
-  static PhotonMapIntegrator Create(ParamSet params) {
-    int nCaustic = params.findOneInt('causticphotons', 20000);
-    int nIndirect = params.findOneInt('indirectphotons', 100000);
-    int nUsed = params.findOneInt('nused', 50);
-
-    int maxSpecularDepth = params.findOneInt('maxspeculardepth', 5);
-    int maxPhotonDepth = params.findOneInt('maxphotondepth', 5);
-    bool finalGather = params.findOneBool('finalgather', true);
-    int gatherSamples = params.findOneInt('finalgathersamples', 32);
-
-    double maxDist = params.findOneFloat('maxdist', 0.1);
-    double gatherAngle = params.findOneFloat('gatherangle', 10.0);
-
-    return new PhotonMapIntegrator(nCaustic, nIndirect, nUsed,
-                                   maxSpecularDepth, maxPhotonDepth, maxDist,
-                                   finalGather, gatherSamples, gatherAngle);
-  }
 
   Spectrum Li(Scene scene, Renderer renderer,
       RayDifferential ray, Intersection isect, Sample sample,
@@ -289,6 +291,24 @@ class PhotonMapIntegrator extends SurfaceIntegrator {
     }
   }
 
+  static PhotonMapIntegrator Create(ParamSet params) {
+    int nCaustic = params.findOneInt('causticphotons', 20000);
+    int nIndirect = params.findOneInt('indirectphotons', 100000);
+    int nUsed = params.findOneInt('nused', 50);
+
+    int maxSpecularDepth = params.findOneInt('maxspeculardepth', 5);
+    int maxPhotonDepth = params.findOneInt('maxphotondepth', 5);
+    bool finalGather = params.findOneBool('finalgather', true);
+    int gatherSamples = params.findOneInt('finalgathersamples', 32);
+
+    double maxDist = params.findOneFloat('maxdist', 0.1);
+    double gatherAngle = params.findOneFloat('gatherangle', 10.0);
+
+    return new PhotonMapIntegrator(nCaustic, nIndirect, nUsed,
+                                   maxSpecularDepth, maxPhotonDepth, maxDist,
+                                   finalGather, gatherSamples, gatherAngle);
+  }
+
   int nCausticPhotonsWanted;
   int nIndirectPhotonsWanted;
   int nLookup;
@@ -364,7 +384,7 @@ class PhotonShootingTask {
         // Generate _photonRay_ from light source and initialize _alpha_
         RayDifferential photonRay = new RayDifferential();
         List<double> pdf = [0.0];
-        LightSample ls = new LightSample.set(u[1], u[2], u[3]);
+        LightSample ls = new LightSample(u[1], u[2], u[3]);
         Normal Nl = new Normal();
 
         Spectrum Le = light.sampleL(scene, ls, u[4], u[5], time, photonRay,
@@ -454,7 +474,8 @@ class PhotonShootingTask {
                             Vector.AbsDot(wi, photonBSDF.dgShading.nn) / pdf[0];
 
             // Possibly terminate photon path with Russian roulette
-            double continueProb = Math.min(1.0, anew.y / alpha.y);
+            double continueProb = Math.min(1.0,
+                                          anew.luminance() / alpha.luminance());
             if (rng.randomFloat() > continueProb) {
               break;
             }

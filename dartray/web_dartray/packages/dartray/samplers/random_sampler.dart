@@ -1,136 +1,99 @@
 /****************************************************************************
- *  Copyright (C) 2014 by Brendan Duncan.                                   *
+ * Copyright (C) 2014 by Brendan Duncan.                                    *
  *                                                                          *
- *  This file is part of DartRay.                                           *
+ * This file is part of DartRay.                                            *
  *                                                                          *
- *  Licensed under the Apache License, Version 2.0 (the "License");         *
- *  you may not use this file except in compliance with the License.        *
- *  You may obtain a copy of the License at                                 *
+ * Licensed under the Apache License, Version 2.0 (the "License");          *
+ * you may not use this file except in compliance with the License.         *
+ * You may obtain a copy of the License at                                  *
  *                                                                          *
- *  http://www.apache.org/licenses/LICENSE-2.0                              *
+ * http://www.apache.org/licenses/LICENSE-2.0                               *
  *                                                                          *
- *  Unless required by applicable law or agreed to in writing, software     *
- *  distributed under the License is distributed on an "AS IS" BASIS,       *
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.*
- *  See the License for the specific language governing permissions and     *
- *  limitations under the License.                                          *
+ * Unless required by applicable law or agreed to in writing, software      *
+ * distributed under the License is distributed on an "AS IS" BASIS,        *
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. *
+ * See the License for the specific language governing permissions and      *
+ * limitations under the License.                                           *
  *                                                                          *
- *   This project is based on PBRT v2 ; see http://www.pbrt.org             *
- *   pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.*
+ * This project is based on PBRT v2 ; see http://www.pbrt.org               *
+ * pbrt2 source code Copyright(c) 1998-2010 Matt Pharr and Greg Humphreys.  *
  ****************************************************************************/
 part of samplers;
 
 class RandomSampler extends Sampler {
-  static RandomSampler Create(ParamSet params, Film film, Camera camera,
-                              PixelSampler pixels) {
-    int ns = params.findOneInt('pixelsamples', 1);
-    bool continuous = params.findOneBool('continuous', true);
-    List<int> extents = [0, 0, 0, 0];
-    film.getSampleExtent(extents);
-    return new RandomSampler(extents[0], extents[1], extents[2], extents[3],
-                             ns, continuous,
-                             camera.shutterOpen, camera.shutterClose,
-                             pixels);
-  }
-
-  RandomSampler(int xstart, int xend, int ystart,
-      int yend, int ns, this.continuous, double sopen, double sclose,
-      this.pixels) :
-    super(xstart, xend, ystart, yend, ns, sopen, sclose) {
+  RandomSampler(int x, int y, int width, int height, double sopen,
+                double sclose, this.pixels, int ns) :
+    super(x, y, width, height, sopen, sclose, ns) {
     if (pixels == null) {
-      LogSevere('Pixel sampler is required by LowDiscrepencySampler');
+      LogSevere('A PixelSampler is required by RandomSampler');
     }
-    pixels.setup(xstart, xend, ystart, yend);
+    pixels.setup(x, y, width, height);
     pixelIndex = 0;
-    // Get storage for a pixel's worth of stratified samples
-    imageSamples = new Float32List(2 * samplesPerPixel);
-    lensSamples = new Float32List(2 * samplesPerPixel);
-    timeSamples = new Float32List(samplesPerPixel);
-    samplePos = samplesPerPixel;
+    sampleCount = 0;
   }
 
   int maximumSampleCount() {
-    return 1;
+    return samplesPerPixel;
   }
 
   int getMoreSamples(List<Sample> sample, RNG rng) {
+    PixelSampler pixels = this.pixels;
+
     if (pixelIndex >= pixels.numPixels()) {
-      if (!continuous) {
+      sampleCount++;
+      if (sampleCount >= samplesPerPixel) {
         return 0;
       }
       pixelIndex = 0;
     }
 
-    if (samplePos == samplesPerPixel) {
-      pixels.getPixel(pixelIndex++, pixel);
+    pixels.getPixel(pixelIndex++, pixel);
 
-      int i = 0;
-      for (; i < samplesPerPixel; ++i) {
-        timeSamples[i] = rng.randomFloat();
-        imageSamples[i] = rng.randomFloat();
-        lensSamples[i] = rng.randomFloat();
+    int mode = RenderOverrides.SamplingMode();
+    int numSamples = mode == Sampler.ITERATIVE_SAMPLING ? 1 :
+                     mode == Sampler.FULL_SAMPLING ? samplesPerPixel :
+                     (sampleCount == 0) ? 1 : samplesPerPixel - 1;
+
+    for (int si = 0; si < numSamples; ++si) {
+      // Return next sample point
+      sample[si].imageX = rng.randomFloat() + pixel[0];
+      sample[si].imageY = rng.randomFloat() + pixel[1];
+      sample[si].lensU = rng.randomFloat();
+      sample[si].lensV = rng.randomFloat();
+      sample[si].time = Lerp(rng.randomFloat(), shutterOpen, shutterClose);
+
+      // Generate stratified samples for integrators
+      for (int i = 0; i < sample[si].n1D.length; ++i) {
+        for (int j = 0; j < sample[si].n1D[i]; ++j) {
+          sample[si].oneD[i][j] = rng.randomFloat();
+        }
       }
 
-      for (; i < 2 * samplesPerPixel; ++i) {
-        imageSamples[i] = rng.randomFloat();
-        lensSamples[i] = rng.randomFloat();
-      }
-
-      // Shift image samples to pixel coordinates
-      for (int o = 0; o < 2 * samplesPerPixel; o += 2) {
-        imageSamples[o] += pixel[0];
-        imageSamples[o + 1] += pixel[1];
-      }
-
-      samplePos = 0;
-    }
-
-    // Return next sample point
-    sample[0].imageX = imageSamples[2 * samplePos];
-    sample[0].imageY = imageSamples[2 * samplePos + 1];
-    sample[0].lensU = lensSamples[2 * samplePos];
-    sample[0].lensV = lensSamples[2 * samplePos + 1];
-    sample[0].time = Lerp(timeSamples[samplePos], shutterOpen, shutterClose);
-
-    // Generate stratified samples for integrators
-    for (int i = 0; i < sample[0].n1D.length; ++i) {
-      for (int j = 0; j < sample[0].n1D[i]; ++j) {
-        sample[0].oneD[i][j] = rng.randomFloat();
+      for (int i = 0; i < sample[si].n2D.length; ++i) {
+        for (int j = 0; j < 2 * sample[si].n2D[i]; ++j) {
+          sample[si].twoD[i][j] = rng.randomFloat();
+        }
       }
     }
 
-    for (int i = 0; i < sample[0].n2D.length; ++i) {
-      for (int j = 0; j < 2 * sample[0].n2D[i]; ++j) {
-        sample[0].twoD[i][j] = rng.randomFloat();
-      }
-    }
-
-    ++samplePos;
-    return 1;
+    return numSamples;
   }
 
   int roundSize(int sz) {
     return sz;
   }
 
-  Sampler getSubSampler(int num, int count) {
-    List<int> extents = [0, 0, 0, 0];
-    computeSubWindow(num, count, extents);
-    if (extents[0] == extents[1] || extents[2] == extents[3]) {
-      return null;
-    }
+  static RandomSampler Create(ParamSet params, int x, int y, int width,
+                              int height, Camera camera, PixelSampler pixels) {
+    int ns = params.findOneInt('pixelsamples', 10);
 
-    return new RandomSampler(extents[0], extents[1], extents[2], extents[3],
-                             samplesPerPixel, continuous, shutterOpen,
-                             shutterClose, pixels);
+    return new RandomSampler(x, y, width, height,
+                             camera.shutterOpen, camera.shutterClose,
+                             pixels, ns);
   }
 
-  bool continuous;
   PixelSampler pixels;
   Int32List pixel = new Int32List(2);
   int pixelIndex;
-  Float32List imageSamples;
-  Float32List lensSamples;
-  Float32List timeSamples;
-  int samplePos;
+  int sampleCount;
 }
