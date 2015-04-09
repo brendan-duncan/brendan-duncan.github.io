@@ -5113,12 +5113,6 @@ z.bu(a,b,c,d)
 return z}}},
 ST:{
 "^":"uJ;hO:z<,ch,cx,cy,db,Q,a,b,c,d,e,f,r,x,y",
-qW:function(){var z,y
-z=this.r
-y=z.length
-if(y!==0){if(0>=y)return H.e(z,0)
-z=z[0]}else z=null
-return z},
 im:function(a,b,c,d){var z,y,x,w,v,u,t,s
 for(z=c.gwd(c),z=new J.m1(z,z.length,0,null);z.D();){y=z.c
 if(J.wS(y.gle())===1&&!!J.t(J.Tf(y.gle(),0)).$iszM)x=J.Tf(y.gle(),0)
@@ -5420,12 +5414,14 @@ if(y==null){y=new Z.Wt(null,null,null,null,null)
 z[a]=y
 z=y}else z=y
 return z},
-Bm:function(){var z,y,x
+Bm:function(){var z,y,x,w,v,u
 z=[]
 y=this.xD("Skin")
-for(x=new J.m1(y,y.length,0,null);x.D();)x.c.uX("Cluster",z)
-return z},
-fo:function(a){var z,y,x,w,v,u,t,s,r,q,p,o,n,m,l,k
+for(x=new J.m1(y,y.length,0,null);x.D();){w=[]
+x.c.uX("Cluster",w)
+for(v=new J.m1(w,w.length,0,null);v.D();){u=v.c
+if(u.ghO()!=null&&u.ch!=null)z.push(u)}}return z},
+fo:function(a){var z,y,x,w,v,u,t,s,r,q,p,o,n,m,l,k,j
 z=J.wS(this.f)
 if(typeof z!=="number")return H.o(z)
 z=0<z
@@ -5437,23 +5433,26 @@ x=0<z.length?z[0]:null
 for(w=this.fx.length,v=0,u=0;v<w;++v){z=this.fx
 if(v>=z.length)return H.e(z,v)
 t=z[v]
-s=t.qW()
-r=x.ND(y)
-q=y.K6()
+z=t.r
+s=z.length
+if(s!==0){if(0>=s)return H.e(z,0)
+r=z[0]}else r=null
+q=x.ND(y)
+p=y.K6()
 z=t.cy
-p=new T.aI(new Float32Array(16))
-p.xu(z)
-p.OY()
-o=s.K6()
-n=p.R(0,r)
-p=new T.aI(new Float32Array(16))
-p.xu(q)
-p.OY()
-m=p.R(0,o).R(0,n)
-for(l=0;l<16;++l,u=k){k=u+1
-z=m.gEv()
-if(l>=z.length)return H.e(z,l)
-z=z[l]
+o=new T.aI(new Float32Array(16))
+o.xu(z)
+o.OY()
+n=r.K6()
+m=o.R(0,q)
+o=new T.aI(new Float32Array(16))
+o.xu(p)
+o.OY()
+l=o.R(0,n).R(0,m)
+for(k=0;k<16;++k,u=j){j=u+1
+z=l.gEv()
+if(k>=z.length)return H.e(z,k)
+z=z[k]
 if(u<0||u>=a.length)return H.e(a,u)
 a[u]=z}}return a},
 EF:function(){var z,y,x,w,v,u
@@ -5470,7 +5469,7 @@ w=u}else w=u
 u=y.ch
 if(x>=u.length)return H.e(u,x)
 w.push([y,u[x]])}}},
-mt:function(){var z,y,x,w,v,u,t,s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9
+mt:function(){var z,y,x,w,v,u,t,s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,b0
 this.dx=[]
 if(this.z==null)return
 this.fx=this.Bm()
@@ -5621,33 +5620,30 @@ if(typeof y!=="number")return y.R()
 z.r=new Float32Array(H.T0(y*4))
 y=H.T0(this.z.length)
 b=new Int32Array(y)
-for(m=this.fx.length,a=0;a<m;++a){x=this.fx
-if(a>=x.length)return H.e(x,a)
-a0=x[a]
-for(a1=a0.ghO().length,x=z.x,q=z.r,k=z.f,i=a0.ch,a2=a0.z,f=0;f<a1;++f){if(f>=i.length)return H.e(i,f)
-a3=i[f]
-if(f>=a2.length)return H.e(a2,f)
-p=a2[f]
-if(p>>>0!==p||p>=x.length)return H.e(x,p)
-a4=x[p].length
+for(x=this.fx,m=x.length,q=z.x,k=z.r,i=z.f,a=0;a<m;++a){a0=x[a]
+for(a1=a0.z,a2=a1.length,a3=a0.ch,f=0;f<a2;++f){if(f>=a3.length)return H.e(a3,f)
+a4=a3[f]
+p=a1[f]
+if(p>>>0!==p||p>=q.length)return H.e(q,p)
+a5=q[p].length
 l=0
-for(;l<a4;++l){a5=x[p]
-if(l>=a5.length)return H.e(a5,l)
-a6=C.jn.BU(a5[l],3)*4
+for(;l<a5;++l){a6=q[p]
+if(l>=a6.length)return H.e(a6,l)
+a7=C.jn.BU(a6[l],3)*4
 if(p>=y)return H.e(b,p)
-a5=b[p]
-if(a5>3)for(a7=0;a7<4;++a7){a5=a6+a7
-if(a5>=k.length)return H.e(k,a5)
-a8=k[a5]
-if(typeof a3!=="number")return H.o(a3)
-if(a8<a3){if(a5>=q.length)return H.e(q,a5)
-q[a5]=a
-k[a5]=a3
-break}}else{a9=a6+a5
-if(a9<0||a9>=q.length)return H.e(q,a9)
-q[a9]=a
-if(a9>=k.length)return H.e(k,a9)
-k[a9]=a3}}if(p>=y)return H.e(b,p)
+a6=b[p]
+if(a6>3)for(a8=0;a8<4;++a8){a6=a7+a8
+if(a6>=i.length)return H.e(i,a6)
+a9=i[a6]
+if(typeof a4!=="number")return H.o(a4)
+if(a9<a4){if(a6>=k.length)return H.e(k,a6)
+k[a6]=a
+i[a6]=a4
+break}}else{b0=a7+a6
+if(b0<0||b0>=k.length)return H.e(k,b0)
+k[b0]=a
+if(b0>=i.length)return H.e(i,b0)
+i[b0]=a4}}if(p>=y)return H.e(b,p)
 b[p]=b[p]+1}}}},
 pR:function(a){var z,y,x,w,v,u,t,s,r,q,p
 if(J.wS(a.gle())===1&&!!J.t(J.Tf(a.gle(),0)).$iszM)z=J.Tf(a.gle(),0)
@@ -6013,7 +6009,7 @@ J.aS(this.Q,3042)
 J.L(this.Q,770,771)
 J.aS(this.Q,2884)
 z=this.d
-if(z!=null){z.r2=J.W(z.r2,0.5)
+if(z!=null){z.r2=J.W(z.r2,0.3)
 z=this.d
 y=z.r2
 x=z.r1
@@ -6086,7 +6082,7 @@ z.z=J.w0(z.Q,z.a,"color")
 this.y=z
 z=this.Q
 y=new E.hn(null,null,null,z,null,null,null,null,null,P.A(null,null),!1,0,null)
-y.bn(z,"    precision highp float;\r\n    attribute vec3 aVertexPosition;\r\n    attribute vec3 aVertexNormal;\r\n    attribute vec4 skinIndices;\r\n    attribute vec4 skinWeights;\r\n\r\n    varying vec3 vNormal;\r\n\r\n    uniform mat4 uMVMatrix;\r\n    uniform mat4 uPMatrix;\r\n    uniform mat4 joints[60];\r\n\r\n    void main(void) {\r\n      vec4 p = vec4(aVertexPosition, 1.0);\r\n      vec4 n = vec4(aVertexNormal, 0.0);\r\n\r\n      vec4 sp = vec4(0.0, 0.0, 0.0, 0.0);\r\n      vec4 sn = vec4(0.0, 0.0, 0.0, 0.0);\r\n      int index = 0;\r\n\r\n      index = int(skinIndices.x);\r\n      sp = (joints[index] * p) * skinWeights.x;\r\n      sn = (joints[index] * n) * skinWeights.x;\r\n\r\n      index = int(skinIndices.y);\r\n      sp += (joints[index] * p) * skinWeights.y;\r\n      sn += (joints[index] * n) * skinWeights.y;\r\n    \r\n      index = int(skinIndices.z);\r\n      sp += (joints[index] * p) * skinWeights.z;\r\n      sn += (joints[index] * n) * skinWeights.z;\r\n\r\n      index = int(skinIndices.w);\r\n      sp += (joints[index] * p) * skinWeights.w;\r\n      sn += (joints[index] * n) * skinWeights.w;\r\n\r\n      vNormal = normalize(uMVMatrix * vec4(sn.xyz, 0.0)).xyz;\r\n\r\n      vec4 vPosition = (uMVMatrix * vec4(sp.xyz, 1.0));\r\n\r\n      gl_Position = uPMatrix * vec4(vPosition.xyz, 1.0);\r\n    }\r\n    ","    precision highp float;\r\n    varying vec3 vNormal;\r\n    void main(void) {\r\n      gl_FragColor = vec4(mix(abs(vNormal), vec3(0.3, 0.7, 0.7), 0.7), 1.0);\r\n    }\r\n    ")
+y.bn(z,"    precision highp float;\r\n    attribute vec3 aVertexPosition;\r\n    attribute vec3 aVertexNormal;\r\n    attribute vec4 skinIndices;\r\n    attribute vec4 skinWeights;\r\n\r\n    varying vec3 vNormal;\r\n\r\n    uniform mat4 uMVMatrix;\r\n    uniform mat4 uPMatrix;\r\n    uniform mat4 joints[60];\r\n\r\n    void main(void) {\r\n      vec4 p = vec4(aVertexPosition, 1.0);\r\n      vec4 n = vec4(aVertexNormal, 0.0);\r\n\r\n      vec4 sp = vec4(0.0, 0.0, 0.0, 0.0);\r\n      vec4 sn = vec4(0.0, 0.0, 0.0, 0.0);\r\n      int index = 0;\r\n\r\n      index = int(skinIndices.x);\r\n      sp = (joints[index] * p) * skinWeights.x;\r\n      sn = (joints[index] * n) * skinWeights.x;\r\n\r\n      index = int(skinIndices.y);\r\n      sp += (joints[index] * p) * skinWeights.y;\r\n      sn += (joints[index] * n) * skinWeights.y;\r\n    \r\n      index = int(skinIndices.z);\r\n      sp += (joints[index] * p) * skinWeights.z;\r\n      sn += (joints[index] * n) * skinWeights.z;\r\n\r\n      index = int(skinIndices.w);\r\n      sp += (joints[index] * p) * skinWeights.w;\r\n      sn += (joints[index] * n) * skinWeights.w;\r\n\r\n      vNormal = normalize(uMVMatrix * vec4(sn.xyz, 0.0)).xyz;\r\n\r\n      vec4 vPosition = (uMVMatrix * vec4(sp.xyz, 1.0));\r\n\r\n      gl_Position = uPMatrix * vec4(vPosition.xyz, 1.0);\r\n    }\r\n    ","    precision highp float;\r\n    varying vec3 vNormal;\r\n    void main(void) {\r\n      gl_FragColor = vec4(mix(abs(vNormal), vec3(0.6, 0.7, 0.4), 0.5), 1.0);\r\n    }\r\n    ")
 y.z=J.w0(y.Q,y.a,"joints")
 y.ch=J.E4(y.Q,y.a,"skinIndices")
 y.cx=J.E4(y.Q,y.a,"skinWeights")
@@ -6116,9 +6112,9 @@ z[14]=-0.20002000200020004
 this.r=t
 z=new Float32Array(H.T0(3))
 y=new T.An(z)
-y.PJ(-30,100,400)
+y.PJ(10,0,25)
 q=new T.An(new Float32Array(H.T0(3)))
-q.PJ(-30,100,0)
+q.PJ(0,0,0)
 p=new T.An(new Float32Array(H.T0(3)))
 p.PJ(0,1,0)
 o=new Float32Array(H.T0(16))
@@ -6172,7 +6168,7 @@ o[13]=i.gy(i)
 o[14]=i.gz(i)
 this.x=n
 h=new XMLHttpRequest()
-C.Dt.EP(h,"GET","data/humanoid_ascii.fbx")
+C.Dt.EP(h,"GET","data/knight_2014.fbx")
 h.responseType="arraybuffer"
 o=H.J(new W.RO(h,"error",!1),[null])
 H.J(new W.xC(0,o.Q,o.a,W.V(new E.H8(h)),o.b),[H.Kp(o,0)]).DN()
